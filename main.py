@@ -6,7 +6,7 @@ app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="pages/static"), name="static")
 
-
+# comment
 @app.get("/", response_class=FileResponse)
 async def read_root():
     return FileResponse("pages/home.html")
