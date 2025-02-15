@@ -15,6 +15,10 @@ async def read_root():
 async def read_about():
     return FileResponse("pages/about.html")
 
-@app.get("/about", response_class=FileResponse)
+@app.get("/contact", response_class=FileResponse)
 async def read_contact():
     return FileResponse("pages/contact.html")
+
+@app.get("/web_journey", response_class=FileResponse)
+async def read_contact():
+    return FileResponse("pages/web_journey.html")

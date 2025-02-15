@@ -3,17 +3,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Courier Light', Courier, monospace;
     color: #333;
     line-height: 1.6;
     padding: 20px;
 }
 
 header {
+    font-family: 'Courier Light', Courier, monospace;
     text-align: center;
     padding: 20px 0;
 }
@@ -22,7 +23,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+    
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -33,36 +34,33 @@ header {
 }
 
 .nav_bar li {
-    margin: 0 15px;
+    margin: 0 50px;
 }
 
 .nav_bar a {
-    text-decoration: none;
-    color: white;
+    color: black;
     font-weight: bold;
+    font-size: 2.1em;
     transition: color 0.3s ease;
 }
 
 .nav_bar a:hover {
-    color: #63bd3d;
+    color: #ced4cc;
 }
 
 .main_content {
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 20px;
     background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 1.1em;
     margin-bottom: 20px;
 }
 
@@ -76,9 +74,17 @@ a:hover {
     color: #0056b3;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+.main_content_header{  
+    align-items: center;
     margin-bottom: 20px;
+    font-weight: normal;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main_content_text {
+    font-size: 1.1em;
+    font-weight: 100;
+    margin-bottom: 5px;
+    text-align: center;
 }
