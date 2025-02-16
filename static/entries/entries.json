@@ -1,0 +1,46 @@
+[
+    {
+        "date": "16 Feb 2025",
+        "entries": [
+            {
+                "text": "So I researched what are the best ways to organize these entries, it is to use a JSON file, and then use JavaScript to call it and display it. Like that's literally a genius idea wth!",
+                "subpoints": []
+            },
+            {
+                "text": "OK turns out this feature is harder than it sounds! Cause there are actually so many steps for me to do (and I'm new to this, mind you). At this point I'm like, \"Why didn't I just use a blog template?\" Or like, \"Why didn't I just use a Website builder tool?😭\" But NO. We persevere!!!",
+                "subpoints": ["Even creating these sub bullet points takes some understanding on how JS works. I need to create an array of strings, then loop through them to display them, then think about the html tags etc (thankful for ChatGPT)."]
+            },
+            {
+                "text": "So I created this JSON file, and at first it was just a list of strings. But then I realized I need to add more details to it, like the date, and subpoints. It has been a constant change of the JSON file structure.",
+                "subpoints": []
+            },
+            {
+                "text": "Now I'm worried that the JSON file will get too big, and it will be hard to manage. I need to figure out a way to make it more organized. LMAOOO😭😭💀. I originally wanted to be working on how to showcase my projects in the other tabs. But I realized I'm <b>LITERALLY starting from the ground UP</b>.",
+                "subpoints": ["I'm thinking now if I should get a database for these entries. Then I just call the database instead of managing this JSON file. Cause I need to copy paste each object every time I want to add a new entry. It's a hassle.", "I also realized like visually, this is not a very nice way for people to read these entries. I need to figure out a way to make it more legible. (added margin-bottom: 15px). But surely, there's a better way to do this."]
+            },
+            {
+                "text": "Anyways, some thing I learned today is that the File:// protocol is not the same as the HTTP:// protocol (wa, this took so long to figure out WHAT was the problem, omfg🔪). I was wondering why my JSON and CSS file wasn't serving, and it was because I was using the File protocol. I had to use a local server to host the file.\n But anws, the \"Live Server\" extension on VSCode saved my life, cause now I can see my updates in realtime. It also serves the CSS correctly.",
+                "subpoints": ["I need to figure out what's the diff between file:// and HTTP:// protocol."]
+            },
+            {
+                "text": "Also, I'm using FastAPI to serve the all these static files, and I realized the links doesn't work (locally) because the routing is different in my main.py file. Like let's say I route to /web_journey, but the actual link is /pages/web_journey.html. So I need to figure out how to make \"FastAPI\" and \"Live Server\" work together, methinks.",
+                "subpoints": ["I think I need to organize these entries by date, and then have a button to show/hide the entries for that date. Cause if I keep adding entries, it will get too cluttered. I also need to figure out how to make the text more legible.", "I also want to find a way to show my code? Or like let people see the past iterations of this website.", "May be I need a new organization structure? OK, I'm getting ahead of myself. I need to focus on the current problem first- showcase my projects!"]
+            }
+            
+            
+        ]
+    },
+    {
+        "date": "15 Feb 2025",
+        "entries": [
+            {
+                "text": "OK I actually need to start documenting this thing, but the more points + dates I add, the more cluttered my html file will be. How do I solve this? 🤔 But this will do for now, I think. I will figure a way when the html gets too clunky.",
+                "subpoints": []
+            },
+            {
+                "text": "I think the text here also needs to be legible, so that people can read it. Anyways, at least I figured how to host this website on Azure, hehe.",
+                "subpoints": []
+            }
+        ]
+    }
+]

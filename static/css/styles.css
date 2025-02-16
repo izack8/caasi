@@ -88,3 +88,28 @@ a:hover {
     margin-bottom: 5px;
     text-align: center;
 }
+/* Add styles for subpoints */
+ul.subpoints {
+    margin-left: 40px; /* Indent subpoints */
+    list-style-type: disc; /* Change bullet style for subpoints */
+    
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: black;
+    margin-top: 20px;
+}
+
+.disclaimer {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -4,7 +4,8 @@ from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="pages/static"), name="static")
+# mount js 
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # comment
 @app.get("/", response_class=FileResponse)
