@@ -1,13 +1,12 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
-
-# mount js 
+templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# comment
 @app.get("/", response_class=FileResponse)
 async def read_root():
     return FileResponse("pages/home.html")
@@ -23,3 +22,37 @@ async def read_contact():
 @app.get("/web_journey", response_class=FileResponse)
 async def read_contact():
     return FileResponse("pages/web_journey.html")
+
+# trying out HTML templating
+@app.get("/projects", response_class=HTMLResponse)
+async def read_projects(request: Request):
+
+    projects = [
+        {
+            "title": "Personal Website Building",
+            "description" : "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more).",
+            "points": [
+                "I want to learn and experience (hands-on) the process of building🔨 a website from scratch, without using online Web Building tools etc🚫. I feel like this process helps me understand why certain things are done in a certain way, which I feel is the best way to learn anything✔️.",
+                "Like for example I was having such a hard time coding up the JS function for the looping and dynamic updating of details and html😑😑, but then I discovered HTML templating (like Jinja2 for Python, and Thymeleaf for Java), and it's like- oh, that's why people use it!🤯🤯🤯",
+                "And on-top of this, I also learned the smaller things where people usually miss, like how important the file structure in the project folder and in JSON files etc. Like I need to write and organize them to meet my needs, and not just copy-paste from the internet.",
+                "ARGH! So many things to learn! So exciting!",
+                "OK I'm getting carried away.",
+                "And oh yeah, how to deploy on cloud☁️☁️ etc. I'm using Azure now, cause the subscription is free for students, and I learned how to by watching a YouTube video.",
+            ],
+            "image": "/static/images/my_website.jpg",
+            "url": ""
+        },
+        {
+            "title": "STARs Automation for module selection",
+            "description": "Automating the module selection process for NTU students (just myself, ngl).",
+            "points": [
+                "OK so if you're from NTU, then you know how HORRIBLE the STARs system is. Context for non-NTU students, we have a frigging painful system for customizing our time-tables + modules selection every semester. It's basically fastest fingers first, BUT the system crashes every time, or your internet lags behind or something. It's a MESS.",
+                "So once you get into the system, you have to get to the module selection page, and then you have to click module, and then you have to click through like 5654984 more buttons to confirm the selection. And then you have to do this for every module you want to select.",
+                "Anyways, I got fed up with the tireless clicking (cause it's literally the same buttons you have to click every time), so I decided to automate it, and let it run in the background while I do OTHER IMPORTANT THINGS.",
+                "It was on my Mac, so I used AppleScript to automate some keyboard presses (like \"Tab\" and \"Enter\"), on my MacBook Air M2. (so hmu if you need the simple script)",],
+            "image": "/static/images/apple_script.png",
+            "url": ""
+        },
+        # Add more projects as needed
+    ]
+    return templates.TemplateResponse("projects.html", {"request": request, "projects": projects})

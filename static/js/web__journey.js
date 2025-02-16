@@ -38,7 +38,7 @@ function createDateHeader(date) {
 function createEntryItem(item) {
     const li = document.createElement('li');
     li.style.marginBottom = '15px';
-    const text = item.text.replace(/\n/g, '<br>'); // Replace \n with <br> for HTML
+    const text = item.text.replace(/\n/g, '<br>');
     li.innerHTML = `${text}`;
 
     if (item.subpoints && item.subpoints.length > 0) {

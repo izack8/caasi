@@ -3,7 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+}
+
+html {
+    overflow-y: scroll;
 }
 
 body {
@@ -21,25 +24,28 @@ header {
 
 .nav_bar {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    margin-bottom: 20px;
-    background-color: #fff; /* Background color for the navbar */
-    position: -webkit-sticky; /* For Safari */
+    margin-bottom: 10px;
+    background-color: #fff;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure the navbar is above other content */
+    z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80%;
 }
 
 .nav_bar ul {
     list-style-type: none;
     display: flex;
+    align-items: center;
 }
 
 .nav_bar li {
-    margin: 0 50px;
+    margin: 50px;
     text-align: center;
 }
 
@@ -52,17 +58,6 @@ header {
 
 .nav_bar a:hover {
     color: #ced4cc;
-}
-
-.main_content {
-    max-width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 h1 {
@@ -80,6 +75,17 @@ a:hover {
     color: #0056b3;
 }
 
+.main_content {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .main_content_header{  
     align-items: center;
     margin-bottom: 20px;
@@ -90,14 +96,14 @@ a:hover {
 
 .main_content_text {
     font-size: 1.1em;
-    font-weight: 100;
+    font-weight: 400;
     margin-bottom: 5px;
     text-align: center;
 }
-/* Add styles for subpoints */
+
 ul.subpoints {
-    margin-left: 40px; /* Indent subpoints */
-    list-style-type: disc; /* Change bullet style for subpoints */
+    margin-left: 40px; 
+    list-style-type: disc; 
 }
 
 .footer {
@@ -106,7 +112,6 @@ ul.subpoints {
     color: black;
     margin-top: 20px;
 }
-
 
 .disclaimer {
     max-width: 90%;
@@ -118,4 +123,17 @@ ul.subpoints {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.project {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-weight: 400;
 }
