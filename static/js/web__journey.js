@@ -14,7 +14,7 @@ function fetchEntries() {
                 mainContentText.appendChild(dateHeader);
 
                 const ul = document.createElement('ul');
-                ul.style.textAlign = 'left';
+                ul.style.textAlign = 'justify';
 
                 entry.entries.forEach(item => {
                     const li = createEntryItem(item);

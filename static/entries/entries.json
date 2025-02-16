@@ -7,7 +7,7 @@
                 "subpoints": []
             },
             {
-                "text": "OK turns out this feature is harder than it sounds! Cause there are actually so many steps for me to do (and I'm new to this, mind you). At this point I'm like, \"Why didn't I just use a blog template?\" Or like, \"Why didn't I just use a Website builder tool?😭\" But NO. We persevere!!!",
+                "text": "OK turns out this feature is harder than it sounds! Cause there are actually so many steps for me to do (and I'm new to this, mind you). At this point I'm like, <b>\"Why didn't I just use a blog template?\"</b> Or like, <b>\"Why didn't I just use a Website builder tool?😭\"</b> But NO. We persevere!!!",
                 "subpoints": ["Even creating these sub bullet points takes some understanding on how JS works. I need to create an array of strings, then loop through them to display them, then think about the html tags etc (thankful for ChatGPT)."]
             },
             {
@@ -25,6 +25,10 @@
             {
                 "text": "Also, I'm using FastAPI to serve the all these static files, and I realized the links doesn't work (locally) because the routing is different in my main.py file. Like let's say I route to /web_journey, but the actual link is /pages/web_journey.html. So I need to figure out how to make \"FastAPI\" and \"Live Server\" work together, methinks.",
                 "subpoints": ["I think I need to organize these entries by date, and then have a button to show/hide the entries for that date. Cause if I keep adding entries, it will get too cluttered. I also need to figure out how to make the text more legible.", "I also want to find a way to show my code? Or like let people see the past iterations of this website.", "May be I need a new organization structure? OK, I'm getting ahead of myself. I need to focus on the current problem first- showcase my projects!"]
+            },
+            {
+                "text": "Another thing I learned, now more of CI/CD, and development in general, is that I NEED to ensure that all the code is ACTUALLY WORKING😭😭 before pushing it into the main branch cause I PUSHED IT AND IT BROKE MY WEBSITE OMFG (frigging have NO idea how to use FastAPI).\n One push is also costly and timely, like I NEED TO BE SO careful frfr.",
+                "subpoints": []
             }
             
             
