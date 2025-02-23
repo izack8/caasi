@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Function to fetch entries from the JSON file and display them
 function fetchEntries() {
-    fetch('/static/entries/entries.json')
+    fetch('/data/entries/entries.json')
         .then(response => response.json())
         .then(data => {
             const mainContentText = document.querySelector('.main_content_text');

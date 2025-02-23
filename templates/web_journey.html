@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Journey</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+<body class="home">
+    <header>
+        <nav class="nav_bar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/web_journey">Web Journey</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="disclaimer">
+        <h3>My thought processes, in journal entries</h3>
+        <p>Earlier entries start at the <a id="scrollToBottom" href="#">bottom!</a></p>
+    </div>
+
+    <div class="main_content">
+        <div class="main_content_text">
+            {% for entry in entries %}
+                <h3>{{ entry.date }}</h3>
+                <ul style="text-align: justify;">
+                    {% for item in entry.entries %}
+                        <li style="margin-bottom: 15px;">
+                            {{ item.text | replace('\n', '<br>') | safe }}
+                            {% if item.subpoints %}
+                                <ul class="subpoints">
+                                    {% for subpoint in item.subpoints %}
+                                        <li>{{ subpoint }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>Proudly created by Isaac</p>&copy; 2025
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('scrollToBottom').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
