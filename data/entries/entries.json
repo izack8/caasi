@@ -1,5 +1,33 @@
 [
     {
+        "date": "25 Mar 2025",
+        "entries": [
+            {
+                "text": "Not about to let a month pass without updating anything. I've been trying a different layout for my landing page, BUT I CAN'T GET IT TO WORK (I'm so frustrated). The idea is to get something like <a link='alvinchang.dev'>alvinchang.dev</a>, where there's a left component and right component. But the scroll keeps moving the left component, and I can't get it to stay in place. Urgh!!! I mean at least I changed the font.",
+                "subpoints": []
+            },
+            {
+                "text": "I think for the next implementation, I wanna make the dates of these entries links, so it links back to previous iterations of this website.",
+                "subpoints": []
+            }
+            
+        ]
+    },
+    {
+        "date": "25 Feb 2025",
+        "entries": [
+            {
+                "text": "Enough of backend stuff today. I NEEd to start working on the frontend (aesthetics, fonts, colors.) I really need a page where people can go through past iterations of this website. I think it would be cool to see how it has evolved over time.",
+                "subpoints": []
+            },
+            {
+                "text": "Maybe I will find a way to re-org this web journey page. People reading this might get too overwhelemed with the amount of text. I need to figure out a way to make it more digestible.",
+                "subpoints": []
+            }
+            
+        ]
+    },
+    {
         "date": "23 Feb 2025",
         "entries": [
             {
@@ -13,10 +41,55 @@
         ]
     },
     {
+        "date": "23 Feb 2025",
+        "entries": [
+            {
+                "text": "So I had this idea to use a Telegram Bot for updates to my website's entries, like a WebHook (not me pretending to know what a webhook is). But for real, I did not know what a WebHook was (and maybe still don't REALLY know what it does). But fundamentally, it basically allows me to update my website via Telegram Bot, because Webhooks are event-driven. So I just need to figure out how to set it up.",
+                "subpoints": ["Apparently, Telegram's Webhook does not allow for local testing i.e. I can't just run uvicorn main:app, and then set the url to local host. I actually HAVE to deploy it to a server (basically, production/what I'm showing to the world). Hella weird, but this is how I learn too.", "There's the ngrok thing, but it's not free. This server is basically free cause of the student pricing. So I'm just gonna use this for now."]
+            },
+            {
+                "text": "Since now we are dealing with Bots, we need tokens as well. No way am I uploading my .env file online, so I need to remember to put it into my server's environment variables. But I was also told that this is not the best way to do this. Hmm.",
+                "subpoints": []
+            }
+        ]
+    },
+    {
+        "date": "22 Feb 2025",
+        "entries": [
+            {
+                "text": "I'm thinking of adding a search feature to this journal, so that people can search for specific entries. I think it would be a cool feature to have, and it would make it easier for people to find what they're looking for.",
+                "subpoints": [
+                    "I need to figure out how to implement the search feature. I think I'll need to use JavaScript to do it, but I'm not sure how to get started. I'll have to do some research and see what I can find.",
+                    "I also need to think about how the search feature will work. Will it search the entire text of the entries, or just the titles? I'll have to figure out what will work best for the users."
+                ]
+            },
+            {
+                "text": "I also need to figure out how to make the journal entries more visually appealing. Right now, it's just a list of text, and it's not very engaging to look at. I think I'll need to add some styling to make it look better.",
+                "subpoints": [
+                    "I'll need to figure out what kind of styling to add. I want it to be clean and simple, but also visually interesting. I'll have to experiment and see what works best.",
+                    "I also need to think about how to make the journal entries more interactive. Maybe I could add some animations or other interactive elements to make it more engaging."
+                ]
+            }
+        ]
+    },
+    {
+        "date": "17 Feb 2025",
+        "entries": [
+            {
+                "text": "I'm thinking of adding a new section to my website to showcase my projects. I think it would be a good way to show off my work and give people a sense of what I can do.",
+                "subpoints": [
+                    "I need to figure out how to organize the projects. I have a lot of different projects, and I want to make sure they're easy to navigate and explore. I'll have to think about how to categorize them and what information to include.",
+                    "I also need to figure out how to display the projects. I want them to look good and be easy to interact with. I'll have to think about what kind of layout to use and how to make it visually appealing."
+                ]
+            }
+        ]
+    
+    },
+    {
         "date": "16 Feb 2025",
         "entries": [
             {
-                "text": "So I researched what are the best ways to organize these entries, it is to use a JSON file, and then use JavaScript to call it and display it. Like that's literally a genius idea wth!",
+                "text": "So I researched what are the best ways to organize these entries (without crowding the HTML file), it is to use a JSON file, and then use JavaScript to call it and display it. Like that's literally a genius idea wth!",
                 "subpoints": []
             },
             {
@@ -55,14 +128,12 @@
                 "subpoints": []
             },
             {
-                "text": "Further research and digging reveals <b>HTML Templating - Jinja2</b>, and how it can make my life WAY easier😭.",
-                "subpoints": [
-                    "And also, I realized so far my website is static. Since I'm using FastAPI, I can make dynamic features, maybe integrating with the database I mentioned earlier."
-                ]
+                "text": "Further research and digging reveals <b>HTML Templating - Jinja2</b>, and how it can make my life WAY easier😭. And also, I realized so far my website is static. Since I'm using FastAPI, I can make dynamic features, maybe integrating with the database I mentioned earlier.",
+                "subpoints": []
             },
             {
                 "text": "I might just start working on a database to store these entries. Cause I'm getting <b>hELLA tired</b> of this copy-pasting manual labor. But anyways, didn't know that a frigging scrollbar shifts my content.",
-                "subpoints": []
+                "subpoints": ["16 Feb 2025: Fixed it by making the scrollbar always visible!"]
             }
         ]
     },
@@ -70,12 +141,16 @@
         "date": "15 Feb 2025",
         "entries": [
             {
-                "text": "OK I actually need to start documenting this thing, but the more points + dates I add, the more cluttered my html file will be. How do I solve this? 🤔 But this will do for now, I think. I will figure a way when the html gets too clunky.",
-                "subpoints": []
+                "text": "OK I actually need to start documenting this thing. I'm currently just adding my entires as html tags (LOL), but the more points + dates I add, the more cluttered my html file will be. How do I solve this? 🤔 But this will do for now, I think. I will figure a way when the html gets too clunky.",
+                "subpoints": ["16 Feb 2025: Used JSON file to store the entries instead! Then I use JS to loop through the entries and display them, hehe 😊"]
             },
             {
-                "text": "I think the text here also needs to be legible, so that people can read it. Anyways, at least I figured how to host this website on Azure, hehe.",
-                "subpoints": []
+                "text": "I think the text here also needs to be legible, so that people can read it with ease.",
+                "subpoints": ["15 Feb 2025: Updated margins and fonts to make it more legible."]
+            },
+            {
+                "text": "I want to know how to host a website, just to get it out there. I think I'll use Azure, cause I have a student account. But I need to figure out how to do it.",
+                "subpoints": ["15 Feb 2025: OK- I also figured out how to host this on Azure. This process took me ~1.5 days to learn and understand what's going on. There are SO many functions and features, it's kinda confusing navigating it by myself. But I'm proud of myself for figuring it out!!! It's actually not that hard when you know where to look."]
             }
         ]
     }

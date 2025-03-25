@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Reset some default browser styles */
 * {
     margin: 0;
@@ -10,17 +12,28 @@ html {
 }
 
 body {
-    font-family: 'Courier Light', Courier, monospace;
+    font-family: 'Roboto', sans-serif;
     color: #333;
     line-height: 1.6;
     padding: 20px;
 }
 
 header {
-    font-family: 'Courier Light', Courier, monospace;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
     padding: 20px 0;
+    width: 100%;
 }
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    
+    padding: 10px 0;
+  }
 
 .nav_bar {
     display: flex;
@@ -34,7 +47,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
     height: 80%;
 }
 
@@ -74,6 +87,40 @@ a {
 a:hover {
     color: #0056b3;
 }
+.home_main_content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: gold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh; /* Ensure the container takes the full viewport height */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Left container: takes 50% of the width and is vertically centered */
+.home_main_content_left {
+    width: 50%;          /* occupy 50% width */
+    position: sticky;       /* enable sticky positioning */
+    top: 40%;               /* position relative to the viewport */
+    transform: translateY(-50%); /* adjust to truly center vertically */
+    display: flex;          /* use flex for centering content inside */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+  }
+  
+/* Right container: takes the other 50% and is scrollable */
+.home_main_content_right {
+    width: 50%;             
+    height: 100vh;         
+    overflow-y: scroll;      
+    padding: 20px;   
+    background-color: #007bff;
+           
+}
 
 .main_content {
     max-width: 90%;
@@ -95,8 +142,6 @@ a:hover {
 }
 
 .main_content_text {
-    font-size: 1.1em;
-    font-weight: 400;
     margin-bottom: 5px;
     text-align: center;
 }
@@ -104,6 +149,7 @@ a:hover {
 ul.subpoints {
     margin-left: 40px; 
     list-style-type: disc; 
+    width: 90%;
 }
 
 .footer {
@@ -125,8 +171,8 @@ ul.subpoints {
     text-align: center;
 }
 
-.project {
-    max-width: 90%;
+.projects {
+    max-width: 95%;
     margin: 0 auto;
     padding: 20px;
     background: white;
