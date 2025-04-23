@@ -79,6 +79,7 @@ async def telegram_webhook(request: Request):
 
 
 
+
 # @app.get("/testing", response_class=HTMLResponse)
 # async def read_testing(request: Request):
 #     return projects_json.fetch_JSON()
