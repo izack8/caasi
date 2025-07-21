@@ -17,7 +17,7 @@ class TelegramUpdate(BaseModel):
 
 fetch_json = FetchJSON()
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="pages/jinja2_templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/", response_class=FileResponse)
