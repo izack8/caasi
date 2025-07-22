@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
   <title>My Projects!</title>
 </head>
-<body class="projects">
+<body class="home">
     <header>
 
         <nav class="nav_bar">
@@ -29,6 +29,7 @@
         {% for project in projects %}
             <div class="projects">
                 <h2>{{ project.title }}</h2>
+                <b>Year: {{ project.year }}</b>
                 <img src="{{ project.image }}" alt="{{ project.title }}" style="width: 200px; height: 200px;">
                 <h3 style="text-align: center;">{{ project.description }}</h3>
                 <ul>

@@ -1,5 +1,29 @@
 [
     {
+        "title": "Codebot",
+        "description" : "A Chatbot that helps you with coding, by providing code snippets and explanations.",
+        "points": [
+            "This was my first project that I worked with <b>LLMMs</b>.",
+            "Following the popularity of ChatGPT, I was really fasincated by the capabilities of AI & LLMs. I wanted to create my own chatbot that can help people with coding.",
+            "This was the point where I first discovered open-source LLMs, and I was really excited to try them out. I started with <b>llama.cpp</b>, and then I moved on to <b>llama-cpp-python</b>, and then I tried out <b>llama-index</b> and <b>langchain</b>.",
+            "GPT-2",
+            "(In hindsight, and knowing what I know now, wow- I learnt so much since then!)"
+        ],
+        "image": "/static/images/llm_icon.jpg",
+        "url": "https://github.com/izack8/codebot",
+        "year": 2024
+    },{
+        "title": "Nanyang Marche",
+        "description" : "An app designed to help NTU students connect with each other, through forums, and a marketplace for students to buy and sell items.",
+        "points": [
+            "One problem I observed in NTU's hall culture, is that students usually have a lot of furniture and items that they no longer need, but they don't know how to get rid of them. So they just throw them away, which is a waste of resources. hence, I wanted to create a marketplace for students to buy and sell, and also hopefully cultivating a new culture.",
+            "I orginally wanted to create a website, but I realized that it would be better to create an app, because students are more likely to use an app than a website. So I decided to create a mobile app using Flutter."
+        ],
+        "image": "/static/images/nanyang_marche.png",
+        "url": "https://github.com/izack8/nanyang_marche/blob/master/Nanyang_Marche_Report.pdf",
+        "year": 2023
+    },
+    {
         "title": "Personal Website Building",
         "description" : "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more).",
         "points": [
@@ -11,7 +35,8 @@
             "And oh yeah, how to deploy on cloud☁️☁️ etc. I'm using Azure now, cause the subscription is free for students, and I learned how to by watching a YouTube video."
         ],
         "image": "/static/images/my_website.jpg",
-        "url": ""
+        "url": "",
+        "year": 2025
     },
     {
         "title": "STARs Automation for module selection",
@@ -23,6 +48,7 @@
             "It was on my Mac, so I used AppleScript to automate some keyboard presses (like \"Tab\" and \"Enter\"), on my MacBook Air M2. (so hmu if you need the simple script)"
         ],
         "image": "/static/images/apple_script.png",
-        "url": ""
+        "url": "",
+        "year": 2023
     }
 ]
