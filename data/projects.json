@@ -3,10 +3,10 @@
         "title": "Codebot",
         "description" : "A Chatbot that helps you with coding, by providing code snippets and explanations.",
         "points": [
-            "This was my first project that I worked with <b>LLMMs</b>.",
+            "This was my first project that I worked with LLMs.",
             "Following the popularity of ChatGPT, I was really fasincated by the capabilities of AI & LLMs. I wanted to create my own chatbot that can help people with coding.",
-            "This was the point where I first discovered open-source LLMs, and I was really excited to try them out. I started with <b>llama.cpp</b>, and then I moved on to <b>llama-cpp-python</b>, and then I tried out <b>llama-index</b> and <b>langchain</b>.",
-            "GPT-2",
+            "This was the point where I first discovered open-source LLMs, and I was really excited to try them out. I used the GPT-2 model, and I was amazed by how well it could generate code snippets- though of course GPT-3 was wayyyyy better.",
+            "I also learned how to use the Hugging Face Transformers library, and how to fine-tune the model on my own dataset. I created a dataset of code snippets and explanations, and I fine-tuned the model on it.",
             "(In hindsight, and knowing what I know now, wow- I learnt so much since then!)"
         ],
         "image": "/static/images/llm_icon.jpg",
