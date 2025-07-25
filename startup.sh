@@ -2,13 +2,17 @@
 
 echo "=== Azure App Service Startup ==="
 
-# Build frontend
-echo "Building React frontend..."
-cd /home/site/wwwroot/frontend
-npm install --production
-npm run build
+# Check if Node.js is available and build if possible
+if command -v npm &> /dev/null; then
+    echo "Building React frontend..."
+    cd /home/site/wwwroot/frontend
+    npm install --production
+    npm run build
+    cd /home/site/wwwroot/backend
+else
+    echo "npm not available, looking for pre-built dist folder..."
+fi
 
 # Start FastAPI server
 echo "Starting FastAPI server..."
-cd /home/site/wwwroot/backend
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8000
+python -m uvicorn main:app --host 0.0.0.0 --port 8000
