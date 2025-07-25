@@ -1,9 +1,9 @@
 [
     {
         "title": "Codebot",
-        "description" : "A Chatbot that helps you with coding, by providing code snippets and explanations.",
+        "description" : "A fine-tuned Chatbot that helps you with coding, by providing code snippets and explanations.",
         "points": [
-            "This was my first project that I worked with LLMs.",
+            "This was my first project working with LLMs. As all beginners, it was a very exciting (but also frustrating) journey.",
             "Following the popularity of ChatGPT, I was really fasincated by the capabilities of AI & LLMs. I wanted to create my own chatbot that can help people with coding.",
             "This was the point where I first discovered open-source LLMs, and I was really excited to try them out. I used the GPT-2 model, and I was amazed by how well it could generate code snippets- though of course GPT-3 was wayyyyy better.",
             "I also learned how to use the Hugging Face Transformers library, and how to fine-tune the model on my own dataset. I created a dataset of code snippets and explanations, and I fine-tuned the model on it.",
@@ -14,7 +14,7 @@
         "year": 2024
     },{
         "title": "Nanyang Marche",
-        "description" : "An app designed to help NTU students connect with each other, through forums, and a marketplace for students to buy and sell items.",
+        "description" : "An app designed to help NTU students connect with each other, through online forums, and a marketplace for students to buy and sell items.",
         "points": [
             "One problem I observed in NTU's hall culture, is that students usually have a lot of furniture and items that they no longer need, but they don't know how to get rid of them. So they just throw them away, which is a waste of resources. hence, I wanted to create a marketplace for students to buy and sell, and also hopefully cultivating a new culture.",
             "I orginally wanted to create a website, but I realized that it would be better to create an app, because students are more likely to use an app than a website. So I decided to create a mobile app using Flutter."
