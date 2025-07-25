@@ -1,0 +1,86 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import SectionLabel from '../ui/SectionLabel';
+import ProjectModal from '../../components/ProjectModal';
+import Button from '../ui/Button';
+
+function ProjectsSection({ showAll = false }) {
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/projects')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        console.log('Fetching projects from API...');
+        return response.json();
+      })
+      .then(data => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching projects:', error);
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div className="text-center">Loading projects...</div>;
+  if (error) return <div className="text-center text-red-500">Error: {error}</div>;
+
+  const displayProjects = showAll ? projects : projects.slice(0, 3);
+
+  return (
+    <section className="projects-section w-full flex flex-wrap">
+      <SectionLabel label="My Projects" />
+        {displayProjects.map((project, index) => (
+          console.log('Image URL:', project.image),
+          <div key={index} className="w-full lg:hover:bg-[rgb(255,255,255,0.05)] rounded-lg transition-all duration-300 group relative mb-4">
+            <div className="flex mb-3">
+              <h2 className="text-sky-800 text-lg font-bold group-hover:text-orange-500 transition-all duration-300">
+                {project.title}
+              </h2>
+            </div>
+            
+            <p className="text-slate-350 justify-items-left mb-3">
+              {project.description}
+            </p>
+
+            <Button 
+              onClick={() => setSelectedProject(project)}
+              className="w-full rounded-md transition-colors"
+            >
+              View More
+            </Button>
+          </div>
+        ))}
+      
+      
+      {/* {!showAll && projects.length > 3 && (
+        <div className="text-center mt-6">
+          <Link 
+            to="/projects" 
+            className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors"
+          >
+            View All Projects ({projects.length})
+          </Link>
+        </div>
+      )} */}
+
+      {/* Project Modal */}
+      {selectedProject && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
+    </section>
+  );
+}
+
+export default ProjectsSection;

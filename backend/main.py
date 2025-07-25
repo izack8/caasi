@@ -1,37 +1,66 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.staticfiles import StaticFiles
+from fastapi import FastAPI, Request, HTTPException, Query
+from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
-from models import Entry
-from typing import List
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
+from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.status import HTTP_404_NOT_FOUND
+from src.fetch_json import FetchJSON
 
+messages = []
+archive = ""
+
+class TelegramUpdate(BaseModel):
+    update_id: int
+    message: dict
+
+fetch_json = FetchJSON()
 app = FastAPI()
 
-# Enable CORS
+# Add CORS middleware - IMPORTANT for React to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # In production, use your specific domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Serve static files
-app.mount("/static", StaticFiles(directory="../static"), name="static")
 
-# In-memory storage (replace with database later)
-entries: List[Entry] = []
+# API endpoints for React app
+@app.get("/api/projects")
+async def get_projects():
+    return fetch_json.fetch_JSON("../data/projects.json")
 
 @app.get("/api/entries")
 async def get_entries():
-    return entries
+    return fetch_json.fetch_JSON("../data/entries/entries.json")
 
-@app.post("/api/entries")
-async def create_entry(entry: Entry):
-    entries.append(entry)
-    return entry
+# Serve static files from the Vite build
+app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
-@app.delete("/api/entries/{date}")
-async def delete_entry(date: str):
-    global entries
-    entries = [e for e in entries if str(e.date) != date]
-    return {"message": "Entry deleted"}
+
+# @app.get("/contact", response_class=FileResponse)
+# async def read_contact(show_archives: bool = Query(False)):
+#     if show_archives:
+#         file_path = f"pages/contact_with_archives.html"
+#     else:
+#         file_path = f"pages/contact.html"
+#     return FileResponse(file_path)
+
+# # Webhook endpoint to receive Telegram messages
+# @app.post("/telegram-webhook", response_class=PlainTextResponse)
+# async def telegram_webhook(request: Request):
+#     update = await request.json()
+#     try:
+#         message_text = update["message"]["text"]
+#         sender = update["message"]["from"]["username"]
+        
+#     except KeyError:
+#         raise HTTPException(status_code=400, detail="Invalid update format")
+    
+#     # Save the incoming message
+#     messages.append({"from": sender, "text": message_text})
+#     print(messages)
+    
+    # return "OK"
