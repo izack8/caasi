@@ -1,0 +1,6 @@
+body {
+    background-image: url('/canva_bg.png'); /* Light background color */
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+}

@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SectionLabel from '../ui/SectionLabel';
+import ProjectModal from '../../components/ProjectModal';
+import Button from '../ui/Button';
 
 function ProjectsSection({ showAll = false }) {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    // Fetch projects from your API
     fetch('/api/projects')
       .then(response => {
         if (!response.ok) {
@@ -31,58 +33,35 @@ function ProjectsSection({ showAll = false }) {
   if (loading) return <div className="text-center">Loading projects...</div>;
   if (error) return <div className="text-center text-red-500">Error: {error}</div>;
 
-  // Show only first 3 projects on home page, all on projects page
   const displayProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <section className="projects-section">
+    <section className="projects-section w-full flex flex-wrap">
       <SectionLabel label="My Projects" />
-
-      <div className="projects-grid">
         {displayProjects.map((project, index) => (
-          <div key={index} className="project-card">
-            <h3 className="text-xl font-semibold">{project.title}</h3>
+          console.log('Image URL:', project.image),
+          <div key={index} className="w-full lg:hover:bg-[rgb(255,255,255,0.05)] rounded-lg transition-all duration-300 group relative mb-4">
+            <div className="flex mb-3">
+              <h2 className="text-sky-800 text-lg font-bold group-hover:text-orange-500 transition-all duration-300">
+                {project.title}
+              </h2>
+            </div>
             
-            {project.image && (
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-48 object-cover rounded mb-3"
-              />
-            )}
-            
-            <p className="text-sm text-gray-600 mb-2">
-              <strong>Year:</strong> {project.year}
+            <p className="text-slate-350 justify-items-left mb-3">
+              {project.description}
             </p>
-            
-            <div 
-              className="text-lg mb-3" 
-              dangerouslySetInnerHTML={{__html: project.description}} 
-            />
-            
-            {project.points && (
-              <ul className="text-lg mb-3 list-disc list-inside">
-                {project.points.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
-            )}
-            
-            {project.url && (
-              <a 
-                href={project.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700 underline"
-              >
-                Learn more
-              </a>
-            )}
+
+            <Button 
+              onClick={() => setSelectedProject(project)}
+              className="w-full rounded-md transition-colors"
+            >
+              View More
+            </Button>
           </div>
         ))}
-      </div>
       
-      {!showAll && projects.length > 3 && (
+      
+      {/* {!showAll && projects.length > 3 && (
         <div className="text-center mt-6">
           <Link 
             to="/projects" 
@@ -91,6 +70,14 @@ function ProjectsSection({ showAll = false }) {
             View All Projects ({projects.length})
           </Link>
         </div>
+      )} */}
+
+      {/* Project Modal */}
+      {selectedProject && (
+        <ProjectModal 
+          project={selectedProject} 
+          onClose={() => setSelectedProject(null)}
+        />
       )}
     </section>
   );
