@@ -6,10 +6,11 @@ import HeroTitle from '../components/HeroTitle';
 import ShortDesc from '../components/ShortDesc';
 import TechStack from '../components/TechStack';
 import ConnectWithMe from '../components/ConnectWithMe';
+import Footer from '../components/ui/Footer';
 
 function Home() {
   return (
-    <main className="w-full min-h-screen px-6 sm:px-8 md:px-12 lg:px-20 xl:px-40 2xl:px-80">
+    <main className="w-full min-h-screen px-6 sm:px-8 md:px-12 lg:px-20 xl:px-40 2xl:px-80 pb-20 lg:pb-0">
       <section className="w-full flex flex-wrap">
         
         {/* Left side - STICKY header that never moves */}
@@ -20,7 +21,9 @@ function Home() {
             <TechStack />
             <ConnectWithMe />
           </div>
-          <div>
+          
+          <div className="hidden lg:block">
+            <Footer />
           </div>
         </header>
 
@@ -28,6 +31,11 @@ function Home() {
           <AboutSection />
           <ProjectsSection />
           <JourneySection />
+
+          <div className="lg:hidden">
+            <Footer />
+          </div>
+
         </main>
         
       </section>

@@ -26,7 +26,7 @@ function ConnectWithMe() {
                 </a>
                 
                 <a 
-                    href="/ISAAC_TAY_Resume.pdf" 
+                    href="/caasi/frontend/public/ISAAC_TAY_Resume.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 text-slate-300 hover:text-orange-400 transition-colors duration-200"

@@ -1,21 +1,8 @@
 function Footer() {
   return (
-    <footer>
-      <div className="footer">
-        {/* Navigation in sidebar */}
-      <nav className="sidebar-nav">
-        <a href="projects">Projects</a>
-        <a href="#journey">Journey</a>
-        <Link to="/contact">Contact</Link>
-      </nav>
-      
-      <div className="social-links">
-        {/* Add your social media links */}
-        <a href="https://github.com/yourusername">GitHub</a>
-        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-      </div>
-        <p>Proudly created by Isaac</p>&copy; 2025
-      </div>
+    <footer className="lg:text-left text-slate-350 text-[10px] w-full mt-8">
+        <p>Coded by Isaac. Inspired by <a href="https://alvinchang.dev">Alvin.</a></p>
+        &copy; 2025
     </footer>
   );
 }
