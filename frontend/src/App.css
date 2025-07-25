@@ -5,15 +5,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    
-    padding: 10px 0;
-  }
 
 .nav_bar {
     display: flex;
@@ -53,21 +44,6 @@ footer {
     color: #ced4cc;
 }
 
-/* Utility classes - define once, use everywhere */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mb-small { margin-bottom: 0.5rem; }
-.mb-medium { margin-bottom: 1rem; }
-.mb-large { margin-bottom: 2rem; }
-
 
 /* Split screen layout */
 .home-container {
@@ -76,45 +52,6 @@ footer {
   overflow: hidden;
 }
 
-/* Fixed left sidebar */
-.home-left {
-  width: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  overflow-y: hidden;
-  padding: 2rem;
-  z-index: 10;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Scrollable right content */
-.home-right {
-  width: 50%;
-  margin-left: 50%; /* Push content to the right of fixed sidebar */
-  min-height: 100vh;
-  padding: 2rem;
-  overflow-y: auto;
-}
-
-/* Section styling */
-/* .hello-section {
-  position: sticky;
-  top: 2rem;
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  padding: 1rem;
-  border: 2px solid black;
-  min-height: 200px;
-} */
 
 .hero-text {
   font-size: 2.5rem;
@@ -146,28 +83,6 @@ footer {
   background: white;
   padding: 2rem;
 
-}
-
-/* Responsive design */
-@media (max-width: 1024px) {
-  .home-container {
-    flex-direction: column;
-    height: auto;
-    overflow: visible;
-  }
-  
-  .home-left {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-left: 0;
-  }
-  
-  .home-right {
-    width: 100%;
-    margin-left: 0;
-    height: auto;
-  }
 }
 
 /* Create a wrapper that captures ALL scroll events */
