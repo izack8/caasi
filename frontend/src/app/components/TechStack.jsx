@@ -1,91 +1,10 @@
 import { useState } from 'react';
 import Button from './ui/Button';
+import { techCategories } from '../config';
 
 function TechStack() {
     const [activeTab, setActiveTab] = useState('dev');
     const [isTransitioning, setIsTransitioning] = useState(false);
-
-    const techCategories = {
-        dev: {
-            name: 'Development',
-            items: [
-                {
-                    name: "React",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                },
-                {
-                    name: "Node.js",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-                },
-                {
-                    name: "JavaScript",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                },
-                {
-                    name: "Python",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-                },
-                {
-                    name: "PostgreSQL",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-                },
-                {
-                    name: "MongoDB",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-                }
-            ]
-        },
-        ml: {
-            name: 'Machine Learning',
-            items: [
-                {
-                    name: "PyTorch",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
-                },
-                {
-                    name: "TensorFlow",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
-                },
-                {
-                    name: "Pandas",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg"
-                },
-                {
-                    name: "NumPy",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
-                },
-                {
-                    name: "Jupyter",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
-                },
-                {
-                    name: "scikit-learn",
-                    icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-                }
-            ]
-        },
-        cloud: {
-            name: 'Cloud & DevOps',
-            items: [
-                {
-                    name: "Docker",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-                },
-                {
-                    name: "Git",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                },
-                {
-                    name: "Linux",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
-                },
-                {
-                    name: "Azure",
-                    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
-                }
-            ]
-        }
-    };
 
     const handleTabChange = (newTab) => {
         if (newTab === activeTab) return;
@@ -100,7 +19,7 @@ function TechStack() {
 
     return (
         <div className="flex flex-col w-full mt-6 sm:mt-10 px-2 sm:px-0">
-            <div className="h-[160px] sm:h-[180px] mb-4 sm:mb-6 relative">
+            <div className="h-[160px] sm:h-[180px] mb-8 sm:mb-8 relative">
                 <div 
                     className={`grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-6 justify-items-center transition-opacity duration-300 ${
                         isTransitioning ? 'opacity-0' : 'opacity-100'
@@ -143,6 +62,7 @@ function TechStack() {
                     </Button>
                 ))}
             </div>
+            <div className='text-center text-[10px] mt-2'>Tech Stack</div>
 
             <style jsx>{`
                 @keyframes fadeInUp {
