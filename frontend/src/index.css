@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* Global resets and base styles */
 * {
@@ -24,8 +23,8 @@ html {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    
     line-height: 1.6;
     padding: 20px;
 }

@@ -9,7 +9,7 @@
             "I also learned how to use the Hugging Face Transformers library, and how to fine-tune the model on my own dataset. I created a dataset of code snippets and explanations, and I fine-tuned the model on it.",
             "(In hindsight, and knowing what I know now, wow- I learnt so much since then!)"
         ],
-        "image": "/static/images/llm_icon.jpg",
+        "image": "../media/images/llm_icon.jpg",
         "url": "https://github.com/izack8/codebot",
         "year": 2024
     },{
@@ -19,7 +19,7 @@
             "One problem I observed in NTU's hall culture, is that students usually have a lot of furniture and items that they no longer need, but they don't know how to get rid of them. So they just throw them away, which is a waste of resources. hence, I wanted to create a marketplace for students to buy and sell, and also hopefully cultivating a new culture.",
             "I orginally wanted to create a website, but I realized that it would be better to create an app, because students are more likely to use an app than a website. So I decided to create a mobile app using Flutter."
         ],
-        "image": "/static/images/nanyang_marche.png",
+        "image": "../media/images/nanyang_marche.png",
         "url": "https://github.com/izack8/nanyang_marche/blob/master/Nanyang_Marche_Report.pdf",
         "year": 2023
     },
@@ -34,7 +34,7 @@
             "OK I'm getting carried away.",
             "And oh yeah, how to deploy on cloud☁️☁️ etc. I'm using Azure now, cause the subscription is free for students, and I learned how to by watching a YouTube video."
         ],
-        "image": "/static/images/my_website.jpg",
+        "image": "../media/images/my_website.jpg",
         "url": "",
         "year": 2025
     },
@@ -47,7 +47,7 @@
             "Anyways, I got fed up with the tireless clicking (cause it's literally the same buttons you have to click every time), so I decided to automate it, and let it run in the background while I do OTHER IMPORTANT THINGS.",
             "It was on my Mac, so I used AppleScript to automate some keyboard presses (like \"Tab\" and \"Enter\"), on my MacBook Air M2. (so hmu if you need the simple script)"
         ],
-        "image": "/static/images/apple_script.png",
+        "image": "../media/images/apple_script.png",
         "url": "",
         "year": 2023
     }

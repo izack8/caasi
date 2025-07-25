@@ -1,11 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import "tailwindcss";
 
-header {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
+body { 
+  font-family: "Roboto", sans-serif;
 }
 
 footer {
@@ -86,25 +83,27 @@ footer {
   top: 0;
   left: 0;
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding: 2rem;
-  background-color: #f8f9fa;
-  border-right: 1px solid #e9ecef;
   z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Scrollable right content */
 .home-right {
   width: 50%;
-  margin-left: 40%; /* Push content to the right of fixed sidebar */
-  height: 100vh;
-  overflow-y: auto;
+  margin-left: 50%; /* Push content to the right of fixed sidebar */
+  min-height: 100vh;
   padding: 2rem;
-  background-color: white;
+  overflow-y: auto;
 }
 
 /* Section styling */
-.hello-section {
+/* .hello-section {
   position: sticky;
   top: 2rem;
   background: white;
@@ -115,15 +114,38 @@ footer {
   padding: 1rem;
   border: 2px solid black;
   min-height: 200px;
+} */
+
+.hero-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: #495057;
 }
 
 .projects-section,
-.journey-section {
+.journey-section, .about-section, .experience-section {
   margin-bottom: 3rem;
   padding: 2rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-  min-height: 400px; /* Ensure scrollable content */
+}
+
+.hello-section {
+  position: sticky;
+  top: 15rem;
+  background: white;
+  padding: 2rem;
+
 }
 
 /* Responsive design */
@@ -147,3 +169,49 @@ footer {
     height: auto;
   }
 }
+
+/* Create a wrapper that captures ALL scroll events */
+.scroll-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 5;
+  
+  /* Style the scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+/* Webkit scrollbar styling (Chrome, Safari, Edge) */
+.scroll-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(155, 155, 155, 0.5);
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 155, 155, 0.8);
+}
+
+/* Fade scrollbar when not scrolling */
+.scroll-wrapper {
+  scrollbar-color: rgba(155, 155, 155, 0.3) transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.scroll-wrapper:hover {
+  scrollbar-color: rgba(155, 155, 155, 0.7) transparent;
+}
+
