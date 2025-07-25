@@ -8,13 +8,6 @@ from starlette.status import HTTP_404_NOT_FOUND
 from src.fetch_json import FetchJSON
 import os
 
-messages = []
-archive = ""
-
-class TelegramUpdate(BaseModel):
-    update_id: int
-    message: dict
-
 fetch_json = FetchJSON()
 app = FastAPI()
 
@@ -26,6 +19,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve React build files - UPDATED FOR AZURE
+# Try different possible paths
+
 
 # Health check for Azure
 @app.get("/api/health")
@@ -41,19 +38,35 @@ async def get_projects():
 async def get_entries():
     return fetch_json.fetch_JSON("../data/entries/entries.json")
 
-# Serve React build files
-frontend_dir = "../frontend/dist" 
+# Try different possible paths
+possible_frontend_dirs = [
+    "../frontend/dist",           # Local development
+    "/home/site/wwwroot/frontend/dist",  # Azure App Service
+    "./frontend/dist",            # If frontend is in same directory
+    "frontend/dist",              # Relative to current directory
+]
 
-if os.path.exists(frontend_dir):
-    # Serve static assets (CSS, JS, images)
-    app.mount("/static", StaticFiles(directory=f"{frontend_dir}/"), name="static")
+frontend_dir = None
+for dir_path in possible_frontend_dirs:
+    if os.path.exists(dir_path):
+        frontend_dir = dir_path
+        print(f"Found frontend directory at: {frontend_dir}")
+        break
+
+if frontend_dir:
+    # Check what's actually in your dist folder
+    print(f"Contents of {frontend_dir}: {os.listdir(frontend_dir)}")
     
-    # Serve React app for all other routes
+    # Serve React app for all routes
     @app.get("/{full_path:path}")
     async def serve_react_app(full_path: str):
         # Don't interfere with API routes
         if full_path.startswith("api/"):
             raise HTTPException(status_code=404, detail="API endpoint not found")
+        
+        # Handle root path
+        if not full_path or full_path == "":
+            return FileResponse(os.path.join(frontend_dir, "index.html"))
         
         # Serve specific files if they exist
         file_path = os.path.join(frontend_dir, full_path)
@@ -63,4 +76,10 @@ if os.path.exists(frontend_dir):
         # For client-side routing, always return index.html
         return FileResponse(os.path.join(frontend_dir, "index.html"))
 else:
-    print(f"Warning: Frontend directory {frontend_dir} not found")
+    print("Warning: No frontend directory found!")
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Directory contents: {os.listdir('.')}")
+    
+    # Check if we're in the backend folder
+    if os.path.exists(".."):
+        print(f"Parent directory contents: {os.listdir('..')}")
