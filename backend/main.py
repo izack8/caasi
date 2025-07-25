@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException, Query
 from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.status import HTTP_404_NOT_FOUND
@@ -26,11 +27,6 @@ app.add_middleware(
 )
 
 
-# Catch-all route for React app (SPA routing)
-@app.get("/app/{path:path}")
-async def serve_react_app():
-    return FileResponse("frontend/dist/index.html")
-
 # API endpoints for React app
 @app.get("/api/projects")
 async def get_projects():
@@ -38,34 +34,33 @@ async def get_projects():
 
 @app.get("/api/entries")
 async def get_entries():
-    return fetch_json.fetch_JSON("/data/entries/entries.json")
+    return fetch_json.fetch_JSON("../data/entries/entries.json")
 
-# Your existing HTML routes (keep for fallback)
-@app.get("/", response_class=FileResponse)
-async def read_root():
-    return FileResponse("pages/home.html")
+# Serve static files from the Vite build
+app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
 
-@app.get("/contact", response_class=FileResponse)
-async def read_contact(show_archives: bool = Query(False)):
-    if show_archives:
-        file_path = f"pages/contact_with_archives.html"
-    else:
-        file_path = f"pages/contact.html"
-    return FileResponse(file_path)
 
-# Webhook endpoint to receive Telegram messages
-@app.post("/telegram-webhook", response_class=PlainTextResponse)
-async def telegram_webhook(request: Request):
-    update = await request.json()
-    try:
-        message_text = update["message"]["text"]
-        sender = update["message"]["from"]["username"]
+# @app.get("/contact", response_class=FileResponse)
+# async def read_contact(show_archives: bool = Query(False)):
+#     if show_archives:
+#         file_path = f"pages/contact_with_archives.html"
+#     else:
+#         file_path = f"pages/contact.html"
+#     return FileResponse(file_path)
+
+# # Webhook endpoint to receive Telegram messages
+# @app.post("/telegram-webhook", response_class=PlainTextResponse)
+# async def telegram_webhook(request: Request):
+#     update = await request.json()
+#     try:
+#         message_text = update["message"]["text"]
+#         sender = update["message"]["from"]["username"]
         
-    except KeyError:
-        raise HTTPException(status_code=400, detail="Invalid update format")
+#     except KeyError:
+#         raise HTTPException(status_code=400, detail="Invalid update format")
     
-    # Save the incoming message
-    messages.append({"from": sender, "text": message_text})
-    print(messages)
+#     # Save the incoming message
+#     messages.append({"from": sender, "text": message_text})
+#     print(messages)
     
-    return "OK"
+    # return "OK"
