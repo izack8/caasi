@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.status import HTTP_404_NOT_FOUND
 from src.fetch_json import FetchJSON
+import os
 
 messages = []
 archive = ""
@@ -17,15 +18,19 @@ class TelegramUpdate(BaseModel):
 fetch_json = FetchJSON()
 app = FastAPI()
 
-# Add CORS middleware - IMPORTANT for React to connect
+# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, use your specific domain
+    allow_origins=["*"],  # In production, set your domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Health check for Azure
+@app.get("/api/health")
+async def health_check():
+    return {"status": "healthy", "message": "API is running"}
 
 # API endpoints for React app
 @app.get("/api/projects")
@@ -36,31 +41,26 @@ async def get_projects():
 async def get_entries():
     return fetch_json.fetch_JSON("../data/entries/entries.json")
 
-# Serve static files from the Vite build
-app.mount("/", StaticFiles(directory="../frontend/dist", html=True), name="static")
+# Serve React build files
+frontend_dir = "../frontend/dist" 
 
-
-# @app.get("/contact", response_class=FileResponse)
-# async def read_contact(show_archives: bool = Query(False)):
-#     if show_archives:
-#         file_path = f"pages/contact_with_archives.html"
-#     else:
-#         file_path = f"pages/contact.html"
-#     return FileResponse(file_path)
-
-# # Webhook endpoint to receive Telegram messages
-# @app.post("/telegram-webhook", response_class=PlainTextResponse)
-# async def telegram_webhook(request: Request):
-#     update = await request.json()
-#     try:
-#         message_text = update["message"]["text"]
-#         sender = update["message"]["from"]["username"]
+if os.path.exists(frontend_dir):
+    # Serve static assets (CSS, JS, images)
+    app.mount("/static", StaticFiles(directory=f"{frontend_dir}/"), name="static")
+    
+    # Serve React app for all other routes
+    @app.get("/{full_path:path}")
+    async def serve_react_app(full_path: str):
+        # Don't interfere with API routes
+        if full_path.startswith("api/"):
+            raise HTTPException(status_code=404, detail="API endpoint not found")
         
-#     except KeyError:
-#         raise HTTPException(status_code=400, detail="Invalid update format")
-    
-#     # Save the incoming message
-#     messages.append({"from": sender, "text": message_text})
-#     print(messages)
-    
-    # return "OK"
+        # Serve specific files if they exist
+        file_path = os.path.join(frontend_dir, full_path)
+        if os.path.isfile(file_path):
+            return FileResponse(file_path)
+        
+        # For client-side routing, always return index.html
+        return FileResponse(os.path.join(frontend_dir, "index.html"))
+else:
+    print(f"Warning: Frontend directory {frontend_dir} not found")

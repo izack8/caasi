@@ -1,12 +1,14 @@
 #!/bin/bash
 
-echo "Installing frontend dependencies..."
-cd frontend
-npm install
+echo "=== Azure App Service Startup ==="
 
-echo "Building frontend..."
+# Build frontend
+echo "Building React frontend..."
+cd /home/site/wwwroot/frontend
+npm install --production
 npm run build
 
+# Start FastAPI server
 echo "Starting FastAPI server..."
-cd ../backend
+cd /home/site/wwwroot/backend
 gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8000
