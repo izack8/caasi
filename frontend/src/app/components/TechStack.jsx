@@ -100,8 +100,7 @@ function TechStack() {
 
     return (
         <div className="flex flex-col w-full mt-6 sm:mt-10 px-2 sm:px-0">
-            {/* Tech Grid with fixed height and cross-fade animation */}
-            <div className="min-h-[180px] sm:min-h-[100px] relative">
+            <div className="h-[160px] sm:h-[180px] mb-4 sm:mb-6 relative">
                 <div 
                     className={`grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-6 justify-items-center transition-opacity duration-300 ${
                         isTransitioning ? 'opacity-0' : 'opacity-100'
