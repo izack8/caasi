@@ -14,7 +14,7 @@ function AboutSection() {
       </p>
 
       <p className='text-justify mb-3'>
-        Unfortunately, that didn't go so well (circuitry was so challenging to learn, imo), so for the last 2 years in Uni, I decided to shift my focus back to programming, which is where I also discovered <b>AI</b> and <b>Machine Learning</b>. I was so fascinated by how AI can be used to solve real-world problems, and I wanted to learn more about it (Like the entire concept of <b>Large Language Models (LLMs)</b> ARE SO COOL WTH).
+        Unfortunately, that didn't go so well (circuitry was so challenging to learn, imo), so for the last 2 years in Uni, I decided to shift my focus back to programming, which is where I also discovered <b>Data Science,</b> <b>AI & Machine Learning</b>. I was so fascinated by how AI can be used to solve real-world problems, and I wanted to learn more about it (Like the entire concept of <b>Large Language Models (LLMs)</b> ARE SO COOL WTH).
       </p>
 
     </section>

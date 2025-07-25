@@ -32,52 +32,40 @@ import {
 
 export const techCategories = {
     dev: {
-        name: 'Development',
+        name: 'Building & Development',
         items: [
             {
-                name: "React",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                name: "Python",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
             },
             {
-                name: "Node.js",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                name: "Java",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
             },
             {
                 name: "JavaScript",
                 icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
             },
             {
-                name: "Python",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                name: "FastAPI",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
             },
             {
-                name: "PostgreSQL",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                name: "Spring Boot",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
             },
             {
-                name: "MongoDB",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                name: "React",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
             },
             {
-                name: "TypeScript",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                name: "Streamlit",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"
             },
-            {
-                name: "HTML5",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-            },
-            {
-                name: "CSS3",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-            },
-            {
-                name: "PHP",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-            }
         ]
     },
     ml: {
-        name: 'Machine Learning',
+        name: 'AI & ML',
         items: [
             {
                 name: "PyTorch",
@@ -96,13 +84,17 @@ export const techCategories = {
                 icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg"
             },
             {
-                name: "Jupyter",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg"
-            },
-            {
                 name: "scikit-learn",
                 icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-            }
+            },
+            {
+                name: "LangChain",
+                icon: "../public/icons/langchain-color.svg"
+            },
+            {
+                name: "Hugging Face",
+                icon: "../public/icons/hf-logo.svg"
+            },
         ]
     },
     cloud: {
@@ -124,38 +116,23 @@ export const techCategories = {
                 name: "Azure",
                 icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
             },
-            {
-                name: "Express",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-            }
+        
         ]
     },
-    frameworks: {
-        name: 'Frameworks & Tools',
+    database: {
+        name: 'Databases',
         items: [
             {
-                name: "Next.js",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-            },
-            {
-                name: "Tailwind CSS",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
-            },
-            {
-                name: "Prisma",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg"
-            },
-            {
-                name: "WordPress",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
-            },
-            {
-                name: "Supabase",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                name: "MongoDB",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
             },
             {
                 name: "MySQL",
                 icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+            },
+            {
+                name: "ChromaDB",
+                icon: "../public/icons/chromadb_logo.svg"
             }
         ]
     }
