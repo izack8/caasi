@@ -29,7 +29,7 @@ function ConnectWithMe() {
                     href="/caasi/frontend/public/ISAAC_TAY_Resume.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 text-slate-300 hover:text-orange-400 transition-colors duration-200"
+                    className="group flex items-center gap-2 text-slate-300 hover:text-red-400 transition-colors duration-200"
                 >
                     <FaFilePdf className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
                     <span className="text-sm sm:text-base">Resume</span>

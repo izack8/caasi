@@ -14,17 +14,13 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, set your domain
+    allow_origins=["https://isaachehe.azurewebsites.net","izack.dev", "http://localhost:5173"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Serve React build files - UPDATED FOR AZURE
-# Try different possible paths
 
-
-# Health check for Azure
 @app.get("/api/health")
 async def health_check():
     return {"status": "healthy", "message": "API is running"}
@@ -33,6 +29,10 @@ async def health_check():
 @app.get("/api/projects")
 async def get_projects():
     return fetch_json.fetch_JSON("../data/projects.json")
+
+@app.get("/api/experiences")
+async def get_experiences():
+    return fetch_json.fetch_JSON("../data/experiences.json")
 
 @app.get("/api/entries")
 async def get_entries():

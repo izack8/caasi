@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import SectionLabel from '../ui/SectionLabel';
 import ProjectModal from '../../components/ProjectModal';
 import Button from '../ui/Button';
@@ -11,7 +10,7 @@ function ProjectsSection({ showAll = false }) {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    fetch('/api/projects')
+    fetch('https://isaachehe.azurewebsites.net/api/projects')
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -42,7 +41,7 @@ function ProjectsSection({ showAll = false }) {
           console.log('Image URL:', project.image),
           <div key={index} className="w-full lg:hover:bg-[rgb(255,255,255,0.05)] rounded-lg transition-all duration-300 group relative mb-4">
             <div className="flex mb-3">
-              <h2 className="text-sky-800 text-lg font-bold group-hover:text-orange-500 transition-all duration-300">
+              <h2 className="text-blue-900 text-lg font-bold group-hover:text-blue-500 transition-all duration-300">
                 {project.title}
               </h2>
             </div>

@@ -30,30 +30,6 @@ import {
     SiGit,
 } from "react-icons/si";
 
-export const experiences = [
-    {
-        title: "Software Engineer",
-        company: "Tech Company",
-        duration: "2020 - Present",
-        description: "Working on various projects using modern web technologies."
-    },
-    {
-        title: "Frontend Developer",
-        company: "Web Agency",
-        duration: "2018 - 2020",
-        description: "Developed responsive web applications using React and Tailwind CSS."
-    },
-    {
-        title: "iOS App Developer",
-        company: "Startup",
-        duration: "2016 - 2018",
-        description: "Built RESTful APIs and managed databases using Node.js and MongoDB."
-    }
-]
-
-
-
-
 export const techCategories = {
     dev: {
         name: 'Building & Development',
@@ -113,11 +89,11 @@ export const techCategories = {
             },
             {
                 name: "LangChain",
-                icon: "../public/icons/langchain-color.svg"
+                icon: "/frontend/public/icons/langchain-color.svg"
             },
             {
                 name: "Hugging Face",
-                icon: "../public/icons/hf-logo.svg"
+                icon: "/frontend/public/icons/hf-logo.svg"
             },
         ]
     },
@@ -156,7 +132,7 @@ export const techCategories = {
             },
             {
                 name: "ChromaDB",
-                icon: "../public/icons/chromadb_logo.svg"
+                icon: "/frontend/public/icons/chromadb_logo.svg"
             }
         ]
     }

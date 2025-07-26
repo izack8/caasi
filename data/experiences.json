@@ -1,0 +1,32 @@
+[
+    {
+        "title": "AI Engineer/Web-Dev Intern",
+        "location" : "Singapore",
+        "company": "Hummingbird Bioscience",
+        "duration": "Sep 2023 - Dec 2023",
+        "skills": ["Python", "FastAPI", "HTML", "LangChain", "Streamlit"],
+        "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
+        "description": "<b>Fine-tuned, tested, and evaluated</b> various Large Language Models, benchmarking their performance against GPT-3.5 and GPT-4. Leveraged Python frameworks such as LangChain and Streamlit to develop an in-house PDF chatbot that enables users to query uploaded PDFs using the fine-tuned model. Additionally, revamped another internal web application using FastAPI and HTML to display a dashboard of AI-generated summaries of open-access research papers retrieved from the Semantic Scholar API.",
+        "link": "https://hummingbirdbioscience.com/"
+    },
+    {
+        "title": "Data Science Intern",
+        "location" : "Singapore",
+        "company": "Bosch GmbH",
+        "duration": "Jun 2022 - Jul 2023",
+        "skills": ["Python", "FastAPI", "HTML", "LangChain", "Streamlit"],
+        "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
+        "description": "Assisted project managers in the development of a smart and sustainable HVAC system by translating academic research into practical code implementations. Conducted comprehensive literature reviews on anomaly detection in HVAC systems and collaborated with two Research Scientists to develop AI-based control algorithms. Led data collection, exploration, mining, and presentation efforts. Designed and implemented a Python algorithm to query, process, and feed data into a time-series model for accurate predictions, and built forecasting models for effective anomaly detection. Additionally, developed and deployed PowerBI dashboards with intuitive visualizations to help users identify anomalies at a glance.",
+         "link": "https://www.bosch.com.sg/our-company/bosch-in-singapore/"
+    },
+    {
+        "title": "iOS App Developer",
+        "location" : "Harbin, China",
+        "company": "Longcai Technologies",
+        "duration": "Oct 2018 - Mar 2019",
+        "skills": ["Python", "FastAPI", "HTML", "LangChain", "Streamlit"],
+        "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
+        "description": "Improved the iOS app UI by effectively utilizing storyboard elements to create a cleaner and more user-friendly interface. Applied Swift programming alongside Firebase features such as authentication and chat functionalities to enhance the app’s capabilities and user experience. Gained cross-cultural awareness through collaboration with diverse teams, recognizing the value of differing traditions, norms, and perspectives in fostering knowledge sharing and creativity.",
+         "link": ""
+    }
+]
