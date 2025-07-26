@@ -8,7 +8,7 @@ function ExperiencesSection() {
   // define custom loading and error states next time
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/experiences').then(response => {
+    fetch('https://isaachehe.azurewebsites.net/api/experiences').then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
