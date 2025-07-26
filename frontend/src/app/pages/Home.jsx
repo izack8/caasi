@@ -7,6 +7,7 @@ import ShortDesc from '../components/ShortDesc';
 import TechStack from '../components/TechStack';
 import ConnectWithMe from '../components/ConnectWithMe';
 import Footer from '../components/ui/Footer';
+import ExperienceSection from '../components/sections/ExperienceSection';
 
 function Home() {
   return (
@@ -29,6 +30,7 @@ function Home() {
 
         <main className="w-full lg:w-1/2 px-0 sm:px-0 lg:px-4 pt-12 sm:pt-16 lg:pt-40 text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base flex flex-wrap lg:block lg:mb-40">
           <AboutSection />
+          <ExperienceSection />
           <ProjectsSection />
           <JourneySection />
 
