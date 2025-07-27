@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss(),],
   server: {
+    host: '0.0.0.0', // This allows external connections
+    port: 5173,
     proxy: {
       '/api': {
         target: 'http://localhost:8000', // Adjust to your FastAPI server URL
@@ -14,4 +16,4 @@ export default defineConfig({
       }
     }
   }
-})
+})  
