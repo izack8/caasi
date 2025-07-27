@@ -1,7 +1,18 @@
 body {
-    background-image: url('/canva_bg.png'); /* Light background color */
+    background-image: url('/canva_bg.png');
     background-size: cover;
-    background-position: center; /* Shifts the image to the left */
+    background-position: left center;
     min-height: 100vh;
-    background-attachment: fixed;
+    /* Remove this line - it breaks on iOS */
+    /* background-attachment: fixed; */
+    
+    /* Add these instead for mobile compatibility */
+    background-repeat: no-repeat;
+}
+
+/* Alternative: Use a fixed background on desktop only */
+@media (min-width: 768px) {
+    body {
+        background-attachment: fixed;
+    }
 }
