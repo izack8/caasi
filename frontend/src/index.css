@@ -18,6 +18,8 @@ body::before {
     background-repeat: no-repeat;
     z-index: -12;
     /* Ensures the background stays behind all content */
+
+    overflow: overlay;
 }
 
 /* Remove the old media query - not needed anymore */

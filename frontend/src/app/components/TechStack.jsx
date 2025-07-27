@@ -62,7 +62,7 @@ function TechStack() {
                     </Button>
                 ))}
             </div>
-            <div className='text-center text-[10px] mt-2'>Tech Stack</div>
+            <div className='text-center text-[10px] mt-2'>My Tech Stack</div>
 
             <style jsx>{`
                 @keyframes fadeInUp {

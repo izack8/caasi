@@ -1,4 +1,3 @@
-// import HelloSection from '../components/sections/HelloSection';
 import AboutSection from '../components/sections/AboutSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
 import JourneySection from '../components/sections/JourneySection';
@@ -12,6 +11,7 @@ import Glow from '../components/ui/Glow';
 // ...existing imports...
 
 function Home() {
+  
   return (
     <>
       

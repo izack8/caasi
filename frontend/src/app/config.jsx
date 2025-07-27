@@ -2,7 +2,7 @@
 
 export const techCategories = {
     dev: {
-        name: 'Building & Development',
+        name: 'Dev',
         items: [
             {
                 name: "Python",
