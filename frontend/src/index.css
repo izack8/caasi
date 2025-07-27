@@ -1,6 +1,7 @@
 body {
     background-image: url('/canva_bg.png'); /* Light background color */
     background-size: cover;
+    background-position: center; /* Shifts the image to the left */
     min-height: 100vh;
     background-attachment: fixed;
 }
