@@ -16,7 +16,7 @@ body::before {
     background-size: cover;
     background-position: left center;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: -12;
     /* Ensures the background stays behind all content */
 }
 
