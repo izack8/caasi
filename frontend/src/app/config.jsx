@@ -1,34 +1,4 @@
-import {
-    RiNextjsFill,
-    RiTailwindCssFill,
-    RiOpenaiFill,
-    RiWordpressFill,
-} from "react-icons/ri";
-import {
-    SiTypescript,
-    SiShadcnui,
-    SiPrisma,
-    SiWoocommerce,
-    SiReact,
-    SiSupabase,
-    SiExpress,
-    SiPuppeteer,
-    SiHtml5,
-    SiCss3,
-    SiJavascript,
-    SiNodedotjs,
-    SiPhp,
-    SiMysql,
-    SiMongodb,
-    SiGraphql,
-    SiFramer,
-    SiThreedotjs,
-    SiElectron,
-    SiDocker,
-    SiDrizzle,
-    SiMui,
-    SiGit,
-} from "react-icons/si";
+
 
 export const techCategories = {
     dev: {
