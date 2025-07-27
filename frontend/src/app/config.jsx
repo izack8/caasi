@@ -89,11 +89,11 @@ export const techCategories = {
             },
             {
                 name: "LangChain",
-                icon: "/frontend/public/icons/langchain-color.svg"
+                icon: "/icons/langchain-color.svg"
             },
             {
                 name: "Hugging Face",
-                icon: "/frontend/public/icons/hf-logo.svg"
+                icon: "/icons/hf-logo.svg"
             },
         ]
     },
@@ -132,7 +132,7 @@ export const techCategories = {
             },
             {
                 name: "ChromaDB",
-                icon: "/frontend/public/icons/chromadb_logo.svg"
+                icon: "/icons/chromadb_logo.svg"
             }
         ]
     }
