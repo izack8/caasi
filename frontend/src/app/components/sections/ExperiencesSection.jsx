@@ -25,15 +25,15 @@ function ExperiencesSection() {
     <section className="experiences-section w-full flex flex-wrap">
       <SectionLabel label="Experiences" />
       {experiences.map((experience, index) => (
-        <div key={index} className='experience mb-3 w-full flex items-start hover:shadow-lg duration-300'>
-          <div className='year text-sm h-full w-2/7 text-black-400 mt-1.5'>
+        <div key={index} className='experience mb-3 lg:flex lg:flex-wrap items-start hover:shadow-lg duration-300'>
+          <div className='year font-bold text-sm lg:h-full lg:w-2/7 text-black-400 mt-1.5'>
           {experience.duration}
         </div>
-        <div className='desc h-full w-5/7 justify-start'>
+        <div className='desc h-full lg:w-5/7 justify-start'>
           <h2 className='text-gray-500 text-[20px] font-bold mb-1'><a href={experience.link}>{experience.company}</a></h2>
           <h3 className='text-md text-gray-700 font-bold'>{experience.location}</h3>
           <h3 className='text-md text-rose-500 font-bold'>{experience.title}</h3>
-          <p dangerouslySetInnerHTML={{ __html: experience.description }} />
+          <p className='justify-start' dangerouslySetInnerHTML={{ __html: experience.description }} />
         </div>
         </div>
       ))}

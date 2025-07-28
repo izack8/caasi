@@ -17,11 +17,12 @@ function Home() {
       
       <Glow />
       
-      <main className="w-full min-h-screen px-6 sm:px-8 md:px-12 lg:px-20 xl:px-40 2xl:px-60">
-        <section className="w-full flex flex-wrap">
+      <main className="font-sans min-h-screen p-10 sm:px-10 md:px-12 md:py-16 lg:px-18 lg:py-0">
+        <section className="w-full flex flex-wrap lg:flex-nowrap ">
           
           {/* Left side - STICKY header that never moves */}
-          <header className="w-full lg:h-[95dvh] lg:sticky top-0 lg:w-1/2 pt-20 sm:pt-32 lg:pt-27 lg:pb-40 lg:pr-20 flex flex-col lg:justify-between">
+          <header className="w-full lg:h-[95dvh] lg:sticky top-0 lg:w-[45%] 
+          pt-20 sm:pt-32 lg:pt-15 lg:pr-15 flex flex-col lg:justify-between">
             <div>
               <HeroTitle />
               <ShortDesc />
@@ -34,8 +35,10 @@ function Home() {
             </div>
           </header>
 
-          <main className="w-full lg:w-1/2 px-0 sm:px-0 lg:px-4 pt-20 sm:pt-16 lg:pt-27 text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base flex flex-wrap lg:block pb-20">
-            <div className="">
+          <main className="w-full lg:w-[55%] pt-20 sm:pt-16 
+          text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base lg:pt-15
+          flex flex-wrap lg:block pb-20">
+            <div>
               <AboutSection />
               <ExperiencesSection />
               <ProjectsSection />

@@ -18,17 +18,17 @@ function TechStack() {
     };
 
     return (
-        <div className="flex flex-col w-full mt-6 sm:mt-10 px-2 sm:px-0">
+        <div className="flex flex-col w-full mt-6 sm:mt-8">
             <div className="h-[160px] sm:h-[180px] mb-8 sm:mb-8 relative">
                 <div 
-                    className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-6 justify-items-center transition-opacity duration-300 ${
+                    className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-2 gap-3 sm:gap-6 justify-items-center transition-opacity duration-300 ${
                         isTransitioning ? 'opacity-0' : 'opacity-100'
                     }`}
                 >
                     {techCategories[activeTab].items.map((tech, index) => (
                         <div 
                             key={`${activeTab}-${index}`} 
-                            className="flex flex-col items-center group hover:scale-105 transition-all duration-200 w-full max-w-[80px] sm:max-w-none"
+                            className="flex flex-col items-center group hover:scale-110 transition-all duration-200 w-full max-w-[80px] sm:max-w-none"
                             style={{
                                 animationDelay: `${index * 50}ms`,
                                 animation: isTransitioning ? 'none' : 'fadeInUp 0.4s ease-out forwards'
@@ -37,7 +37,7 @@ function TechStack() {
                             <img 
                                 src={tech.icon} 
                                 alt={tech.name} 
-                                className="w-8 h-8 sm:w-12 sm:h-12 mb-1 sm:mb-2 transition-all duration-200" 
+                                className="w-5 h-5 sm:w-12 sm:h-12 mb-1 sm:mb-2 transition-all duration-200" 
                             />
                             <span className="text-xs sm:text-sm text-slate-500 group-hover:text-zinc-900 transition-colors text-center leading-tight">
                                 {tech.name}
@@ -48,7 +48,7 @@ function TechStack() {
             </div>
 
             {/* Tab Navigation - Fixed position */}
-            <div className="flex flex-wrap sm:flex-nowrap gap-1 sm:gap-1 justify-center">
+            <div className="flex flex-wrap gap-1 sm:gap-1 justify-center">
                 {Object.entries(techCategories).map(([key, category]) => (
                     <Button
                         key={key}
