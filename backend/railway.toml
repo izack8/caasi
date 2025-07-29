@@ -1,5 +1,9 @@
 [build]
 builder = "nixpacks"
+watchPatterns = [
+  "backend/**/*",
+  "!frontend/**/*"
+]
 buildCommand = "pip install -r requirements.txt"
 
 [deploy]
