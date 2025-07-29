@@ -10,7 +10,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://isaachehe.azurewebsites.net","https://izack.dev", "http://localhost:5173"],  
+    allow_origins=["https://caasi-production.up.railway.app","https://izack.dev", "http://localhost:5173"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
