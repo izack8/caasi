@@ -19,7 +19,7 @@ function TechStack() {
 
     return (
         <div className="flex flex-col w-full mt-6">
-            <div className="h-[150px] sm:h-[160px] mb-6 relative">
+            <div className="h-[150px] sm:h-[160px] mb-8 relative">
                 <div 
                     className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-2 gap-x-3 gap-y-2 justify-items-center transition-opacity duration-300 ${
                         isTransitioning ? 'opacity-0' : 'opacity-100'
