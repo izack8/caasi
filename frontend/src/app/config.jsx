@@ -107,3 +107,10 @@ export const techCategories = {
         ]
     }
 };
+
+const API_BASE_URL = "https://isaachehe.azurewebsites.net/api";
+
+export const API_ENDPOINTS = {
+  projects: `${API_BASE_URL}/projects`,
+  experiences: `${API_BASE_URL}/experiences`,
+};
