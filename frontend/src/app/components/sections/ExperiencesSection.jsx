@@ -10,6 +10,7 @@ function ExperiencesSection() {
 
   useEffect(() => {
     fetch(API_ENDPOINTS.experiences).then(response => {
+      console.log(API_ENDPOINTS.experiences);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
