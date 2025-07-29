@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
 import ProjectModal from '../../components/ProjectModal';
 import Button from '../ui/Button';
@@ -10,7 +11,7 @@ function ProjectsSection({ showAll = false }) {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
-    fetch('https://isaachehe.azurewebsites.net/api/projects')
+    fetch(API_ENDPOINTS.projects)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -21,7 +22,7 @@ function ProjectsSection({ showAll = false }) {
       .then(data => {
         setProjects(data);
         setLoading(false);
-      })
+      })  
       .catch(error => {
         console.error('Error fetching projects:', error);
         setError(error.message);

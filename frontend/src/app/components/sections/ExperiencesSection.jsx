@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
 
 
@@ -8,7 +9,7 @@ function ExperiencesSection() {
   // define custom loading and error states next time
 
   useEffect(() => {
-    fetch('https://isaachehe.azurewebsites.net/api/experiences').then(response => {
+    fetch(API_ENDPOINTS.experiences).then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
