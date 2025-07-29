@@ -39,7 +39,6 @@ function ProjectsSection({ showAll = false }) {
     <section className="projects-section w-full flex flex-wrap">
       <SectionLabel label="My Projects" />
         {displayProjects.map((project, index) => (
-          console.log('Image URL:', project.image),
           <div key={index} className="w-full lg:hover:bg-[rgb(255,255,255,0.05)] rounded-lg transition-all duration-300 group relative mb-4">
             <div className="flex mb-3">
               <h2 className="text-blue-900 text-lg font-bold group-hover:text-blue-500 transition-all duration-300">

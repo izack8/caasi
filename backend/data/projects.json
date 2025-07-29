@@ -11,8 +11,19 @@
         ],
         "image": "/frontend/src/assets/project_images/llm_icon.jpg",
         "url": "https://github.com/izack8/codebot",
-        "year": 2024
-    },{
+        "year": 2024,
+        "technologies": [{
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        }, {
+            "name": "Hugging Face",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/huggingface/huggingface-original.svg"
+        }, {
+            "name": "Torch",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+        }]
+    },
+    {
         "title": "Nanyang Marche",
         "description" : "An app designed to help NTU students connect with each other, through online forums, and a marketplace for students to buy and sell items.",
         "points": [
@@ -21,7 +32,17 @@
         ],
         "image": "/frontend/src/assets/project_images/nanyang_marche.png",
         "url": "https://github.com/izack8/nanyang_marche/blob/master/Nanyang_Marche_Report.pdf",
-        "year": 2023
+        "year": 2023,
+        "technologies": [{
+            "name": "Flutter",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+        }, {
+            "name": "Dart",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+        }, {
+            "name": "Firebase",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+        }]
     },
     {
         "title": "Personal Website Building",
@@ -36,7 +57,23 @@
         ],
         "image": "/frontend/src/assets/project_images/my_website.jpg",
         "url": "",
-        "year": 2025
+        "year": 2025,
+        "technologies": [{
+            "name": "HTML",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+        }, {
+            "name": "CSS",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+        }, {
+            "name": "JavaScript",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        }, {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        }, {
+            "name": "FastAPI",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+        }]
     },
     {
         "title": "STARs Automation for module selection",
@@ -49,6 +86,13 @@
         ],
         "image": "/frontend/src/assets/project_images/apple_script.png",
         "url": "",
-        "year": 2023
+        "year": 2023,
+        "technologies": [{
+            "name": "AppleScript",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/applescript/applescript-original.svg"
+        }, {
+            "name": "MacOS",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
+        }]
     }
 ]
