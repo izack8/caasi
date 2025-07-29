@@ -18,10 +18,10 @@ function TechStack() {
     };
 
     return (
-        <div className="flex flex-col w-full mt-6 sm:mt-8">
-            <div className="h-[160px] sm:h-[180px] mb-8 sm:mb-8 relative">
+        <div className="flex flex-col w-full mt-6">
+            <div className="h-[150px] sm:h-[160px] mb-6 relative">
                 <div 
-                    className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-2 gap-3 sm:gap-6 justify-items-center transition-opacity duration-300 ${
+                    className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-2 gap-x-3 gap-y-2 justify-items-center transition-opacity duration-300 ${
                         isTransitioning ? 'opacity-0' : 'opacity-100'
                     }`}
                 >
@@ -37,7 +37,7 @@ function TechStack() {
                             <img 
                                 src={tech.icon} 
                                 alt={tech.name} 
-                                className="w-5 h-5 sm:w-12 sm:h-12 mb-1 sm:mb-2 transition-all duration-200" 
+                                className="w-8 h-8 sm:w-10 sm:h-10 sm:w-10 mb-1 sm:mb-2 transition-all duration-200" 
                             />
                             <span className="text-xs sm:text-sm text-slate-500 group-hover:text-zinc-900 transition-colors text-center leading-tight">
                                 {tech.name}

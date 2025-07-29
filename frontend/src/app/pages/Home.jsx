@@ -17,12 +17,12 @@ function Home() {
       
       <Glow />
       
-      <main className="font-sans min-h-screen p-10 sm:px-10 md:px-12 md:py-16 lg:px-18 lg:py-0">
+      <main className="font-sans mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0">
         <section className="w-full flex flex-wrap lg:flex-nowrap ">
           
           {/* Left side - STICKY header that never moves */}
-          <header className="w-full lg:h-[95dvh] lg:sticky top-0 lg:w-[45%] 
-          pt-20 sm:pt-32 lg:pt-15 lg:pr-15 flex flex-col lg:justify-between">
+          <header className="w-full lg:max-h-screen lg:sticky top-0 lg:w-[45%] 
+          pt-20 sm:pt-32 lg:py-24 lg:pr-15 flex flex-col lg:justify-between">
             <div>
               <HeroTitle />
               <ShortDesc />
@@ -35,8 +35,8 @@ function Home() {
             </div>
           </header>
 
-          <main className="w-full lg:w-[55%] pt-20 sm:pt-16 
-          text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base lg:pt-15
+          <main className="w-full lg:w-[55%] pt-24 lg:py-26 sm:pt-16 
+          text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base lg:pt-24
           flex flex-wrap lg:block pb-20">
             <div>
               <AboutSection />
