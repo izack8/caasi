@@ -21,7 +21,7 @@ function Home() {
         <section className="w-full flex flex-wrap lg:flex-nowrap ">
           
           {/* Left side - STICKY header that never moves */}
-          <header className="w-full lg:max-h-screen lg:sticky top-0 lg:w-[45%] 
+          <header className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[45%] 
           pt-20 sm:pt-32 lg:py-24 lg:pr-15 flex flex-col lg:justify-between">
             <div>
               <HeroTitle />
