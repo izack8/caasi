@@ -1,10 +1,6 @@
-from fastapi import FastAPI, Request, HTTPException, Query
-from fastapi.responses import FileResponse, PlainTextResponse
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
-from starlette.exceptions import HTTPException as StarletteHTTPException
-from starlette.status import HTTP_404_NOT_FOUND
 from src.fetch_json import FetchJSON
 import os
 
