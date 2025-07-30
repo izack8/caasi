@@ -11,6 +11,7 @@ function Button({
     
     const variants = {
         default: 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white',
+        ghost: 'bg-slate-500/40 text-slate-300 hover:bg-slate-700 hover:text-white',
         active: 'bg-sky-600 text-white',
         primary: 'bg-blue-600 text-white hover:bg-blue-700',
         secondary: 'bg-gray-600 text-white hover:bg-gray-700',

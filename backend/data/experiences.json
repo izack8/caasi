@@ -1,5 +1,25 @@
 [
     {
+        "title": "AI Software Engineer",
+        "location" : "Singapore",
+        "company": "Synechron",
+        "duration": "Sep 2025 - Present",
+        "skills": ["Python", "Torch", "IOT-Development"],
+        "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
+        "description": "<b>Fine-tuned, tested, and evaluated</b> various Large Language Models, benchmarking their performance against GPT-3.5 and GPT-4. Leveraged Python frameworks such as LangChain and Streamlit to develop an in-house PDF chatbot that enables users to query uploaded PDFs using the fine-tuned model. Additionally, revamped another internal web application using FastAPI and HTML to display a dashboard of AI-generated summaries of open-access research papers retrieved from the Semantic Scholar API.",
+        "link": "https://groundup.ai/"
+    },
+    {
+        "title": "Data Science/IOT Engineer Intern",
+        "location" : "Singapore",
+        "company": "Groundup.AI",
+        "duration": "Jan 2024 - Jul 2024",
+        "skills": ["Python", "Torch", "IOT-Development"],
+        "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
+        "description": "<b>Fine-tuned, tested, and evaluated</b> various Large Language Models, benchmarking their performance against GPT-3.5 and GPT-4. Leveraged Python frameworks such as LangChain and Streamlit to develop an in-house PDF chatbot that enables users to query uploaded PDFs using the fine-tuned model. Additionally, revamped another internal web application using FastAPI and HTML to display a dashboard of AI-generated summaries of open-access research papers retrieved from the Semantic Scholar API.",
+        "link": "https://groundup.ai/"
+    },
+    {
         "title": "AI Engineer/Web-Dev Intern",
         "location" : "Singapore",
         "company": "Hummingbird Bioscience",

@@ -3,6 +3,7 @@ import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
 import ProjectModal from '../../components/ProjectModal';
 import Button from '../ui/Button';
+import ProjectTechStack from '../../components/ProjectTechStack';
 
 function ProjectsSection({ showAll = false }) {
   const [projects, setProjects] = useState([]);
@@ -36,6 +37,7 @@ function ProjectsSection({ showAll = false }) {
   const displayProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
+    
     <section className="projects-section w-full flex flex-wrap">
       <SectionLabel label="My Projects" />
         {displayProjects.map((project, index) => (
@@ -50,9 +52,14 @@ function ProjectsSection({ showAll = false }) {
               {project.description}
             </p>
 
+          <div className="mb-3">
+           <ProjectTechStack technologies={project.technologies} />
+           </div>
+
             <Button 
               onClick={() => setSelectedProject(project)}
               className="w-full rounded-md transition-colors"
+              variant="default"
             >
               View More
             </Button>

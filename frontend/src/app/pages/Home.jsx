@@ -8,6 +8,7 @@ import TechStack from '../components/TechStack';
 import ConnectWithMe from '../components/ConnectWithMe';
 import Footer from '../components/ui/Footer';
 import Glow from '../components/ui/Glow';
+
 // ...existing imports...
 
 function Home() {
