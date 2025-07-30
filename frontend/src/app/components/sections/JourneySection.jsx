@@ -4,9 +4,13 @@ function JourneySection() {
     return (
         <section className="journey-section">
             <SectionLabel label="My Journey" />
-            <p>I have an idea to show the thought processes of my journey building this website. I want to highlight the challenges I faced, the solutions I found, and the lessons I learned along the way.</p>
-            <br />
-            <p>Cause this website building thing started in Feb 2025, and boyyy, did i LEARN SO MUCH (cause it literally did not use to look like this). This iteration is done using <b>React</b> and <b>Tailwind CSS</b>. Omg my life got so much better after using Tailwind CSS LOL.</p> 
+            <p className='text-justify mb-3'>
+                My journey in software development started when I was in Polytechnic, where I learned how to build mobile applications. Following that, I pursued a degree in Electrical Enginnering in University, because I wanted to learn more about how hardware and software interacts with each other (she's got the beeeeest, of both worldssssss).
+            </p>
+
+            <p className='text-justify mb-3'>
+                Welp, unfortunately, that didn't go so well (circuitry was so challenging to learn, imo), so for the last 2 years in Uni, I decided to shift my focus back to programming, which is where I also discovered <b>Data Science,</b> <b>AI & Machine Learning</b>. I was so fascinated by how AI can be used to solve real-world problems, and I wanted to learn more about it (Like the entire concept of <b>Large Language Models (LLMs)</b> ARE SO COOL WTH).
+            </p>
         </section>
     );
 }

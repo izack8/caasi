@@ -3,6 +3,7 @@ import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
 import ProjectModal from '../../components/ProjectModal';
 import Button from '../ui/Button';
+import ProjectTechStack from '../../components/ProjectTechStack';
 
 function ProjectsSection({ showAll = false }) {
   const [projects, setProjects] = useState([]);
@@ -36,24 +37,30 @@ function ProjectsSection({ showAll = false }) {
   const displayProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
+    
     <section className="projects-section w-full flex flex-wrap">
       <SectionLabel label="My Projects" />
         {displayProjects.map((project, index) => (
-          console.log('Image URL:', project.image),
           <div key={index} className="w-full lg:hover:bg-[rgb(255,255,255,0.05)] rounded-lg transition-all duration-300 group relative mb-4">
-            <div className="flex mb-3">
+            <div className="flex flex-col mb-3">
               <h2 className="text-blue-900 text-lg font-bold group-hover:text-blue-500 transition-all duration-300">
                 {project.title}
               </h2>
+              <h3 className="font-bold">Year: {project.year}</h3>
             </div>
             
             <p className="text-slate-350 justify-items-left mb-3">
               {project.description}
             </p>
 
+          <div className="mb-3">
+           <ProjectTechStack technologies={project.technologies} />
+           </div>
+
             <Button 
               onClick={() => setSelectedProject(project)}
               className="w-full rounded-md transition-colors"
+              variant="default"
             >
               View More
             </Button>

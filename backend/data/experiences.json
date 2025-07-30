@@ -1,12 +1,32 @@
 [
     {
+        "title": "Junior Associate/AI Engineer",
+        "location" : "Singapore",
+        "company": "Synechron Technologies",
+        "duration": "Sep 2024 - Present",
+        "skills": ["Python", "Azure", "Streamlit"],
+        "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
+        "description": "Worked on several projects for multiple banks residing in Singapore. Projects are usually <b>AI-oriented</b>, and developed using <b>Azure services</b> such as <b>Azure OpenAI and Azure Computer Vision</b>. One such project involved training a invoice processing model using Azure Form Recognizer, to extract key information from invoices, such as invoice number, date, and amount. Another project involved developing a Streamlit Chatbot that allows employees to <b>query their company's knowledge base</b>, and retrieve relevant documents and information using <b>Retrieval Augmented Generation (RAG)</b>.",
+        "link": "https://synechron.com/"
+    },
+    {
+        "title": "Data Science/IOT-Engineer Intern",
+        "location" : "Singapore",
+        "company": "Groundup.AI",
+        "duration": "Jan 2024 - Jul 2024",
+        "skills": ["Python", "Torch", "IOT-Development"],
+        "tags": ["AI", "IOT", "Machine Learning", "Predictive Maintenance"],
+        "description": "<b>Developed, validated, containerised and deployed</b> predictive maintenance Machine Learning models with audio files converted into a spectrogram as training data, on <b>edge computing devices</b> like <b>Google's Coral Dev Board and Raspberry Pi</b>. The models were trained to <b>detect anomalies</b> in the audio data, and were able to predict when a machine was malfunctioning, allowing for proactive and predictive maintenance.",
+        "link": "https://groundup.ai/"
+    },
+    {
         "title": "AI Engineer/Web-Dev Intern",
         "location" : "Singapore",
         "company": "Hummingbird Bioscience",
         "duration": "Sep 2023 - Dec 2023",
-        "skills": ["Python", "FastAPI", "HTML", "LangChain", "Streamlit"],
+        "skills": ["Python", "FastAPI", "Tailwind", "LangChain", "Streamlit"],
         "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
-        "description": "<b>Fine-tuned, tested, and evaluated</b> various Large Language Models, benchmarking their performance against GPT-3.5 and GPT-4. Leveraged Python frameworks such as LangChain and Streamlit to develop an in-house PDF chatbot that enables users to query uploaded PDFs using the fine-tuned model. Additionally, revamped another internal web application using FastAPI and HTML to display a dashboard of AI-generated summaries of open-access research papers retrieved from the Semantic Scholar API.",
+        "description": "<b>Fine-tuned, tested, and evaluated</b> various Large Language Models, benchmarking their performance against GPT-3.5 and GPT-4. Leveraged Python frameworks such as LangChain and Streamlit to develop an in-house PDF chatbot that enables users to query uploaded PDFs using the fine-tuned model. Additionally, revamped another internal web application using FastAPI and HTML to display a dashboard of AI-generated summaries of open-access research papers retrieved from the Semantic Scholar API. First learnt Tailwind CSS.",
         "link": "https://hummingbirdbioscience.com/"
     },
     {
@@ -14,9 +34,9 @@
         "location" : "Singapore",
         "company": "Bosch GmbH",
         "duration": "Jun 2022 - Jul 2023",
-        "skills": ["Python", "FastAPI", "HTML", "LangChain", "Streamlit"],
+        "skills": ["Python", "scikit-learn", "Literature Review", "PowerBI"],
         "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
-        "description": "Assisted project managers in the development of a smart and sustainable HVAC system by translating academic research into practical code implementations. Conducted comprehensive literature reviews on anomaly detection in HVAC systems and collaborated with two Research Scientists to develop AI-based control algorithms. Led data collection, exploration, mining, and presentation efforts. Designed and implemented a Python algorithm to query, process, and feed data into a time-series model for accurate predictions, and built forecasting models for effective anomaly detection. Additionally, developed and deployed PowerBI dashboards with intuitive visualizations to help users identify anomalies at a glance.",
+        "description": "Assisted project managers in the development of a smart and sustainable HVAC system by translating academic research into practical code implementations. Conducted comprehensive literature reviews on anomaly detection and predictive maintenance in HVAC systems. Also collaborated with two Senior Research Scientists to develop an AI-based control algorithm. Led data collection, exploration, mining, and presentation efforts. Designed and implemented a Python algorithm to query, process, and feed data into a time-series model for accurate predictions, and built forecasting models for effective anomaly detection. Additionally, developed and deployed PowerBI dashboards with intuitive visualizations to help users identify anomalies at a glance.",
          "link": "https://www.bosch.com.sg/our-company/bosch-in-singapore/"
     },
     {
@@ -26,7 +46,7 @@
         "duration": "Oct 2018 - Mar 2019",
         "skills": ["Python", "FastAPI", "HTML", "LangChain", "Streamlit"],
         "tags": ["AI", "Web Development", "Chatbot", "PDF Processing"],
-        "description": "Improved the iOS app UI by effectively utilizing storyboard elements to create a cleaner and more user-friendly interface. Applied Swift programming alongside Firebase features such as authentication and chat functionalities to enhance the app’s capabilities and user experience. Gained cross-cultural awareness through collaboration with diverse teams, recognizing the value of differing traditions, norms, and perspectives in fostering knowledge sharing and creativity.",
+        "description": "Improved the iOS app UI by effectively utilizing storyboard elements to create a cleaner and more user-friendly interface. Applied Swift programming alongside Firebase features such as authentication and chat functionalities to enhance the app's capabilities and user experience. Most importantly, gained cross-cultural awareness through collaboration with diverse teams, recognizing the value of differing traditions, norms, and perspectives in fostering knowledge sharing and creativity.",
          "link": ""
     }
 ]
