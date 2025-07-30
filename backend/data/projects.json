@@ -1,24 +1,64 @@
 [
     {
-        "title": "Codebot",
-        "description" : "A fine-tuned Chatbot that helps you with coding, by providing code snippets and explanations.",
+        "title": "Portfolio Website",
+        "description" : "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more).",
         "www":{
-            "what":"A fine-tuned Chatbot that helps you with coding, by providing code snippets and explanations.",
-            "why":"I wanted to create a chatbot that can help people with coding, and I was fascinated by the capabilities of AI & LLMs.",
-            "who":"Anyone who needs help with coding."
+            "what":"A portfolio website to showcase my projects, experiences, and skills.",
+            "why":"I wanted to learn and experience the process of building a website from scratch, without using online Web Building tools like Wix or WordPress.",
+            "who":"Recruiters to see my projects, experiences, and skills. Also for myself to learn and experience the process of building a website from scratch."
+        },
+        "what_i_learnt": [
+            "A LOT. LOL", 
+            "I got so annoyed with basic HTML & CSS, that I decided to learn React and Tailwind CSS, which is what you're seeing right now.",
+            "Also learnt how to design APIs (though I don't really have to use it here. Maybe database in the future?)",
+            "I also learnt how to deploy my website on the cloud, firstly using Azure. Then it got a little expensive to host, so I had to find cheaper options like Vercel (free) and Railway (free for a certain time).",
+            "VCS! How to branch properly (feat/* and fix/*), pull, push, commit, merge, rebase, etc. Very important!!!"
+        ],
+        "impact" :["Basically learnt A LOT (CORS, how to deploy on cloud, how backend interacts with frontend, HTML templating.",
+        "Newfound knowledge of React, JS, deployment and VCS.",
+        "Just helped me understand why certain things are done in a certain way, which I feel is the best way to learn anything.",
+        "Hope you like this enough to hire me(jk, but seriously, I hope you like it)."
+        ],
+        "image": "/frontend/src/assets/project_images/my_website.jpg",
+        "url": "izack.dev",
+        "year": 2025,
+        "technologies": [{
+            "name": "JavaScript",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        }, {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        }, {
+            "name": "FastAPI",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+        },{
+            "name": "React",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        }, {
+            "name": "Tailwind CSS",
+            "icon": "/icons/Tailwind_CSS_Logo.png"
+        }]
+    },{
+        "title": "Codebot",
+        "description" : "School assigned capstone project, to study the performance between fine-tuning and Retrieval-Augmented Generation (RAG), whilst building a chatbot.",
+        "www":{
+            "what":"A chatbot that replicates the functionality of ChatGPT, but an additional layer of RAG is used to retrieve code snippets and explanations from a dataset of code snippets and explanations.",
+            "why":"In a paper, it was shown that LLMs at that time (GPT-3) tends to hallucinate code snippets. One such instance was when it hallucinated a non-existent library from python, instead of saying it doesn't know. I wanted to see if fine-tuning the model on a dataset of code snippets and explanations, would help reduce the hallucination rate, as compared to RAG.",
+            "who":"Students/Researchers who wants a free and open-source alternative to ChatGPT, that can help them with coding."
         },
         "what_i_learnt": [
             "This was my first project working with LLMs. As all beginners, it was a very exciting (but also frustrating) journey.",
-            "Following the popularity of ChatGPT, I was really fasincated by the capabilities of AI & LLMs. I wanted to create my own chatbot that can help people with coding.",
+            "Following the popularity of ChatGPT, I was really fasincated by the capabilities of AI & LLMs. I wanted to create my own chatbot that can help people with coding problems.",
             "This was the point where I first discovered open-source LLMs, and I was really excited to try them out. I used the GPT-2 model, and I was amazed by how well it could generate code snippets- though of course GPT-3 was wayyyyy better.",
             "I also learned how to use the Hugging Face Transformers library, and how to fine-tune the model on my own dataset. I created a dataset of code snippets and explanations, and I fine-tuned the model on it.",
             "(In hindsight, and knowing what I know now, wow- I learnt so much since then!)"
         ],
-        "impact" :["Reduced the time taken to search for code snippets and explanations online, by providing a chatbot that can generate them on-the-fly.",
-        "Helped people learn coding by providing explanations and code snippets in a conversational manner."],
+        "impact" :["Reduced the hallucination rate of code snippets generated by the model, ensuring that the model responds with accurate and relevant code snippets.",
+        "Provided a free and open-source alternative to ChatGPT, that can help people with coding problems."
+        ],
         "image": "/frontend/src/assets/project_images/llm_icon.jpg",
         "url": "https://github.com/izack8/codebot",
-        "year": 2024,
+        "year": 2023,
         "technologies": [{
             "name": "Python",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
@@ -39,15 +79,14 @@
         "description" : "An app designed to help NTU students connect with each other, through online forums, and a marketplace for students to buy and sell items.",
         "www":{
             "what":"An app designed to help NTU students connect with each other, through online forums, and a marketplace for students to buy and sell items.",
-            "why":"I wanted to create an app that can help NTU students connect with each other, and I was fascinated by the capabilities of Flutter.",
+            "why":"One problem I observed in NTU's hall culture, is that students usually have a lot of furniture and items that they no longer need, but they don't know how to get rid of them. So they just throw them away, which is a waste of resources. Hence, I wanted to create a marketplace for students to buy and sell, and also hopefully cultivating a new culture of trading within NTU students.",
             "who":"NTU students."
         },
         "what_i_learnt": [
-            "One problem I observed in NTU's hall culture, is that students usually have a lot of furniture and items that they no longer need, but they don't know how to get rid of them. So they just throw them away, which is a waste of resources. hence, I wanted to create a marketplace for students to buy and sell, and also hopefully cultivating a new culture.",
-            "I orginally wanted to create a website, but I realized that it would be better to create an app, because students are more likely to use an app than a website. So I decided to create a mobile app using Flutter."
+            "App design. The storyboarding, wireframing, tying everything together- from backend to frontend. How can these files interact with each other, especially with a language I'm not familiar with (Dart).",
+            "To actually read documentation, and not just copy-paste code from the internet. I had to read the Flutter documentation to understand how to use the widgets (and back then it was not as well-documented as it is now)."
         ],
-        "impact" :["Helped NTU students connect with each other, through online forums and a marketplace for students to buy and sell items.",
-        "Cultivated a new culture of buying and selling items among NTU students, reducing waste and promoting sustainability."],
+        "impact" :["Though the app did not go through production, it was defintely a great learning experience for me, trying to balance building an app + juggling other school work."],
         
         "image": "/frontend/src/assets/project_images/nanyang_marche.png",
         "url": "https://github.com/izack8/nanyang_marche/blob/master/Nanyang_Marche_Report.pdf",
@@ -61,45 +100,6 @@
         }, {
             "name": "Firebase",
             "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-        }]
-    },
-    {
-        "title": "Personal Website Building",
-        "description" : "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more).",
-        "www":{
-            "what":"Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more).",
-            "why":"I wanted to learn and experience the process of building a website from scratch, without using online Web Building tools etc.",
-            "who":"Anyone who wants to learn how to build a website from scratch."
-        },
-        "what_i_learnt": [
-            "I wanted to learn and experience the process of building a website from scratch, without using online Web Building tools etc. I feel like this process helps me understand why certain things are done in a certain way, which I feel is the best way to learn anything.",
-            "Like for example I was having such a hard time coding up the JS function for the looping and dynamic updating of details and html, but then I discovered HTML templating (like Jinja2 for Python, and Thymeleaf for Java), and it's like- oh, that's why people use it!",
-            "And on-top of this, I also learned the smaller things where people usually miss, like how important the file structure in the project folder and in JSON files etc. Like I need to write and organize them to meet my needs, and not just copy-paste from the internet.",
-            "ARGH! So many things to learn! So exciting!",
-            "OK I'm getting carried away.",
-            "And oh yeah, how to deploy on cloud etc. I'm using Azure now, cause the subscription is free for students, and I learned how to by watching a YouTube video."
-        ],
-        "impact" :["Helped me learn and experience the process of building a website from scratch, without using online Web Building tools etc.",
-        "Helped me understand why certain things are done in a certain way, which I feel is the best way to learn anything.",
-        "Helped me learn how to deploy on cloud etc."],
-        "image": "/frontend/src/assets/project_images/my_website.jpg",
-        "url": "",
-        "year": 2025,
-        "technologies": [{
-            "name": "HTML",
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-        }, {
-            "name": "CSS",
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-        }, {
-            "name": "JavaScript",
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-        }, {
-            "name": "Python",
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-        }, {
-            "name": "FastAPI",
-            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
         }]
     },
     {

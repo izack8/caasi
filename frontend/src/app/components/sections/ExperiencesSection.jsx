@@ -32,9 +32,9 @@ function ExperiencesSection() {
           {experience.duration}
         </div>
         <div className='desc h-full lg:w-5/7 justify-start'>
-          <h2 className='text-gray-500 text-[20px] font-bold mb-1'><a href={experience.link}>{experience.company}</a></h2>
+          <h2 className='text-neutral-900 text-[20px] font-bold'>{experience.title}</h2>
           <h3 className='text-md text-gray-700 font-bold'>{experience.location}</h3>
-          <h3 className='text-md text-rose-500 font-bold'>{experience.title}</h3>
+          <h3 className='text-md text-rose-500 font-bold'><a href={experience.link}>{experience.company}</a></h3>
           <p className='justify-start' dangerouslySetInnerHTML={{ __html: experience.description }} />
         </div>
         </div>

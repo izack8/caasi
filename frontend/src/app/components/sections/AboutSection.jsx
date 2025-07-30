@@ -6,16 +6,18 @@ function AboutSection() {
       <SectionLabel label="About Me" />
 
       <p className='text-justify mb-3'>
-        Helloooooo!!!!1 My name is <b>Isaac</b>, and I am a Junior (emphasis on Junior) Software Developer, aspiring to be a really competent <b>AI Software Engineer</b>. 
+        Helloooooo!!!!1 My name is <b>Isaac</b>, and I am a Junior (emphasis on Junior) Software Developer, graduated from <b>Nanyang Technological University (NTU)</b> with a degree in <b>Electrical and Electronic Engineering</b>, aspiring to be a really competent <b>AI Software Engineer</b> (or tbh, any roles that involves writing code). 
       </p>
 
-      <p className='text-justify mb-3'>
-        My journey in software development started when I was in Polytechnic, where I learned how to build mobile applications. Following that, I pursued a degree in <b>Electrical and Electronic Engineering</b> from <b>Nanyang Technological University (NTU)</b>, because I wanted to learn more about how hardware and software interacts with each other.
+      <p className="text-justify mb-3">
+        I always strive to do my best and learn as much as I can in this short life I have. I am always looking for opportunities to learn, grow, contribute my skills effectively, and most importantly, <b>put out as much cool stuff to the world as I can!</b> I am excited to see where this journey will take me! :D
       </p>
 
-      <p className='text-justify mb-3'>
-        Unfortunately, that didn't go so well (circuitry was so challenging to learn, imo), so for the last 2 years in Uni, I decided to shift my focus back to programming, which is where I also discovered <b>Data Science,</b> <b>AI & Machine Learning</b>. I was so fascinated by how AI can be used to solve real-world problems, and I wanted to learn more about it (Like the entire concept of <b>Large Language Models (LLMs)</b> ARE SO COOL WTH).
+      <p className="text-justify mb-3">
+        If you don't find me coding, you can find me playing the guitar and making covers of songs made by the <b>greatest songwriter of this century, Ms. Taylor Alison Swift.</b> (Bonus points if you can find my YouTube channel, I have a few covers there (I'd like to think I sing pretty well, hehe))
       </p>
+
+      <p className="text-justify mb-3">Also generally a little unserious :p</p>
 
     </section>
   );
