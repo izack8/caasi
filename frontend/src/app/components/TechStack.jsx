@@ -21,7 +21,9 @@ function TechStack() {
         <div className="flex flex-col w-full mt-6">
             <div className="h-[150px] sm:h-[160px] mb-8 relative">
                 <div 
-                    className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 lg:gap-x-2 gap-x-3 gap-y-2 justify-items-center transition-opacity duration-300 ${
+                    className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 
+                        lg:grid-cols-5 lg:gap-x-2 gap-x-3 gap-y-2 
+                        justify-items-center transition-opacity duration-300 ${
                         isTransitioning ? 'opacity-0' : 'opacity-100'
                     }`}
                 >
@@ -37,9 +39,10 @@ function TechStack() {
                             <img 
                                 src={tech.icon} 
                                 alt={tech.name} 
-                                className="w-8 h-8 sm:w-10 sm:h-10 sm:w-10 mb-1 sm:mb-2 transition-all duration-200" 
+                                className="w-8 h-8 sm:w-10 sm:h-10 mb-1 sm:mb-2 transition-all duration-200" 
                             />
-                            <span className="text-xs sm:text-sm text-slate-500 group-hover:text-zinc-900 transition-colors text-center leading-tight">
+                            <span className="text-xs sm:text-sm text-slate-500 
+                            group-hover:text-zinc-900 transition-colors text-center leading-tight">
                                 {tech.name}
                             </span>
                         </div>
@@ -48,13 +51,13 @@ function TechStack() {
             </div>
 
             {/* Tab Navigation - Fixed position */}
-            <div className="flex flex-wrap gap-1 sm:gap-1 justify-center">
+            <div className="flex flex-wrap gap-1 sm:gap-1 justify-center mt-1">
                 {Object.entries(techCategories).map(([key, category]) => (
                     <Button
                         key={key}
                         onClick={() => handleTabChange(key)}
                         disabled={isTransitioning}
-                        variant={activeTab === key ? 'active' : 'default'}
+                        variant={activeTab === key ? 'active' : 'ghost'}
                         size="sm"
                         className="text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 flex-shrink-0"
                     >

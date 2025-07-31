@@ -1,7 +1,7 @@
 export default function SectionLabel({ label, className }) {
   return (
     <div className={`w-full lg:text-start mb-4 mt-5 group justify-start ${className || ''}`}>
-      <h2 className="text-black-100 text-lg font-bold tracking-[0.3em] group-hover:text-blue-400 transition-all duration-300">
+      <h2 className="text-black-100 text-lg font-bold uppercase tracking-[0.005em] group-hover:text-rose-500 transition-all duration-300">
         {label}
       </h2>
       <div className="flex justify-start lg:justify-start">
