@@ -1,7 +1,7 @@
 [
     {
         "title": "Portfolio Website",
-        "description" : "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more).",
+        "description" : "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more). I'm trying to constantly update this website with stuff I learnt, so checkback to see if you can spot any changes!",
         "www":{
             "what":"A portfolio website to showcase my projects, experiences, and skills.",
             "why":"I wanted to learn and experience the process of building a website from scratch, without using online Web Building tools like Wix or WordPress.",
