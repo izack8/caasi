@@ -19,7 +19,7 @@ function Post() {
     <div className="max-w-2xl mx-auto p-8">
       <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
       <ReactMarkdown>{post.md}</ReactMarkdown>
-      <div className="text-xs text-gray-400 mb-2">{new Date(post.date).toLocaleDateString()}</div>
+      <div className="text-xs text-gray-400 mb-2">{post.date}</div>
     </div>
   );
 }
