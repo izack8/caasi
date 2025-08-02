@@ -1,9 +1,9 @@
 {
-  "2025-08-02-new-year-new-beginnings": {
-    "id": "2025-08-02-new-year-new-beginnings",
+  "2025-08-02-async-await": {
+    "id": "2025-08-02-async-await",
     "date": "2025-08-02",
-    "title": "New Year, New Beginnings",
-    "description": "/posts/2025-08-02-new-year-new-beginnings.md",
-    "md_file": "2025-08-02-new-year-new-beginnings.md"
+    "title": "Async, Await",
+    "description": "this post explores the concepts of async and await in JavaScript.",
+    "md_file": "2025-08-02-async-await.md"
   }
 }
