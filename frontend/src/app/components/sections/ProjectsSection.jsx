@@ -4,6 +4,7 @@ import SectionLabel from '../ui/SectionLabel';
 import ProjectModal from '../../components/ProjectModal';
 import Button from '../ui/Button';
 import ProjectTechStack from '../../components/ProjectTechStack';
+import LoadingBar from '../../components/ui/LoadingBar';
 
 function ProjectsSection({ showAll = false }) {
   const [projects, setProjects] = useState([]);
@@ -38,8 +39,8 @@ function ProjectsSection({ showAll = false }) {
     
     <section className="projects-section w-full flex flex-wrap">
       <SectionLabel label="My Projects" />
-      {loading && <div className="text-center">Loading projects...</div>}
-      {error && <div className="text-center text-red-500">Error fetching projects: {error}</div>}
+      {loading && <LoadingBar />}
+      {error && <div className="text-center text-red-500">API did not hit :(. Error: {error}</div>}
       {displayProjects.length === 0 && !loading && (
         <div className="text-center">No projects found</div>
       )}
