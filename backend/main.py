@@ -1,12 +1,8 @@
-from datetime import datetime
 import os
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from src.fetch_json import FetchJSON
-from sqlalchemy.orm import Session
-from src.models import  Post
-from src.schemas import PostCreate, PostResponse
 
 
 fetch_json = FetchJSON()
