@@ -3,7 +3,9 @@
 
 body { 
   font-family: "Roboto", sans-serif;
+  overflow-y: scroll;
 }
+
 
 /* Animated scrollbar that fades in/out */
 ::-webkit-scrollbar {

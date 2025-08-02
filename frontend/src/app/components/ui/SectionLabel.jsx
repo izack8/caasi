@@ -1,6 +1,12 @@
-export default function SectionLabel({ label, className }) {
+export default function SectionLabel({ label, className, onClick, style }) {
   return (
-    <div className={`w-full lg:text-start mb-4 mt-5 group justify-start ${className || ''}`}>
+    <div
+      className={`w-full lg:text-start mb-4 mt-5 group justify-start ${className || ''}`}
+      onClick={onClick}
+      style={style}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick ? 0 : undefined}
+    >
       <h2 className="text-black-100 text-lg font-bold uppercase tracking-[0.005em] group-hover:text-rose-500 transition-all duration-300">
         {label}
       </h2>

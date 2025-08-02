@@ -6,26 +6,35 @@ import SectionLabel from '../ui/SectionLabel';
 function ExperiencesSection() {
 
   const [experiences, setExperiences] = useState([]);
-  // define custom loading and error states next time
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
 
   useEffect(() => {
-    fetch(API_ENDPOINTS.experiences).then(response => {
-      console.log(API_ENDPOINTS.experiences);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    }).then(data => {
-      setExperiences(data);
-    }).catch(error => {
-      console.error('Error fetching experiences:', error);
-    });
+    fetch(API_ENDPOINTS.experiences)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        setExperiences(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error('Error fetching experiences:', error);
+        setError(error.message);
+        setLoading(false);
+      });
   }, []);
 
   return (
     
     <section className="experiences-section w-full flex flex-wrap">
       <SectionLabel label="Experiences" />
+      {loading && <div className="text-center">Loading experiences...</div>}
+      {!loading && experiences.length === 0 && <div className="text-center">No experiences found</div>}
       {experiences.map((experience, index) => (
         <div key={index} className='experience mb-3 lg:flex lg:flex-wrap items-start duration-300 transition-all duration-300 group relative'>
           <div className='year font-bold text-sm lg:h-full lg:w-2/7 text-black-400 mt-1.5'>

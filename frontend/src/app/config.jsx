@@ -116,4 +116,8 @@ export const API_ENDPOINTS = {
   projects: `${API_BASE_URL}/projects`,
   experiences: `${API_BASE_URL}/experiences`,
   entries: `${API_BASE_URL}/entries`,
+  guestbook_messages: `${API_BASE_URL}/guestbook_messages`,
+  messages: `${API_BASE_URL}/messages`,
+  posts: `${API_BASE_URL}/posts`,
+post: (id) => `${API_BASE_URL}/posts/${id}`,
 };
