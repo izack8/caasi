@@ -1,9 +1,9 @@
 {
-  "2025-08-02-async-await": {
-    "id": "2025-08-02-async-await",
+  "2025-08-02-my-first-post": {
+    "id": "2025-08-02-my-first-post",
     "date": "2025-08-02",
-    "title": "Async, Await",
-    "description": "this post explores the concepts of async and await in JavaScript.",
-    "md_file": "2025-08-02-async-await.md"
+    "title": "My First Post",
+    "description": "My first post on my website.",
+    "md_file": "2025-08-02-my-first-post.md"
   }
 }
