@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/atom-one-dark.css'; // Choose any theme you like
+import 'highlight.js/styles/atom-one-dark.css';
 
 const MarkdownRenderer = ({ content }) => {
   return (

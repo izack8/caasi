@@ -1,6 +1,6 @@
-# My First Post
 
 And my mind is a blank… So much time spent into trying to perfect this website of mine, that I have no idea what do I write now. I literally RUSHED home from a meeting with friends, so **excited** to jot my thoughts down. HOW CAN I GO BLANK NOW?
+
 
 I guess I could start with the reason with why I wanted to build this website. I want something that’s mine. Something that I tend to, and care for. A place I can go to, to experiment, and to add features, bit-by-bit. Sort of like a build-a-bear, haha. Funnily, this is exactly how React works, and how I have been framing my mind to think like such. Each component acts as a unique brick, and when you piece them together, you get a solid house! (Wow look at me applying React logic into everyday thinking). 
 

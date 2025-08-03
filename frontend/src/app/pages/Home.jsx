@@ -12,11 +12,26 @@ import Footer from '../components/ui/Footer';
 import Glow from '../components/ui/Glow';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom';
 
 // ...existing imports...
 
 function Home() {
-  const [activeTab, setActiveTab] = useState('work');
+  const location = useLocation();
+  const initialTab = location.state?.tab || 'work';
+  const [activeTab, setActiveTab] = useState(initialTab);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const handleTabChange = (newTab) => {
+      if (newTab === activeTab) return;
+      
+      setIsTransitioning(true);
+      
+      setTimeout(() => {
+          setActiveTab(newTab);
+          setIsTransitioning(false);
+      }, 150);
+  };
 
   return (
     <>
@@ -37,24 +52,40 @@ function Home() {
           </header>
           
            {/* Right side - main content */}
-          <main className="w-full lg:w-[55%] pt-20 lg:py-26 sm:pt-16 text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base lg:pt-20 flex flex-col lg:flex-wrap lg:block pb-20">
+          <main className="w-full lg:w-[55%] pt-20 lg:py-26 sm:pt-16 text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base lg:pt-20 flex flex-col lg:flex-wrap lg:block pb-20 overflow-y-scroll">
             <div className="relative">
-              <div className="absolute top-0 left-0 w-full z-10 px-2 pt-2 pb-4 pointer-events-auto">
-                <Tabs activeTab={activeTab} onTabClick={setActiveTab} />
+              <div className="absolute top-0 left-0 w-full z-10 pb-4 pointer-events-auto" >
+                <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
               </div>
               <div className="pt-10">
-                {activeTab === 'work' && (
-                  <>
-                    <AboutSection />
-                    <ExperiencesSection />
-                    <ProjectsSection />
-                    <JourneySection />
-                  </>
-                )}
-                {activeTab === 'writing' && (
-                  <WritingSection />
-                )}
-              </div>
+                <AnimatePresence mode="wait">
+                  {activeTab === 'work' && (
+                    <motion.div
+                      key="work"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <AboutSection />
+                      <ExperiencesSection />
+                      <ProjectsSection />
+                      <JourneySection />
+                    </motion.div>
+                  )}
+                  {activeTab === 'writing' && (
+                    <motion.div
+                      key="writing"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1}}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                      <WritingSection />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                </div>
             </div>
             <div className="lg:hidden">
               <Footer />

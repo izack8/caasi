@@ -33,7 +33,7 @@ function TechStack() {
                             className="flex flex-col items-center group hover:scale-110 transition-all duration-200 w-full max-w-[80px] sm:max-w-none"
                             style={{
                                 animationDelay: `${index * 50}ms`,
-                                animation: isTransitioning ? 'none' : 'fadeInUp 0.4s ease-out forwards'
+                                animation: isTransitioning ? 'none' : 'fadeIn 0.8s ease-out forwards'
                             }}
                         >
                             <img 

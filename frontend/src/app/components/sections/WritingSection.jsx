@@ -43,11 +43,11 @@ function WritingSection() {
             {Object.entries(posts).map(([key, post]) => (
                 <div
                     key={key}
-                    className="mb-8 rounded cursor-pointer"
+                    className="mb-8 rounded cursor-pointer group"
                     onClick={() => navigate(`/writing/${key}`)}
                 >
-                    <h2 className="text-xl font-bold mb-2">{post.title}</h2>
-                    <div className="text-xs text-gray-400 mt-2">
+                    <h2 className="text-xl font-bold mb-2 group-hover:text-blue-800 transition-colors duration-200">{post.title}</h2>
+                    <div className="text-md text-black-400 mt-2">
                     {new Date(post.date).toLocaleDateString()}
                     </div>
                 </div>

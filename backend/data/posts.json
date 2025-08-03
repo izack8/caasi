@@ -1,4 +1,11 @@
 {
+  "2025-08-02-async-await": {
+    "id": "2025-08-02-async-await",
+    "date": "2025-08-02",
+    "title": "Understanding Async/Await",
+    "description": "A deep dive into async/await in JavaScript.",
+    "md_file": "2025-08-02-async-await.md"
+  },
   "2025-08-02-my-first-post": {
     "id": "2025-08-02-my-first-post",
     "date": "2025-08-02",
