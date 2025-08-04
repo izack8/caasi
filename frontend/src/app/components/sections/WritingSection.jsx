@@ -5,29 +5,42 @@ import { data, useNavigate } from "react-router-dom";
 import LoadingBar from '../../components/ui/LoadingBar';
 
 function WritingSection() {
+
+    const fetchPosts = async () => {
+      try {
+        const res = await fetch(API_ENDPOINTS.posts);
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        console.log("Fetched posts:", data);
+        setPosts(data);
+        setLoading(false);
+        sessionStorage.setItem('cachedPosts', JSON.stringify(data));
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+        setError(error.message);
+        setLoading(false);
+      }
+    };  
+
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
-      fetch(API_ENDPOINTS.posts)
-      .then (response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        setPosts(data);
+      const cachedPosts = sessionStorage.getItem('cachedPosts');
+
+      if (cachedPosts) {
+        setPosts(JSON.parse(cachedPosts));
         setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching posts:', error);
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
+      } else {
+        fetchPosts();
+      }
+    }, []);
 
   return (
     <section className="writing-section">

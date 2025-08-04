@@ -5,24 +5,48 @@ import { API_ENDPOINTS } from '../config';
 import Footer from '../components/ui/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function Post() {
+export default function Post() {
   const { id } = useParams();
   const [post, setPost] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const fetchPost =  async () => {
+        try {
+          const res = await fetch(API_ENDPOINTS.post(id));
+          const postData = await res.json();
+          setPost(postData);
+          setLoading(false);
+          console.log("Fetched post:", postData);
+          sessionStorage.setItem(`lastVisitedPost_${id}`, JSON.stringify(postData));
+        } catch (error) {
+          console.error("Error fetching post:", error);
+        }
+    };
+
   useEffect(() => {
-    fetch(API_ENDPOINTS.post(id))
-      .then(res => res.json())
-      .then(setPost);
+
+    const cachedPost = sessionStorage.getItem(`lastVisitedPost_${id}`);
+
+    if (cachedPost) {
+      setPost(JSON.parse(cachedPost));
+      setLoading(false);
+    } else {
+      fetchPost(); 
+    }
+
+      
   }, [id]);
 
   const handleBack = () => {
-    navigate("/", { state: { tab: 'writing' }});
+    navigate(-1);
   };
+
+  sessionStorage.setItem('lastVisitedPost', id);
 
   return (
     <AnimatePresence mode="wait">
-      {!post ? (
+      {loading ? (
         <motion.div
           key="loading"
           initial={{ opacity: 0 }}
@@ -61,5 +85,3 @@ function Post() {
     </AnimatePresence>
   );
 }
-
-export default Post;

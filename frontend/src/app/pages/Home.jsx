@@ -10,28 +10,26 @@ import ConnectWithMe from '../components/ConnectWithMe';
 import Tabs from '../components/Tabs';
 import Footer from '../components/ui/Footer';
 import Glow from '../components/ui/Glow';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLocation } from 'react-router-dom';
 
-// ...existing imports...
-
 function Home() {
-  const location = useLocation();
-  const initialTab = location.state?.tab || 'work';
-  const [activeTab, setActiveTab] = useState(initialTab);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const [activeTab, setActiveTab] = useState('work');
 
   const handleTabChange = (newTab) => {
-      if (newTab === activeTab) return;
-      
-      setIsTransitioning(true);
-      
-      setTimeout(() => {
-          setActiveTab(newTab);
-          setIsTransitioning(false);
-      }, 150);
+    if (newTab === activeTab) return;
+    setActiveTab(newTab);
+    sessionStorage.setItem('activeTab', newTab);
   };
+
+  useEffect(() => {
+    const savedTab = sessionStorage.getItem('activeTab');
+    if (savedTab) {
+      setActiveTab(savedTab);
+    }
+  }, []);
 
   return (
     <>

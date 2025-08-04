@@ -12,24 +12,29 @@ function ProjectsSection({ showAll = false }) {
   const [error, setError] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
 
+  const fetchProjects = async () => {
+    try {
+      const res = await fetch(API_ENDPOINTS.projects);
+      const data = await res.json();
+      console.log("Fetched projects:", data);
+      setProjects(data);
+      setLoading(false);
+      sessionStorage.setItem('cachedProjects', JSON.stringify(data));
+    } catch (error) {
+      console.error('Error fetching projects:', error);
+      setError(error.message);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    fetch(API_ENDPOINTS.projects)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        console.log('Fetching projects from API...');
-        return response.json();
-      })
-      .then(data => {
-        setProjects(data);
-        setLoading(false);
-      })  
-      .catch(error => {
-        console.error('Error fetching projects:', error);
-        setError(error.message);
-        setLoading(false);
-      });
+    const cachedProjects = sessionStorage.getItem('cachedProjects');
+    if (cachedProjects) {
+      setProjects(JSON.parse(cachedProjects));
+      setLoading(false);
+    } else {
+      fetchProjects();
+    }
   }, []);
 
 

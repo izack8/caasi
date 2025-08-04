@@ -10,24 +10,30 @@ function ExperiencesSection() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const fetchExperiences = async () => {
+    try {
+      const res = await fetch(API_ENDPOINTS.experiences);
+      const data = await res.json();
+      console.log("Fetched experiences:", data);
+      setExperiences(data);
+      setLoading(false);
+      localStorage.setItem('cachedExperiences', JSON.stringify(data));
+    } catch (error) {
+      console.error('Error fetching experiences:', error);
+      setError(error.message);
+      setLoading(false); 
+    }
+  };
+
 
   useEffect(() => {
-    fetch(API_ENDPOINTS.experiences)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then(data => {
-        setExperiences(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching experiences:', error);
-        setError(error.message);
-        setLoading(false);
-      });
+    const cachedExperiences = localStorage.getItem('cachedExperiences');
+    if (cachedExperiences) {
+      setExperiences(JSON.parse(cachedExperiences));
+      setLoading(false);
+    } else {
+      fetchExperiences();
+    }
   }, []);
 
   return (
