@@ -6,7 +6,7 @@ function AboutSection() {
       <SectionLabel label="About Me" />
 
       <p className='text-justify mb-3'>
-        Helloooooo!!!!1 My name is <b>Isaac</b>, and I am a Graduate (emphasis on Graduate) Data Scientist/Software Engineer, graduated from <b>Nanyang Technological University (NTU)</b> with a degree in <b>Electrical and Electronic Engineering</b>, aspiring to be a really competent <b>AI Software Engineer</b> (or tbh, any roles that involves writing code. tippity-tappity.). 
+        Helloooooo!!!!1 My name is <b>Isaac</b>, and I am a Graduate Data Scientist/Software Engineer, graduated from <b>Nanyang Technological University (NTU)</b>, with a Bachelor's Degree in <b>Electrical and Electronic Engineering</b>. I am passionate for projects that <b>involves cooking logic 🔥 and writing code 👨‍💻</b> (tippity-tappity). I aspire to be a <b>really competent programmer</b>, building AI & ML models/software for public good. I am currently working as a Developer/AI Engineer at <b><a href="https://synechron.com">Synechron</a></b>, building ML pipelines for financial institutions! 
       </p>
 
       <p className="text-justify mb-3">

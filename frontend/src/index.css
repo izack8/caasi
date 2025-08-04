@@ -1,7 +1,6 @@
 body {
     min-height: 100vh;
     position: relative;
-    /* Remove all background properties from body */
 }
 
 /* Create fixed background with pseudo-element that works on ALL devices */

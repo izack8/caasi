@@ -50,13 +50,12 @@ function TechStack() {
                 </div>
             </div>
 
-            {/* Tab Navigation - Fixed position */}
+            {/* Tab Navigation */}
             <div className="flex flex-wrap gap-1 sm:gap-1 justify-center mt-1">
                 {Object.entries(techCategories).map(([key, category]) => (
                     <Button
                         key={key}
                         onClick={() => handleTabChange(key)}
-                        disabled={isTransitioning}
                         variant={activeTab === key ? 'active' : 'ghost'}
                         size="sm"
                         className="text-xs sm:text-sm px-2 sm:px-4 py-1 sm:py-2 flex-shrink-0"
@@ -67,18 +66,6 @@ function TechStack() {
             </div>
             <div className='text-center text-[10px] mt-2'>My Tech Stack</div>
 
-            <style jsx>{`
-                @keyframes fadeInUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-            `}</style>
         </div>
     );
 }

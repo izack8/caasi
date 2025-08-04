@@ -5,42 +5,45 @@ import { data, useNavigate } from "react-router-dom";
 import LoadingBar from '../../components/ui/LoadingBar';
 
 function WritingSection() {
+  
 
-    const fetchPosts = async () => {
-      try {
-        const res = await fetch(API_ENDPOINTS.posts);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
+  const fetchPosts = async () => {
+    try {
+      const res = await fetch(API_ENDPOINTS.posts);
 
-        const data = await res.json();
-        console.log("Fetched posts:", data);
-        setPosts(data);
-        setLoading(false);
-        sessionStorage.setItem('cachedPosts', JSON.stringify(data));
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-        setError(error.message);
-        setLoading(false);
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
       }
-    };  
 
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const navigate = useNavigate();
+      const data = await res.json();
+      console.log("Fetched posts:", data);
+      setPosts(data);
+      setLoading(false);
+      sessionStorage.setItem('cachedPosts', JSON.stringify(data));
+    } catch (error) {
+      console.error('Error fetching posts:', error);
+      setError(error.message);
+      setLoading(false);
+    }
+  };  
 
-    useEffect(() => {
-      const cachedPosts = sessionStorage.getItem('cachedPosts');
+  
 
-      if (cachedPosts) {
-        setPosts(JSON.parse(cachedPosts));
-        setLoading(false);
-      } else {
-        fetchPosts();
-      }
-    }, []);
+  useEffect(() => {
+    const cachedPosts = sessionStorage.getItem('cachedPosts');
+
+    if (cachedPosts) {
+      setPosts(JSON.parse(cachedPosts));
+      setLoading(false);
+    } else {
+      fetchPosts();
+    }
+  }, []);
 
   return (
     <section className="writing-section">
@@ -56,12 +59,19 @@ function WritingSection() {
             {Object.entries(posts).map(([key, post]) => (
                 <div
                     key={key}
-                    className="mb-8 rounded cursor-pointer group"
+                    className="mb-5 rounded cursor-pointer group"
                     onClick={() => navigate(`/writing/${key}`)}
                 >
-                    <h2 className="text-xl font-bold mb-2 group-hover:text-blue-800 transition-colors duration-200">{post.title}</h2>
-                    <div className="text-md text-black-400 mt-2">
-                    {new Date(post.date).toLocaleDateString()}
+                  <div className="text-sm text-black-400">
+                    {new Date(post.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}
+                  </div>
+                    <h2 className="text-xl font-bold group-hover:text-blue-800 transition-colors duration-200">{post.title}</h2>
+                    <div className="text-md text-gray-600">
+                      {post.description}
                     </div>
                 </div>
                 ))}

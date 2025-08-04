@@ -76,7 +76,7 @@
     },
     {
         "title": "Nanyang Marche",
-        "description" : "An app designed to help NTU students connect with each other, through online forums, and a marketplace for students to buy and sell items.",
+        "description" : "An app designed to help NTU students connect with each other, through online forums + a marketplace for students to buy and sell items.",
         "www":{
             "what":"An app designed to help NTU students connect with each other, through online forums, and a marketplace for students to buy and sell items.",
             "why":"One problem I observed in NTU's hall culture, is that students usually have a lot of furniture and items that they no longer need, but they don't know how to get rid of them. So they just throw them away, which is a waste of resources. Hence, I wanted to create a marketplace for students to buy and sell, and also hopefully cultivating a new culture of trading within NTU students.",

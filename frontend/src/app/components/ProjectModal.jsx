@@ -36,7 +36,7 @@ function ProjectModal({ project, onClose }) {
   }, []);
 
   return (
-    <div className="font-sans fixed inset-0 bg-black/70 flex items-center justify-center p-4 min-h-screen min-w-screen text-slate-600">
+    <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 min-h-screen min-w-screen text-slate-600">
       <div className="bg-neutral-200 rounded-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex p-6 bg-neutral-200 border-b border-slate-700 w-full sticky top-0">

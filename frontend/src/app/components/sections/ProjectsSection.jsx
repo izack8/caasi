@@ -50,12 +50,12 @@ function ProjectsSection({ showAll = false }) {
         <div className="text-center">No projects found</div>
       )}
       {displayProjects.map((project, index) => (
-        <div key={index} className="w-full rounded-lg transition-all duration-300 group relative mb-4">
+        <div key={index} className="w-full rounded-lg transition-all duration-300 group relative mb-10">
           <div className="flex flex-col mb-3">
             <h2 className="text-blue-900 text-lg font-bold group-hover:text-blue-500 transition-all duration-300">
               {project.title}
               </h2>
-              <h3 className="font-bold">Year: {project.year}</h3>
+              {/* <h3 className="font-bold">Year: {project.year}</h3> */}
             </div>
             
             <p className="text-slate-350 justify-items-left mb-3">

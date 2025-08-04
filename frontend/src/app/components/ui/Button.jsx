@@ -7,7 +7,7 @@ function Button({
     className = '',
     ...props 
 }) {
-    const baseClasses = 'font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500';
+    const baseClasses = 'font-medium rounded-lg transition-all duration-200';
     
     const variants = {
         default: 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white',

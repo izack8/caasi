@@ -11,7 +11,7 @@ export default function SectionLabel({ label, className, onClick, style }) {
         {label}
       </h2>
       <div className="flex justify-start lg:justify-start">
-        <hr className="w-36 lg:w-20 lg:group-hover:w-25 transition-all duration-300 h-[1px] text-slate-700 border-slate-700 !mt-2 !mb-2" />
+        <hr className="w-20 group-hover:w-25 md:group-hover:w-28 transition-all duration-300 h-[1px] text-slate-700 border-slate-700 mt-2 mb-2" />
       </div>
     </div>
   );

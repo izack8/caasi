@@ -65,7 +65,7 @@ export default function Post() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "ease" }}
         >
-          <div className="font-sans mx-auto min-h-screen max-w-screen-lg px-6 py-12 font-sans md:px-12 md:py-16">
+          <div className="mx-auto min-h-screen max-w-screen-lg px-6 py-12 md:px-12 md:py-16">
             <div className="mb-3">
               <button
                 className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"

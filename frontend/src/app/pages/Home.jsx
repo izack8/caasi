@@ -34,7 +34,7 @@ function Home() {
   return (
     <>
       <Glow />
-      <main className="font-sans mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-16 lg:py-0">
+      <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 md:py-16 lg:py-0">
         <section className="w-full flex flex-wrap lg:flex-nowrap ">
           {/* Left side - sticky header that never moves */}
           <header className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[45%] pt-20 sm:pt-32 lg:py-24 lg:pr-15 flex flex-col lg:justify-between">
@@ -50,7 +50,7 @@ function Home() {
           </header>
           
            {/* Right side - main content */}
-          <main className="w-full lg:w-[55%] pt-20 lg:py-26 sm:pt-16 text-slate-350 text-sm sm:text-sm md:text-sm lg:text-sm xl:text-base lg:pt-20 flex flex-col lg:flex-wrap lg:block pb-20 overflow-y-scroll">
+          <main className="w-full lg:w-[55%] pt-20 lg:py-26 sm:py-16 text-slate-350 text-sm xl:text-base flex flex-col lg:flex-wrap lg:block">
             <div className="relative">
               <div className="absolute top-0 left-0 w-full z-10 pb-4 pointer-events-auto" >
                 <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
