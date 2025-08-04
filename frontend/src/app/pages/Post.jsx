@@ -77,7 +77,7 @@ export default function Post() {
             </div>
             <h1 className="text-2xl font-bold">{post.title}</h1>
             <h2 className="text-md font-bold mb-5">{post.date}</h2>
-            <MarkdownRenderer content={post.md} />
+            <MarkdownRenderer>{post.md}</MarkdownRenderer>
             <Footer />
           </div>
         </motion.div>
