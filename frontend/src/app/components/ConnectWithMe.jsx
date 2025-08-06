@@ -19,7 +19,7 @@ function ConnectWithMe() {
                     href="https://www.linkedin.com/in/isaac-tay-a31a3a236/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 hover:text-blue-400 transition-colors duration-200"
+                    className="group flex items-center gap-2 hover:text-[#0072b1] transition-colors duration-200"
                 >
                     <FaLinkedin className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
                     <span className="text-sm sm:text-base">LinkedIn</span>
@@ -29,7 +29,7 @@ function ConnectWithMe() {
                     href="documents/isaactay_resume_2025.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2 hover:text-red-400 transition-colors duration-200"
+                    className="group flex items-center gap-2 hover:text-red-500 transition-colors duration-200"
                 >
                     <FaFilePdf className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
                     <span className="text-sm sm:text-base">Resume</span>

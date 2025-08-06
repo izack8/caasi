@@ -1,4 +1,11 @@
 {
+  "2025-08-06-mnist-handwriting-digit": {
+    "id": "2025-08-06-mnist-handwriting-digit",
+    "date": "2025-08-06",
+    "title": "MNIST Handwriting Digit Recognition",
+    "description": "(Post coming soon) Exploring the MNIST dataset and building a handwriting digit recognition model.",
+    "md_file": "2025-08-06-mnist-handwriting-digit.md"
+  },
   "2025-08-04-how-to-build-a-portfolio-website": {
     "id": "2025-08-04-how-to-build-a-portfolio-website",
     "date": "2025-08-04",
