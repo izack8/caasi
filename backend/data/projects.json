@@ -1,5 +1,40 @@
 [
     {
+        "title": "MNIST Handwritten Digit Recognition App",
+        "description" : "Building a simple Neural Network to recognize handwritten digits from the MNIST dataset using PyTorch. Deployed the model, then built a simple web app to interact with the model.",
+        "www":{
+            "what":"A web-app that allows user to draw a handwritten digit on a canvas. The app sends the image to a deployed PyTorch model, which predicts the digit, and returns the prediction to the user.",
+            "why":"To learn not just about building a neural network, but also how to deploy it.",
+            "who":"Just me."
+        },
+        "what_i_learnt": [
+            "I wanted a quick refresher on the steps to build a neural network with PyTorch. So I went back to the basics + what I learnt in Uni, and built a simple neural network to recognize handwritten digits from the MNIST dataset.", 
+            "The building of the neural network was pretty straightforward (code-wise), partly because my knowledge limits me to build a simple feedforward neural network. But I realized that I was forgetting the mathematical concepts behind it (like backpropagation and loss functions). Which is why I wanted to build this project, to refresh my memory.",
+            "I also wanted to learn how to deploy the model. Right now it's running on Railway, (which frustratingly took so much time to debug because the deployment keeps failing cause of image size etc.) In the end, had to learn how to use docker to containerize the model, and then deploy it on Railway. Which was how I learnt about Docker caching: deployment wouldn't build from scratch every time, but only the files that changed.",
+            "For frontend, I used React to build a simple web app that allows user to draw a handwritten digit on a canvas. The app sends the image to the deployed PyTorch model, which predicts the digit, and returns the prediction to the user. BUT, I discovered that the canvas MUST be white strokes on a black background, otherwise the model will not be able to recognize the digit (obvious, but I did not realize). So I had to add a feature to convert the image to black and white, before sending it to the model."
+        ],
+        "impact" :["Coming Soon"
+        ],
+        "image": "/frontend/src/assets/project_images/my_website.jpg",
+        "url": "handwritten-digits.izack.dev",
+        "year": 2025,
+        "technologies": [{
+            "name": "JavaScript",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        }, {
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        }, {
+            "name": "FastAPI",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+        },{
+            "name": "React",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        }, {
+            "name": "Tailwind CSS",
+            "icon": "/icons/Tailwind_CSS_Logo.png"
+        }]
+    },{
         "title": "Portfolio Website",
         "description" : "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more). I'm trying to constantly update this website with stuff I learnt, so checkback to see if you can spot any changes!",
         "www":{
@@ -37,6 +72,13 @@
         }, {
             "name": "Tailwind CSS",
             "icon": "/icons/Tailwind_CSS_Logo.png"
+        },
+        {
+            "name": "Hugging Face",
+            "icon": "/icons/hf-logo.svg"
+        }, {
+            "name": "Torch",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
         }]
     },{
         "title": "Codebot",
