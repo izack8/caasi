@@ -16,7 +16,8 @@
         "impact" :["Coming Soon"
         ],
         "image": "/frontend/src/assets/project_images/my_website.jpg",
-        "url": "handwritten-digits.izack.dev",
+        "url": {"github": "https://github.com/izack8/handwritten-numbers", 
+        "link": "https://handwritten-digits.izack.dev"},
         "year": 2025,
         "technologies": [{
             "name": "JavaScript",
@@ -55,7 +56,7 @@
         "Hope you like this enough to hire me(jk, but seriously, I hope you like it)."
         ],
         "image": "/frontend/src/assets/project_images/my_website.jpg",
-        "url": "izack.dev",
+        "url": {"github": "https://github.com/izack8/caasi", "link": "https://izack.dev"},
         "year": 2025,
         "technologies": [{
             "name": "JavaScript",
@@ -99,7 +100,10 @@
         "Provided a free and open-source alternative to ChatGPT, that can help people with coding problems."
         ],
         "image": "/frontend/src/assets/project_images/llm_icon.jpg",
-        "url": "https://github.com/izack8/codebot",
+        "url": {
+            "github": "https://github.com/izack8/codebot",
+            "link": "No link for this >.<"
+        },
         "year": 2023,
         "technologies": [{
             "name": "Python",
@@ -131,7 +135,10 @@
         "impact" :["Though the app did not go through production, it was defintely a great learning experience for me, trying to balance building an app + juggling other school work."],
         
         "image": "/frontend/src/assets/project_images/nanyang_marche.png",
-        "url": "https://github.com/izack8/nanyang_marche/blob/master/Nanyang_Marche_Report.pdf",
+        "url": {
+            "github": "https://github.com/izack8/nanyang_marche/blob/master/Nanyang_Marche_Report.pdf",
+            "link": "No link for this >.<"
+        },
         "year": 2023,
         "technologies": [{
             "name": "Flutter",
@@ -161,7 +168,10 @@
         "impact": ["Reduced the time taken to select modules, by automating the process.",
         "Helped NTU students select their modules faster and more efficiently."],
         "image": "/frontend/src/assets/project_images/apple_script.png",
-        "url": "",
+        "url": {
+            "github": "No link for this >.<",
+            "link": "No link for this >.<"
+        },
         "year": 2023,
         "technologies": [{
             "name": "AppleScript",

@@ -38,7 +38,7 @@ function ProjectsSection({ showAll = false }) {
   }, []);
 
 
-  const displayProjects = showAll ? projects : projects.slice(0, 3);
+  const displayProjects = showAll ? projects : projects.slice(0, 5);
 
   return (
     

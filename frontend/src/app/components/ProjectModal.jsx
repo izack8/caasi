@@ -79,16 +79,27 @@ function ProjectModal({ project, onClose }) {
                     </ul>
                   </div>
 
-                  <div className="mt-auto">
-                        <h4 className="text-sm uppercase text-white font-semibold">Github Link</h4>
+                  <div className="mt-auto flex flex-col">
+                        <h4 className="text-sm uppercase text-white font-semibold">Links</h4>
                         <a 
-                            href={project.url} 
+                            href={project.url.github} 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="text-gray-300 text-md hover:text-blue-400 transition-colors flex items-center gap-2 mt-2 group"
                         >
-                            <FaGithub className="w-4 h-4 group-hover:scale-110 transition-transform" />
                             <span>View Repository</span>
+                            <FaExternalLinkAlt className="w-3 h-3" />
+                            <FaGithub className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                        </a> 
+
+                        <a 
+                            href={project.url.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-gray-300 text-md hover:text-blue-400 transition-colors flex items-center gap-2 mt-2 group"
+                        >
+                            
+                            <span>View Live Site</span>
                             <FaExternalLinkAlt className="w-3 h-3" />
                         </a>
                     </div>
