@@ -1,4 +1,12 @@
 {
+  "2025-08-08-julip-mp3": {
+    "id": "2025-08-08-julip-mp3",
+    "date": "2025-08-08",
+    "title": "Julip MP3",
+    "description": "(Post coming soon) Musician that used CV to mix music.",
+    "md_file": "2025-08-08-julip-mp3.md"
+  },
+
   "2025-08-06-mnist-handwriting-digit": {
     "id": "2025-08-06-mnist-handwriting-digit",
     "date": "2025-08-06",
