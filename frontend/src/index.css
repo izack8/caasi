@@ -14,7 +14,4 @@ body::before {
     background-position: left center;
     background-repeat: no-repeat;
     z-index: -12;
-    /* Ensures the background stays behind all content */
-
-    overflow: overlay;
 }
