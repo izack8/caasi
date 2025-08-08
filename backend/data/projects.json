@@ -102,7 +102,7 @@
         "image": "/frontend/src/assets/project_images/llm_icon.jpg",
         "url": {
             "github": "https://github.com/izack8/codebot",
-            "link": "No link for this >.<"
+            "link": ""
         },
         "year": 2023,
         "technologies": [{
@@ -137,7 +137,7 @@
         "image": "/frontend/src/assets/project_images/nanyang_marche.png",
         "url": {
             "github": "https://github.com/izack8/nanyang_marche/blob/master/Nanyang_Marche_Report.pdf",
-            "link": "No link for this >.<"
+            "link": ""
         },
         "year": 2023,
         "technologies": [{
@@ -170,7 +170,7 @@
         "image": "/frontend/src/assets/project_images/apple_script.png",
         "url": {
             "github": "No link for this >.<",
-            "link": "No link for this >.<"
+            "link": ""
         },
         "year": 2023,
         "technologies": [{

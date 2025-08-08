@@ -65,14 +65,20 @@ function ProjectsSection({ showAll = false }) {
           <div className="mb-3">
            <ProjectTechStack technologies={project.technologies} />
            </div>
-
             <Button 
               onClick={() => setSelectedProject(project)}
-              className="w-full rounded-md transition-colors"
+              className="w-full rounded-md transition-colors mb-2"
               variant="default"
             >
               View More
             </Button>
+            
+           {project.url?.link && project.url.link !== "" && (
+            <Button className='w-full rounded-md transition-colors' variant='default'>
+              <a href={project.url.link} target="_blank" rel="noopener noreferrer">
+              View Live Site
+              </a>
+              </Button>)}
           </div>
         ))}
       
