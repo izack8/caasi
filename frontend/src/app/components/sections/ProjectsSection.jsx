@@ -67,14 +67,14 @@ function ProjectsSection({ showAll = false }) {
            </div>
             <Button 
               onClick={() => setSelectedProject(project)}
-              className="w-full rounded-md transition-colors mb-2"
+              className="w-full rounded-md transition-colors"
               variant="default"
             >
               View More
             </Button>
             
            {project.url?.link && project.url.link !== "" && (
-            <Button className='w-full rounded-md transition-colors' variant='default'>
+            <Button className='w-full rounded-md transition-colors mt-2' variant='default'>
               <a href={project.url.link} target="_blank" rel="noopener noreferrer">
               View Live Site
               </a>
