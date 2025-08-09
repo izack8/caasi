@@ -1,3 +1,5 @@
+import SparkleText from '../../components/animation/Sparkles';
+
 function Button({ 
     children, 
     onClick, 
@@ -15,7 +17,9 @@ function Button({
         active: 'bg-sky-600 text-white',
         primary: 'bg-blue-600 text-white hover:bg-blue-700',
         secondary: 'bg-gray-600 text-white hover:bg-gray-700',
-        danger: 'bg-red-600 text-white hover:bg-red-700'
+        danger: 'bg-red-600 text-white hover:bg-red-700',
+        sparkle: 'bg-purple-600 text-white hover:bg-purple-700',
+        live: 'bg-sky-600 text-white hover:bg-sky-700',
     };
     
     const sizes = {
@@ -29,6 +33,18 @@ function Button({
     const buttonClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${disabledClasses} ${className}`;
     
     return (
+        variant === 'sparkle' ? (
+            <SparkleText className={buttonClasses}>
+                <button
+                    onClick={onClick}
+                    disabled={disabled}
+                    className={buttonClasses}
+                    {...props}
+                >
+                    {children}
+                </button>
+            </SparkleText>
+        ) : (
         <button
             onClick={onClick}
             disabled={disabled}
@@ -37,7 +53,7 @@ function Button({
         >
             {children}
         </button>
-    );
+    ));
 }
 
 export default Button;

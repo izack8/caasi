@@ -6,6 +6,7 @@ import Button from '../ui/Button';
 import ProjectTechStack from '../../components/ProjectTechStack';
 import LoadingBar from '../../components/ui/LoadingBar';
 
+
 function ProjectsSection({ showAll = false }) {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -65,6 +66,7 @@ function ProjectsSection({ showAll = false }) {
           <div className="mb-3">
            <ProjectTechStack technologies={project.technologies} />
            </div>
+           <div className='flex flex-row gap-2'>
             <Button 
               onClick={() => setSelectedProject(project)}
               className="w-full rounded-md transition-colors"
@@ -74,11 +76,10 @@ function ProjectsSection({ showAll = false }) {
             </Button>
             
            {project.url?.link && project.url.link !== "" && (
-            <Button className='w-full rounded-md transition-colors mt-2' variant='default'>
-              <a href={project.url.link} target="_blank" rel="noopener noreferrer">
+            <Button className='w-full rounded-md transition-colors' variant='live' onClick={() => window.open(project.url.link, '_blank')}>
               View Live Site
-              </a>
               </Button>)}
+              </div>
           </div>
         ))}
       
