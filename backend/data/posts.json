@@ -1,45 +1,44 @@
-{
-  "2025-08-09-training-my-own-cv-model": {
-    "id": "2025-08-09-training-my-own-cv-model",
-    "date": "2025-08-09",
-    "title": "Training My Own CV Model",
-    "description": "(Post coming soon) Training a pre-trained computer vision model on a custom dataset.",
-    "md_file": "2025-08-09-training-my-own-cv-model.md"
-  },
-  "2025-08-08-julip-mp3": {
-    "id": "2025-08-08-julip-mp3",
-    "date": "2025-08-08",
-    "title": "julip.mp3",
-    "description": "(Post coming soon) Software Engineer Musician, who used CV to mix + produce music.",
-    "md_file": "2025-08-08-julip-mp3.md"
-  },
-
-  "2025-08-06-mnist-handwritten-digit": {
-    "id": "2025-08-06-mnist-handwritten-digit",
-    "date": "2025-08-06",
-    "title": "MNIST Handwritten Digit Recognition",
-    "description": "(Post coming soon) Exploring the MNIST dataset and building a handwritten digit recognition model.",
-    "md_file": "2025-08-06-mnist-handwritten-digit.md"
-  },
-  "2025-08-04-how-to-build-a-portfolio-website": {
-    "id": "2025-08-04-how-to-build-a-portfolio-website",
-    "date": "2025-08-04",
-    "title": "How to Build a Portfolio Website",
-    "description": "My thought processes in building a portfolio website from scratch.",
-    "md_file": "2025-08-04-how-to-build-a-portfolio-website.md"
-  },
-  "2025-08-02-async-await": {
-    "id": "2025-08-02-async-await",
-    "date": "2025-08-02",
-    "title": "Understanding Async/Await",
-    "description": "A deep dive into async/await in JavaScript.",
-    "md_file": "2025-08-02-async-await.md"
-  },
-  "2025-08-02-my-first-post": {
-    "id": "2025-08-02-my-first-post",
-    "date": "2025-08-02",
-    "title": "My First Post",
-    "description": "My first post on my website.",
-    "md_file": "2025-08-02-my-first-post.md"
-  }
-}
+[
+    {
+        "id": "2025-08-09-training-my-own-cv-model",
+        "date": "2025-08-09",
+        "title": "Training My Own CV Model",
+        "description": "(Post coming soon) Training a pre-trained computer vision model on a custom dataset.",
+        "md_file": "2025-08-09-training-my-own-cv-model.md"
+    },
+    {
+        "id": "2025-08-08-julip-mp3",
+        "date": "2025-08-08",
+        "title": "julip.mp3",
+        "description": "(Post coming soon) Software Engineer Musician, who used CV to mix + produce music.",
+        "md_file": "2025-08-08-julip-mp3.md"
+    },
+    {
+        "id": "2025-08-06-mnist-handwritten-digit",
+        "date": "2025-08-06",
+        "title": "MNIST Handwritten Digit Recognition",
+        "description": "(Post coming soon) Exploring the MNIST dataset and building a handwritten digit recognition model.",
+        "md_file": "2025-08-06-mnist-handwritten-digit.md"
+    },
+    {
+        "id": "2025-08-04-how-to-build-a-portfolio-website",
+        "date": "2025-08-04",
+        "title": "How to Build a Portfolio Website",
+        "description": "My thought processes in building a portfolio website from scratch.",
+        "md_file": "2025-08-04-how-to-build-a-portfolio-website.md"
+    },
+    {
+        "id": "2025-08-02-async-await",
+        "date": "2025-08-02",
+        "title": "Understanding Async/Await",
+        "description": "A deep dive into async/await in JavaScript.",
+        "md_file": "2025-08-02-async-await.md"
+    },
+    {
+        "id": "2025-08-02-my-first-post",
+        "date": "2025-08-02",
+        "title": "My First Post",
+        "description": "My first post on my website.",
+        "md_file": "2025-08-02-my-first-post.md"
+    }
+]

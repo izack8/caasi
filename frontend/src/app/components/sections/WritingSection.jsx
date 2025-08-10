@@ -56,11 +56,11 @@ function WritingSection() {
                 <p className="text-gray-600">No posts yet.</p>
                 </div>
             )}
-            {Object.entries(posts).map(([key, post]) => (
+            {posts.map((post, index) => (
                 <div
-                    key={key}
+                    key={index}
                     className="mb-5 rounded cursor-pointer group"
-                    onClick={() => navigate(`/writing/${key}`)}
+                    onClick={() => navigate(`/writing/${post.id}`)}
                 >
                   <div className="text-sm text-black-400">
                     {new Date(post.date).toLocaleDateString('en-US', { 
