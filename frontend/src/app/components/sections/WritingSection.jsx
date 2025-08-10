@@ -51,7 +51,7 @@ function WritingSection() {
         {loading && <LoadingBar />}
         {error && <div className="text-center text-red-500">API did not hit :(. Error: {error}</div>}
         <div className="w-full">
-            {!loading && Object.values(posts).length === 0 && (
+            {!loading && posts.length === 0 && (
                 <div className="text-center">
                 <p className="text-gray-600">No posts yet.</p>
                 </div>
