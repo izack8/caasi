@@ -27,7 +27,7 @@ function WritingSection() {
     } catch (error) {
       console.error('Error fetching posts:', error);
       setError(error.message);
-      setLoading(false);
+      setLoading(true);
     }
   };  
 
