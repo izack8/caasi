@@ -109,7 +109,7 @@ export const techCategories = {
 };
 
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? process.env.REACT_APP_API_BASE_URL
+  ? "https://caasi-production.up.railway.app/api"
   : "http://localhost:8000/api";
 
 export const API_ENDPOINTS = {
