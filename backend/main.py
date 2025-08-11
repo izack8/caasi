@@ -10,7 +10,7 @@ api_router.include_router(project_controller.router)
 api_router.include_router(experience_controller.router)
 
 @api_router.get("/health")
-async def health_check():
+def health_check():
     return {"status": "healthy", "message": "API is running"}
 
 app.include_router(api_router)
