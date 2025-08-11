@@ -1,8 +1,10 @@
 from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from src.controllers import post_controller, project_controller, experience_controller
+from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 app = FastAPI()
+app.add_middleware(HTTPSRedirectMiddleware)
 
 api_router = APIRouter(prefix="/api")
 api_router.include_router(post_controller.router)
