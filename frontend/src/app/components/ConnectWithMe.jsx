@@ -2,9 +2,9 @@ import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
 
 function ConnectWithMe() {
     return (
-        <div className="flex flex-col w-full mt-8 lg:mt-5">
+        <div className="flex flex-col w-full mt-8 lg:mt-5 items-center lg:items-start">
             
-            <div className="flex items-center text-slate-500 gap-4 justify-center">
+            <div className="flex text-slate-500 gap-4">
                 <a 
                     href="https://github.com/izack8" 
                     target="_blank" 

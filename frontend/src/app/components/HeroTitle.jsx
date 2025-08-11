@@ -1,7 +1,7 @@
 function HeroTitle() {
     return(
         <div className="flex flex-col w-full justify-center text-center lg:justify-start lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-thin mb-4">👋Hi! My name is</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-light mb-4">👋Hi! My name is</h1>
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl mb-4"><b>Isaac👨‍💻.</b></h1>
         </div>
     )

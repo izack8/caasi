@@ -1,5 +1,31 @@
 [
     {
+        "title": "Lyrics by Gesture Recognition",
+        "description" : "Using Google's MediaPipe to recognize hand gestures, and using them to control the lyrics of a song.",
+        "www":{
+            "what":"A web app that allows users to control the lyrics of a song using hand gestures.",
+            "why":"I saw this video of a musician (julip.mp3) using hand gestures to control the lyrics of a song, which I thought was the coolest thing ever. So I wanted to build it myself, whilst also learning how to use MediaPipe for gesture recognition. Just for entertainment purposes.",
+            "who":"Anyone who wants to interact with music in a new way. Maybe even the deaf community, so they could feel the music through the gestures."
+        },
+        "what_i_learnt": [
+            "How to use MediaPipe. Luckily for me, there was a lot of documentation, and an .ipynb that faciliated the training of the model. So all I had to do was write a python script to take some images of my hand gestures, and then train the model on it.",
+            "How to map the gestures to the lyrics of a song. Also how to use OpenCV to capture video feed, then process the frames, then display the lyrics on the screen."
+        ],
+        "impact" :["Not a very big impact I'd say. It's just for fun + I think it's a really cool thing to build. I might include other songs in the future, then build a simple app around it."
+        ],
+        "image": "/frontend/src/assets/project_images/my_website.jpg",
+        "url": {"github": "https://github.com/izack8/HandTrackCam",
+                "live": ""},
+        "year": 2025,
+        "technologies": [{
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },  {
+            "name": "MediaPipe",
+            "icon": ""
+        }]
+    },
+    {
         "title": "MNIST Handwritten Digit Recognition App",
         "description" : "Building a simple Neural Network to recognize handwritten digits from the MNIST dataset using PyTorch. Deployed the model, then built a simple web app to interact with the model.",
         "www":{
