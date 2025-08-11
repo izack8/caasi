@@ -1,7 +1,8 @@
 # Project specific
 /media 
-/experimental/
+/bexperimental/
 src/fetch_telegram.py
+__pycache__/
 
 # Environment variables
 .env

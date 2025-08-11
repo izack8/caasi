@@ -1,4 +1,4 @@
-from ..mongo_db import db, serialize_document
+from ..mongo_db import db
 
 def get_projects():
     projects = list(db['projects'].find({}, {"_id": 0}))

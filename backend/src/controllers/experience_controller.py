@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from ..services.experience_service import get_experiences
 
 router = APIRouter(prefix="/experiences", tags=["Experience"])

@@ -1,4 +1,4 @@
-from ..mongo_db import db, serialize_document
+from ..mongo_db import db
 
 def get_posts():
     posts = list(db['posts'].find({}, {"_id": 0}))

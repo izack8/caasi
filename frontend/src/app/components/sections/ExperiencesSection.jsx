@@ -17,17 +17,17 @@ function ExperiencesSection() {
       console.log("Fetched experiences:", data);
       setExperiences(data);
       setLoading(false);
-      localStorage.setItem('cachedExperiences', JSON.stringify(data));
+      sessionStorage.setItem('cachedExperiences', JSON.stringify(data));
     } catch (error) {
       console.error('Error fetching experiences:', error);
       setError(error.message);
-      setLoading(false); 
+      setLoading(true); 
     }
   };
 
 
   useEffect(() => {
-    const cachedExperiences = localStorage.getItem('cachedExperiences');
+    const cachedExperiences = sessionStorage.getItem('cachedExperiences');
     if (cachedExperiences) {
       setExperiences(JSON.parse(cachedExperiences));
       setLoading(false);

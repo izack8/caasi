@@ -24,7 +24,7 @@ function ProjectsSection({ showAll = false }) {
     } catch (error) {
       console.error('Error fetching projects:', error);
       setError(error.message);
-      setLoading(false);
+      setLoading(true);
     }
   };
 
@@ -46,7 +46,6 @@ function ProjectsSection({ showAll = false }) {
     <section className="projects-section w-full flex flex-wrap">
       <SectionLabel label="My Projects" />
       {loading && <LoadingBar />}
-      {error && <div className="text-center text-red-500">API did not hit :(. Error: {error}</div>}
       {displayProjects.length === 0 && !loading && (
         <div className="text-center">No projects found</div>
       )}
