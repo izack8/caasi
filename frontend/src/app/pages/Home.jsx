@@ -34,10 +34,10 @@ function Home() {
   return (
     <>
       <Glow />
-      <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 md:py-16 lg:py-0">
-        <section className="w-full flex flex-wrap lg:flex-nowrap ">
+      <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 lg:py-0 lg:px-0">
+        <section className="w-full flex flex-wrap lg:flex-nowrap lg:gap-x-6">
           {/* Left side - sticky header that never moves */}
-          <header className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[45%] pt-20 sm:pt-32 lg:py-24 lg:pr-15 flex flex-col lg:justify-between">
+          <header className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[45%] pt-20 sm:pt-32 lg:py-24 flex flex-col lg:justify-between">
             <div>
               <HeroTitle />
               <ShortDesc />
