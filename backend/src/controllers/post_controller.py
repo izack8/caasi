@@ -3,7 +3,7 @@ from ..services.post_service import get_posts, get_post_by_id
 
 router = APIRouter(prefix="/posts", tags=["Post"])
 
-@router.get("/")
+@router.get("")
 def fetch_posts():
     return get_posts()
 
