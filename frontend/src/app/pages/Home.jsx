@@ -6,13 +6,14 @@ import WritingSection from '../components/sections/WritingSection';
 import HeroTitle from '../components/HeroTitle';
 import ShortDesc from '../components/ShortDesc';
 import TechStack from '../components/TechStack';
+import TechStackSection from '../components/sections/TechStackSection';
 import ConnectWithMe from '../components/ConnectWithMe';
 import Tabs from '../components/Tabs';
 import Footer from '../components/ui/Footer';
 import Glow from '../components/ui/Glow';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
-import { useLocation } from 'react-router-dom';
+
 
 function Home() {
 
@@ -36,21 +37,29 @@ function Home() {
       <Glow />
       <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 lg:py-0">
         <section className="w-full flex flex-wrap lg:flex-nowrap lg:gap-x-6">
-          {/* Left side - sticky header that never moves */}
-          <header className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[45%] pt-20 sm:pt-32 lg:py-24 flex flex-col lg:justify-between">
-            <div>
+        <AnimatePresence mode="wait">
+          <motion.header
+            key="header"
+            initial={{ opacity: 0, x: 0 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            exit={{ opacity: 0, x: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }} 
+            className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] pt-20 sm:pt-32 lg:py-24 flex flex-col lg:justify-between"
+          >
+            <div className="h-full">
               <HeroTitle />
               <ShortDesc />
-              <TechStack />
+              {/* <TechStack /> */}
               <ConnectWithMe />
             </div>
             <div className="hidden lg:block">
               <Footer />
             </div>
-          </header>
+          </motion.header>
+        </AnimatePresence>
           
            {/* Right side - main content */}
-          <main className="w-full lg:w-[55%] pt-20 lg:py-26 sm:py-16 text-slate-350 text-sm xl:text-base flex flex-col lg:flex-wrap lg:block">
+          <main className="w-full lg:w-[60%] pt-20 lg:py-15 sm:py-16 text-slate-350 text-sm xl:text-base flex flex-col lg:flex-wrap lg:block">
             <div className="relative">
               <div className="absolute top-0 left-0 w-full z-10 pb-4 pointer-events-auto" >
                 <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
@@ -68,6 +77,7 @@ function Home() {
                       <AboutSection />
                       <ExperiencesSection />
                       <ProjectsSection />
+                      <TechStackSection />
                       <JourneySection />
                     </motion.div>
                   )}

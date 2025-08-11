@@ -38,7 +38,7 @@ function ProjectModal({ project, onClose }) {
   return (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center p-4 min-h-screen min-w-screen text-slate-600">
       <div className="bg-neutral-200 rounded-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto">
-        {/* Header */}
+        
         <div className="flex p-6 bg-neutral-200 border-b border-slate-700 w-full sticky top-0">
           <div className="flex gap-3 items-center w-[90%]">
             <h2 className="text-2xl font-bold">{project.title}</h2>
@@ -51,16 +51,11 @@ function ProjectModal({ project, onClose }) {
           </button>
         </div>
 
-        {/* Content */}
-        <div className="p-6 w-full">
-          {/* <div className="p-2 mb-4">
-            <Slider />
-          </div> */}
-
-            <div className="grid lg:grid-cols-2 gap-5">
-               <div className="bg-gray-600 p-7 rounded-lg h-full flex flex-col">
-
-                
+        
+        <div className="content p-6 w-full">
+      
+            <div className="grid lg:grid-cols-2 gap-5 h-full">
+               <div className="bg-gray-600 p-7 rounded-lg h-full flex flex-col max-h-[70vh] overflow-y-auto">
 
                   {Object.keys(project.www || {}).map((key) => (
                     <div key={key} className="mb-4">
@@ -108,9 +103,7 @@ function ProjectModal({ project, onClose }) {
 
               </div>
 
-              
-
-               <div className="bg-gray-600 p-4 rounded-lg h-full flex flex-col p-7">
+               <div className="bg-gray-600 p-4 rounded-lg h-full flex flex-col p-7 max-h-[70vh] overflow-y-auto">
                 <div className="flex-1 mb-4">
                     <h4 className="text-sm uppercase text-white font-semibold">What I Learnt</h4>
                     <ul>
