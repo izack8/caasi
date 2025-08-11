@@ -4,7 +4,6 @@ from src.controllers import post_controller, project_controller, experience_cont
 from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 app = FastAPI()
-app.add_middleware(HTTPSRedirectMiddleware)
 
 api_router = APIRouter(prefix="/api")
 api_router.include_router(post_controller.router)

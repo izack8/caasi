@@ -1,21 +1,12 @@
 import os 
 from dotenv import load_dotenv
-from pymongo.mongo_client import MongoClient
-from pymongo.server_api import ServerApi
-from src.config import MONGODB_URI
-
+from pymongo import MongoClient
 
 load_dotenv()
 
-client = MongoClient(MONGODB_URI, server_api=ServerApi('1'))
+client = MongoClient(os.getenv("MONGODB_URI", "mongodb://localhost:27017/"))
 client.server_info() 
-try:
-    client.admin.command('ping')
-    db = client.get_database("website_data")
-    print("MongoDB connection successful")
-except Exception as e:
-    print(f"MongoDB connection failed: {e}")
-
+db = client.get_database("website_data")
 
 def serialize_document(document):
     """Convert MongoDB document to JSON-serializable format."""
