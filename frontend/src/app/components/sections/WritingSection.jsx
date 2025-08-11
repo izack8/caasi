@@ -19,7 +19,6 @@ function WritingSection() {
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
-
       const data = await res.json();
       data.sort((a, b) => new Date(b.date) - new Date(a.date));
       setPosts(data);
@@ -49,7 +48,7 @@ function WritingSection() {
     <section className="writing-section">
       <SectionLabel label="My Writing" />
         {loading && <LoadingBar />}
-        {error && <div className="text-center text-red-500">API did not hit :(. Error: {error}</div>}
+        {error && console.error('Error fetching posts:', error)}
         <div className="w-full">
             {!loading && posts.length === 0 && (
                 <div className="text-center">
