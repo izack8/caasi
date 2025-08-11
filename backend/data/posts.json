@@ -1,5 +1,12 @@
 [
     {
+        "id": "2025-08-11-finally-using-a-db",
+        "date": "2025-08-11",
+        "title": "Finally Using a Database",
+        "description": "(Post coming soon) Journey in integrating a database into my application.",
+        "md_file": "2025-08-11-finally-using-a-db.md"
+    },
+    {
         "id": "2025-08-09-training-my-own-cv-model",
         "date": "2025-08-09",
         "title": "Training My Own CV Model",

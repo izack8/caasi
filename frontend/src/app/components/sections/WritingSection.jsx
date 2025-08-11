@@ -21,7 +21,7 @@ function WritingSection() {
       }
 
       const data = await res.json();
-      console.log("Fetched posts:", data);
+      data.sort((a, b) => new Date(b.date) - new Date(a.date));
       setPosts(data);
       setLoading(false);
       sessionStorage.setItem('cachedPosts', JSON.stringify(data));

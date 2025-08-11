@@ -48,7 +48,7 @@ function ExperiencesSection() {
           {experience.duration}
         </div>
         <div className='desc h-full lg:w-5/7 text-justify'>
-          <h2 className='text-[20px] font-bold group-hover:text-blue-500 transition-all duration-300'>{experience.title}</h2>
+          <h2 className='text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300'>{experience.title}</h2>
           <h3 className='text-md text-gray-700'>{experience.location}</h3>
           <h3 className='text-md text-rose-500'><a href={experience.link}>{experience.company}</a></h3>
           <p dangerouslySetInnerHTML={{ __html: experience.description }} />

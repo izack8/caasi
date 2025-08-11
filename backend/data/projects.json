@@ -34,6 +34,10 @@
         }, {
             "name": "Tailwind CSS",
             "icon": "/icons/Tailwind_CSS_Logo.png"
+        },
+     {
+            "name": "Torch",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
         }]
     },{
         "title": "Portfolio Website",
