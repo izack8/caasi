@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
 import LoadingBar from '../../components/ui/LoadingBar';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 
 function ExperiencesSection() {
@@ -44,16 +45,21 @@ function ExperiencesSection() {
       {!loading && experiences.length === 0 && <div className="text-center">No experiences found</div>}
       {experiences.map((experience, index) => (
         <div key={index} className='experience mb-10 lg:flex lg:flex-wrap items-start duration-300 transition-all duration-300 group relative'>
-          <div className='year font-bold text-sm lg:h-full lg:w-2/7 text-black-400 mt-1.5'>
+          <div className='year font-bold text-sm lg:w-2/7 text-black-400'>
           {experience.duration}
         </div>
         <div className='desc h-full lg:w-5/7 text-justify'>
           <h2 className='text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300'>{experience.title}</h2>
           <h3 className='text-md text-gray-700'>{experience.location}</h3>
-          <h3 className='text-md text-rose-500'><a href={experience.link}>{experience.company}</a></h3>
-          <p dangerouslySetInnerHTML={{ __html: experience.description }} />
+          <h3 className="text-md text-rose-500 w-full flex items-center gap-1">
+          <a href={experience.link} target="_blank" rel="noopener noreferrer">
+          {experience.company}
+          </a>
+          <FaExternalLinkAlt className="w-3 h-3" />
+          </h3>
+          <p className="text-sm" dangerouslySetInnerHTML={{ __html: experience.description }} />
         </div>
-        </div>
+      </div>
       ))}
     </section>
   );

@@ -8,7 +8,7 @@ export default function Glow() {
       const x = e.clientX
       const y = e.clientY
       if (ref.current) {
-        ref.current.style.background = `radial-gradient(600px at ${x}px ${y}px, rgba(255, 255, 255, 0.67), transparent 80%)`
+        ref.current.style.background = `radial-gradient(400px at ${x}px ${y}px, rgba(244, 236, 236, 0.9), transparent 50%)`
       }
     }
 

@@ -3,7 +3,7 @@ import SectionLabel from '../ui/SectionLabel';
 function JourneySection() {
     return (
         <section className="journey-section">
-            <SectionLabel label="My Journey" />
+            <SectionLabel label="Journey" />
             <p className='text-justify mb-3'>
                 My journey in software development started when I was in Polytechnic, where I learned how to build mobile applications. Following that, I pursued a degree in Electrical Enginnering in University, because I wanted to learn more about how hardware and software interacts with each other (she's got the beeeeest, of both worldssssss).
             </p>

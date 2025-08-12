@@ -50,7 +50,9 @@ function Home() {
               <HeroTitle />
               <ShortDesc />
               {/* <TechStack /> */}
+              <div className="">
               <ConnectWithMe />
+              </div>
             </div>
             <div className="hidden lg:block">
               <Footer />

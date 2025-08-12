@@ -17,6 +17,7 @@ function ProjectsSection({ showAll = false }) {
     try {
       const res = await fetch(API_ENDPOINTS.projects);
       const data = await res.json();
+      data.sort((a, b) => new Date(b.year) - new Date(a.year)); 
       console.log("Fetched projects:", data);
       setProjects(data);
       setLoading(false);
@@ -39,12 +40,12 @@ function ProjectsSection({ showAll = false }) {
   }, []);
 
 
-  const displayProjects = showAll ? projects : projects.slice(0, 5);
+  const displayProjects = showAll ? projects : projects.slice(0, 10);
 
   return (
     
     <section className="projects-section w-full flex flex-wrap">
-      <SectionLabel label="My Projects" />
+      <SectionLabel label="Projects" />
       {loading && <LoadingBar />}
       {displayProjects.length === 0 && !loading && (
         <div className="text-center">No projects found</div>
@@ -55,10 +56,10 @@ function ProjectsSection({ showAll = false }) {
             <h2 className="text-blue-900 text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300">
               {project.title}
               </h2>
-              {/* <h3 className="font-bold">Year: {project.year}</h3> */}
+              <h3 className="font-semibold">{project.year}</h3>
             </div>
             
-            <p className="text-slate-350 justify-items-left mb-3">
+            <p className="text-slate-350 justify-items-left mb-3 text-sm">
               {project.description}
             </p>
 
