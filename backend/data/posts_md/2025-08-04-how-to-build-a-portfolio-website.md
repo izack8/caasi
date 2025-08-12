@@ -50,17 +50,28 @@ It is every beginner’s rite-of-passage, to ask the age-old question.
 
 And fortunately for us, there is! Now if you are a newbie to webdev like me, you probably would have started with HTML and CSS for web design. *Ain't it an absolute **pain** to write its' code?*
 
-Writing HTML and CSS *was* starting to get tedious and 
+Writing HTML and CSS *was* starting to get tedious and repetitive. Not to mention, it was not very intuitive (to me). Introducing, 
+[**Tailwind CSS**](https://tailwindcss.com/), a utility-first CSS framework that allows you to write your styles in a more intuitive way. HEHE. Absoute game-changer. CSS file? WhAT CSS FILE? All I need is a few lines of code in my HTML, and I can style it however I want.
 
-This moment is pivotal, as it made me understand why people used React, or other libraries to make their lives easier. It suddenly became clear that these are not “scary” and “intimidating” tools used to confuse me. Rather, tools that brilliant people came up with to make their lives easier, and kindly shared it with the rest of the digital world. 
+Going back to my point on starting with the basics, this was exactly why this step was so important. Somebody already shares the same frustrations as you, and they have already come up with a solution to it. I am just lucky enough to be able to use it. 
+
+Discovering this moment was pivotal, as it made me understand why people used React, or other libraries to make their lives easier. It suddenly became clear that these are not “scary” and “intimidating” tools used to confuse me. Rather, tools that brilliant people came up with to make their lives easier, and kindly shared it with the rest of the digital world. Some day, I hope to be able to do the same for others, and I believe you can too!
 
 # Obsess over your creation
-(coming soon)
+I know I keep saying that each point is important, and I would want to say that this point is the most important, but... I mean it's not really? But like still important, iykyk. Anyways, my point is, when you start obsessing over your creation, you unknowingly start exploring the nooks and crannies of your website. You discover bugs, weird behavior, things you would want to implement (which I'll be mentioning more later). This does **not** mean frustration, but an opportunity for you to **learn** from those mistakes, which is very important (omg I gotta stop saying important).
+
+Similarly to my previous points, you gradually gravitate towards a coding pattern/design that's optimal for your usecase. You now understand why there are standard conventions. They are not hard and fast rules! They are just **easier** that way.  
+
+For example, I realized that I do not want to keep hitting APIs, as it was getting costly (for my free tier subscription). Solution? I realized I can store the fetched data in the browser, so each refresh would not instantiate an API request -> saved cost. I also learnt that is actually the **cache**! 
 
 # Discover some things you would like to add
-(coming soon)
+As I am finishing the project, the previous playing around gave me multiple ideas of what I could add to my website. I had the idea of a **guestbook**, where anyone who visits can say hi and leave their mark. I also had this idea of doing a writing section, to capture my thought processes as coherently as possible (though I tend to lean towards being overtly casual).
 
+So here you are reading this (wow, all the way here!??!?!), all because I wanted a section to document my process. 
 
-“oh, i realized i dont want to always hit the api cause it’s costing me $. can i just store it in browser? yes! that’s actually the cache!” 
+As I am coding this up, I also thought of integrating a database (maybe MongoDB), as I want to be able to change my data without affecting CI/CD and rebuilding. 
 
-you dont just become an expert because of. it’s through frustration, and doing it repeatedly, where your brain’s neurons can activated over and over again, until it. just. makes. sense.
+# Final thoughts
+Yay! Thanks for reading all the way through! Though I can tell you about a million things on how to build a website, I want to re-emphasize, that you should **want** to build this, and it should feel **fun** (for the most part). Because oh boy-, the amount of frustrations I had because I felt **stuck**.
+
+BUT, it's important to remember that you dont just become an expert overnight! It’s through frustrations, doing it repeatedly, failing, trying again, where your brain’s neurons can activated over and over again, until it. just. makes. sense. So don't give up! Live through your frustrations, and happy coding!
