@@ -16,6 +16,12 @@ function ExperiencesSection() {
       const res = await fetch(API_ENDPOINTS.experiences);
       const data = await res.json();
       console.log("Fetched experiences:", data);
+      // sort data by date, but first get the first 7 index of duration string
+      data.sort((a, b) => {
+        const aDate = new Date(a.duration.slice(0, 8));
+        const bDate = new Date(b.duration.slice(0, 8));
+        return bDate - aDate;
+      });
       setExperiences(data);
       setLoading(false);
       sessionStorage.setItem('cachedExperiences', JSON.stringify(data));

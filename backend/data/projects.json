@@ -1,5 +1,38 @@
 [
     {
+        "title": "Ask Your PDF",
+        "description" : "A web app that allows users to interact with their PDF documents using natural language.",
+        "www":{
+            "what":"A web app that allows users to upload, and interact with their PDF documents using natural language. (For rate limiting purposes, I have removed the live site. It will be up once I can figure out how to implement fair use.",
+            "why":"Following my intern experience at Hummingbird Bioscience, I saw the need for people to access information as quickly as possible. Instead of reading through PDFs, it will be faster if it was summarized by LLMs. Even better when you can query it yourself.",
+            "who":"Anyone who works with PDF documents and wants to find information more easily within them. This could be useful for students, researchers, and professionals alike."
+        },
+        "what_i_learnt": [
+            "Cause I learnt some of the skills during intern, I was able to implement the PDF summarization feature quickly (looking back at old code).",
+            "I'd say something new I implemented was the separation of concerns. Each component now has a clear responsibility, making the pipeline easier to see and change accordingly. For e.g. if I wanted to use a different LLM or Embedding model, I can just change it in the config."
+        ],
+        "impact" :["I haven't measured the impace"
+        ],
+        "image": "/frontend/src/assets/project_images/my_website.jpg",
+        "url": {"github": "https://github.com/izack8/Ask-Your-PDF",
+                "live": ""},
+        "year": 2025,
+        "technologies":
+        [{
+            "name": "Python",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },  
+        {
+            "name": "LangChain/LangGraph",
+            "icon": "/icons/langchain-color.svg"
+        },
+        {   
+            "name":"Streamlit",
+            "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg"
+        }
+    ]
+    },
+    {
         "title": "Lyrics by Gesture Recognition",
         "description" : "Using Google's MediaPipe to recognize hand gestures, and using them to control the lyrics of a song.",
         "www":{
