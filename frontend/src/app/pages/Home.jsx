@@ -36,7 +36,7 @@ function Home() {
     <>
       <Glow />
       <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 lg:py-0">
-        <section className="w-full flex flex-wrap lg:flex-nowrap lg:gap-x-6">
+        <div className="w-full flex flex-wrap lg:flex-nowrap lg:gap-x-6">
         <AnimatePresence mode="wait">
           <motion.header
             key="header"
@@ -101,7 +101,15 @@ function Home() {
               <Footer />
             </div>
           </main>
-        </section>
+        </div>
+
+        <div className="w-full h-[700px] bg-slate-200 my-10">
+        <iframe
+          src="https://ask-your-pdf-production.up.railway.app?embed=true"
+          title="Ask Your PDF App"
+          className="w-full h-full"
+        ></iframe>
+      </div>
       </main>
     </>
   );
