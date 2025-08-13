@@ -16,12 +16,24 @@ function ExperiencesSection() {
       const res = await fetch(API_ENDPOINTS.experiences);
       const data = await res.json();
       console.log("Fetched experiences:", data);
-      // sort data by date, but first get the first 7 index of duration string
-      data.sort((a, b) => {
-        const aDate = new Date(a.duration.slice(0, 8));
-        const bDate = new Date(b.duration.slice(0, 8));
-        return bDate - aDate;
-      });
+      // Sort data by start date (need to do it like this because Safari lol)
+    data.sort((a, b) => {
+      const parseDate = (duration) => {
+        const startDateStr = duration.split(' - ')[0].trim();
+        const [month, year] = startDateStr.split(' '); 
+        const monthMap = {
+          Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+          Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11,
+        };
+
+        return new Date(year, monthMap[month]);
+      };
+
+      const aDate = parseDate(a.duration);
+      const bDate = parseDate(b.duration);
+
+      return bDate - aDate; // Sort by most recent first
+    });
       setExperiences(data);
       setLoading(false);
       sessionStorage.setItem('cachedExperiences', JSON.stringify(data));
