@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { API_ENDPOINTS } from "../../config";
 import { data, useNavigate } from "react-router-dom";
 import LoadingBar from '../../components/ui/LoadingBar';
+import Button from "../ui/Button";
 
 function WritingSection() {
   
@@ -10,6 +11,7 @@ function WritingSection() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [activeTag, setActiveTag] = useState("All");
   const navigate = useNavigate();
 
   const fetchPosts = async () => {
@@ -31,8 +33,6 @@ function WritingSection() {
     }
   };  
 
-  
-
   useEffect(() => {
     const cachedPosts = sessionStorage.getItem('cachedPosts');
 
@@ -44,18 +44,49 @@ function WritingSection() {
     }
   }, []);
 
+  const uniqueTags = ["All", ...new Set(posts.flatMap((post) => post.type))];
+
+  const filteredPosts = activeTag === "All" 
+    ? posts 
+    : posts.filter((post) => post.type === activeTag);
+
+  const handleTagChange = (newTag) => {
+    if (newTag === activeTag) return;
+    setActiveTag(newTag);
+    sessionStorage.setItem('activeTag', newTag);
+  };
+  useEffect(() => {
+    const savedTag = sessionStorage.getItem('activeTag');
+    if (savedTag) {
+      setActiveTag(savedTag);
+    }
+  }, []);
+
   return (
     <section className="writing-section">
       <SectionLabel label="My Writing" />
         {loading && <LoadingBar />}
         {error && console.error('Error fetching posts:', error)}
+        <div className="flex gap-2 mb-6">
+          {uniqueTags.map((tag, index) => (
+            <Button
+              key={index}
+              variant={activeTag === tag ? "active" : "ghost"}
+              onClick={() => { setActiveTag(tag); handleTagChange(tag); }}
+            size="md"
+            className=""
+          >
+            {tag}
+          </Button>
+        ))}
+        </div>
         <div className="w-full">
-            {!loading && posts.length === 0 && (
+            {!loading && filteredPosts.length === 0 && (
                 <div className="text-center">
                 <p className="text-gray-600">No posts yet.</p>
                 </div>
             )}
-            {posts.map((post, index) => (
+            {filteredPosts.map((post, index) => (
                 <div
                     key={index}
                     className="mb-5 rounded cursor-pointer group"

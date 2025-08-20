@@ -7,7 +7,7 @@ export default function SectionLabel({ label, className, onClick, style }) {
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
     >
-      <h2 className="text-black-100 text-md font-bold uppercase tracking-[0.09em] group-hover:text-rose-600 transition-all duration-300">
+      <h2 className="text-black-100 text-md font-bold uppercase tracking-[0.09em] group-hover:text-rose-500 transition-all duration-300">
         {label}
       </h2>
       <div className="flex justify-start lg:justify-start">

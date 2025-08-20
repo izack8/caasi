@@ -47,11 +47,13 @@ function ExperiencesSection() {
     
     <section className="experiences-section w-full flex flex-wrap">
       <SectionLabel label="Experiences" />
+
       {loading && <LoadingBar />}
+
       {!loading && experiences.length === 0 && <div className="text-center">No experiences found</div>}
       {experiences.map((experience, index) => (
         <div key={index} className='experience mb-10 lg:flex lg:flex-wrap items-start duration-300 transition-all duration-300 group relative'>
-          <div className='year font-bold text-sm lg:w-2/7 text-black-400'>
+          <div className='year font-bold mt-1 text-[13.5px] lg:w-2/7 text-black-400'>
           {experience.duration}
         </div>
         <div className='desc h-full lg:w-5/7 text-justify'>

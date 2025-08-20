@@ -5,7 +5,6 @@ import ExperiencesSection from '../components/sections/ExperiencesSection';
 import WritingSection from '../components/sections/WritingSection';
 import HeroTitle from '../components/HeroTitle';
 import ShortDesc from '../components/ShortDesc';
-import TechStack from '../components/TechStack';
 import TechStackSection from '../components/sections/TechStackSection';
 import ConnectWithMe from '../components/ConnectWithMe';
 import Tabs from '../components/Tabs';
