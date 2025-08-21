@@ -4,6 +4,7 @@ import { API_ENDPOINTS } from "../../config";
 import { data, useNavigate } from "react-router-dom";
 import LoadingBar from '../../components/ui/LoadingBar';
 import Button from "../ui/Button";
+import { AnimatePresence, motion } from "framer-motion";
 
 function WritingSection() {
   
@@ -80,32 +81,49 @@ function WritingSection() {
           </Button>
         ))}
         </div>
+        
+          
         <div className="w-full">
             {!loading && filteredPosts.length === 0 && (
+              
                 <div className="text-center">
                 <p className="text-gray-600">No posts yet.</p>
                 </div>
             )}
+              
+              
+              <AnimatePresence mode="wait">  
+              <motion.div key={activeTag}>
             {filteredPosts.map((post, index) => (
-                <div
-                    key={index}
-                    className="mb-5 rounded cursor-pointer group"
-                    onClick={() => navigate(`/writing/${post.id}`)}
-                >
-                  <div className="text-sm text-black-400">
-                    {new Date(post.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}
-                  </div>
-                    <h2 className="text-xl font-bold group-hover:text-blue-800 transition-colors duration-200">{post.title}</h2>
-                    <div className="text-md text-gray-600">
-                      {post.description}
-                    </div>
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="mb-5 rounded cursor-pointer group"
+                onClick={() => navigate(`/writing/${post.id}`)}
+              >
+                <div className="text-sm text-black-400">
+                  {new Date(post.date).toLocaleDateString('en-US', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                  })}
                 </div>
-                ))}
+                  <h2 className="text-xl font-bold group-hover:text-blue-800 transition-colors duration-200">{post.title}</h2>
+                  <div className="text-md text-gray-600">
+                    {post.description}
+                  </div>
+                </motion.div>
+                
+              ))}
+              </motion.div>
+             
+              </AnimatePresence>
         </div>
+        
+        
     </section>
   );
 }

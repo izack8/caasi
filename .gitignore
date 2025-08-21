@@ -1,6 +1,6 @@
 # Project specific
 /media 
-/bexperimental/
+/experimental/
 src/fetch_telegram.py
 __pycache__/
 
