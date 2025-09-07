@@ -3,7 +3,7 @@ function ShortDesc() {
         <div className="flex items-center w-full">
             <br></br>
             <p className='font-light sm:text-xl flex items-center w-full justify-center lg:justify-start'>
-                I love &nbsp; <del>Taylor Swift</del>&nbsp; building stuff.
+                I love building stuff.
             </p>
         </div>
     )
