@@ -18,8 +18,6 @@ With `await`, you let the program **do other things while waiting**, like handli
 ### Example (with `asyncio.sleep`):
 
 ```python
-python
-CopyEdit
 import asyncio
 
 async def say_after(delay, message):
@@ -46,8 +44,6 @@ asyncio.run(main())
 ### Better example: Running two tasks concurrently
 
 ```python
-python
-CopyEdit
 async def main():
     task1 = asyncio.create_task(say_after(2, "Hello"))
     task2 = asyncio.create_task(say_after(2, "World"))
@@ -63,8 +59,7 @@ asyncio.run(main())
 
 **Output:**
 
-```
-sql
+```Code
 CopyEdit
 Start both tasks
 Hello

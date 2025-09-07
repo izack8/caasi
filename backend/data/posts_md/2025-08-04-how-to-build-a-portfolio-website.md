@@ -1,8 +1,7 @@
-<aside>
-💡
-*Headsup! If you’re looking for code/blueprints to get you started, you can checkout my GitHub page! This post serves more as a dump to share my thought processes, and what I’ve learnt.*
 
-</aside>
+💡
+# *Headsup! If you’re looking for code/blueprints to get you started, you can checkout my GitHub page! This post serves more as a dump to share my thought processes, and what I’ve learnt.*
+
 
 Hi friendos! It’s ya boy, Isaac, here to serve you hot, fresh, dumpster fire, which is what I would call my thought processes (it’s so hard to express one thought when I have like a gajillion of them whizzing around). 
 
