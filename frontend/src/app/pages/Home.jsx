@@ -94,6 +94,23 @@ function Home() {
                       <WritingSection />
                     </motion.div>
                   )}
+                  {activeTab === 'chat' && (
+                    <motion.div
+                      key="chat"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1}}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
+                       <div className="w-full h-[500px] bg-slate-200 my-10">
+                      <iframe
+                        src="https://ask-your-pdf-production.up.railway.app?embed=true"
+                        title="Ask Your PDF App"
+                        className="w-full h-full"
+                      ></iframe>
+                    </div>
+                    </motion.div>
+                  )}
                 </AnimatePresence>
                 </div>
             </div>
@@ -103,13 +120,7 @@ function Home() {
           </main>
         </div>
 
-        <div className="w-full h-[700px] bg-slate-200 my-10">
-        <iframe
-          src="https://ask-your-pdf-production.up.railway.app?embed=true"
-          title="Ask Your PDF App"
-          className="w-full h-full"
-        ></iframe>
-      </div>
+       
       </main>
     </>
   );
