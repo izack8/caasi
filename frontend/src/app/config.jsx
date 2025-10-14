@@ -113,8 +113,8 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
   : "http://localhost:8000/api";
 
 export const API_ENDPOINTS = {
-  projects: `${API_BASE_URL}/projects`,
-  experiences: `${API_BASE_URL}/experiences`,
-  posts: `${API_BASE_URL}/posts`,
-post: (id) => `${API_BASE_URL}/posts/${id}`,
+    projects: `${API_BASE_URL}/projects`,
+    experiences: `${API_BASE_URL}/experiences`,
+    posts: `${API_BASE_URL}/posts`,
+    post: (id) => `${API_BASE_URL}/posts/${id}`,
 };
