@@ -1,6 +1,4 @@
-# Finally Using a Database
-
-I've put off writing this for some time, partly because I want to be able to form coherent paragraphs before jotting it down. But the more I delay, the more I forget (urGH, frustrating). So here's my feeble attempt in trying to describe my journey in integrating MongoDB into my website by stringing a couple of words together.
+I've  put off writing this for some time, partly because I want to be able to form coherent paragraphs before jotting it down. But the more I delay, the more I forget (urGH, frustrating). So here's my feeble attempt in trying to describe my journey in integrating MongoDB into my website by stringing a couple of words together. 
 
 # Context
 
@@ -29,13 +27,13 @@ Prior to what it is currently, the data for my website (experiences, projects, a
     },]
 ```
 
-At the beginning of the creation of this website, I knew **very little** about hosting a database, and how to retrieve it in a conventional manner. The way that makes sense the **most** for me (at that time), was just using a JSON file to store the data. (If you go back to the first iteration of my website, you are able to see my thought processes). 
+At the beginning of the creation of this website, I knew **very little** about hosting a database, and how to retrieve it in a conventional manner. The way that makes sense the **most** for me (at that time), was just using a JSON file to store the data. (If you go back to the first iteration of my website, you are able to see my thought processes).
 
-Well, it worked out fine… Initially, at least. I didn’t think about scaling etc. All I did was create a JavaScript function to fetch these JSON objects from the .json file. Voila! I feel so smart for doing that. LOL. *I don’t need a database man!* 
+Well, it worked out fine… Initially, at least. I didn’t think about scaling etc. All I did was create a JavaScript function to fetch these JSON objects from the .json file. Voila! I feel so smart for doing that. LOL. *I don’t need a database man!*
 
 # Challenges
 
-And like clockwork, like tale as old as time, like how all things naturally converge to their balance point, I faced the damn issue of s c a l i n g. It begin with the “Projects” section at first. I’ve been developing and tinkering with new projects I wanted to show the world. Each new project means the tedious task of adding a new project, every time. The UI/UX of the VSCode IDE, whilst editing my projects .json file. There and then, I had my first “boy, is this tedious”. 
+And like clockwork, like tale as old as time, like how all things naturally converge to their balance point, I faced the damn issue of s c a l i n g. It begin with the “Projects” section at first. I’ve been developing and tinkering with new projects I wanted to show the world. Each new project means the tedious task of adding a new project, every time. The UI/UX of the VSCode IDE, whilst editing my projects .json file. There and then, I had my first “boy, is this tedious”.
 
 The straw that broke the camel’s back, was discovering that whenever I had a typo, or something I forgot to add, I’d have to edit the original file, push the code, rebuild, and finally deploy. Geez. Surely, if I used a database, all I have to do is edit it in my database, and have an API fetch it. Which is what I did!
 
@@ -43,7 +41,7 @@ The straw that broke the camel’s back, was discovering that whenever I had a t
 
 Since my data was already in JSON format, I decided that it was best to migrate my data over to a platform that handles . MongoDB came to mind, partly because I have been using it at work, and thought that the migration wouldn’t be as challenging, as I was familiar with the basics. Thankfully, this was the case, because now all I had to do was learn how to get MongoDB to host my data, allow it to be sent over the web.
 
-Furthermore, I’ve always wanted to learn how to use NoSQL databases, 
+Furthermore, I’ve always wanted to learn how to use NoSQL databases,
 
 # Files
 
