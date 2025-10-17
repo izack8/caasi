@@ -65,7 +65,7 @@ function WritingSection() {
 
   return (
     <section className="writing-section">
-      <SectionLabel label="My Writing" />
+      <SectionLabel label="Blog Posts" />
         {loading && <LoadingBar />}
         {error && console.error('Error fetching posts:', error)}
         <div className="flex gap-2 mb-6">
