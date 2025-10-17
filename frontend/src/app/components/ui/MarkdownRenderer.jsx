@@ -54,12 +54,12 @@ export default function MarkdownRenderer({ children }) {
                   style={oneDark}
                   PreTag="div"
                   language={match[1]}
-                  showLineNumbers={false}
-                  wrapLines={false}
+                  showLineNumbers={true}
+                  wrapLines={true}
                   customStyle={{
                     margin: 0,
                     padding: '1em',
-                    paddingTop: '2.5em', // Add space for copy button
+                    paddingTop: '2.5em',
                     background: '#282a36',
                     borderRadius: '0.5rem',
                     fontSize: '0.9rem',
