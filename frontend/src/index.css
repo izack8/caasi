@@ -15,3 +15,7 @@ body::before {
     background-repeat: no-repeat;
     z-index: -12;
 }
+
+html {
+    scrollbar-gutter: stable;
+}
