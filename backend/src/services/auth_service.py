@@ -15,8 +15,8 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     else:
         expire = datetime.utcnow() + timedelta(minutes=15)
     to_encode.update({"exp": expire})
-    secret_key = os.getenv("SECRET_KEY", "your_default_secret_key")
-    algorithm = os.getenv("ALGORITHM", "HS256")
+    secret_key = os.getenv("SECRET_KEY")
+    algorithm = os.getenv("ALGORITHM")
     encoded_jwt = jwt.encode(to_encode, secret_key, algorithm=algorithm)
     return encoded_jwt
 
