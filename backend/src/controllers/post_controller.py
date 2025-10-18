@@ -1,6 +1,7 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from ..services.post_service import get_posts, get_post_by_id, update_post, create_new_post as create_post_service, delete_post
+from ..controllers.auth_controller import get_current_user
 
 router = APIRouter(prefix="/posts", tags=["Post"])
 
@@ -19,18 +20,15 @@ def fetch_post(post_id: str):
     post = get_post_by_id(post_id)
     if not post:
         raise HTTPException(status_code=404, detail="Post not found")
-    
-    md_path = f"data/posts_md/{post['md_file']}"
-    try:
-        with open(md_path, "r", encoding="utf-8") as f:
-            post["md"] = f.read()
-    except FileNotFoundError:
-        post["md"] = "# Markdown file not found"
     return post
 
 @router.post("")
-def create_new_post(post: Post):
+def create_new_post(
+    post: Post, 
+    current_user: dict = Depends(get_current_user)
+):
     print("Creating post:", post)
+    print("Authenticated user:", current_user["username"])
     
     result = create_post_service({
         "date": post.date,
@@ -45,14 +43,18 @@ def create_new_post(post: Post):
     return result 
 
 @router.put("/{post_id}")
-def update_post_endpoint(post_id: str, post_update: Post):
+def update_post_endpoint(
+    post_id: str, 
+    post_update: Post,
+    current_user: dict = Depends(get_current_user)
+):
     print("Updating post:", post_id)
-    # Get current post to check if it exists
+    print("Authenticated user:", current_user["username"])
+    
     current_post = get_post_by_id(post_id)
     if not current_post:
         raise HTTPException(status_code=404, detail="Post not found")
     
-    # Prepare update data (only include non-None fields)
     update_data = {}
     if post_update.title is not None:
         update_data["title"] = post_update.title
@@ -63,12 +65,10 @@ def update_post_endpoint(post_id: str, post_update: Post):
     if post_update.description is not None:
         update_data["description"] = post_update.description
     
-    # Update the post
     success = update_post(post_id, update_data)
     if not success:
         raise HTTPException(status_code=500, detail="Failed to update post")
     
-    # Return the updated post
     updated_post = get_post_by_id(post_id)
     if post_update.content is not None:
         updated_post["md"] = post_update.content
@@ -76,8 +76,13 @@ def update_post_endpoint(post_id: str, post_update: Post):
     return updated_post
 
 @router.delete("/{post_id}")
-def delete_post_endpoint(post_id: str):
+def delete_post_endpoint(
+    post_id: str,
+    current_user: dict = Depends(get_current_user)
+):
     print("Deleting post:", post_id)
+    print("Authenticated user:", current_user["username"])
+    
     success = delete_post(post_id)
     if not success:
         raise HTTPException(status_code=404, detail="Post not found or failed to delete")
