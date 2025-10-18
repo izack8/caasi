@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from ..services.post_service import get_posts, get_post_by_id, update_post, create_new_post as create_post_service, delete_post
 from ..controllers.auth_controller import get_current_user
 
-router = APIRouter(prefix="/posts", tags=["Post"])
+router = APIRouter(prefix="/posts", tags=["Posts"])
 
 class Post(BaseModel):
     title: str = None

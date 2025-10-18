@@ -20,16 +20,15 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     encoded_jwt = jwt.encode(to_encode, secret_key, algorithm=algorithm)
     return encoded_jwt
 
-def verify_access_token(token: str, credentials_exception):
-    secret_key = os.getenv("SECRET KEY")
-    algorithm = os.getenv("ALGORITHM", "HS256")
-
+def verify_access_token(token: str):
+    secret_key = os.getenv("SECRET_KEY")
+    algorithm = os.getenv("ALGORITHM")
     try:
         payload = jwt.decode(token, secret_key, algorithms=[algorithm])
         username: str = payload.get("sub")
         if username is None:
-            raise credentials_exception
+            return None
         return username
     except JWTError:
-        raise credentials_exception
+        return None
  
