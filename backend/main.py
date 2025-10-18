@@ -1,20 +1,22 @@
 from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
-from src.controllers import post_controller, project_controller, experience_controller
-from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
+from src.controllers import post_controller, project_controller, experience_controller, auth_controller
 
 app = FastAPI()
 
 api_router = APIRouter(prefix="/api")
+
 api_router.include_router(post_controller.router)
 api_router.include_router(project_controller.router)
 api_router.include_router(experience_controller.router)
+
 
 @api_router.get("/health")
 def health_check():
     return {"status": "healthy", "message": "API is running"}
 
 app.include_router(api_router)
+app.include_router(auth_controller.router)
 
 # Add CORS middleware
 app.add_middleware(
@@ -24,7 +26,7 @@ app.add_middleware(
                    "https://izack.dev", 
                    "http://localhost:5173",
                    "https://caasi-crud-ui.vercel.app",
-                   "https://*.izack.dev"],  
+                   "https://caasi-crud-ui.izack.dev"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
