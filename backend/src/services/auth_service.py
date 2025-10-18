@@ -13,7 +13,7 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(minutes=15)
+        expire = datetime.utcnow() + timedelta(days=1)
     to_encode.update({"exp": expire})
     secret_key = os.getenv("SECRET_KEY")
     algorithm = os.getenv("ALGORITHM")
