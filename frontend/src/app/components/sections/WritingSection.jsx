@@ -1,14 +1,13 @@
 import SectionLabel from "../ui/SectionLabel";
 import { useEffect, useState } from "react";
 import { API_ENDPOINTS } from "../../config";
-import { data, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LoadingBar from '../../components/ui/LoadingBar';
 import Button from "../ui/Button";
 import { AnimatePresence, motion } from "framer-motion";
 
 function WritingSection() {
   
-
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -90,7 +89,6 @@ function WritingSection() {
                 <p className="text-gray-600">No posts yet.</p>
                 </div>
             )}
-              
               
               <AnimatePresence mode="wait">  
               <motion.div key={activeTag}>

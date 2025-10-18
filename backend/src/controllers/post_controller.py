@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from ..services.post_service import get_posts, get_post_by_id, update_post, create_new_post as create_post_service, delete_post
 
-router = APIRouter(prefix="/posts", tags=["Posts"])
+router = APIRouter(prefix="/posts", tags=["Post"])
 
 class Post(BaseModel):
     title: str = None
