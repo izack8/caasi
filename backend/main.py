@@ -10,11 +10,13 @@ api_router.include_router(post_controller.router)
 api_router.include_router(project_controller.router)
 api_router.include_router(experience_controller.router)
 
-
-@api_router.get("/health")
-def health_check():
+@app.get("/health")
+def app_health_check():
     return {"status": "healthy", "message": "API is running"}
 
+@api_router.get("/health")
+def api_health_check():
+    return {"status": "healthy", "message": "API is running"}
 app.include_router(api_router)
 app.include_router(auth_controller.router)
 
