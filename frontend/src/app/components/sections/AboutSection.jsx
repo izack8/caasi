@@ -6,7 +6,7 @@ function AboutSection() {
       <SectionLabel label="About Me" />
 
       <p className='text-justify mb-3'>
-        Hello! I am a <b>Software Engineer/Data Scientist</b>, graduated from <b><a className="underline" href="https://www.ntu.edu.sg/">Nanyang Technological University Singapore (NTU)</a></b>, with a Bachelor's Degree in <b>Electrical and Electronics Engineering</b>. I am currently developing, and engineering AI solutions at <b><a className="underline" href="https://synechron.com">Synechron</a></b>, and building ML pipelines for financial institutions.</p>
+        Hey there! I am a <b>Software Engineer/Data Scientist</b>, graduated from <b><a className="underline" href="https://www.ntu.edu.sg/">Nanyang Technological University Singapore (NTU)</a></b>, with a Bachelor's Degree in <b>Electrical and Electronics Engineering</b>. I am currently developing, and engineering AI solutions at <b><a className="underline" href="https://synechron.com">Synechron</a></b>, and building ML pipelines for financial institutions.</p>
 
       <p className="text-justify mb-3">
         I am passionate for projects that <b>involves cooking logic 🔥 and writing code 👨‍💻</b>, and I aspire to be a <b>really competent engineer one day</b>, building software/AI & ML models for public good! I always strive to do my best and learn as much as I can in this short life I have, and am always looking for opportunities to <b>learn</b>, grow, contribute my skills effectively, and most importantly, <b>put out as much cool stuff to the world as I can!</b> I am excited to see where this journey will take me! :D 
