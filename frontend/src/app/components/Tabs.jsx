@@ -24,7 +24,7 @@ function Tabs({ activeTab, onTabClick }) {
         style={{ boxShadow: 'none' }}
         onClick={() => onTabClick('chat')}
       >
-        chat
+        resume chat
         <span className={`absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 ${activeTab === 'chat' ? 'bg-black' : 'bg-transparent'} group-hover:bg-black`} style={{ display: 'block' }}></span>
       </button>
     </div>
