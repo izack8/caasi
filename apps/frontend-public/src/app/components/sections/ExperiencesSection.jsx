@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
-import LoadingBar from '../../components/ui/LoadingBar';
+import LoadingBar from '../ui/LoadingBar';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
 

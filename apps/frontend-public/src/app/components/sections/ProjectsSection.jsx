@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
-import ProjectModal from '../../components/ProjectModal';
+import ProjectModal from '../ProjectModal';
 import Button from '../ui/Button';
-import ProjectTechStack from '../../components/ProjectTechStack';
-import LoadingBar from '../../components/ui/LoadingBar';
+import ProjectTechStack from '../ProjectTechStack';
+import LoadingBar from '../ui/LoadingBar';
 
 
 function ProjectsSection({ showAll = false }) {

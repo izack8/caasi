@@ -2,7 +2,7 @@ import SectionLabel from "../ui/SectionLabel";
 import { useEffect, useState } from "react";
 import { API_ENDPOINTS } from "../../config";
 import { useNavigate } from "react-router-dom";
-import LoadingBar from '../../components/ui/LoadingBar';
+import LoadingBar from '../ui/LoadingBar';
 import Button from "../ui/Button";
 import { AnimatePresence, motion } from "framer-motion";
 
