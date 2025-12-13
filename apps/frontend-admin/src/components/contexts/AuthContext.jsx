@@ -27,6 +27,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (username, password) => {
         try {
+            console.log(password);
             const response = await fetch(AUTH_ENDPOINTS.login, {
                 method: 'POST',
                 headers: {

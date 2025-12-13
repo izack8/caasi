@@ -5,7 +5,6 @@ def get_user_by_username(username: str):
     """Get user by username from database"""
     try:
         user = db['users'].find_one({"username": username}, {"_id": 0})
-        print(user)
         return user
     except Exception as e:
         print(f"Error fetching user: {e}")
