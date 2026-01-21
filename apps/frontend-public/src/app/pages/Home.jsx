@@ -44,7 +44,7 @@ function Home() {
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }} 
-            className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] pt-20 sm:pt-32 lg:py-24 flex flex-col lg:justify-between"
+            className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] pt-20 lg:py-24 flex flex-col lg:justify-between"
           >
             <div className="h-full">
               <HeroTitle />
@@ -61,9 +61,9 @@ function Home() {
         </AnimatePresence>
           
            {/* Right side - main content */}
-          <main className="w-full lg:w-[60%] pt-20 lg:py-15 sm:py-16 text-slate-350 text-sm xl:text-base flex flex-col lg:flex-wrap lg:block">
+          <main className="w-full lg:w-[60%] pt-20 lg:py-15 sm:py-16 text-slate-350 text-sm lg:text-base flex flex-col lg:flex-wrap lg:block">
             <div className="relative">
-              <div className="absolute top-0 left-0 w-full z-10 pb-4 pointer-events-auto" >
+              <div className="flex flex-row lg:justify-end justify-center w-full pointer-events-auto" >
                 <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
               </div>
               <div className="pt-10">
@@ -76,7 +76,10 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <AboutSection />
+                      <div className='lg:mt-20 lg:mb-40'>
+                        <AboutSection />
+                      </div>
+                      
                       <ExperiencesSection />
                       <ProjectsSection />
                       <TechStackSection />
