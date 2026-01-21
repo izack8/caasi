@@ -12,7 +12,7 @@ function AboutSection() {
       </p>
 
       <p className="text-justify mb-3">
-        If you don't find me writing code, you can find me playing the guitar (or learning a new musical instrument) and making covers of pop songs! (Bonus points if you can find my YouTube channel, I have a few covers there (I'd like to think I sing pretty well :p))
+        If you don't find me writing code, you can find me playing Overwatch, the guitar, learning a new musical instrument, recording covers of pop songs (bonus points if you can find my YouTube channel), or hanging with my besties. Either way, slay vibes only. 🎮🎸🎤👯🩵
       </p>
 
     </section>
