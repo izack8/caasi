@@ -67,13 +67,13 @@ function ExperiencesSection() {
         <div key={index} className='experience mb-10 lg:flex lg:flex-wrap items-start duration-300 transition-all duration-300 group relative'>
         <div className='desc h-full text-justify'>
           <div className='flex flex-col mb-2 gap-y-1'>
-            <h2 className='text-xl font-bold group-hover:text-blue-500 transition-all duration-300'>{experience.title}</h2>
+            <h2 className='text-xl font-bold group-hover:text-blue-500 transition-all duration-200'>{experience.title}</h2>
             
             <h3 className="text-md text-rose-500 w-full flex items-center gap-1">
-            <a className="flex flex-row items-center gap-1 text-lg" href={experience.link} target="_blank" rel="noopener noreferrer">
-            {experience.company}
-            <FaExternalLinkAlt className="w-3 h-3" />
-            </a>
+              <a className="flex flex-row items-center gap-1 text-lg group/link" href={experience.link} target="_blank" rel="noopener noreferrer">
+                {experience.company}
+                <FaExternalLinkAlt className="w-3 h-3 group-hover:w-4 group-hover:h-4 group-hover/link:w-5 group-hover/link:h-5 transition-all duration-200" />
+              </a>
             </h3>
             <div className='durationandlocation flex flex-row text-md gap-7 items-center'>
               <span className='flex flex-row text-black-400 items-center gap-1'>
