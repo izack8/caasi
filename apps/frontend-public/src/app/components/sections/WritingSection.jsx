@@ -102,16 +102,18 @@ function WritingSection() {
                 className="mb-5 rounded cursor-pointer group"
                 onClick={() => navigate(`/writing/${post.id}`)}
               >
-                <div className="text-sm text-black-400">
-                  {new Date(post.date).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}
-                </div>
-                  <h2 className="text-xl font-bold group-hover:text-blue-800 transition-colors duration-200">{post.title}</h2>
-                  <div className="text-md text-gray-600">
-                    {post.description}
+                <div className="flex flex-col gap-y-1">
+                    <h1 className="text-xl 
+                    font-semibold 
+                    group-hover:text-blue-800 
+                    transition-colors 
+                    duration-200">{post.title}</h1>
+                    <h2 className="text-md">{post.description}</h2>
+                    <h2 className="text-sm text-black-400">{new Date(post.date).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}</h2>
                   </div>
                 </motion.div>
                 

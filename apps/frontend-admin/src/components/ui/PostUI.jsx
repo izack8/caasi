@@ -29,7 +29,7 @@ export default function PostUI({
         if (mode === 'render') {
         // 1. Title of Post - display only
         return (
-            <h1 className="text-2xl font-bold mb-2">
+            <h1 className="text-2xl font-bold">
             {post.title}
             </h1>
         );
@@ -40,7 +40,7 @@ export default function PostUI({
             type="text"
             value={post.title}
             onChange={(e) => handleInputChange('title', e.target.value)}
-            className="w-full text-2xl font-bold border-none outline-none bg-transparent mb-2 focus:ring-0"
+            className="w-full text-2xl font-bold text-gray-300"
             placeholder="Enter post title..."
             />
         );
@@ -61,9 +61,12 @@ export default function PostUI({
     const renderDate = () => {
         if (mode === 'render') {
         return (
-            <h2 className="text-md font-bold mb-5">
-            {post.date}
-            </h2>
+            <h2 className="text-md mb-5">{new Date(post.date).toLocaleDateString('en-US', 
+                    { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}</h2>
         );
         } else {
         return (
@@ -71,23 +74,25 @@ export default function PostUI({
             type="date"
             value={post.date}
             onChange={(e) => handleInputChange('date', e.target.value)}
-            className="text-md font-bold mb-2 border-none outline-none bg-transparent focus:ring-0"
+            className="text-md"
             />
+            
         );
         }
     };
 
     const renderDescription = () => {
         if (mode === 'render') {
-        // Don't show description in render mode (it's usually for listings)
-        return null;
+        return (
+             <h2 className="text-md">{post.description}</h2>
+        );
         } else {
         return (
             <input
             type="text"
             value={post.description || ''}
             onChange={(e) => handleInputChange('description', e.target.value)}
-            className="w-full text-md text-gray-600 border-none outline-none bg-transparent mb-5 placeholder-gray-400 focus:ring-0"
+            className="w-full text-md text-gray-600 border-none outline-none bg-transparent placeholder-gray-400 focus:ring-0"
             placeholder="Enter a brief description..."
             />
         );
@@ -95,10 +100,10 @@ export default function PostUI({
     };
 
     return (
-        <div>
+        <div className="flex flex-col gap-y-1">
             {renderTitle()}
-            {renderDate()}
             {renderDescription()}
+            {renderDate()}
             <MarkdownRenderer 
               isEditing={isEditing}
               onUpdate={setMarkdown}

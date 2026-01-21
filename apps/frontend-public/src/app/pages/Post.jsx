@@ -75,8 +75,16 @@ export default function Post() {
                 <span className="absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 bg-black"></span>
               </button>
             </div>
-            <h1 className="text-2xl font-bold">{post.title}</h1>
-            <h2 className="text-md font-bold mb-5">{post.date}</h2>
+            <div className="flex flex-col gap-y-1">
+              <h1 className="text-2xl font-semibold">{post.title}</h1>
+              <h2 className="text-md">{post.description}</h2>
+              <h2 className="text-md mb-5">{new Date(post.date).toLocaleDateString('en-US', 
+                    { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric' 
+                    })}</h2>
+            </div>
             <MarkdownRenderer>{post.content}</MarkdownRenderer>
             <Footer />
           </div>
