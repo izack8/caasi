@@ -5,6 +5,7 @@ import ProjectModal from '../ProjectModal';
 import Button from '../ui/Button';
 import ProjectTechStack from '../ProjectTechStack';
 import LoadingBar from '../ui/LoadingBar';
+import { FaCalendar } from 'react-icons/fa';
 
 
 function ProjectsSection({ showAll = false }) {
@@ -56,10 +57,10 @@ function ProjectsSection({ showAll = false }) {
             <h2 className="text-blue-900 text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300">
               {project.title}
               </h2>
-              <h3 className="font-semibold">{project.year}</h3>
+              <h3 className="font-semibold flex items-center gap-1"><FaCalendar />{project.year}</h3>
             </div>
             
-            <p className="text-slate-350 justify-items-left mb-3 text-sm">
+            <p className="text-slate-350 justify-items-left mb-3 text-md">
               {project.description}
             </p>
 

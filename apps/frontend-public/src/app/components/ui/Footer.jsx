@@ -8,7 +8,7 @@ function Footer() {
         &nbsp;<a className="underline" href="https://alvinchang.dev">Alvin</a>,
         &nbsp;<a className="underline" href="https://brittanychiang.com">Brittany</a>, and
         &nbsp;<a className="underline" href="https://www.knlrvr.dev">Kane</a>.</p>
-        &copy; 2025
+        &copy; 2025 - 2026
         <div className='flex items-center gap-2'>
           <span>Click Me to Time Travel!</span>
           <SparkleText>

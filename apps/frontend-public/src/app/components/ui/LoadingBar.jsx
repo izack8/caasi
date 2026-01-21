@@ -1,3 +1,4 @@
+// simple loading bar animation, displayed while fetching data from API or loading components
 import HotCherryLink from '../../../assets/hot_cherry_running_gif.gif'
 
 function LoadingBar() {

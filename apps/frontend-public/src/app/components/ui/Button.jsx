@@ -15,11 +15,11 @@ function Button({
         default: 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white',
         ghost: 'bg-slate-500/40 text-slate-300 hover:bg-slate-700 hover:text-white',
         active: 'bg-sky-600 text-white',
-        primary: 'bg-blue-600 text-white hover:bg-blue-700',
+        primary: 'bg-blue-700 text-white hover:bg-blue-600',
         secondary: 'bg-gray-600 text-white hover:bg-gray-700',
         danger: 'bg-red-600 text-white hover:bg-red-700',
         sparkle: 'bg-purple-600 text-white hover:bg-purple-700',
-        live: 'bg-sky-600 text-white hover:bg-sky-700',
+        live: 'bg-sky-700 text-white hover:bg-sky-600',
     };
     
     const sizes = {
