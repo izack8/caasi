@@ -26,7 +26,7 @@ function ConnectWithMe() {
                 </a>
                 
                 <a 
-                    href="documents/isaactay_resume_2025.pdf" 
+                    href="documents/isaactay_resume.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="group flex items-center gap-2 hover:text-red-500 transition-colors duration-200"

@@ -48,8 +48,8 @@ def update_post_endpoint(
     post_update: Post,
     current_user: dict = Depends(get_current_user)
 ):
-    print("Updating post:", post_id)
-    print("Authenticated user:", current_user["username"])
+    # print("Updating post:", post_id)
+    # print("Authenticated user:", current_user["username"])
     
     current_post = get_post_by_id(post_id)
     if not current_post:
