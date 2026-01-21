@@ -44,12 +44,13 @@ function Home() {
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }} 
-            className="w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] pt-20 lg:py-24 flex flex-col lg:justify-between"
+            className="flex flex-col w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] pt-20 lg:py-24 lg:justify-between"
           >
+            {/* Left Side */}
             <div className="h-full">
               <HeroTitle />
               <ShortDesc />
-              {/* <TechStack /> */}
+              
               <div className="">
               <ConnectWithMe />
               </div>
