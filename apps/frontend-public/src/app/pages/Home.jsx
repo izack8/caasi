@@ -3,6 +3,7 @@ import ProjectsSection from '../components/sections/ProjectsSection';
 import JourneySection from '../components/sections/JourneySection';
 import ExperiencesSection from '../components/sections/ExperiencesSection';
 import WritingSection from '../components/sections/WritingSection';
+import PageTracker from '../components/PageTracker';
 import HeroTitle from '../components/HeroTitle';
 import ShortDesc from '../components/ShortDesc';
 import TechStackSection from '../components/sections/TechStackSection';
@@ -34,34 +35,40 @@ function Home() {
   return (
     <>
       <Glow />
-      <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 lg:py-0">
+      <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 lg:py-0">
         <div className="w-full flex flex-wrap lg:flex-nowrap lg:gap-x-6">
-        <AnimatePresence mode="wait">
+          <div className="flex flex-col w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] py-15">
+            <div className="hidden lg:block">
+              <PageTracker />
+            </div>
+          <AnimatePresence mode="wait">
+          
+          {/* Left Side */}
           <motion.header
             key="header"
             initial={{ opacity: 0, x: 0 }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }} 
-            className="flex flex-col w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] pt-20 lg:py-24 lg:justify-between"
           >
-            {/* Left Side */}
-            <div className="h-full">
+            
+            <div className="h-full lg:pt-10 flex flex-col">
               <HeroTitle />
               <ShortDesc />
-              
-              <div className="">
               <ConnectWithMe />
+              <div className="justify-items-center lg:hidden mt-6">
+                <PageTracker />
               </div>
+               
             </div>
             <div className="hidden lg:block">
               <Footer />
             </div>
           </motion.header>
         </AnimatePresence>
-          
+          </div>
            {/* Right side - main content */}
-          <main className="w-full lg:w-[60%] pt-20 lg:py-15 sm:py-16 text-slate-350 text-sm lg:text-base flex flex-col lg:flex-wrap lg:block">
+          <main className="w-full lg:w-[60%] py-15 text-slate-350 text-sm lg:text-base flex flex-col lg:flex-wrap lg:block">
             <div className="relative">
               <div className="flex flex-row lg:justify-end justify-center w-full pointer-events-auto" >
                 <Tabs activeTab={activeTab} onTabClick={handleTabChange} />

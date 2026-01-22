@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import MarkdownRenderer from '../components/ui/MarkdownRenderer';
 import { API_ENDPOINTS } from '../config';
 import Footer from '../components/ui/Footer';
+import PageTracker from '../components/PageTracker';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Post() {
@@ -45,6 +46,8 @@ export default function Post() {
   sessionStorage.setItem('lastVisitedPost', id);
 
   return (
+    <div className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 lg:py-15">
+      <PageTracker currentPage={id ? id : ''} />
     <AnimatePresence mode="wait">
       {loading ? (
         <motion.div
@@ -58,6 +61,7 @@ export default function Post() {
           Loading...
         </motion.div>
       ) : (
+        <div className="pt-10">
         <motion.div
           key={post.id}
           initial={{ opacity: 0 }}
@@ -65,7 +69,7 @@ export default function Post() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "ease" }}
         >
-          <div className="mx-auto min-h-screen max-w-screen-lg px-6 py-12 md:px-12 md:py-16">
+          
             <div className="mb-3">
               <button
                 className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
@@ -87,9 +91,11 @@ export default function Post() {
             </div>
             <MarkdownRenderer>{post.content}</MarkdownRenderer>
             <Footer />
-          </div>
+          
         </motion.div>
+        </div>
       )}
     </AnimatePresence>
+    </div>
   );
 }
