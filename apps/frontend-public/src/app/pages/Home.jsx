@@ -35,7 +35,7 @@ function Home() {
   return (
     <>
       <Glow />
-      <div className="mx-auto min-h-screen max-w-screen-xl px-12 h-screen lg:h-auto">
+      <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-9 h-screen lg:h-auto">
         
         <div className="w-full h-full lg:flex lg:flex-row lg:gap-6">
 
