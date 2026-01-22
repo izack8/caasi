@@ -1,7 +1,7 @@
 export default function SectionLabel({ label, className, onClick, style }) {
   return (
     <div
-      className={`w-full lg:text-start mb-4 mt-5 group justify-start ${className || ''}`}
+      className={`w-full lg:text-start mb-4 group justify-start ${className || ''}`}
       onClick={onClick}
       style={style}
       role={onClick ? "button" : undefined}

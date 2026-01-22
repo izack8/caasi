@@ -35,49 +35,47 @@ function Home() {
   return (
     <>
       <Glow />
-      <main className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 lg:py-0">
-        <div className="w-full flex flex-wrap lg:flex-nowrap lg:gap-x-6">
-          <div className="flex flex-col w-full lg:h-[99dvh] lg:sticky top-0 lg:w-[40%] py-15">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-12 h-screen lg:h-auto">
+        
+        <div className="w-full h-full lg:flex lg:flex-row lg:gap-6">
+
+          {/* Left/top Side - hero title */}
+          <header className="flex flex-col w-full lg:w-[40%] lg:h-[100dvh] lg:sticky top-0 py-15">
             <div className="hidden lg:block">
               <PageTracker />
             </div>
 
-        {/* Left Side */}
-        <div className="h-full lg:pt-10 flex flex-col">
-          <AnimatePresence mode="wait">
-            <motion.header
-              key="header"
-              initial={{ opacity: 0, x: 0 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              exit={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }} 
-              className='flex flex-col h-full'
-            >
+        
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key="div"
+                  initial={{ opacity: 0, x: 0 }} 
+                  animate={{ opacity: 1, x: 0 }} 
+                  exit={{ opacity: 0, x: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }} 
+                  className='flex flex-col h-full pt-10'
+                >
                 <HeroTitle />
                 <ShortDesc />
                 <ConnectWithMe />
 
-                <div className="justify-items-center lg:hidden mt-6">
-                  <PageTracker />
-                </div>
+                  <div className="hidden lg:block items-end mt-auto">
+                    <Footer />
+                  </div>
+              
+                </motion.div>
+               
+              </AnimatePresence>
 
-                <div className="hidden lg:block items-end mt-auto">
-                  <Footer />
-                </div>
-            
-              </motion.header>
-             
-            </AnimatePresence>
-          </div>
         
-        </div>
-           {/* Right side - main content */}
-          <main className="w-full lg:w-[60%] py-15 text-slate-350 text-sm lg:text-base flex flex-col lg:flex-wrap lg:block">
-            <div className="relative">
+          </header>
+           {/* Right/bottom side - main content */}
+          <main className="flex flex-col w-full lg:w-[60%] py-15 text-slate-350 text-sm lg:text-base">
+            
               <div className="flex flex-row lg:justify-end justify-center w-full pointer-events-auto" >
                 <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
               </div>
-              <div className="pt-10">
+              <div className="flex flex-col mt-10">
                 <AnimatePresence mode="wait">
                   {activeTab === 'about' && (
                     <motion.div
@@ -87,14 +85,24 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className='lg:mb-50'>
-                        <AboutSection />
-                      </div>
                       
+                        <AboutSection />
+                      
+                      
+                      {/* <JourneySection /> */}
+                    </motion.div>
+                  )}
+                  {activeTab === 'work' && (
+                    <motion.div
+                      key="work"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1}}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                    >
                       <ExperiencesSection />
-                      <ProjectsSection />
                       <TechStackSection />
-                      <JourneySection />
+                      <ProjectsSection />
                     </motion.div>
                   )}
                   {activeTab === 'writing' && (
@@ -125,17 +133,25 @@ function Home() {
                     </div>
                     </motion.div>
                   )}
+
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="lg:hidden items-end">
+                      <Footer />
+                </motion.div>
+
                 </AnimatePresence>
+                  
                 </div>
-            </div>
-            <div className="lg:hidden">
-              <Footer />
-            </div>
           </main>
+
         </div>
 
        
-      </main>
+      </div>
     </>
   );
 }

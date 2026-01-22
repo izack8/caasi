@@ -46,7 +46,7 @@ export default function Post() {
   sessionStorage.setItem('lastVisitedPost', id);
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 lg:py-15">
+    <main className="mx-auto max-w-screen-xl px-12 py-15">
       <PageTracker section={"writing"} currentPage={id ? id : ''} />
     <AnimatePresence mode="wait">
       {loading ? (
@@ -96,6 +96,6 @@ export default function Post() {
         </div>
       )}
     </AnimatePresence>
-    </div>
+    </main>
   );
 }
