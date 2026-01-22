@@ -70,7 +70,7 @@ function Home() {
         
           </header>
            {/* Right/bottom side - main content */}
-          <main className="flex flex-col w-full lg:w-[60%] py-15 text-slate-350 text-xs lg:text-base">
+          <main className="flex flex-col w-full lg:w-[60%] py-15 text-slate-350 text-sm lg:text-base">
             
               <div className="flex flex-row lg:justify-end justify-center w-full pointer-events-auto" >
                 <Tabs activeTab={activeTab} onTabClick={handleTabChange} />

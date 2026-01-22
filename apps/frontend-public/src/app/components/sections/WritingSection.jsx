@@ -67,14 +67,13 @@ function WritingSection() {
       <SectionLabel label="Blog Posts" />
         {loading && <LoadingBar />}
         {error && console.error('Error fetching posts:', error)}
-        <div className="flex gap-2 mb-6">
+        <div className="flex gap-2 mb-6 justify-center lg:justify-start">
           {uniqueTags.map((tag, index) => (
             <Button
               key={index}
               variant={activeTag === tag ? "active" : "ghost"}
               onClick={() => { setActiveTag(tag); handleTagChange(tag); }}
-            size="sm"
-            className=""
+            size="md"
           >
             {tag}
           </Button>
@@ -103,12 +102,12 @@ function WritingSection() {
                 onClick={() => navigate(`/writing/${post.id}`)}
               >
                 <div className="flex flex-col gap-y-1">
-                    <h1 className="lg:text-xl text-sm
+                    <h1 className="text-lg
                     font-semibold 
                     group-hover:text-blue-800 
                     transition-colors 
                     duration-200">{post.title}</h1>
-                    <h2 className="lg:text-md text-sm">{post.description}</h2>
+                    <h2 className="text-md">{post.description}</h2>
                     <h2 className="text-sm text-black-400">{new Date(post.date).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'long', 
