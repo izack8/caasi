@@ -57,7 +57,7 @@ function ProjectsSection({ showAll = false }) {
             <h2 className="text-blue-900 text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300">
               {project.title}
               </h2>
-              <h3 className="font-semibold flex items-center gap-1"><FaCalendar />{project.year}</h3>
+              <h3 className="font-semibold flex items-center gap-2"><FaCalendar className='w-3 h-3' />{project.year}</h3>
             </div>
             
             <p className="text-slate-350 justify-items-left mb-3 text-md">

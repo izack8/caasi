@@ -17,7 +17,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 function Home() {
 
-  const [activeTab, setActiveTab] = useState('work');
+  const [activeTab, setActiveTab] = useState('about');
 
   const handleTabChange = (newTab) => {
     if (newTab === activeTab) return;
@@ -41,32 +41,36 @@ function Home() {
             <div className="hidden lg:block">
               <PageTracker />
             </div>
+
+        {/* Left Side */}
+        <div className="h-full lg:pt-10 flex flex-col">
           <AnimatePresence mode="wait">
-          
-          {/* Left Side */}
-          <motion.header
-            key="header"
-            initial={{ opacity: 0, x: 0 }} 
-            animate={{ opacity: 1, x: 0 }} 
-            exit={{ opacity: 0, x: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }} 
-          >
+            <motion.header
+              key="header"
+              initial={{ opacity: 0, x: 0 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              exit={{ opacity: 0, x: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }} 
+              className='flex flex-col h-full'
+            >
+                <HeroTitle />
+                <ShortDesc />
+                <ConnectWithMe />
+
+                <div className="justify-items-center lg:hidden mt-6">
+                  <PageTracker />
+                </div>
+
+                <div className="hidden lg:block items-end mt-auto">
+                  <Footer />
+                </div>
             
-            <div className="h-full lg:pt-10 flex flex-col">
-              <HeroTitle />
-              <ShortDesc />
-              <ConnectWithMe />
-              <div className="justify-items-center lg:hidden mt-6">
-                <PageTracker />
-              </div>
-               
-            </div>
-            <div className="hidden lg:block">
-              <Footer />
-            </div>
-          </motion.header>
-        </AnimatePresence>
+              </motion.header>
+             
+            </AnimatePresence>
           </div>
+        
+        </div>
            {/* Right side - main content */}
           <main className="w-full lg:w-[60%] py-15 text-slate-350 text-sm lg:text-base flex flex-col lg:flex-wrap lg:block">
             <div className="relative">
@@ -75,15 +79,15 @@ function Home() {
               </div>
               <div className="pt-10">
                 <AnimatePresence mode="wait">
-                  {activeTab === 'work' && (
+                  {activeTab === 'about' && (
                     <motion.div
-                      key="work"
+                      key="about"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className='lg:mt-20 lg:mb-40'>
+                      <div className='lg:mb-50'>
                         <AboutSection />
                       </div>
                       

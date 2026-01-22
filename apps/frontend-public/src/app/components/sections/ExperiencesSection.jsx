@@ -69,19 +69,19 @@ function ExperiencesSection() {
           <div className='flex flex-col mb-2 gap-y-1'>
             <h2 className='text-xl font-bold group-hover:text-blue-500 transition-all duration-200'>{experience.title}</h2>
             
-            <h3 className="text-md text-rose-500 w-full flex items-center gap-1">
-              <a className="flex flex-row items-center gap-1 text-lg group/link" href={experience.link} target="_blank" rel="noopener noreferrer">
+            <h3 className="text-md w-full flex items-end hover:text-rose-500 transition-colors duration-200">
+              <a className="flex flex-row gap-2 text-lg items-center group/link" href={experience.link} target="_blank" rel="noopener noreferrer">
                 {experience.company}
-                <FaExternalLinkAlt className="w-3 h-3 group-hover:w-4 group-hover:h-4 group-hover/link:w-5 group-hover/link:h-5 transition-all duration-200" />
+                <FaExternalLinkAlt className="w-3 h-3 group-hover:text-rose-500 group-hover:w-4 group-hover:h-4 group-hover/link:w-5 group-hover/link:h-5 transition-all duration-200" />
               </a>
             </h3>
             <div className='durationandlocation flex flex-row text-md gap-7 items-center'>
-              <span className='flex flex-row text-black-400 items-center gap-1'>
-                <FaCalendar />
-              {experience.duration}
+              <span className='flex flex-row text-black-400 items-center gap-2'>
+                <FaCalendar className='w-3 h-3'/>
+                {experience.duration}
               </span>
-              <span className='flex flex-row text-black-400 items-center gap-1'>
-                <FaMapMarkerAlt />
+              <span className='flex flex-row text-black-400 items-center gap-2'>
+                <FaMapMarkerAlt className='w-3 h-3'/>
                 {experience.location}
                 </span>
             </div>

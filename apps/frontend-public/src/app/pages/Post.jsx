@@ -47,7 +47,7 @@ export default function Post() {
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 md:px-12 py-12 lg:py-15">
-      <PageTracker currentPage={id ? id : ''} />
+      <PageTracker section={"writing"} currentPage={id ? id : ''} />
     <AnimatePresence mode="wait">
       {loading ? (
         <motion.div
