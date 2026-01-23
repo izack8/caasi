@@ -40,7 +40,7 @@ function Home() {
         <div className="w-full h-full lg:flex lg:flex-row lg:gap-6">
 
           {/* Left/top Side - hero title */}
-          <header className="flex flex-col w-full lg:w-[40%] lg:h-[99dvh] lg:sticky top-0 lg:py-15 pt-15">
+          <header className="flex flex-col w-full lg:w-[40%] lg:h-[99dvh] lg:sticky top-0 lg:py-15 pt-10">
             <div className="hidden lg:block">
               <PageTracker />
             </div>
@@ -57,9 +57,8 @@ function Home() {
                 >
                 <div>
                   <HeroTitle />
-                  <ShortDesc />
                   <ConnectWithMe />
-                  <div className="lg:my-10 mt-10 flex lg:justify-start justify-center" >
+                  <div className="flex lg:justify-start justify-center py-5 items-center" >
                     <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
                 </div>
               </div>
@@ -75,7 +74,7 @@ function Home() {
         
           </header>
            {/* Right/bottom side - main content */}
-          <main className="flex flex-col w-full lg:w-[60%] py-5 lg:py-31 text-slate-350 text-sm lg:text-base">
+          <main className="flex flex-col w-full lg:w-[60%] lg:py-28 text-slate-350 text-sm lg:text-base">
             
               
               <div className="flex flex-col ">
@@ -127,7 +126,7 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                       <div className="w-full h-[500px] bg-slate-200 my-10">
+                       <div className="w-full h-[450px] bg-slate-200">
                       <iframe
                         src="https://ask-your-pdf-production.up.railway.app?embed=true"
                         title="Ask Your PDF App"
