@@ -40,7 +40,7 @@ function Home() {
         <div className="w-full h-full lg:flex lg:flex-row lg:gap-6">
 
           {/* Left/top Side - hero title */}
-          <header className="flex flex-col w-full lg:w-[40%] lg:h-[100dvh] lg:sticky top-0 py-15">
+          <header className="flex flex-col w-full lg:w-[40%] lg:h-[99dvh] lg:sticky top-0 lg:py-15 pt-15">
             <div className="hidden lg:block">
               <PageTracker />
             </div>
@@ -55,9 +55,14 @@ function Home() {
                   transition={{ duration: 0.3, ease: "easeInOut" }} 
                   className='flex flex-col h-full pt-10'
                 >
-                <HeroTitle />
-                <ShortDesc />
-                <ConnectWithMe />
+                <div>
+                  <HeroTitle />
+                  <ShortDesc />
+                  <ConnectWithMe />
+                  <div className="lg:my-10 mt-10 flex lg:justify-start justify-center" >
+                    <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
+                </div>
+              </div>
 
                   <div className="hidden lg:block items-end mt-auto">
                     <Footer />
@@ -70,11 +75,9 @@ function Home() {
         
           </header>
            {/* Right/bottom side - main content */}
-          <main className="flex flex-col w-full lg:w-[60%] py-15 text-slate-350 text-sm lg:text-base">
+          <main className="flex flex-col w-full lg:w-[60%] lg:py-22 pb-5 text-slate-350 text-sm lg:text-base">
             
-              <div className="flex flex-row lg:justify-end justify-center w-full pointer-events-auto" >
-                <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
-              </div>
+              
               <div className="flex flex-col mt-10">
                 <AnimatePresence mode="wait">
                   {activeTab === 'about' && (

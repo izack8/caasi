@@ -3,7 +3,7 @@ import SparkleText from '../animation/Sparkles';
 
 function Footer() {
   return (
-    <footer className="lg:text-left text-slate-350 text-[10px] w-full   mt-10">
+    <footer className="lg:text-left text-slate-350 text-[10px] w-full">
         <p>Coded by Isaac. Design inspired by
         &nbsp;<a className="underline" href="https://alvinchang.dev">Alvin</a>,
         &nbsp;<a className="underline" href="https://brittanychiang.com">Brittany</a>, and
