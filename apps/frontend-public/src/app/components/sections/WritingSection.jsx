@@ -67,7 +67,7 @@ function WritingSection() {
       <SectionLabel label="Blog Posts" />
         {loading && <LoadingBar />}
         {error && console.error('Error fetching posts:', error)}
-        <div className="flex gap-2 mb-6 justify-center lg:justify-start">
+        <div className="flex gap-2 mb-5 justify-center lg:justify-start">
           {uniqueTags.map((tag, index) => (
             <Button
               key={index}

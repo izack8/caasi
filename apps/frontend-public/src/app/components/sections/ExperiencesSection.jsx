@@ -65,7 +65,7 @@ function ExperiencesSection() {
       {!loading && experiences.length === 0 && <div className="text-center">No experiences found</div>}
       {experiences.map((experience, index) => (
         <div key={index} className='experience mb-10 lg:flex lg:flex-wrap items-start duration-300 transition-all duration-300 group relative'>
-        <div className='desc h-full text-justify'>
+        <div className='desc h-full'>
           <div className='flex flex-col mb-2 gap-y-1'>
             <h2 className='text-xl font-bold group-hover:text-blue-500 transition-all duration-200'>{experience.title}</h2>
             
@@ -87,7 +87,7 @@ function ExperiencesSection() {
             </div>
           </div>
           
-          <p className="text-md" dangerouslySetInnerHTML={{ __html: experience.description }} />
+          <p className="text-md text-justify" dangerouslySetInnerHTML={{ __html: experience.description }} />
         </div>
       </div>
       ))}

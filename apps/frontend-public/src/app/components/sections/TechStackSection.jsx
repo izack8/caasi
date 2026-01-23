@@ -21,7 +21,7 @@ function TechStackSection() {
     return (
         <section>
             <SectionLabel label="Tech Stack" />
-        <div className="flex flex-col w-full mt-6">
+        <div className="flex flex-col w-full my-6">
             <div className="h-[150px] sm:h-[160px] mb-8 lg:mb-4">
                 <div 
                     className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 

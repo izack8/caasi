@@ -53,7 +53,7 @@ function Home() {
                   animate={{ opacity: 1, x: 0 }} 
                   exit={{ opacity: 0, x: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }} 
-                  className='flex flex-col h-full pt-10'
+                  className='flex flex-col h-full'
                 >
                 <div>
                   <HeroTitle />
@@ -75,10 +75,10 @@ function Home() {
         
           </header>
            {/* Right/bottom side - main content */}
-          <main className="flex flex-col w-full lg:w-[60%] lg:py-22 pb-5 text-slate-350 text-sm lg:text-base">
+          <main className="flex flex-col w-full lg:w-[60%] py-5 lg:py-30 text-slate-350 text-sm lg:text-base">
             
               
-              <div className="flex flex-col mt-10">
+              <div className="flex flex-col ">
                 <AnimatePresence mode="wait">
                   {activeTab === 'about' && (
                     <motion.div
@@ -137,14 +137,10 @@ function Home() {
                     </motion.div>
                   )}
 
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="lg:hidden items-end">
+                <div
+                  className="lg:hidden items-end mt-10">
                       <Footer />
-                </motion.div>
+                </div>
 
                 </AnimatePresence>
                   

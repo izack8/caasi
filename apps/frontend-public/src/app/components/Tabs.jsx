@@ -11,7 +11,7 @@ function Tabs({ activeTab, onTabClick }) {
       {tabs.map((tab) => (
         <button
           key={tab.id}
-          className={`tab bg-transparent border-none outline-none text-md lg:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === tab.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
+          className={`tab bg-transparent border-none outline-none text-sm lg:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === tab.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
           onClick={() => onTabClick(tab.id)}
         >
           {tab.label}
