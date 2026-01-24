@@ -8,7 +8,7 @@ function SparkleText({ children, className = "" }) {
       const newSparkle = {
         id: Date.now(),
         x: Math.random() * 100,
-        y: Math.random() * 100,
+        y: Math.random() * 10,
       };
       
       setSparkles(prev => [...prev, newSparkle]);
@@ -16,7 +16,7 @@ function SparkleText({ children, className = "" }) {
       setTimeout(() => {
         setSparkles(prev => prev.filter(s => s.id !== newSparkle.id));
       }, 1500);
-    }, 300);
+    }, 400);
 
     return () => clearInterval(interval);
   }, []);

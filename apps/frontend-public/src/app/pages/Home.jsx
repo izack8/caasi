@@ -86,7 +86,7 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <PageHeader title="hey there" subtitle="thanks for visiting! <3" />
+                      <PageHeader title="hey there" subtitle="thanks for visiting! please enjoy your stay <3" />
                       <AboutSection />
                       
                       
@@ -101,7 +101,7 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <PageHeader title="main quests & projects" subtitle="skills, experiences, trying to build cool stuff, automate things, etc etc."/>
+                      <PageHeader title="main quests & projects" subtitle="skills, professional experiences, trying to build cool stuff, automate things, etc etc"/>
                       <ExperiencesSection />
                       <ProjectsSection />
                       <TechStackSection />
