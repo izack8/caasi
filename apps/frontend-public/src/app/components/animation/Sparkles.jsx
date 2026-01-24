@@ -31,7 +31,7 @@ function SparkleText({ children, className = "" }) {
           style={{
             left: `${sparkle.x}%`,
             top: `${sparkle.y}%`,
-            fontSize: '8px',
+            fontSize: '20px',
           }}
         >
           ✨

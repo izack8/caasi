@@ -5,7 +5,7 @@ import ExperiencesSection from '../components/sections/ExperiencesSection';
 import WritingSection from '../components/sections/WritingSection';
 import PageTracker from '../components/PageTracker';
 import HeroTitle from '../components/HeroTitle';
-import ShortDesc from '../components/ShortDesc';
+import PageHeader from '../components/ui/PageHeader';
 import TechStackSection from '../components/sections/TechStackSection';
 import ConnectWithMe from '../components/ConnectWithMe';
 import Tabs from '../components/Tabs';
@@ -36,7 +36,6 @@ function Home() {
     <>
       <Glow />
       <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
-        
         <div className="w-full h-full lg:flex lg:flex-row lg:gap-6">
 
           {/* Left/top Side - hero title */}
@@ -87,8 +86,8 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      
-                        <AboutSection />
+                      <PageHeader title="hey there" subtitle="thanks for visiting! <3" />
+                      <AboutSection />
                       
                       
                       {/* <JourneySection /> */}
@@ -102,9 +101,10 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
+                      <PageHeader title="main quests & projects" subtitle="skills, experiences, trying to build cool stuff, automate things, etc etc."/>
                       <ExperiencesSection />
-                      <TechStackSection />
                       <ProjectsSection />
+                      <TechStackSection />
                     </motion.div>
                   )}
                   {activeTab === 'writing' && (
@@ -115,6 +115,11 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
+                      <PageHeader title="i write(?)" subtitle={
+                        <>
+                        I sometimes try to form coherent thoughts and write them down.
+                        </>
+                    } />
                       <WritingSection />
                     </motion.div>
                   )}
@@ -126,6 +131,7 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
+                      <PageHeader title="resumé chatbot" subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}/>
                        <div className="w-full h-[450px] bg-slate-200">
                       <iframe
                         src="https://ask-your-pdf-production.up.railway.app?embed=true"

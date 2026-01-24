@@ -58,6 +58,7 @@ function ExperiencesSection() {
   return (
     
     <section className="experiences-section w-full flex flex-wrap">
+      
       <SectionLabel label="Experiences" />
 
       {loading && <LoadingBar />}
