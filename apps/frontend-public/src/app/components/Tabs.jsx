@@ -5,7 +5,7 @@ function Tabs({ activeTab, onTabClick }) {
     { id: 'about', label: 'about me' },
     { id: 'work', label: 'my work' },
     { id: 'writing', label: 'my writing' },
-    { id: 'chat', label: 'resume chat' },
+    { id: 'chat', label: 'resumé chat' },
   ];
 
   useEffect(() => {

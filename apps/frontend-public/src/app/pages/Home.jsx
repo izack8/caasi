@@ -138,7 +138,7 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <PageHeader title="main quests & projects" subtitle="skills, professional experiences, trying to build cool stuff, automate things, etc etc"/>
+                      <PageHeader title="leveling up & side quests" subtitle="skills, professional experiences, trying to build cool stuff, automate things, etc etc"/>
                       <ExperiencesSection />
                       <ProjectsSection />
                       <TechStackSection />
@@ -153,9 +153,9 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <PageHeader title="i write(?)" subtitle={
+                      <PageHeader title="online scrapbook" subtitle={
                         <>
-                        I sometimes try to form coherent thoughts and write them down.
+                        I sometimes try to form coherent thoughts and then write them down
                         </>
                     } />
                       <WritingSection />
@@ -170,7 +170,7 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <PageHeader title="resumé chatbot" subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}/>
+                      <PageHeader title="ai chatbot" subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}/>
                        <div className="w-full h-[450px] bg-slate-200">
                       <iframe
                         src="https://ask-your-pdf-production.up.railway.app?embed=true"

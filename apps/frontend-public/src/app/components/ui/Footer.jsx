@@ -3,12 +3,12 @@ import SparkleText from '../animation/Sparkles';
 
 function Footer() {
   return (
-    <footer className="lg:text-left text-slate-350 text-[10px] w-full gap-y-1 flex flex-col">
-        <p>Web design inspired by
-        &nbsp;<a className="underline" href="https://alvinchang.dev">Alvin</a>,
-        &nbsp;<a className="underline" href="https://brittanychiang.com">Brittany</a>, and
-        &nbsp;<a className="underline" href="https://www.knlrvr.dev">Kane</a>.</p>
-        <p>Written with React and Tailwind CSS by Isaac. </p>
+    <footer className="lg:text-left text-slate-350 text-[11px] w-full flex flex-col">
+        <p>Design inspired by&nbsp;<a className="underline" href="https://alvinchang.dev">Alvin</a>,&nbsp; 
+        <a className="underline" href="https://brittanychiang.com">Brittany</a>,&nbsp;&&nbsp;
+          <a className="underline" href="https://www.knlrvr.dev">Kane</a>.</p>
+        <p>Built with FastAPI, React & Tailwind CSS by Isaac.</p>
+        <p>Deployed on Vercel & Railway.</p>
         &copy; 2025 - 2026
         <div className='flex items-center gap-2'>
           <span>Click Me to Time Travel!</span>
@@ -19,7 +19,6 @@ function Footer() {
           >
             <img src={time_machine_gif} alt="Time Machine Rotation" className="w-15 h-15" />
           </button>
-          {/* </SparkleText> */}
         </div>
     </footer>
   );

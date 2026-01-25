@@ -42,7 +42,7 @@ function HeroTitle() {
                 <span className="font-semibold text-4xl lg:text-5xl">Isaac 🎮</span>
             </h1>
             <p className='font-light text-xl flex w-full justify-center lg:justify-start '>
-                Musician. Software Engineer.
+                Gamer. Musician. Software Engineer.
             </p>
                 <p className="text-[10px] lg:text-[12px]">
                 (我会说中文 / je parle un petit peu français)
