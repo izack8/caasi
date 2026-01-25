@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
 
 function ConnectWithMe() {
     return (
-        <div className="flex flex-col w-full py-2 items-center lg:items-start">
+        <div className="flex flex-col w-full pt-5 items-center lg:items-start">
             
             <div className="flex text-slate-500 gap-4">
                 <a 

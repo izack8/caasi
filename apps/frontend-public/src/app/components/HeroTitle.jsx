@@ -11,7 +11,7 @@ function HeroTitle() {
     const [lang, setLang] = useState('en');
 
     return(
-        <div className="flex flex-col w-full justify-center text-center lg:justify-start lg:text-left mt-4 font-light gap-y-3 py-3">
+        <div className="flex flex-col w-full justify-center text-center lg:justify-start lg:text-left font-light gap-y-3">
             <h1 className="text-4xl lg:text-5xl flex flex-row justify-center lg:justify-start">
                 <span 
                     className={`cursor-pointer transition-colors ${lang === 'en' ? 'text-rose-500' : 'hover:text-rose-500'}`}
@@ -45,7 +45,7 @@ function HeroTitle() {
                 Musician. Software Engineer.
             </p>
                 <p className="text-[10px] lg:text-[12px]">
-            (我会说中文 / je parle un petit peu français)
+                (我会说中文 / je parle un petit peu français)
             </p>
         </div>
     )

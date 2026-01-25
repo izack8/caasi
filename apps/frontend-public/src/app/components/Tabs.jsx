@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function Tabs({ activeTab, onTabClick }) {
   const tabs = [
     { id: 'about', label: 'about me' },
@@ -5,6 +7,11 @@ function Tabs({ activeTab, onTabClick }) {
     { id: 'writing', label: 'my writing' },
     { id: 'chat', label: 'resume chat' },
   ];
+
+  useEffect(() => {
+    // scroll to top when activeTab changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
 
   return (
     <div className="tabs flex flex-row lg:flex-col gap-6 lg:gap-3 lg:items-start">

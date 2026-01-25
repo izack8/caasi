@@ -8,16 +8,18 @@ import HeroTitle from '../components/HeroTitle';
 import PageHeader from '../components/ui/PageHeader';
 import TechStackSection from '../components/sections/TechStackSection';
 import ConnectWithMe from '../components/ConnectWithMe';
-import Tabs from '../components/Tabs';
+import NavigationBar from '../components/ui/NavigationBar';
 import Footer from '../components/ui/Footer';
 import Glow from '../components/ui/Glow';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
 
 
+
 function Home() {
 
   const [activeTab, setActiveTab] = useState('about');
+  const [isNavSticky, setIsNavSticky] = useState(false);
 
   const handleTabChange = (newTab) => {
     if (newTab === activeTab) return;
@@ -30,22 +32,50 @@ function Home() {
     if (savedTab) {
       setActiveTab(savedTab);
     }
+
+    const savedScrollPosition = sessionStorage.getItem('homeScrollPosition');
+    if (savedScrollPosition) {
+      window.scrollTo(0, parseInt(savedScrollPosition, 10));
+    }
+
+    const getNavbarPosition = () => {
+      const navBar = document.getElementById('nav-bar');
+      if (navBar) {
+        const rect = navBar.getBoundingClientRect();
+        setIsNavSticky(rect.top <= 5);
+      }
+    };
+    window.addEventListener('scroll', getNavbarPosition);
+
+    const handleScroll = () => {
+      sessionStorage.setItem('homeScrollPosition', window.scrollY.toString());
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', getNavbarPosition);
+      window.removeEventListener('scroll', handleScroll);
+    };
+
   }, []);
 
   return (
     <>
       <Glow />
-      <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
-        <div className="w-full h-full lg:flex lg:flex-row lg:gap-6">
+      <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
+        <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-6">
+
 
           {/* Left/top Side - hero title */}
-          <header className="flex flex-col w-full lg:w-[40%] lg:h-[99dvh] lg:sticky top-0 lg:py-15 pt-10">
-            <div className="hidden lg:block">
+          <AnimatePresence mode="wait">
+          <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 px-5 lg:px-0">
+
+            <div className="hidden lg:block absolute top-10">
               <PageTracker />
             </div>
 
         
-              <AnimatePresence mode="wait">
+              
                 <motion.div
                   key="div"
                   initial={{ opacity: 0, x: 0 }} 
@@ -54,32 +84,38 @@ function Home() {
                   transition={{ duration: 0.3, ease: "easeInOut" }} 
                   className='flex flex-col h-full'
                 >
-                <div>
+                
                   <HeroTitle />
                   <ConnectWithMe />
-                  <div className="flex lg:justify-start justify-center py-5 items-center" >
-                    <Tabs activeTab={activeTab} onTabClick={handleTabChange} />
-                </div>
-              </div>
+                  <div className="hidden lg:block">
+                    <NavigationBar activeTab={activeTab} onTabClick={handleTabChange}/>
+                  </div>
 
                   <div className="hidden lg:block items-end mt-auto">
                     <Footer />
                   </div>
               
                 </motion.div>
-               
-              </AnimatePresence>
+            </header>
 
-        
-          </header>
+            <motion.div id="nav-bar" className={`lg:hidden sticky top-0 z-50 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/20 px-0' : '')}
+              initial={{ opacity: 0, x: 0 }} 
+                  animate={{ opacity: 1, x: 0 }} 
+                  exit={{ opacity: 0, x: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }} >
+                  <NavigationBar activeTab={activeTab} onTabClick={handleTabChange}/>
+              </motion.div>
+          </AnimatePresence>
            {/* Right/bottom side - main content */}
-          <main className="flex flex-col w-full lg:w-[60%] lg:py-28 text-slate-350 text-sm lg:text-base">
+           
+          <main className="flex flex-col w-full lg:w-[70%] lg:py-20 text-slate-350 text-sm lg:text-base px-5 lg:px-0">
             
               
               <div className="flex flex-col ">
                 <AnimatePresence mode="wait">
                   {activeTab === 'about' && (
                     <motion.div
+                      id="about"
                       key="about"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -95,6 +131,7 @@ function Home() {
                   )}
                   {activeTab === 'work' && (
                     <motion.div
+                      id="work"
                       key="work"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1}}
@@ -109,6 +146,7 @@ function Home() {
                   )}
                   {activeTab === 'writing' && (
                     <motion.div
+                      id="writing"
                       key="writing"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1}}
@@ -125,6 +163,7 @@ function Home() {
                   )}
                   {activeTab === 'chat' && (
                     <motion.div
+                    id="chat"
                       key="chat"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1}}
