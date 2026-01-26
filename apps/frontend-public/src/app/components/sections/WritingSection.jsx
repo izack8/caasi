@@ -63,8 +63,8 @@ function WritingSection() {
   }, []);
 
   return (
-    <section className="writing-section">
-      <SectionLabel label="Blog Posts" />
+    <section className="writing-section w-full flex flex-col">
+      <SectionLabel label="Posts" />
         {loading && <LoadingBar />}
         {error && console.error('Error fetching posts:', error)}
         <div className="flex gap-2 mb-5 justify-center lg:justify-start">

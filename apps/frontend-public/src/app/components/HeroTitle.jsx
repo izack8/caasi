@@ -24,7 +24,7 @@ function HeroTitle() {
                 <span 
                     className={`cursor-pointer transition-colors ${lang === 'fr' ? 'text-rose-500' : 'hover:text-rose-500'}`}
                     onClick={() => setLang('fr')}
-                >&nbsp;salut</span>
+                >&nbsp;Salut</span>
             </h1>
             
             <h1 className="flex flex-col text-2xl lg:text-4xl font-light">

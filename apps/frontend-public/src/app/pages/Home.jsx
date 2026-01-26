@@ -15,7 +15,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
 
 
-
 function Home() {
 
   const [activeTab, setActiveTab] = useState('about');
@@ -63,7 +62,7 @@ function Home() {
     <>
       <Glow />
       <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
-        <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-6">
+        <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
 
 
           {/* Left/top Side - hero title */}
@@ -73,11 +72,9 @@ function Home() {
             <div className="hidden lg:block absolute top-10">
               <PageTracker />
             </div>
-
-        
               
                 <motion.div
-                  key="div"
+                  key="left"
                   initial={{ opacity: 0, x: 0 }} 
                   animate={{ opacity: 1, x: 0 }} 
                   exit={{ opacity: 0, x: 0 }}
@@ -98,7 +95,9 @@ function Home() {
                 </motion.div>
             </header>
 
-            <motion.div id="nav-bar" className={`lg:hidden sticky top-0 z-50 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/20 px-0' : '')}
+            <motion.div 
+            key="nav-bar"
+            id="nav-bar" className={`lg:hidden sticky top-0 z-50 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/20 px-0' : '')}
               initial={{ opacity: 0, x: 0 }} 
                   animate={{ opacity: 1, x: 0 }} 
                   exit={{ opacity: 0, x: 0 }}
@@ -108,8 +107,7 @@ function Home() {
           </AnimatePresence>
            {/* Right/bottom side - main content */}
            
-          <main className="flex flex-col w-full lg:w-[70%] lg:py-20 text-slate-350 text-sm lg:text-base px-5 lg:px-0">
-            
+          <main className="flex flex-col w-full lg:w-[70%] lg:py-20 text-slate-350 text-md lg:text-base px-5 lg:px-0">
               
               <div className="flex flex-col ">
                 <AnimatePresence mode="wait">
@@ -153,7 +151,7 @@ function Home() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <PageHeader title="online scrapbook" subtitle={
+                      <PageHeader title="digital scrapbook" subtitle={
                         <>
                         I sometimes try to form coherent thoughts and then write them down
                         </>

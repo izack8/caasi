@@ -1,18 +1,13 @@
-export default function SectionLabel({ label, className, onClick, style }) {
+export default function SectionLabel({ label }) {
   return (
-    <div
-      className={`w-full lg:text-start mb-4 group justify-start ${className || ''}`}
-      onClick={onClick}
-      style={style}
-      role={onClick ? "button" : undefined}
-      tabIndex={onClick ? 0 : undefined}
-    >
-      <h2 className="text-black-100 text-md font-bold uppercase tracking-[0.09em] group-hover:text-rose-500 transition-all duration-300">
+    <div className="lg:text-start mb-4 group justify-start flex-col mr-auto">
+      <h2 className="w-full text-black-100 text-md font-bold uppercase tracking-[0.09em] group-hover:text-rose-500 transition-all duration-300">
         {label}
-      </h2>
-      <div className="flex justify-start lg:justify-start">
-        <hr className="w-20 group-hover:w-25 md:group-hover:w-28 transition-all duration-300 h-[1px] text-slate-700 border-slate-700 mt-2 mb-2" />
+          <div className="flex justify-start lg:justify-start">
+          <hr className="lg:w-[75%] lg:group-hover:w-full w-full transition-all duration-300 h-[1px] text-slate-700 border-slate-700 mt-2 mb-2" />
       </div>
+      </h2>
+      
     </div>
   );
 }

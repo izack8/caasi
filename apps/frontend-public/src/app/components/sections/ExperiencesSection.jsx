@@ -57,7 +57,7 @@ function ExperiencesSection() {
 
   return (
     
-    <section className="experiences-section w-full flex flex-wrap">
+    <section className="experiences-section w-full flex flex-col">
       
       <SectionLabel label="Experiences" />
 

@@ -3,12 +3,14 @@ import SparkleText from '../animation/Sparkles';
 
 function Footer() {
   return (
-    <footer className="lg:text-left text-slate-350 text-[11px] w-full flex flex-col">
+    <footer className="lg:text-left text-slate-350 text-[10px] 2xl:text-[12px] w-full flex flex-col">
         <p>Design inspired by&nbsp;<a className="underline" href="https://alvinchang.dev">Alvin</a>,&nbsp; 
-        <a className="underline" href="https://brittanychiang.com">Brittany</a>,&nbsp;&&nbsp;
-          <a className="underline" href="https://www.knlrvr.dev">Kane</a>.</p>
-        <p>Built with FastAPI, React & Tailwind CSS by Isaac.</p>
-        <p>Deployed on Vercel & Railway.</p>
+        <a className="underline" href="https://brittanychiang.com">Brittany</a>,&nbsp;
+          <a className="underline" href="https://www.knlrvr.dev">Kane</a>&nbsp;&&nbsp;
+          <a className="underline" href="https://www.taniarascia.com">Tania</a>
+          </p>
+        <p>Built with React, Tailwind CSS & FastAPI, with ♥️ by <a href="https://github.com/izack8" className="underline">Isaac</a></p>
+        <p>Deployed on Vercel & Railway</p>
         &copy; 2025 - 2026
         <div className='flex items-center gap-2'>
           <span>Click Me to Time Travel!</span>

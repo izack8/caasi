@@ -19,9 +19,9 @@ function TechStackSection() {
     };
 
     return (
-        <section>
+        <section className="tech-stack-section w-full flex flex-col">
             <SectionLabel label="Tech Stack" />
-        <div className="flex flex-col w-full my-6">
+        
             <div className="h-[150px] sm:h-[160px] mb-8 lg:mb-4">
                 <div 
                     className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 
@@ -68,7 +68,6 @@ function TechStackSection() {
                 ))}
             </div>
             <div className='text-center text-[10px] mt-2'>My Tech Stack (I wanna collect them like infinity stones)</div>
-        </div>
         </section>
     );
 }

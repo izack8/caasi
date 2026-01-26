@@ -11,7 +11,7 @@ export default function Post() {
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  
   const fetchPost =  async () => {
         try {
           const res = await fetch(API_ENDPOINTS.post(id));
@@ -27,6 +27,7 @@ export default function Post() {
 
   useEffect(() => {
 
+    const cachedPostFromFetchPosts = sessionStorage.getItem(`cachePosts`);
     const cachedPost = sessionStorage.getItem(`lastVisitedPost_${id}`);
 
     if (cachedPost) {
@@ -49,33 +50,13 @@ export default function Post() {
     <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
       
       <div className="w-full h-full lg:flex lg:flex-col">
-      <main className="flex flex-col pt-10 lg:py-20">
-
         <div className="hidden lg:block absolute top-10">
             <PageTracker section={"writing"} currentPage={id ? id : ''}/>
         </div>
-      <AnimatePresence mode="wait">
-        {loading ? (
-          <motion.div
-            key="loading"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="p-8 text-center"
-          >
-            Loading...
-          </motion.div>
-        ) : (
-          <motion.div
-            key={post.id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: "ease" }}
-          >
-            
-              <div className="mb-3">
+      <main className="flex flex-col pt-10 lg:py-20">
+
+        
+        <div className="mb-3">
                 <button
                   className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
                   onClick={handleBack}
@@ -84,6 +65,20 @@ export default function Post() {
                   <span className="absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 bg-black"></span>
                 </button>
               </div>
+      <AnimatePresence mode="wait">
+         <motion.div
+            key={post ? post.id : 'loading'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+        {loading ? (
+          <div className="p-8 text-center">
+            Loading...
+          </div>
+        ) : (
+         <>
               <div className="flex flex-col gap-y-1">
                 <h1 className="text-2xl font-semibold">{post.title}</h1>
                 <h2 className="text-md">{post.description}</h2>
@@ -95,14 +90,20 @@ export default function Post() {
                       })}</h2>
               </div>
               <MarkdownRenderer>{post.content}</MarkdownRenderer>
-              <Footer />
-            
-          </motion.div>
-         
-        )}
+          </>
+          )}
+           <div className="items-end py-5 lg:py-0">
+          <Footer />
+        </div>
+        </motion.div>
       </AnimatePresence>
+       
       </main>
+     
+        
       </div>
+       
     </div>
+    
   );
 }
