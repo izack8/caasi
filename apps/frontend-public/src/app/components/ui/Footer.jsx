@@ -1,5 +1,4 @@
 import time_machine_gif from '../../../assets/time_machine_rotation_gif.webp';
-import SparkleText from '../animation/Sparkles';
 
 function Footer() {
   return (
