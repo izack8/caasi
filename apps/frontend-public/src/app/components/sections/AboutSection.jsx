@@ -16,10 +16,6 @@ function AboutSection() {
         I'd like to think that I'm an individual that <span className="line-through">always</span> strives to give my best, and learn as much as I can in this short life I have, so I'm always looking for opportunities to learn, grow and contribute my skills effectively. But most importantly, <span className="font-semibold">I really want to put as much cool stuff into the world as I can</span>, and I’m très excité to see where this journey takes me! :D
       </p>
 
-      <p>
-        I always strive to do my best and learn as much as I can in this short life I have, and am always looking for opportunities to learn, grow and contribute my skills effectively. Most importantly, <span className="font-semibold">I want to put as much cool stuff into the world as I can</span>, and I’m excited to see where this journey takes me! :D
-      </p>
-
 
       <div className="flex font-semibold">
         <SparkleText>Slay vibes only!!! 🎮🎸🎤👯🩵</SparkleText>
