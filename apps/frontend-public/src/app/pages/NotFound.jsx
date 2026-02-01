@@ -1,7 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import MarkdownRenderer from '../components/ui/MarkdownRenderer';
-import { API_ENDPOINTS } from '../config';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../components/ui/Footer';
 import PageTracker from '../components/PageTracker';
 import { motion, AnimatePresence } from 'framer-motion';
