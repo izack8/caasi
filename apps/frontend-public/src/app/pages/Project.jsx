@@ -9,53 +9,55 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Project() {
-    const { id } = useParams();
-    const [project, setProject] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
-    const defaultErrorProject = {
-                        id: "not-found",
-                        slug: "not-found",
-                        title: "awwie. i didn't make this project!",
-                        what_i_learnt: "it's ok! i have other cool projects you can check out!!! :)",
-                        technologies: [],
-                        url: {
-                          link: "",
-                          github: ""
-                        },
-                        www: {
-                          what: "sometimes i dream of better",
-                          why: "what is life without purpose?",
-                          who: "just a wanderer in the code universe"
-                        },
-                        timeline: []
-                      };
+  const { id } = useParams();
+  const [project, setProject] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-    const fetchProjectFromAPI =  async () => {
-          try {
-            const res = await fetch(API_ENDPOINTS.project(id));
+  const defaultErrorProject = {
+                      id: "not-found",
+                      slug: "not-found",
+                      title: "awwie. i didn't make this project! :(",
+                      what_i_learnt: "it's ok! i have other cool projects you can check out!!! :)",
+                      technologies: [],
+                      url: {
+                        link: "",
+                        github: ""
+                      },
+                      www: {
+                        what: "anyways, i hope you're well!",
+                        why: "good vibes only!",
+                        who: "i'm so hungry coding this page up lolz."
+                      },
+                      timeline: [{"timeline_date": "hehe", "timeline_description": "cyaaa!"}]
+                    };
 
-            if (!res.ok) {
-              setProject(defaultErrorProject);
-              return;
-            }
-            const projectData = await res.json();
-            setProject(projectData);
-            setLoading(false);
-            console.log("Fetched project:", projectData);
-            sessionStorage.setItem(`lastVisitedProject_${id}`, JSON.stringify(projectData));
-          } catch (error) {
+  const fetchProjectFromAPI =  async () => {
+        try {
+          const res = await fetch(API_ENDPOINTS.project(id));
 
-            console.error("Error fetching project:", error);
-                  setProject(defaultErrorProject);
+          if (!res.ok) {
+            setProject(defaultErrorProject);
+            return;
           }
-      };
+
+          const projectData = await res.json();
+          setProject(projectData);
+          // setLoading(false);
+          console.log("Fetched project:", projectData);
+          sessionStorage.setItem(`lastVisitedProject_${id}`, JSON.stringify(projectData));
+        } catch (error) {
+          console.error("Error fetching project:", error);
+          setProject(defaultErrorProject);
+          // setLoading(false);
+        }
+    };
 
   const fetchProjectFromCache = () => {
       const cachedProject = sessionStorage.getItem(`lastVisitedProject_${id}`);
       if (cachedProject) {
         setProject(JSON.parse(cachedProject));
-        setLoading(false);
+        // setLoading(false);
         console.log("Loaded project from cache:", JSON.parse(cachedProject));
       } else {
         fetchProjectFromAPI();
@@ -71,11 +73,10 @@ export default function Project() {
       // i need to test this
     if (cachedProject) {
       setProject(cachedProject);
-      setLoading(false);
+      // setLoading(false);
     } else {
       fetchProjectFromCache();
     }
-
       
   }, [id]);
 
