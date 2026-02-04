@@ -171,22 +171,28 @@ function Home() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                       <PageHeader title="ai chatbot" subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}/>
+                      (it's kinda broken now, cause YALL MFs USED UP ALL MY CREDITS)
                        <div className="w-full h-[450px] bg-slate-200">
-                        (it's kinda broken now, cause YALL MFs USED UP ALL MY CREDITS)
                         <AIResumeChatSection />
                     </div>
                     </motion.div>
                   )}
 
-                <div
-                  className="lg:hidden items-end mt-10">
-                      <Footer />
-                </div>
+                <motion.div className="flex lg:hidden mt-10 py-3"
+                  key="footer-mobile"
+                initial={{ opacity: 0, x: 0 }} 
+                animate={{ opacity: 1, x: 0 }} 
+                exit={{ opacity: 0, x: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                            >
+                  <Footer />
+                </motion.div>
 
                 </AnimatePresence>
-                  
                 </div>
           </main>
+
+          
 
         </div>
 
