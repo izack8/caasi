@@ -13,21 +13,44 @@ export default function Project() {
     const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const defaultErrorProject = {
+                        id: "not-found",
+                        slug: "not-found",
+                        title: "awwie. i didn't make this project!",
+                        what_i_learnt: "it's ok! i have other cool projects you can check out!!! :)",
+                        technologies: [],
+                        url: {
+                          link: "",
+                          github: ""
+                        },
+                        www: {
+                          what: "sometimes i dream of better",
+                          why: "what is life without purpose?",
+                          who: "just a wanderer in the code universe"
+                        },
+                        timeline: []
+                      };
 
-  const fetchProjectFromAPI =  async () => {
-        try {
-          const res = await fetch(API_ENDPOINTS.project(id));
-          const projectData = await res.json();
-          setProject(projectData);
-          setLoading(false);
-          console.log("Fetched project:", projectData);
-          sessionStorage.setItem(`lastVisitedProject_${id}`, JSON.stringify(projectData));
-        } catch (error) {
-          console.error("Error fetching project:", error);
-        }
-    };
+    const fetchProjectFromAPI =  async () => {
+          try {
+            const res = await fetch(API_ENDPOINTS.project(id));
 
-  // fix this later
+            if (!res.ok) {
+              setProject(defaultErrorProject);
+              return;
+            }
+            const projectData = await res.json();
+            setProject(projectData);
+            setLoading(false);
+            console.log("Fetched project:", projectData);
+            sessionStorage.setItem(`lastVisitedProject_${id}`, JSON.stringify(projectData));
+          } catch (error) {
+
+            console.error("Error fetching project:", error);
+                  setProject(defaultErrorProject);
+          }
+      };
+
   const fetchProjectFromCache = () => {
       const cachedProject = sessionStorage.getItem(`lastVisitedProject_${id}`);
       if (cachedProject) {
@@ -45,11 +68,12 @@ export default function Project() {
       ? JSON.parse(cachedProjects).find((project) => project.slug === id)
       : null;
 
+      // i need to test this
     if (cachedProject) {
       setProject(cachedProject);
       setLoading(false);
     } else {
-      fetchProjectFromAPI();
+      fetchProjectFromCache();
     }
 
       
@@ -63,10 +87,7 @@ export default function Project() {
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
-      
-      
       <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
-
           <main className="flex flex-col w-full lg:w-[80%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 lg:px-0">
           
             <div className="hidden lg:block absolute top-10">
@@ -135,7 +156,7 @@ export default function Project() {
                         {/* To-do: update project content here plz dont procrastinate*/}
                         <div className="flex lg:flex-row flex-col gap-x-2 lg:text-left text-justify">
                           
-                          <div className="lg:w-1/3">
+                          <div className="lg:w-1/3 lg:mb-3">
                             <h1 className="text-xl font-semibold">what</h1>
                             <span className="text-md text-justify">{project ? project.www.what : ''}</span>
                           </div>
@@ -148,37 +169,38 @@ export default function Project() {
                             <span className="text-md text-justify">{project ? project.www.who : ''}</span>
                           </div>
                       </div>
-
-
                     </div>
 
                   </motion.div>
                 </AnimatePresence>
+
+              <div className="hidden lg:block items-end mt-auto">
+                    <Footer />
+              </div>
               
 
           </main>
-
-          
-                <header className="flex flex-col w-full lg:w-[20%] lg:py-20 text-slate-350 text-md lg:text-base lg:py-0 py-5 lg:px-0">
-                <AnimatePresence mode="wait">
-                <motion.div
-                  key="loading"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                  <div className="mb-4 flex flex-col">
-                  <h1 className="font-semibold text-2xl">Timeline</h1>
-                  <span className="text-xs">(earlier entries at the bottom)</span>
-                  </div>
-                  <Timeline timelineData={project ? project.timeline : []} />
-                   </motion.div>
-                </AnimatePresence>
-                  </header>
+          <header className="flex flex-col w-full lg:w-[20%] lg:py-20 text-slate-350 text-md lg:text-base lg:py-0 py-5 lg:px-0">
+          <AnimatePresence mode="wait">
+          <motion.div
+            key="loading"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="mb-4 flex flex-col">
+            <h1 className="font-semibold text-2xl">Timeline</h1>
+            <span className="text-xs">(earlier entries at the bottom)</span>
+            </div>
+            <Timeline timelineData={project ? project.timeline : []} />
+            <div className="flex lg:hidden items-end py-3">
+              <Footer />
+            </div>
+              </motion.div>
+          </AnimatePresence>
+          </header>
                  
-            
-
       </div>
      
     </div>

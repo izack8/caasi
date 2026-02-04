@@ -1,5 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from ..services.project_service import get_project_by_id, get_projects
+
 
 router = APIRouter(prefix="/projects", tags=["Projects"])
 
@@ -10,6 +11,6 @@ def fetch_projects():
 @router.get("/{project_id}")
 def fetch_project_by_id(project_id: str):
     project = get_project_by_id(project_id)
-    if project:
-        return project
-    return {"error": "Project not found"}
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+    return project
