@@ -151,11 +151,11 @@ export default function Project() {
                     </div>
                     <div>
                     <h2 className="text-xl font-semibold">abstract</h2>
-                      <p className="lg:text-left text-justify">{project ? project.what_i_learnt : ''}</p>
+                      <p className="lg:text-left text-justify text-sm">{project ? project.what_i_learnt : ''}</p>
                       </div>
 
                         {/* To-do: update project content here plz dont procrastinate*/}
-                        <div className="flex lg:flex-row flex-col gap-x-2 lg:text-left text-justify">
+                        <div className="flex lg:flex-row flex-col gap-x-2 lg:text-left text-justify text-sm">
                           
                           <div className="lg:w-1/3 lg:mb-3">
                             <h1 className="text-xl font-semibold">what</h1>
