@@ -7,6 +7,7 @@ import PageTracker from '../components/PageTracker';
 import HeroTitle from '../components/HeroTitle';
 import PageHeader from '../components/ui/PageHeader';
 import TechStackSection from '../components/sections/TechStackSection';
+import AIResumeChatSection from '../components/sections/AIResumeChatSection';
 import ConnectWithMe from '../components/ConnectWithMe';
 import NavigationBar from '../components/ui/NavigationBar';
 import Footer from '../components/ui/Footer';
@@ -171,11 +172,8 @@ function Home() {
                     >
                       <PageHeader title="ai chatbot" subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}/>
                        <div className="w-full h-[450px] bg-slate-200">
-                      <iframe
-                        src="https://ask-your-pdf-production.up.railway.app?embed=true"
-                        title="Ask Your PDF App"
-                        className="w-full h-full"
-                      ></iframe>
+                        (it's kinda broken now, cause YALL MFs USED UP ALL MY CREDITS)
+                        <AIResumeChatSection />
                     </div>
                     </motion.div>
                   )}
