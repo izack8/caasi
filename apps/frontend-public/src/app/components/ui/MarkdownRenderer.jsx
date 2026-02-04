@@ -19,7 +19,7 @@ export default function MarkdownRenderer({ children }) {
   };
 
   return (
-    <div className="prose prose-neutral prose-lg max-w-none dark:prose-invert">
+    <div className="prose prose-neutral prose-lg max-w-none dark:prose-invert text-justify">
       <Markdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}

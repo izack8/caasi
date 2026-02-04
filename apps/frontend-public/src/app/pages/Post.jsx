@@ -51,7 +51,7 @@ export default function Post() {
       
       <div className="w-full h-full lg:flex lg:flex-col">
         <div className="hidden lg:block absolute top-10">
-            <PageTracker section={"writing"} currentPage={id ? id : ''}/>
+            <PageTracker section={"writings"} currentPage={id ? id : ''}/>
         </div>
       <main className="flex flex-col pt-10 lg:py-20">
 

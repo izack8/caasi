@@ -1,6 +1,6 @@
 import AboutSection from '../components/sections/AboutSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
-import JourneySection from '../components/sections/JourneySection';
+// import JourneySection from '../components/sections/JourneySection'; ill use this one day lmao
 import ExperiencesSection from '../components/sections/ExperiencesSection';
 import WritingSection from '../components/sections/WritingSection';
 import PageTracker from '../components/PageTracker';
@@ -95,6 +95,7 @@ function Home() {
                 </motion.div>
             </header>
 
+            {/* only shown (the nav bar) on mobile devices (smol screens) */}
             <motion.div 
             key="nav-bar"
             id="nav-bar" className={`lg:hidden sticky top-0 z-50 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/20 px-0' : '')}
@@ -105,8 +106,8 @@ function Home() {
                   <NavigationBar activeTab={activeTab} onTabClick={handleTabChange}/>
               </motion.div>
           </AnimatePresence>
+
            {/* Right/bottom side - main content */}
-           
           <main className="flex flex-col w-full lg:w-[70%] lg:py-20 text-slate-350 text-md lg:text-base px-5 lg:px-0">
               
               <div className="flex flex-col ">
@@ -137,8 +138,8 @@ function Home() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                       <PageHeader title="leveling up & side quests" subtitle="skills, professional experiences, trying to build cool stuff, automate things, etc etc"/>
-                      <ExperiencesSection />
                       <ProjectsSection />
+                      <ExperiencesSection />
                       <TechStackSection />
                     </motion.div>
                   )}
@@ -153,7 +154,7 @@ function Home() {
                     >
                       <PageHeader title="digital scrapbook" subtitle={
                         <>
-                        I sometimes try to form coherent thoughts and then write them down
+                        i sometimes try to form coherent thoughts and then write them down
                         </>
                     } />
                       <WritingSection />

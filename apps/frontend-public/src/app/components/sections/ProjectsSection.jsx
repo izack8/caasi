@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
 import ProjectModal from '../ProjectModal';
@@ -13,12 +14,17 @@ function ProjectsSection({ showAll = false }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
   const fetchProjects = async () => {
     try {
       const res = await fetch(API_ENDPOINTS.projects);
       const data = await res.json();
-      data.sort((a, b) => new Date(b.year) - new Date(a.year)); 
+      data.sort((a, b) => {
+      const yearA = parseInt(String(a.year).split(' ')[0]) || 0;
+      const yearB = parseInt(String(b.year).split(' ')[0]) || 0;
+      return yearB - yearA;
+    });
       console.log("Fetched projects:", data);
       setProjects(data);
       setLoading(false);
@@ -69,7 +75,7 @@ function ProjectsSection({ showAll = false }) {
            </div>
            <div className='flex flex-row gap-2'>
             <Button 
-              onClick={() => setSelectedProject(project)}
+              onClick={() => navigate(`/projects/${project.slug}`)}
               className="w-full rounded-md transition-colors"
               variant="default"
             >

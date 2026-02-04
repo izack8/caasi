@@ -114,6 +114,7 @@ const API_BASE_URL = process.env.NODE_ENV === 'production'
 
 export const API_ENDPOINTS = {
     projects: `${API_BASE_URL}/projects`,
+    project: (id) => `${API_BASE_URL}/projects/${id}`,
     experiences: `${API_BASE_URL}/experiences`,
     posts: `${API_BASE_URL}/posts`,
     post: (id) => `${API_BASE_URL}/posts/${id}`,
