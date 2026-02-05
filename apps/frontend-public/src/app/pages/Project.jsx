@@ -119,16 +119,16 @@ export default function Project() {
                       <h1 className="text-3xl font-semibold">{project ? project.title : 'not found'}</h1>
 
                     <div className="">
-                      <div className="flex flex-row gap-x-2">
+                      <div className="flex flex-row gap-x-2 w-full">
                       {project && project.url?.link && project.url.link !== "" && (
                         <a 
                             href={project.url.link} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group flex items-center gap-2 hover:text-zinc-900 transition-colors duration-200"
+                            className="group flex items-center gap-2 hover:text-[#0072b1] transition-colors duration-200"
                         >
-                            <FaExternalLinkAlt className="group-hover:scale-110 transition-transform duration-200" />
-                            <span className="text-sm text-base">Live Site</span>
+                            <FaExternalLinkAlt className="group-hover:scale-110 transition-transform duration-200 w-5 h-5 hover:text-[#0072b1] transition-colors" />
+                            <span className="text-md text-base">Live Site</span>
                         </a>
                       )}
                       
@@ -137,10 +137,10 @@ export default function Project() {
                             href={project.url.github} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="group flex items-center gap-2 hover:text-zinc-900 transition-colors duration-200"
+                            className="group flex items-center gap-2 hover:text-slate-900 transition-colors duration-200"
                         >
-                          <FaGithub className="group-hover:scale-110 transition-transform duration-200" />
-                          <span className="text-sm text-base">GitHub</span>
+                          <FaGithub className="group-hover:scale-110 transition-transform duration-200 w-6 h-6 hover:text-slate-900" />
+                          <span className="text-md text-base">GitHub</span>
                         </a>
                         
                       )}

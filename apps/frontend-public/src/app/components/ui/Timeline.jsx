@@ -14,7 +14,7 @@ export default function Timeline({ timelineData }) {
             <TimelineItem key={index} timelineData={item} isLastItem={index === reversedData.length - 1} />
           ))
         ) : (
-          <p>No timeline data available.</p>
+          <p>🔨🚧 No timeline data available (cause i haven't added it yet :/) 🚧🔨</p>
         )}
       
     </div>
