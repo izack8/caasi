@@ -4,6 +4,10 @@ export default function Timeline({ timelineData }) {
 
   return (
     <div className="flex flex-col w-full">
+        <div className="mb-2 flex flex-col">
+            <h1 className="font-semibold text-2xl">Timeline</h1>
+            <span className="text-xs">(earlier entries at the bottom)</span>
+        </div>
 
         {reversedData && reversedData.length > 0 ? (
           reversedData.map((item, index) => (
@@ -23,12 +27,12 @@ function TimelineItem({ timelineData, isLastItem }) {
 
       <div className="flex flex-col">
         <h1 className="text-lg font-semibold">{timelineData.timeline_date}</h1>
-        <p className="text-sm text-justify">{timelineData.timeline_description}</p>
+        <p className="text-justify">{timelineData.timeline_description}</p>
       </div>
 
         {/* if its the last item of array, dont render the line */}
         {!isLastItem && (
-          <div className="flex justify-center border-l-2 border-slate-500 h-10 mx-auto my-2"></div>
+          <div className="flex border-l-2 border-slate-500 h-10 ml-4 my-2"></div>
         )}
       
     </div>

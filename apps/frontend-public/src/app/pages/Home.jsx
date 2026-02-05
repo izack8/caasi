@@ -64,14 +64,12 @@ function Home() {
       <Glow />
       <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
         <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
-
-
           {/* Left/top Side - hero title */}
           <AnimatePresence mode="wait">
           <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 px-5 lg:px-0">
 
-            <div className="hidden lg:block absolute top-10">
-              <PageTracker />
+            <div className="flex hidden lg:block absolute top-[30px] h-[40px] items-center">
+              <PageTracker tabs={activeTab} />
             </div>
               
                 <motion.div
@@ -144,10 +142,10 @@ function Home() {
                       <TechStackSection />
                     </motion.div>
                   )}
-                  {activeTab === 'writing' && (
+                  {activeTab === 'writings' && (
                     <motion.div
-                      id="writing"
-                      key="writing"
+                      id="writings"
+                      key="writings"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1}}
                       exit={{ opacity: 0 }}

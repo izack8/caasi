@@ -4,7 +4,7 @@ function Tabs({ activeTab, onTabClick }) {
   const tabs = [
     { id: 'about', label: 'about me' },
     { id: 'work', label: 'my work' },
-    { id: 'writing', label: 'my writing' },
+    { id: 'writings', label: 'my writing' },
     { id: 'chat', label: 'resumé chat' },
   ];
 

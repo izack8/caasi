@@ -8,6 +8,7 @@ import Timeline from '../components/ui/Timeline';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
+
 export default function Project() {
   const { id } = useParams();
   const [project, setProject] = useState(null);
@@ -81,19 +82,19 @@ export default function Project() {
   }, [id]);
 
     const handleBack = () => {
-        navigate('/');
+        navigate(-1);
     };
 
     sessionStorage.setItem('lastVisitedProject', id);
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
+    <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
       <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
-          <main className="flex flex-col w-full lg:w-[80%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 lg:px-0">
+          <main className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 lg:px-0">
           
-            <div className="hidden lg:block absolute top-10">
-              <PageTracker section={"projects"} currentPage={id ? id : 'doesn\'t exist (yet?)'}/>
-          </div>
+            <div className="flex hidden lg:block absolute top-[30px] h-[40px] items-center">
+              <PageTracker tabs={"work"} section={"projects"} currentPage={id ? id : 'doesn\'t exist (yet?)'}/>
+             </div>
 
             <div className="mb-3">
                   <button
@@ -149,27 +150,7 @@ export default function Project() {
                     <div className="flex flex-row gap-x-3">
                       <ProjectTechStack technologies={project ? project.technologies : []} />
                     </div>
-                    <div>
-                    <h2 className="text-xl font-semibold">abstract</h2>
-                      <p className="lg:text-left text-justify text-sm">{project ? project.what_i_learnt : ''}</p>
-                      </div>
 
-                        {/* To-do: update project content here plz dont procrastinate*/}
-                        <div className="flex lg:flex-row flex-col gap-x-2 lg:text-left text-justify text-sm">
-                          
-                          <div className="lg:w-1/3 lg:mb-3">
-                            <h1 className="text-xl font-semibold">what</h1>
-                            <span className="text-md text-justify">{project ? project.www.what : ''}</span>
-                          </div>
-                          <div className="lg:w-1/3">
-                            <h1 className="text-xl font-semibold">why</h1>
-                            <span className="text-md text-justify">{project ? project.www.why : ''}</span>
-                          </div>
-                          <div className="lg:w-1/3">
-                            <h1 className="text-xl font-semibold">who</h1>
-                            <span className="text-md text-justify">{project ? project.www.who : ''}</span>
-                          </div>
-                      </div>
                     </div>
 
                   </motion.div>
@@ -181,7 +162,7 @@ export default function Project() {
               
 
           </main>
-          <header className="flex flex-col w-full lg:w-[20%] lg:py-20 text-slate-350 text-md lg:text-base lg:py-0 py-5 lg:px-0">
+          <header className="flex flex-col w-full lg:w-[70%] lg:py-20 text-slate-350 text-md lg:text-base lg:py-0 py-5 lg:px-0 gap-y-2">
           <AnimatePresence mode="wait">
           <motion.div
             key="loading"
@@ -190,11 +171,35 @@ export default function Project() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <div className="mb-4 flex flex-col">
-            <h1 className="font-semibold text-2xl">Timeline</h1>
-            <span className="text-xs">(earlier entries at the bottom)</span>
+            <div className="mb-4 flex flex-col gap-y-2">
+              {/* To-do: update project content here plz dont procrastinate*/}
+              
+                <div className="flex flex-col gap-y-2 lg:text-left text-justify">
+
+                  <div>
+                    <h2 className="text-xl font-semibold">abstract</h2>
+                      <p className="lg:text-left text-justify">{project ? project.what_i_learnt : ''}</p>
+                </div>
+                  
+                  <div className="">
+                    <h1 className="text-xl font-semibold">what</h1>
+                    <span className="text-justify">{project ? project.www.what : ''}</span>
+                  </div>
+
+                  <div className="">
+                    <h1 className="text-xl font-semibold">why</h1>
+                    <span className="text-justify">{project ? project.www.why : ''}</span>
+                  </div>
+
+                  <div className="">
+                    <h1 className="text-xl font-semibold">who</h1>
+                    <span className="text-justify">{project ? project.www.who : ''}</span>
+                  </div>
+              </div>
             </div>
-            <Timeline timelineData={project ? project.timeline : []} />
+
+              <Timeline timelineData={project ? project.timeline : []} />
+
             <div className="flex lg:hidden items-end py-3">
               <Footer />
             </div>
