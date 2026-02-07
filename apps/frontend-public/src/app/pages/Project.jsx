@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
 import { API_ENDPOINTS } from '../config';
 import Footer from '../components/ui/Footer';
@@ -178,7 +179,7 @@ export default function Project() {
 
                   <div>
                     <h2 className="text-xl font-semibold">abstract</h2>
-                      <p className="text-justify" dangerouslySetInnerHTML={{__html: project ? project.what_i_learnt : ''}}></p>
+                      <ReactMarkdown className="text-justify">{project ? project.what_i_learnt : ''}</ReactMarkdown>
                 </div>
                   
                   <div className="">
