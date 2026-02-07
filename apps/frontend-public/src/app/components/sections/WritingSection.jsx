@@ -44,11 +44,11 @@ function WritingSection() {
     }
   }, []);
 
-  const uniqueTags = ["All", ...new Set(posts.flatMap((post) => post.type))];
+  const uniqueTags = ["All", ...new Set(posts.flatMap((post) => post.type))].filter(tag => tag !== "Personal");
 
   const filteredPosts = activeTag === "All" 
-    ? posts 
-    : posts.filter((post) => post.type === activeTag);
+    ? posts.filter((post) => !post.type.includes("Personal"))
+    : posts.filter((post) => post.type.includes(activeTag) && !post.type.includes("Personal"));
 
   const handleTagChange = (newTag) => {
     if (newTag === activeTag) return;
