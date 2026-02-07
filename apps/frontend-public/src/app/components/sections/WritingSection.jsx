@@ -44,11 +44,9 @@ function WritingSection() {
     }
   }, []);
 
-  const uniqueTags = ["All", ...new Set(posts.flatMap((post) => post.type))].filter(tag => tag !== "Personal");
+  const uniqueTags = ["All", ...new Set(posts.flatMap((post) => post.type))].filter(tag => tag !== "Extras");
 
-  const filteredPosts = activeTag === "All" 
-    ? posts.filter((post) => !post.type.includes("Personal"))
-    : posts.filter((post) => post.type.includes(activeTag) && !post.type.includes("Personal"));
+  const filteredPosts = activeTag === "All" ? posts.filter((post) => !post.type.includes("Extras")) : posts.filter((post) => post.type.includes(activeTag));
 
   const handleTagChange = (newTag) => {
     if (newTag === activeTag) return;
