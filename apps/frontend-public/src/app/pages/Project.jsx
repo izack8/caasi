@@ -174,11 +174,11 @@ export default function Project() {
             <div className="mb-4 flex flex-col gap-y-2">
               {/* To-do: update project content here plz dont procrastinate*/}
               
-                <div className="flex flex-col gap-y-2 lg:text-left text-justify">
+                <div className="flex flex-col gap-y-2 text-justify">
 
                   <div>
                     <h2 className="text-xl font-semibold">abstract</h2>
-                      <p className="lg:text-left text-justify">{project ? project.what_i_learnt : ''}</p>
+                      <p className="text-justify" dangerouslySetInnerHTML={{__html: project ? project.what_i_learnt : ''}}></p>
                 </div>
                   
                   <div className="">
