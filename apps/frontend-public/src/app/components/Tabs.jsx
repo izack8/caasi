@@ -14,11 +14,11 @@ function Tabs({ activeTab, onTabClick }) {
   }, [activeTab]);
 
   return (
-    <div className="nav-tabs flex flex-row lg:flex-col gap-6 lg:gap-3 lg:items-start" style={{ WebkitTransform: 'translateZ(0)', willChange: 'transform' }}>
+    <div className="flex flex-row lg:flex-col gap-6 lg:gap-3 lg:items-start">
       {tabs.map((tab) => (
         <button
           key={tab.id}
-          className={`nav-tab bg-transparent border-none outline-none text-sm lg:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === tab.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
+          className={`bg-transparent border-none outline-none text-sm lg:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === tab.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
           onClick={() => onTabClick(tab.id)}
         >
           {tab.label}
