@@ -47,13 +47,11 @@ export default function Post() {
   sessionStorage.setItem('lastVisitedPost', id);
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
-      
-      <div className="w-full h-full lg:flex lg:flex-col">
-        <div className="hidden lg:block absolute top-10">
-            <PageTracker section={"writings"} currentPage={id ? id : ''}/>
-        </div>
-      <main className="flex flex-col pt-10 lg:py-20">
+    <>
+      <div className="hidden lg:block absolute top-10">
+          <PageTracker section={"writings"} currentPage={id ? id : ''}/>
+      </div>
+      <main className="flex flex-col pt-10 lg:py-20 px-5 lg:px-0">
 
         
         <div className="mb-3">
@@ -99,11 +97,6 @@ export default function Post() {
       </AnimatePresence>
        
       </main>
-     
-        
-      </div>
-       
-    </div>
-    
+    </>
   );
 }

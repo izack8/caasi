@@ -14,10 +14,8 @@ export default function NotFound() {
 //   sessionStorage.setItem('lastVisitedPost', id);
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
-      
-      <div className="w-full h-full lg:flex lg:flex-col">
-      <main className="flex flex-col pt-10 lg:py-20">
+    <>
+      <main className="flex flex-col pt-10 lg:py-20 px-5 lg:px-0">
 
         <div className="hidden lg:block absolute top-10">
             <PageTracker section={"404"} currentPage={'page doesn\'t exist <3'}/>
@@ -48,8 +46,7 @@ export default function NotFound() {
       </main>
       <div className="items-end py-5 lg:py-0">
             <Footer />
-        </div>
       </div>
-    </div>
+    </>
   );
 }

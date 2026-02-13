@@ -9,12 +9,16 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/writings/:id" element={<Post />} />
-          <Route path="/projects/:id" element={<Project />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
+          <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/writings/:id" element={<Post />} />
+              <Route path="/projects/:id" element={<Project />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </div>
       </div>
     </Router>
   );

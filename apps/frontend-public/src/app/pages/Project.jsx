@@ -89,9 +89,8 @@ export default function Project() {
     sessionStorage.setItem('lastVisitedProject', id);
 
   return (
-    <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 px-5 h-screen lg:h-auto">
-      <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
-          <main className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 lg:px-0">
+    <>
+      <main className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 px-5 lg:px-0">
           
             <div className="flex hidden lg:block absolute top-[30px] h-[40px] items-center">
               <PageTracker tabs={"work"} section={"projects"} currentPage={id ? id : 'doesn\'t exist (yet?)'}/>
@@ -207,10 +206,6 @@ export default function Project() {
               </motion.div>
           </AnimatePresence>
           </header>
-                 
-      </div>
-     
-    </div>
-    
+    </>
   );
 }

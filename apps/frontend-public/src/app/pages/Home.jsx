@@ -62,10 +62,8 @@ function Home() {
   return (
     <>
       <Glow />
-      <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
-        <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
-          {/* Left/top Side - hero title */}
-          <AnimatePresence mode="wait">
+      {/* Left/top Side - hero title */}
+      <AnimatePresence mode="wait">
           <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 px-5 lg:px-0">
 
             <div className="flex hidden lg:block absolute top-[30px] h-[40px] items-center">
@@ -189,13 +187,6 @@ function Home() {
                 </AnimatePresence>
                 </div>
           </main>
-
-          
-
-        </div>
-
-       
-      </div>
     </>
   );
 }
