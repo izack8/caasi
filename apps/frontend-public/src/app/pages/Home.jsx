@@ -39,7 +39,7 @@ function Home() {
     }
 
     const getNavbarPosition = () => {
-      const navBar = document.getElementById('nav-bar');
+      const navBar = document.getElementById('page-switcher');
       if (navBar) {
         const rect = navBar.getBoundingClientRect();
         setIsNavSticky(rect.top <= 5);
@@ -96,7 +96,8 @@ function Home() {
 
             {/* only shown (the nav bar) on mobile devices (smol screens) */}
             <motion.div 
-            key="nav-bar"
+            id="page-switcher"
+            key="page-switcher"
             className={`lg:hidden sticky top-0 z-1 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/40 px-0' : '')}
               initial={{ opacity: 0, x: 0 }} 
                   animate={{ opacity: 1, x: 0 }} 
@@ -122,7 +123,6 @@ function Home() {
                     >
                       <PageHeader title="hey there" subtitle="thanks for visiting! please enjoy your stay <3" />
                       <AboutSection />
-                      
                       
                       {/* <JourneySection /> */}
                     </motion.div>
