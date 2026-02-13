@@ -97,7 +97,7 @@ function Home() {
             {/* only shown (the nav bar) on mobile devices (smol screens) */}
             <motion.div 
             key="nav-bar"
-            id="nav-bar" className={`lg:hidden sticky top-0 z-1 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/40 px-0' : '')}
+            className={`lg:hidden sticky top-0 z-1 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/40 px-0' : '')}
               initial={{ opacity: 0, x: 0 }} 
                   animate={{ opacity: 1, x: 0 }} 
                   exit={{ opacity: 0, x: 0 }}
