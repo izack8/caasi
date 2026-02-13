@@ -18,7 +18,6 @@ function Button({
         primary: 'bg-blue-700 text-white hover:bg-blue-600',
         secondary: 'bg-gray-600 text-white hover:bg-gray-700',
         danger: 'bg-red-600 text-white hover:bg-red-700',
-        sparkle: 'bg-purple-600 text-white hover:bg-purple-700',
         live: 'bg-sky-700 text-white hover:bg-sky-600',
     };
     
@@ -33,18 +32,6 @@ function Button({
     const buttonClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${disabledClasses} ${className}`;
     
     return (
-        variant === 'sparkle' ? (
-            <SparkleText className={buttonClasses}>
-                <button
-                    onClick={onClick}
-                    disabled={disabled}
-                    className={buttonClasses}
-                    {...props}
-                >
-                    {children}
-                </button>
-            </SparkleText>
-        ) : (
         <button
             onClick={onClick}
             disabled={disabled}
@@ -53,7 +40,7 @@ function Button({
         >
             {children}
         </button>
-    ));
+    );
 }
 
 export default Button;

@@ -22,7 +22,7 @@ export default function Glow() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 -z-10 transition duration-300 glow"
+      className="pointer-events-none fixed inset-0 -z-1 transition duration-300 glow"
       ref={ref}
     />
   )

@@ -2,8 +2,7 @@ import SparkleText from "../animation/Sparkles";
 
 function AboutSection() {
   return (
-    <section className="about-section flex flex-col text-justify gap-y-4">
-        
+    <section className="flex flex-col text-justify gap-y-4">
       <p>
         I'm a <span className="tracking-[.2em]"><SparkleText>whimsy</SparkleText></span> ai and software engineer, curious about the digital world, with a dream of one day being affectionately referred to as a "nerd🤓". I love solving <span className="font-semibold"><a href="https://minutecryptic.com" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">minute cryptics</a></span> (love-hate actually), playing video games with my friendos (Overwatch!!!), playing the guitar, learning new musical instruments, reading, and hanging with my besties. I also love to make singing covers of pop songs (especially mandopop hehe)!!! I am currently developing AI solutions at a large FinTech consulting firm, <span className="font-semibold"><a href="https://synechron.com" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">Synechron</a></span>, building ML pipelines for major financial institutions.
         </p>

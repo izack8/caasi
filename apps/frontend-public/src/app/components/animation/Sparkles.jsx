@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function SparkleText({ children, className = "" }) {
+function SparkleText({ children }) {
   const [sparkles, setSparkles] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function SparkleText({ children, className = "" }) {
   }, []);
 
   return (
-    <span className={`relative inline-block ${className}`}>
+    <span className="relative inline-block">
       {children}
       {sparkles.map(sparkle => (
         <span
