@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-function Tabs({ activeTab, onTabClick }) {
+function PageLinks({ activeTab, onTabClick }) {
   const tabs = [
     { id: 'about', label: 'about me' },
     { id: 'work', label: 'my work' },
@@ -29,4 +29,4 @@ function Tabs({ activeTab, onTabClick }) {
   );
 }
 
-export default Tabs;
+export default PageLinks;
