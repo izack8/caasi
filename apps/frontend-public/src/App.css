@@ -9,7 +9,6 @@ html {
   scrollbar-gutter: stable;
 }
 
-
 /* Animated scrollbar that fades in/out */
 ::-webkit-scrollbar {
   width: 8px;

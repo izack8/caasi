@@ -66,7 +66,7 @@ function Home() {
         <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-8">
           {/* Left/top Side - hero title */}
           <AnimatePresence mode="wait">
-          <header key="home-header" className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 px-5 lg:px-0">
+          <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky top-0 lg:py-20 pt-10 px-5 lg:px-0">
 
             <div className="flex hidden lg:block absolute top-[30px] h-[40px] items-center">
               <PageTracker tabs={activeTab} />
@@ -95,21 +95,15 @@ function Home() {
             </header>
 
             {/* only shown (the nav bar) on mobile devices (smol screens) */}
-            <div
-              key="home-nav-bar"
-              id="nav-bar"
-              className={`lg:hidden sticky top-0 z-50 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/20 px-0' : '')}
-            >
-              <motion.div
-                key="nav-bar"
-                initial={{ opacity: 0, x: 0 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <NavigationBar activeTab={activeTab} onTabClick={handleTabChange}/>
+            <motion.div 
+            key="nav-bar"
+            id="nav-bar" className={`lg:hidden sticky top-0 z-1 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/20 px-0' : '')}
+              initial={{ opacity: 0, x: 0 }} 
+                  animate={{ opacity: 1, x: 0 }} 
+                  exit={{ opacity: 0, x: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }} >
+                  <NavigationBar activeTab={activeTab} onTabClick={handleTabChange}/>
               </motion.div>
-            </div>
           </AnimatePresence>
 
            {/* Right/bottom side - main content */}
