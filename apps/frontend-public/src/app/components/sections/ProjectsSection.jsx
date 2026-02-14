@@ -75,7 +75,7 @@ function ProjectsSection({ showAll = false }) {
            </div>
            <div className='flex flex-row gap-2'>
             <Button 
-              onClick={() => navigate(`/projects/${project.slug}`)}
+              onClick={() => navigate(`/work/projects/${project.slug}`)}
               className="w-full rounded-md transition-colors"
               variant="default"
             >

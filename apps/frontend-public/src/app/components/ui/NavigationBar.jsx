@@ -1,16 +1,28 @@
 import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function NavigationBar({ activeTab, onTabClick }) {
+  const navigate = useNavigate();
+  
   const links = [
-    { id: 'about', label: 'about me' },
-    { id: 'work', label: 'my work' },
-    { id: 'writings', label: 'my writing' },
-    { id: 'chat', label: 'resumé chat' },
+    { id: 'about', label: 'about me', path: '/' },
+    { id: 'work', label: 'my work', path: '/work' },
+    { id: 'writings', label: 'my writing', path: '/writings' },
+    { id: 'chat', label: 'resumé chat', path: '/chat' },
   ];
 
+  const topHeight = window.innerWidth < 1024 ? 280 : 0;
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: topHeight, behavior: 'smooth' });
   }, [activeTab]);
+
+  const handleClick = (link) => {
+    navigate(link.path);
+    if (onTabClick) {
+      onTabClick(link.id);
+    }
+  };
 
   return (
     <nav className="flex lg:justify-start justify-center py-5 items-center">
@@ -18,8 +30,8 @@ function NavigationBar({ activeTab, onTabClick }) {
         {links.map((link) => (
           <button
             key={link.id}
-            className={`bg-transparent border-none outline-none text-sm lg:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
-            onClick={() => onTabClick(link.id)}
+            className={`bg-transparent border-none outline-none text-sm lg:text-md xl:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
+            onClick={() => handleClick(link)}
           >
             {link.label}
             <span className={`absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 ${activeTab === link.id ? 'bg-black' : 'bg-transparent'}`}></span>

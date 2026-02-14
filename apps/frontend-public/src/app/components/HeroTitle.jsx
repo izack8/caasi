@@ -12,7 +12,7 @@ function HeroTitle() {
 
     return(
         <div className="flex flex-col w-full justify-center text-center lg:justify-start lg:text-left font-light gap-y-3">
-            <h1 className="text-4xl lg:text-5xl flex flex-row justify-center lg:justify-start">
+            <h1 className="text-4xl xl:text-5xl flex flex-row justify-center lg:justify-start">
                 <span 
                     className={`cursor-pointer transition-colors ${lang === 'en' ? 'text-rose-500' : 'hover:text-rose-500'}`}
                     onClick={() => setLang('en')}
@@ -39,9 +39,9 @@ function HeroTitle() {
                         {langs.find(l => l.id === lang).lang}&nbsp;
                     </motion.span>
                 </AnimatePresence>
-                <span className="font-semibold text-4xl lg:text-5xl">Isaac 🎮</span>
+                <span className="font-semibold text-4xl xl:text-5xl">Isaac 🎮</span>
             </h1>
-            <p className='font-light text-xl flex w-full justify-center lg:justify-start '>
+            <p className='font-light text-md xl:text-lg flex w-full justify-center lg:justify-start '>
                 Gamer. Musician. Software Engineer.
             </p>
                 <p className="text-[10px] lg:text-[12px]">
