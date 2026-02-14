@@ -1,10 +1,17 @@
+import { motion } from 'framer-motion';
 import PageHeader from '../components/ui/PageHeader';
 import AIResumeChatSection from '../components/sections/AIResumeChatSection';
 import Footer from '../components/ui/Footer';
 
 function ChatPage() {
   return (
-    <div id="chat" className="lg:h-auto h-[99dvh]">
+    <motion.div 
+      id="chat" 
+      className="lg:h-auto h-[99dvh]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
       <PageHeader 
         title="ai chatbot" 
         subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}
@@ -17,7 +24,7 @@ function ChatPage() {
       <div className="flex lg:hidden mt-10 py-3">
         <Footer />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
