@@ -10,6 +10,7 @@ import NotFound from './app/pages/subpages/NotFound.jsx';
 import './App.css';
 
 function App() {
+ 
   return (
     <Router>
       <div className="App">

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_ENDPOINTS } from '../../config';
 import SectionLabel from '../ui/SectionLabel';
-import ProjectModal from '../ProjectModal';
 import Button from '../ui/Button';
 import ProjectTechStack from '../ProjectTechStack';
 import LoadingBar from '../ui/LoadingBar';
@@ -10,10 +9,10 @@ import { FaCalendar } from 'react-icons/fa';
 
 
 function ProjectsSection({ showAll = false }) {
+
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedProject, setSelectedProject] = useState(null);
   const navigate = useNavigate();
 
   const fetchProjects = async () => {
@@ -25,7 +24,6 @@ function ProjectsSection({ showAll = false }) {
       const yearB = parseInt(String(b.year).split(' ')[0]) || 0;
       return yearB - yearA;
     });
-      console.log("Fetched projects:", data);
       setProjects(data);
       setLoading(false);
       sessionStorage.setItem('cachedProjects', JSON.stringify(data));
@@ -46,14 +44,14 @@ function ProjectsSection({ showAll = false }) {
     }
   }, []);
 
-
   const displayProjects = showAll ? projects : projects.slice(0, 10);
 
   return (
     
-    <section className="projects-section w-full flex flex-wrap">
+    <section className="projects-section w-full flex flex-col">
       <SectionLabel label="Projects" />
       {loading && <LoadingBar />}
+      {error && console.error('Error fetching projects:', error)}
       {displayProjects.length === 0 && !loading && (
         <div className="text-center">No projects found</div>
       )}
@@ -103,12 +101,12 @@ function ProjectsSection({ showAll = false }) {
       )} */}
 
       {/* Project Modal */}
-      {selectedProject && (
+      {/* {selectedProject && (
         <ProjectModal 
           project={selectedProject} 
           onClose={() => setSelectedProject(null)}
         />
-      )}
+      )} */}
     </section>
   );
 }

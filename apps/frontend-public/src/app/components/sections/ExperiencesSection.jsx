@@ -62,7 +62,6 @@ function ExperiencesSection() {
       <SectionLabel label="Experiences" />
 
       {loading && <LoadingBar />}
-
       {!loading && experiences.length === 0 && <div className="text-center">No experiences found</div>}
       {experiences.map((experience, index) => (
         <div key={index} className='experience mb-10 lg:flex lg:flex-wrap items-start duration-300 transition-all duration-300 group relative'>

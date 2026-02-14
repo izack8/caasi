@@ -1,7 +1,6 @@
-import { useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function NavigationBar({ activeTab, onTabClick }) {
+function NavigationBar({ activeTab }) {
   const navigate = useNavigate();
   
   const links = [
@@ -11,18 +10,6 @@ function NavigationBar({ activeTab, onTabClick }) {
     { id: 'chat', label: 'resumé chat', path: '/chat' },
   ];
 
-  const topHeight = window.innerWidth < 1024 ? 280 : 0;
-
-  useEffect(() => {
-    window.scrollTo({ top: topHeight, behavior: 'smooth' });
-  }, [activeTab]);
-
-  const handleClick = (link) => {
-    navigate(link.path);
-    if (onTabClick) {
-      onTabClick(link.id);
-    }
-  };
 
   return (
     <nav className="flex lg:justify-start justify-center py-5 items-center">
@@ -31,7 +18,7 @@ function NavigationBar({ activeTab, onTabClick }) {
           <button
             key={link.id}
             className={`bg-transparent border-none outline-none text-sm lg:text-md xl:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
-            onClick={() => handleClick(link)}
+            onClick={() => navigate(link.path)}
           >
             {link.label}
             <span className={`absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 ${activeTab === link.id ? 'bg-black' : 'bg-transparent'}`}></span>

@@ -22,18 +22,8 @@ function Layout() {
     else if (path === '/chat') setActiveTab('chat');
   }, [location.pathname]);
 
-  const handleTabChange = (newTab) => {
-    if (newTab === activeTab) return;
-    setActiveTab(newTab);
-    sessionStorage.setItem('activeTab', newTab);
-  };
-
+  // when scroll to top of page switcher, make it sticky and add backdrop blur + bg color
   useEffect(() => {
-    const savedScrollPosition = sessionStorage.getItem('homeScrollPosition');
-    if (savedScrollPosition) {
-      window.scrollTo(0, parseInt(savedScrollPosition, 10));
-    }
-
     const getNavbarPosition = () => {
       const navBar = document.getElementById('page-switcher');
       if (navBar) {
@@ -43,16 +33,17 @@ function Layout() {
     };
     window.addEventListener('scroll', getNavbarPosition);
 
-    const handleScroll = () => {
-      sessionStorage.setItem('homeScrollPosition', window.scrollY.toString());
-    };
-    window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', getNavbarPosition);
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const topHeight = window.innerWidth < 1024 ? 280 : 0;
+  
+  useEffect(() => {
+    window.scrollTo({ top: topHeight, behavior: 'smooth' });
+  }, [activeTab]);
+
 
   return (
     <>
@@ -63,37 +54,32 @@ function Layout() {
               <PageTracker pathname={location.pathname} />
             </div>
               
-            <motion.div
-              key="left"
-              initial={{ opacity: 0, x: 0 }} 
-              animate={{ opacity: 1, x: 0 }} 
-              exit={{ opacity: 0, x: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }} 
+            <div
               className='flex flex-col h-full'
             >
               <HeroTitle />
               <ConnectWithMe />
               <div className="hidden lg:block">
-                <NavigationBar activeTab={activeTab} onTabClick={handleTabChange}/>
+                <NavigationBar activeTab={activeTab} />
               </div>
 
               <div className="hidden lg:block items-end mt-auto">
                 <Footer />
               </div>
-            </motion.div>
+            </div>
           </header>
 
           {/* only shown (the nav bar) on mobile devices (smol screens) */}
-          <motion.div 
+          <motion.div
             id="page-switcher"
             key="page-switcher"
-            className={`lg:hidden sticky top-0 z-1 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/40 px-0' : '')}
+            className={`lg:hidden sticky top-0 z-10 transition-colors duration-200 px-5` + (isNavSticky ? ' backdrop-blur-md bg-white/40 px-0' : '')}
             initial={{ opacity: 0, x: 0 }} 
             animate={{ opacity: 1, x: 0 }} 
             exit={{ opacity: 0, x: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            <NavigationBar activeTab={activeTab} onTabClick={handleTabChange}/>
+            <NavigationBar activeTab={activeTab} />
           </motion.div>
         </AnimatePresence>
 
