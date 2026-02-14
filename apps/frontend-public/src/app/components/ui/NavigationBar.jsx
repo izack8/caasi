@@ -10,7 +10,6 @@ function NavigationBar({ activeTab }) {
     { id: 'chat', label: 'resumé chat', path: '/chat' },
   ];
 
-
   return (
     <nav className="flex lg:justify-start justify-center py-5 items-center">
       <div className="flex flex-row lg:flex-col gap-6 lg:gap-3 lg:items-start">

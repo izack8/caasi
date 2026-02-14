@@ -9,7 +9,7 @@ function WorkPage() {
   return (
     <motion.div 
       id="work" 
-      className="lg:h-auto h-[99dvh]"
+      className="h-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
