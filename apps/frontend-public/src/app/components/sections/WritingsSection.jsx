@@ -97,7 +97,7 @@ function WritingSection() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
                 className="mb-5 rounded cursor-pointer group"
-                onClick={() => navigate(`/writings/${post.id}`)}
+                onClick={() => navigate(`/writings/posts/${post.id}`)}
               >
                 <div className="flex flex-col gap-y-1">
                     <h1 className="text-lg

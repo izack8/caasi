@@ -1,9 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import MarkdownRenderer from '../components/ui/MarkdownRenderer';
-import { API_ENDPOINTS } from '../config';
-import Footer from '../components/ui/Footer';
-import PageTracker from '../components/PageTracker';
+import MarkdownRenderer from '../../components/ui/MarkdownRenderer';
+import { API_ENDPOINTS } from '../../config';
+import Footer from '../../components/ui/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Post() {
@@ -48,11 +47,6 @@ export default function Post() {
 
   return (
     <>
-      <div className="hidden lg:block absolute top-10">
-          <PageTracker section={"writings"} currentPage={id ? id : ''}/>
-      </div>
-      <main className="flex flex-col pt-10 lg:py-20 px-5 lg:px-0">
-
         
         <div className="mb-3">
                 <button
@@ -95,8 +89,6 @@ export default function Post() {
         </div>
         </motion.div>
       </AnimatePresence>
-       
-      </main>
     </>
   );
 }

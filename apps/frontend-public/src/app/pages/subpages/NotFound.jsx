@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import Footer from '../components/ui/Footer';
-import PageTracker from '../components/PageTracker';
+import Footer from '../../components/ui/Footer';
+import PageTracker from '../../components/PageTracker';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function NotFound() {
@@ -15,11 +15,6 @@ export default function NotFound() {
 
   return (
     <>
-      <main className="flex flex-col pt-10 lg:py-20 px-5 lg:px-0">
-
-        <div className="hidden lg:block absolute top-10">
-            <PageTracker section={"404"} currentPage={'page doesn\'t exist <3'}/>
-        </div>
       <AnimatePresence mode="wait">
         <div className="mb-3">
                 <button
@@ -43,10 +38,6 @@ export default function NotFound() {
           </motion.div>
 
       </AnimatePresence>
-      </main>
-      <div className="items-end py-5 lg:py-0">
-            <Footer />
-      </div>
     </>
   );
 }
