@@ -6,8 +6,8 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 export default function MarkdownRenderer({ children }) {
+  
   const [copiedCode, setCopiedCode] = useState('');
-
   const copyToClipboard = async (code) => {
     try {
       await navigator.clipboard.writeText(code);
@@ -19,14 +19,14 @@ export default function MarkdownRenderer({ children }) {
   };
 
   return (
-    <div className="prose prose-neutral prose-lg max-w-none dark:prose-invert text-justify">
+    <div className="prose prose-neutral prose-lg dark:prose-invert text-justify ">
       <Markdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
         components={{
-          h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
-          h2: ({ children }) => <h2 className="text-2xl font-semibold mt-6 mb-3">{children}</h2>,
-          h3: ({ children }) => <h3 className="text-xl font-medium mt-4 mb-2">{children}</h3>,
+          h1: ({ children }) => <h1 className="text-3xl font-bold py-4">{children}</h1>,
+          h2: ({ children }) => <h2 className="text-2xl font-semibold py-3">{children}</h2>,
+          h3: ({ children }) => <h3 className="text-xl font-medium py-2">{children}</h3>,
           p:  ({ children }) => <p className="my-2 leading-relaxed">{children}</p>,
           ul: ({ children }) => <ul className="list-disc list-inside space-y-1">{children}</ul>,
           ol: ({ children }) => <ol className="list-decimal list-inside space-y-1">{children}</ol>,
@@ -41,7 +41,7 @@ export default function MarkdownRenderer({ children }) {
             const codeString = String(children).replace(/\n$/, '');
             
             return !inline && match ? (
-              <div className="my-4 rounded-lg overflow-hidden relative group">
+              <div className="my-4 rounded-lg overflow-hidden relative group max-w-full">
                 {/* Copy button */}
                 <button
                   onClick={() => copyToClipboard(codeString)}
@@ -56,6 +56,7 @@ export default function MarkdownRenderer({ children }) {
                   language={match[1]}
                   showLineNumbers={true}
                   wrapLines={true}
+                  wrapLongLines={true}
                   customStyle={{
                     margin: 0,
                     padding: '1em',
@@ -63,10 +64,15 @@ export default function MarkdownRenderer({ children }) {
                     background: '#282a36',
                     borderRadius: '0.5rem',
                     fontSize: '0.9rem',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'normal',
+                    overflowWrap: 'break-word',
                   }}
                   codeTagProps={{
                     style: {
                       fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
+                      whiteSpace: 'pre-wrap',
+                      wordBreak: 'normal',
                     }
                   }}
                   {...props}
@@ -75,7 +81,7 @@ export default function MarkdownRenderer({ children }) {
                 </SyntaxHighlighter>
               </div>
             ) : (
-              <code className="bg-gray-800 dark:bg-gray-800 text-white px-1 py-0.5 rounded text-sm" {...props}>
+              <code className="bg-gray-800 dark:bg-gray-800 text-white px-1 py-0.5 rounded text-sm break-all" {...props}>
                 {children}
               </code>
             );

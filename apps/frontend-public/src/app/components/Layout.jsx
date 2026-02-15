@@ -42,7 +42,7 @@ function Layout() {
   
   useEffect(() => {
     window.scrollTo({ top: topHeight, behavior: 'smooth' });
-  }, [activeTab]);
+  }, [location.pathname]);
 
 
   return (
@@ -83,7 +83,7 @@ function Layout() {
           </motion.div>
         </AnimatePresence>
 
-      <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-slate-350 text-md lg:text-base px-5 lg:px-0 gap-y-4">
+      <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-slate-350 text-md lg:text-base px-5 lg:px-0 gap-y-4 mt-5 lg:mt-0">
         <Outlet />
       </main>
     </>

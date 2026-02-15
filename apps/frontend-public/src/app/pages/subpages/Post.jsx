@@ -46,18 +46,18 @@ export default function Post() {
   sessionStorage.setItem('lastVisitedPost', id);
 
   return (
-    <>
-        
+     <AnimatePresence mode="wait">
+      <div>  
         <div className="mb-3">
-                <button
-                  className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
-                  onClick={handleBack}
-                >
-                  back to posts
-                  <span className="absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 bg-black"></span>
-                </button>
-              </div>
-      <AnimatePresence mode="wait">
+            <button
+              className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
+              onClick={handleBack}
+            >
+              back to posts
+              <span className="absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 bg-black"></span>
+            </button>
+          </div>
+     
          <motion.div
             key={post ? post.id : 'loading'}
             initial={{ opacity: 0 }}
@@ -70,7 +70,6 @@ export default function Post() {
             Loading...
           </div>
         ) : (
-         <>
               <div className="flex flex-col gap-y-1">
                 <h1 className="text-2xl font-semibold">{post.title}</h1>
                 <h2 className="text-md">{post.description}</h2>
@@ -80,15 +79,14 @@ export default function Post() {
                         month: 'long', 
                         day: 'numeric' 
                       })}</h2>
+                <MarkdownRenderer>{post.content}</MarkdownRenderer>
               </div>
-              <MarkdownRenderer>{post.content}</MarkdownRenderer>
-          </>
           )}
-           <div className="items-end py-5 lg:py-0">
+           <div className="lg:hidden items-end py-5 lg:py-0">
           <Footer />
         </div>
         </motion.div>
-      </AnimatePresence>
-    </>
+          </div>
+       </AnimatePresence>
   );
 }
