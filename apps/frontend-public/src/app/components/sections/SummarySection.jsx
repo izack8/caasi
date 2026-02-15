@@ -1,15 +1,28 @@
-
-
+import { useNavigate } from 'react-router-dom';
+import Button from '../ui/Button';
 
 export default function SummarySection() {
+
+    const navigate = useNavigate();
+    const summaryContent = [
+        {title: "sign-a-photo.jpg", desc:"A web app that uses computer vision to detect ASL alphabets, built with the theme of a photobooth", type:"Project", link: "work/projects/sign-a-photo-jpg"},
+        {title: "Portfolio Website", desc:"Developments of my personal website, inspired by other engineers, built by yours truly", type:"Project", link: "/work/projects/portfolio-website"},
+        {title: "Implementing a CRUD UI", desc:"A short article about implementing a CRUD UI for my personal website", type:"Article", link: "/writings/posts/2025-10-17-implementing-a-ui-for-crud"},
+    ]
     return (
-        <div className="flex flex-col gap-y-4">
-            <p className="text-lg lg:text-base xl:text-lg">
-                I'm a software engineer who loves building fun and whimsical projects. I have a passion for game development, interactive web experiences, and anything that allows me to express my creativity through code.
-            </p>
-            <p className="text-lg lg:text-base xl:text-lg">
-                When I'm not coding, you can find me playing video games, exploring new technologies, or just goofing around with friends. I believe that software should be enjoyable to use and create, and I strive to bring that philosophy into everything I build.
-            </p>
+        <div className="pt-4">
+        <p>(click me to explore more!)</p>
+            <div className="flex flex-row gap-4 h-45 w-full mt-1">
+                {summaryContent.map((item, index) => (
+                    <Button key={index} className="w-1/3 flex outline-1 outline-white" onClick={() => navigate(item.link)}>
+                        <div className="flex flex-col gap-y-1 text-left py-2">
+                            <h2 className="text-slate-200 text-lg">{item.title}</h2>
+                            <h3 className="text-sm text-slate-400">{item.type}</h3>
+                            <p className="text-white font-normal text-sm">{item.desc}</p>
+                        </div>
+                    </Button>
+                ))}
+            </div>
         </div>
     );
 }
