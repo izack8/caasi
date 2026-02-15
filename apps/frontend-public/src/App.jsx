@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './app/components/Layout.jsx';
+import HomePage from './app/pages/HomePage.jsx';
 import AboutPage from './app/pages/AboutPage.jsx';
 import WorkPage from './app/pages/WorkPage.jsx';
 import WritingsPage from './app/pages/WritingsPage.jsx';
@@ -18,7 +19,8 @@ function App() {
           <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-x-8">
             <Routes>
               <Route element={<Layout />}>
-                <Route path="/" element={<AboutPage />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/work" element={<WorkPage />} />
                 <Route path="/writings" element={<WritingsPage />} />
                 <Route path="/chat" element={<ChatPage />} />

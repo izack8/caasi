@@ -46,8 +46,7 @@ export default function Post() {
   sessionStorage.setItem('lastVisitedPost', id);
 
   return (
-     <AnimatePresence mode="wait">
-      <div>  
+      <>  
         <div className="mb-3">
             <button
               className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
@@ -86,7 +85,6 @@ export default function Post() {
           <Footer />
         </div>
         </motion.div>
-          </div>
-       </AnimatePresence>
+          </>
   );
 }

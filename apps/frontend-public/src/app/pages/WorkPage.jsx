@@ -9,14 +9,13 @@ function WorkPage() {
   return (
     <motion.div 
       id="work" 
-      className="h-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <PageHeader 
         title="leveling up & side quests" 
-        subtitle="skills, professional experiences, trying to build cool stuff, automate things, etc etc"
+        subtitle="projects, skills, professional experiences, trying to build cool stuff, automate things, etc etc"
       />
       <ProjectsSection />
       <ExperiencesSection />

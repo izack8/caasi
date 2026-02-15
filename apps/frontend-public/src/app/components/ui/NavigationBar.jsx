@@ -4,10 +4,10 @@ function NavigationBar({ activeTab }) {
   const navigate = useNavigate();
   
   const links = [
-    { id: 'about', label: 'about me', path: '/' },
     { id: 'work', label: 'my work', path: '/work' },
     { id: 'writings', label: 'my writing', path: '/writings' },
     { id: 'chat', label: 'resumé chat', path: '/chat' },
+    { id: 'about', label: 'about me', path: '/about' },
   ];
 
   return (

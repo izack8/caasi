@@ -7,12 +7,11 @@ function AboutPage() {
   return (
     <motion.div 
       id="about" 
-      className="h-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <PageHeader title="hey there" subtitle="thanks for visiting! please enjoy your stay <3" />
+      <PageHeader title="with ♥️," subtitle="from your local whimsy software engineer" />
       <AboutSection />
       
       <div className="flex lg:hidden mt-10 py-3">

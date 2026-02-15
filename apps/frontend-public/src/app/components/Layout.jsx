@@ -10,16 +10,17 @@ import Glow from './ui/Glow';
 
 function Layout() {
   const location = useLocation();
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('home');
   const [isNavSticky, setIsNavSticky] = useState(false);
 
   // determine active tab from current route, (for UI display purposes)
   const path = location.pathname;
   useEffect(() => {
-    if (path === '/') setActiveTab('about');
+    if (path === '/') setActiveTab('home');
     else if (path === '/work') setActiveTab('work');
     else if (path === '/writings') setActiveTab('writings');
     else if (path === '/chat') setActiveTab('chat');
+    else if (path === '/about') setActiveTab('about');
   }, [location.pathname]);
 
   // when scroll to top of page switcher, make it sticky and add backdrop blur + bg color
@@ -38,7 +39,7 @@ function Layout() {
     };
   }, []);
 
-  const topHeight = window.innerWidth < 1024 ? 280 : 0;
+  const topHeight = window.innerWidth < 1024 ? 200 : 0;
   
   useEffect(() => {
     window.scrollTo({ top: topHeight, behavior: 'smooth' });
@@ -58,10 +59,10 @@ function Layout() {
               className='flex flex-col h-full'
             >
               <HeroTitle />
-              <ConnectWithMe />
               <div className="hidden lg:block">
                 <NavigationBar activeTab={activeTab} />
               </div>
+              
 
               <div className="hidden lg:block items-end mt-auto">
                 <Footer />
