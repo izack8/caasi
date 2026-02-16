@@ -2,19 +2,37 @@
 
 body { 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  min-height: 100vh;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/canva_bg.png');
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
-  z-index: -1;
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Animated scrollbar that fades in/out - Windows only */
+html.windows ::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+html.windows ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease;
+}
+
+html.windows ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+/* Show scrollbar when scrolling - Windows only */
+html.windows.scrolling ::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+/* Auto-hide after scrolling stops - Windows only */
+html.windows.scroll-fade ::-webkit-scrollbar-thumb {
+  opacity: 0;
+  transition: opacity 0.8s ease 1s; /* Fade out after 1s delay */
 }

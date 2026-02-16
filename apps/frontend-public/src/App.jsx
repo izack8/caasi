@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import Layout from './app/components/Layout.jsx';
 import HomePage from './app/pages/HomePage.jsx';
 import AboutPage from './app/pages/AboutPage.jsx';
@@ -12,6 +13,13 @@ import NotFound from './app/pages/subpages/NotFound.jsx';
 import './App.css';
 
 function App() {
+  // Detect Windows for custom scrollbar
+  useEffect(() => {
+    const isWindows = navigator.platform.toLowerCase().includes('win');
+    if (isWindows) {
+      document.documentElement.classList.add('windows');
+    }
+  }, []);
  
   return (
     <Router>
