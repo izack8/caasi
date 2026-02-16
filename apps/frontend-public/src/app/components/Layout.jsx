@@ -20,7 +20,7 @@ function Layout() {
   }, [location.pathname]);
   
   useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
 
   return (

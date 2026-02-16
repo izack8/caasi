@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
 import MarkdownRenderer from '../../components/ui/MarkdownRenderer';
 import { API_ENDPOINTS } from '../../config';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Post() {
   const { id } = useParams();

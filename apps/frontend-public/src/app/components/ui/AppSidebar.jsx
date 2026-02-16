@@ -1,10 +1,11 @@
+import { memo } from 'react';
 import PageTracker from '../PageTracker';
 import HeroTitle from '../HeroTitle';
 import Footer from './Footer';
 import { useNavigate } from "react-router-dom";
 
 
-export default function AppSidebar({ location, activeTab }) {
+const AppSidebar = memo(function AppSidebar({ location, activeTab }) {
 
   const navigate = useNavigate();
 
@@ -28,16 +29,17 @@ export default function AppSidebar({ location, activeTab }) {
       </nav>
 
       {/* Mobile Navigation Bar */}
-      <nav className="lg:hidden flex flex-row items-center bg-white/30 backdrop-blur-md h-[50px] p-5 sticky">
+      <nav className="lg:hidden flex flex-row items-center bg-white/30 backdrop-blur-md h-[50px] p-5 sticky top-0 z-50" style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation', transform: 'translateZ(0)' }}>
           <span 
-            className="font-semibold text-xl cursor-pointer hover:text-blue-700 transition-colors w-1/3"
+            className="font-semibold text-xl cursor-pointer transition-colors w-1/3"
             onClick={() => navigate('/')}
+            style={{ WebkitTapHighlightColor: 'transparent' }}
           >  🎮&nbsp; Isaac</span>
           <NavigationBar activeTab={activeTab} />
       </nav>
     </>
   );
-}
+});
 
 function NavigationBar({ activeTab }) {
 
@@ -57,8 +59,9 @@ function NavigationBar({ activeTab }) {
         {links.map((link) => (
           <button
             key={link.id}
-            className={`text-sm lg:text-md xl:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
+            className={`text-sm lg:text-md xl:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'}`}
             onClick={() => navigate(link.path)}
+            style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}
           >
             <span className="md:hidden">{link.emoji}</span>
             <span className="hidden md:inline">{link.emoji} {link.label}</span>
@@ -70,3 +73,4 @@ function NavigationBar({ activeTab }) {
   );
 }
 
+export default AppSidebar;
