@@ -2,7 +2,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MarkdownRenderer from '../../components/ui/MarkdownRenderer';
 import { API_ENDPOINTS } from '../../config';
-import Footer from '../../components/ui/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Post() {
@@ -26,7 +25,7 @@ export default function Post() {
 
   useEffect(() => {
 
-    const cachedPostFromFetchPosts = sessionStorage.getItem(`cachePosts`);
+    const cachedPostFromFetchPosts = sessionStorage.getItem(`cachedPosts`);
     const cachedPost = sessionStorage.getItem(`lastVisitedPost_${id}`);
 
     if (cachedPost) {
@@ -81,9 +80,6 @@ export default function Post() {
                 <MarkdownRenderer>{post.content}</MarkdownRenderer>
               </div>
           )}
-           <div className="lg:hidden items-end py-5 lg:py-0">
-          <Footer />
-        </div>
         </motion.div>
           </>
   );

@@ -11,10 +11,10 @@ export default function SummarySection() {
     ]
     return (
         <div className="pt-4">
-        <p>(click me to explore more!)</p>
-            <div className="flex flex-row gap-4 h-45 w-full mt-1">
+        <p>Featured works: (click me to explore more!)</p>
+            <div className="flex md:flex-row gap-4 w-full mt-1 flex-col">
                 {summaryContent.map((item, index) => (
-                    <Button key={index} className="w-1/3 flex outline-1 outline-white" onClick={() => navigate(item.link)}>
+                    <Button key={index} className="md:w-1/3 flex outline-1 outline-white" onClick={() => navigate(item.link)}>
                         <div className="flex flex-col gap-y-1 text-left py-2">
                             <h2 className="text-slate-200 text-lg">{item.title}</h2>
                             <h3 className="text-sm text-slate-400">{item.type}</h3>

@@ -20,9 +20,6 @@ function ChatPage() {
         <AIResumeChatSection />
       </div>
       
-      <div className="flex lg:hidden mt-10 py-3">
-        <Footer />
-      </div>
     </motion.div>
   );
 }

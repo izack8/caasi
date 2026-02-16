@@ -21,9 +21,6 @@ function WorkPage() {
       <ExperiencesSection />
       <TechStackSection />
       
-      <div className="flex lg:hidden mt-10 py-3">
-        <Footer />
-      </div>
     </motion.div>
   );
 }

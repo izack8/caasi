@@ -22,7 +22,7 @@ function SparkleText({ children }) {
   }, []);
 
   return (
-    <span className="relative inline-block">
+    <span className="relative inline-block -z-1">
       {children}
       {sparkles.map(sparkle => (
         <span

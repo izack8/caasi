@@ -1,4 +1,4 @@
-import SparkleText from '../animation/Sparkles';
+import SparkleText from '../animation/SparkleText';
 
 function Button({ 
     children, 

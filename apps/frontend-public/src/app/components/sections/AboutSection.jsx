@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import SparkleText from "../animation/Sparkles";
+import SparkleText from "../animation/SparkleText";
 
 function AboutSection() {
   const navigate = useNavigate();

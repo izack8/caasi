@@ -1,7 +1,6 @@
-import SparkleText from '../components/animation/Sparkles';
+import SparkleText from '../components/animation/SparkleText';
 import ExecutiveSection from '../components/sections/ExecutiveSection';
 import SummarySection from '../components/sections/SummarySection';
-import Footer from '../components/ui/Footer';
 import PageHeader from '../components/ui/PageHeader';
 import { motion } from 'framer-motion'
 
@@ -23,9 +22,6 @@ function Home() {
         <SummarySection />
       </div>
       
-      <div className="flex lg:hidden mt-10 py-3">
-        <Footer />
-      </div>
     </motion.div>
     </>
   );

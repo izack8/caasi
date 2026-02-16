@@ -2,7 +2,7 @@ import time_machine_gif from '../../../assets/time_machine_rotation_gif.webp';
 
 function Footer() {
   return (
-    <footer className="lg:text-left text-slate-350 text-[10px] w-full flex flex-col">
+    <div className="lg:text-left text-slate-350 text-[10px] w-full flex flex-col">
         <p>Design inspired by&nbsp;<a className="underline" href="https://alvinchang.dev">Alvin</a>,&nbsp; 
         <a className="underline" href="https://brittanychiang.com">Brittany</a>,&nbsp;
           <a className="underline" href="https://www.knlrvr.dev">Kane</a>&nbsp;&&nbsp;
@@ -21,7 +21,7 @@ function Footer() {
             <img src={time_machine_gif} alt="Time Machine Rotation" className="w-15 h-15" />
           </button>
         </div>
-    </footer>
+    </div>
   );
 }
 

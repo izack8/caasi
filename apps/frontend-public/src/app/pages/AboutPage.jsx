@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import PageHeader from '../components/ui/PageHeader';
 import AboutSection from '../components/sections/AboutSection';
 import Footer from '../components/ui/Footer';
+import ConnectWithMeSection from '../components/sections/ConnectWithMeSection';
 
 function AboutPage() {
   return (
@@ -12,11 +13,11 @@ function AboutPage() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <PageHeader title="with ♥️," subtitle="from your local whimsy software engineer" />
-      <AboutSection />
-      
-      <div className="flex lg:hidden mt-10 py-3">
-        <Footer />
+      <div className='flex flex-col gap-y-10'>
+        <AboutSection />
+        <ConnectWithMeSection />
       </div>
+      
     </motion.div>
   );
 }

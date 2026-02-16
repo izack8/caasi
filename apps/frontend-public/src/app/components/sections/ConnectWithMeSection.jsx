@@ -1,8 +1,10 @@
 import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
+import SectionLabel from '../ui/SectionLabel';
 
-function ConnectWithMe() {
+function ConnectWithMeSection() {
     return (
-        <div className="flex flex-col w-full items-center lg:items-start">
+        <section className="flex flex-col w-full items-center lg:items-start">
+            <SectionLabel label="connect with me" />
             
             <div className="flex text-slate-500 gap-4">
                 <a 
@@ -35,8 +37,8 @@ function ConnectWithMe() {
                     <span className="text-sm text-base">Resume</span>
                 </a>
             </div>
-        </div>
+        </section>
     );
 }
 
-export default ConnectWithMe;
+export default ConnectWithMeSection;

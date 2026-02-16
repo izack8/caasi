@@ -15,11 +15,9 @@ function WritingsPage() {
         title="digital scrapbook" 
         subtitle={`i sometimes try to form coherent thoughts and then write them down`}
       />
+      
       <PostsSection />
       
-      <div className="flex lg:hidden mt-10 py-3">
-        <Footer />
-      </div>
     </motion.div>
   );
 }
