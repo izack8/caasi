@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import PageHeader from '../components/ui/PageHeader';
 import AIResumeChatSection from '../components/sections/AIResumeChatSection';
-import Footer from '../components/ui/Footer';
 
 function ChatPage() {
   return (

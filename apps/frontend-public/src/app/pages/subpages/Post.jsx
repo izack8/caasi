@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { FaAngleLeft } from 'react-icons/fa';
 import MarkdownRenderer from '../../components/ui/MarkdownRenderer';
 import { API_ENDPOINTS } from '../../config';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -48,13 +49,13 @@ export default function Post() {
       <>  
         <div className="mb-3">
             <button
-              className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
+              className="tab font-semibold pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
               onClick={handleBack}
             >
+              <FaAngleLeft className="inline mr-1" />
               back to posts
-              <span className="absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 bg-black"></span>
             </button>
-          </div>
+                </div>
      
          <motion.div
             key={post ? post.id : 'loading'}

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import PageHeader from '../components/ui/PageHeader';
 import AboutSection from '../components/sections/AboutSection';
-import Footer from '../components/ui/Footer';
 import ConnectWithMeSection from '../components/sections/ConnectWithMeSection';
 
 function AboutPage() {

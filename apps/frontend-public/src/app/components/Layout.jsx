@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import AppSidebar from './ui/AppSidebar';
 import Glow from './ui/Glow';
@@ -19,7 +19,7 @@ function Layout() {
     else if (path === '/favorites') setActiveTab('favorites');
   }, [location.pathname]);
   
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [location.pathname]);
 
@@ -28,11 +28,11 @@ function Layout() {
     <Glow />
     <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-x-8">
     
-        <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] sticky top-0 lg:py-20 lg:px-0">
+        <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] sticky top-0 lg:py-20 lg:px-0 z-10">
           <AppSidebar location={location} activeTab={activeTab} />
         </header>
 
-        <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-md lg:text-base gap-y-4 p-5 lg:px-0">
+        <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-md lg:text-base gap-y-4 p-5 lg:px-0 z-0">
           <Outlet />
         </main>
 

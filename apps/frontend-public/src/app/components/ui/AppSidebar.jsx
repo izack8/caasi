@@ -11,7 +11,7 @@ export default function AppSidebar({ location, activeTab }) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <div className="hidden lg:block">
+      <nav className="hidden lg:block">
         <div className="flex absolute top-[30px] h-[40px] items-center">
             <PageTracker pathname={location.pathname} />
         </div>
@@ -25,14 +25,14 @@ export default function AppSidebar({ location, activeTab }) {
             </div>
           </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Navigation Bar */}
-      <nav className="lg:hidden flex flex-row items-center bg-white/30 backdrop-blur-md h-[50px] p-5">
+      <nav className="lg:hidden flex flex-row items-center bg-white/30 backdrop-blur-md h-[50px] p-5 sticky">
           <span 
             className="font-semibold text-xl cursor-pointer hover:text-blue-700 transition-colors w-1/3"
             onClick={() => navigate('/')}
-          >  🎮 Isaac</span>
+          >  🎮&nbsp; Isaac</span>
           <NavigationBar activeTab={activeTab} />
       </nav>
     </>
@@ -57,11 +57,11 @@ function NavigationBar({ activeTab }) {
         {links.map((link) => (
           <button
             key={link.id}
-            className={`bg-transparent border-none outline-none text-sm lg:text-md xl:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
+            className={`text-sm lg:text-md xl:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'} hover:text-black`}
             onClick={() => navigate(link.path)}
           >
-            <span className="lg:hidden">{link.emoji}</span>
-            <span className="hidden lg:inline">{link.emoji} {link.label}</span>
+            <span className="md:hidden">{link.emoji}</span>
+            <span className="hidden md:inline">{link.emoji} {link.label}</span>
             <span className={`absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 ${activeTab === link.id ? 'bg-black' : 'bg-transparent'}`}></span>
           </button>
         ))}

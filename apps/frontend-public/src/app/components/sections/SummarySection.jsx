@@ -5,20 +5,21 @@ export default function SummarySection() {
 
     const navigate = useNavigate();
     const summaryContent = [
-        {title: "sign-a-photo.jpg", desc:"A web app that uses computer vision to detect ASL alphabets, built with the theme of a photobooth", type:"Project", link: "work/projects/sign-a-photo-jpg"},
-        {title: "Portfolio Website", desc:"Developments of my personal website, inspired by other engineers, built by yours truly", type:"Project", link: "/work/projects/portfolio-website"},
-        {title: "Implementing a CRUD UI", desc:"A short article about implementing a CRUD UI for my personal website", type:"Article", link: "/writings/posts/2025-10-17-implementing-a-ui-for-crud"},
+        {year: "2026", title: "sign-a-photo.jpg", desc:"A web app that uses computer vision to detect ASL alphabets, built with the theme of a photobooth", type:"Project", link: "work/projects/sign-a-photo-jpg"},
+        {year: "2025", title: "Portfolio Website", desc:"Developments of my personal website, inspired by other engineers, built by yours truly", type:"Project", link: "/work/projects/portfolio-website"},
+        {year: "2025", title: "Implementing a CRUD UI", desc:"A short article about implementing a CRUD UI for my personal website", type:"Article", link: "/writings/posts/2025-10-17-implementing-a-ui-for-crud"},
     ]
     return (
         <div className="pt-4">
         <p>Featured works: (click me to explore more!)</p>
             <div className="flex md:flex-row gap-4 w-full mt-1 flex-col">
                 {summaryContent.map((item, index) => (
-                    <Button key={index} className="md:w-1/3 flex outline-1 outline-white" onClick={() => navigate(item.link)}>
-                        <div className="flex flex-col gap-y-1 text-left py-2">
-                            <h2 className="text-slate-200 text-lg">{item.title}</h2>
-                            <h3 className="text-sm text-slate-400">{item.type}</h3>
-                            <p className="text-white font-normal text-sm">{item.desc}</p>
+                    <Button key={index} className="md:w-1/3 flex outline-1 outline-white bg-transparent hover:bg-stone-100" onClick={() => navigate(item.link)}>
+                        <div className="flex flex-col gap-y-1 text-left text-black py-2">
+                            <h1 className="text-sm text-gray-500">{item.year}</h1>
+                            <h2 className="text-lg">{item.title}</h2>
+                            <h3 className="text-sm">{item.type}</h3>
+                            <p className="font-normal text-sm">{item.desc}</p>
                         </div>
                     </Button>
                 ))}

@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
 import { API_ENDPOINTS } from '../../config';
+import { FaAngleLeft } from "react-icons/fa";
 import ProjectTechStack from '../../components/ProjectTechStack';
 import Timeline from '../../components/ui/Timeline';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -90,11 +91,11 @@ export default function Project() {
     <>
       <div className="mb-3">
             <button
-              className="tab font-semibold relative pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
+              className="tab font-semibold pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
               onClick={handleBack}
             >
+              <FaAngleLeft className="inline mr-1" />
               back to projects
-              <span className="absolute left-0 bottom-0 w-full h-[2px] transition-all duration-200 bg-black"></span>
             </button>
         </div>
 
