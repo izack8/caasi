@@ -26,9 +26,9 @@ export default function Project() {
                         github: ""
                       },
                       www: {
-                        what: "anyways, i hope you're well!",
-                        why: "good vibes only!",
-                        who: "i'm so hungry coding this page up lolz."
+                        what: "(i have a secret page!)",
+                        why: "(up to you to find it :p)",
+                        who: "i'm so hungry "
                       },
                       timeline: [{"timeline_date": "hehe", "timeline_description": "cyaaa!"}]
                     };
