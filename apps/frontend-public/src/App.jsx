@@ -22,9 +22,12 @@ function App() {
   }, []);
  
   return (
-    <Router>
+    
       <div className="App">
+
         <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
+
+          <Router>
             <Routes>
               <Route element={<Layout />}>
                 <Route path="/" element={<HomePage />} />
@@ -38,9 +41,12 @@ function App() {
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
+          </Router>
+          
         </div>
+        
       </div>
-    </Router>
+ 
   );
 }
 
