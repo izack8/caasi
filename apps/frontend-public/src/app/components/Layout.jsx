@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { useLocation, Outlet } from 'react-router-dom';
 import AppSidebar from './ui/AppSidebar';
 import Glow from './ui/Glow';
@@ -10,7 +10,7 @@ function Layout() {
 
   // determine active tab from current route, (for UI display purposes)
   const path = location.pathname;
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (path === '/') setActiveTab('home');
     else if (path === '/work') setActiveTab('work');
     else if (path === '/writings') setActiveTab('writings');
