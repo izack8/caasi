@@ -105,7 +105,7 @@ export default function Project() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
           
                 <div className="flex flex-col gap-y-4">
@@ -146,17 +146,7 @@ export default function Project() {
 
                 </div>
 
-              </motion.div>
-            </AnimatePresence>
-          
-      <AnimatePresence mode="wait">
-      <motion.div
-        key="loading"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
-      >
+
         <div className="mb-4 flex flex-col gap-y-2">
           {/* To-do: update project content here plz dont procrastinate*/}
           
