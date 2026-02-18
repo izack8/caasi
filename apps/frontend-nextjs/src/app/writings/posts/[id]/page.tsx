@@ -2,24 +2,30 @@ import BackButton from '@/components/ui/BackButton';
 import MotionWrapper from '@/components/ui/MotionWrapper';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import { getCachedPost } from '@/lib/api';
+import { Post } from '@/lib/types';
 
 export default async function PostPage({ params }: { params: Promise<{ id: string }> }) {
 
   const { id } = await params;
   
-  let post;
-  let error = false;
+  let post : Post = {
+
+    id: "post-not-found",
+    title: "ahhh! i haven't finished writing this post!",
+    description: "but it's coming soooooooon!!!",
+    date: "1998-12-08",
+    content: "found 1/3 site secrets, tho. hehe.",
+    type: "Extras",
+    tags: []
+
+  };
 
   try {
     post = await getCachedPost(id);
   } catch (err) {
     console.error("Error fetching post:", err);
-    error = true;
   }
 
-  if (error || !post) {
-    return <div className="p-5">Post not found</div>;
-  }
 
   return (
     <>

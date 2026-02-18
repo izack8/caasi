@@ -11,8 +11,10 @@ export default function NotFound() {
     <>
           <BackButton section="home"/>
           <MotionWrapper id="not-found">
-            <div className="p-8 text-center">
-            404. Oops, are you supposed to be here :o? 
+            <div className="flex flex-col items-center justify-center p-8">
+            <p>404. Oops, are you supposed to be here :o?</p>
+            <p>(if you are, please let me know how you got here lol)</p>
+            <p>anyways, there are 3 secrets hidden on this site! can you find them all? :p</p>
             </div>
           </MotionWrapper>
 

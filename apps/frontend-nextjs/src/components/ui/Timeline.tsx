@@ -42,7 +42,7 @@ function TimelineItem({ timelineData, isLastItem }: TimelineItemProps) {
         <div className="text-justify">
           <ReactMarkdown>
             {timelineData.timeline_description}
-            </ReactMarkdown>
+          </ReactMarkdown>
         </div>
       </div>
 

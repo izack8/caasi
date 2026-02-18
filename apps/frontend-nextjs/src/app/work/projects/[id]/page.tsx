@@ -19,18 +19,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         title: "awwie. i didn't make this project! :(",
         description: "not found",
         year: "2024",
-        what_i_learnt: "it's ok! i have other cool projects you can check out!!! :)",
+        what_i_learnt: "i have other cool projects you can check out!!! :)",
         technologies: [],
         url: {
         live: "",
         github: ""
         },
         www: {
-        what: "(i have a secret page!)",
-        why: "(up to you to find it :p)",
-        who: "i'm so hungry "
+        what: "but anyways, 1/3 site secrets found! hehe",
+        why: "i'm writing this at 3am, so i have no idea what to put here lol",
+        who: "67"
         },
-        timeline: [{"timeline_date": "hehe", "timeline_description": "cyaaa!"}]
+        timeline: [{"timeline_date": "hehe", "timeline_description": "ok bye"}]
     };
 
     let project: Project = defaultErrorProject

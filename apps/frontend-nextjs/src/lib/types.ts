@@ -6,7 +6,7 @@ export interface Post {
   description: string;
   date: string;
   content: string;
-  type: string[];
+  type: string;
   tags?: string[];
 }
 
