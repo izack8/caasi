@@ -27,6 +27,7 @@ app.add_middleware(
                    "https://www.izack.dev", 
                    "https://izack.dev", 
                    "http://localhost:5173",
+                   "http://localhost:3000",
                    "https://caasi-crud-ui.vercel.app",
                    "https://caasi-crud-ui.izack.dev"],  
     allow_credentials=True,

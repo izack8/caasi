@@ -1,6 +1,6 @@
 "use client"
 
-import time_machine_gif from '@/assets/time_machine_rotation_gif.webp';
+import time_machine_gif from "../../../public/time_machine_rotation_gif.webp";
 
 function Footer() {
   return (
