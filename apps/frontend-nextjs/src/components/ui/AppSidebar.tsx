@@ -6,9 +6,9 @@ import PageTracker from '@/components/PageTracker';
 import HeroTitle from '@/components/HeroTitle';
 import Footer from './Footer';
 
-const AppSidebar = memo(function AppSidebar() {
+function AppSidebar() {
   const router = useRouter();
-  const pathname = usePathname(); // ← get pathname directly here
+  const pathname = usePathname(); // get pathname directly here
   const [activeTab, setActiveTab] = useState('home');
 
   // Determine active tab from current route
@@ -51,7 +51,7 @@ const AppSidebar = memo(function AppSidebar() {
       </nav>
     </>
   );
-});
+};
 
 function NavigationBar({ activeTab, router }: { activeTab: string, router: any }) {
   
