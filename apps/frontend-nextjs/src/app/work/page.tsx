@@ -14,6 +14,7 @@ export default function WorkPage() {
         subtitle="projects, skills, professional experiences, trying to build cool stuff, automate things, etc etc"
       />
 
+    <div className="flex flex-col gap-y-10">
       <Suspense fallback={<LoadingBar />}>
         <ProjectsSection />
       </Suspense>
@@ -22,6 +23,8 @@ export default function WorkPage() {
         <ExperiencesSection />
       </Suspense>
       <TechStackSection />
+    </div>
+
     </MotionWrapper>
   );
 }

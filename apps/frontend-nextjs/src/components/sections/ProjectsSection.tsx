@@ -19,7 +19,7 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
     <section className="projects-section w-full flex flex-col">
       <SectionLabel label="Projects" />
 
-      <div className="flex flex-col gap-y-6">
+      <div className="flex flex-col gap-y-7">
 
       {displayProjects.length === 0 && (
         <div className="text-center">No projects found</div>
