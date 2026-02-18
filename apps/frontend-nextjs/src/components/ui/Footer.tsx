@@ -1,3 +1,5 @@
+"use client"
+
 import time_machine_gif from '@/assets/time_machine_rotation_gif.webp';
 
 function Footer() {
@@ -16,7 +18,7 @@ function Footer() {
           {/* <SparkleText> */}
           <button 
             className="hover:scale-150 transition-transform duration-200 cursor-pointer"
-            onClick={() => /* Go to website */ window.open('https://v1.izack.dev', '_blank')}
+            onClick={() => window.open('https://v1.izack.dev', '_blank')}
           >
             <img src={time_machine_gif.src} alt="Time Machine Rotation" className="w-15 h-15" />
           </button>

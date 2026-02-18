@@ -1,15 +1,25 @@
 'use client';
 
-import { memo } from 'react';
+import { memo, useState, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import PageTracker from '@/components/PageTracker';
 import HeroTitle from '@/components/HeroTitle';
 import Footer from './Footer';
-import { useRouter } from 'next/navigation';
 
-
-const AppSidebar = memo(function AppSidebar({ pathname, activeTab }: { pathname: string, activeTab: string }) {
-
+const AppSidebar = memo(function AppSidebar() {
   const router = useRouter();
+  const pathname = usePathname(); // ← get pathname directly here
+  const [activeTab, setActiveTab] = useState('home');
+
+  // Determine active tab from current route
+  useEffect(() => {
+    if (pathname === '/') setActiveTab('home');
+    else if (pathname === '/work' || pathname?.startsWith('/work/')) setActiveTab('work');
+    else if (pathname === '/writings' || pathname?.startsWith('/writings/')) setActiveTab('writings');
+    else if (pathname === '/chat') setActiveTab('chat');
+    else if (pathname === '/about') setActiveTab('about');
+    else if (pathname === '/favorites') setActiveTab('favorites');
+  }, [pathname]);
 
   return (
     <>

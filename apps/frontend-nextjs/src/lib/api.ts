@@ -49,9 +49,11 @@ class ApiClient {
   private async fetchData<T>(url: string): Promise<T> {
     try {
       const res = await fetch(url, {
-        cache: 'force-cache', // Use browser cache first
-        // Alternative: Set revalidation time
-        // next: { revalidate: 3600 } // Revalidate every hour
+        cache: 'force-cache', // Use HTTP cache first
+        next: { 
+          revalidate: 3600, // Revalidate every hour
+          tags: ['api-data'] 
+        }
       });
       
       if (!res.ok) {
@@ -69,9 +71,6 @@ class ApiClient {
     }
   }
 
-  /**
-   * Fetch all posts with optional caching
-   */
   async getPosts(useCache: boolean = true): Promise<Post[]> {
     const cacheKey = 'cachedPosts';
     
@@ -89,9 +88,7 @@ class ApiClient {
     return posts;
   }
 
-  /**
-   * Fetch a single post by ID with optional caching
-   */
+
   async getPost(id: string): Promise<Post> {
     const cacheKey = "cachedPosts";
 

@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import ProjectTechStack from '@/components/ProjectTechStack';
 import Timeline from '@/components/ui/Timeline';
 import BackButton from '@/components/ui/BackButton';
-import { api } from '@/lib/api';
+import { getCachedProject } from '@/lib/api';
 import type { Project } from '@/lib/types';
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
@@ -36,7 +36,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     let project: Project = defaultErrorProject
     
     try{
-        project = await api.getProject(slug);
+        project = await getCachedProject(slug);
     } catch (error) {
         console.error("Error fetching project:", error);
     }
@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
     return (
       <>
-        <div className="mb-3">
+        <div className="mb-1">
               <BackButton />
           </div>
   
@@ -88,7 +88,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                     <ProjectTechStack technologies={project ? project.technologies : []} />
                   </div>
   
-                  </div>
   
   
           <div className="mb-4 flex flex-col gap-y-2">
@@ -121,6 +120,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           </div>
   
             <Timeline timelineData={project ? project.timeline : []} />
+          </div>
   
         </MotionWrapper>
   

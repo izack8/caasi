@@ -8,7 +8,7 @@ export default function BackButton() {
 
   return (
     <button
-      className="tab font-semibold pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
+      className="tab font-semibold transition-colors duration-200 text-gray-700 hover:text-black"
       onClick={() => router.back()}
     >
       <FaAngleLeft className="inline mr-1" />

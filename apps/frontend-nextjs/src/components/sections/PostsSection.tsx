@@ -68,7 +68,7 @@ function PostsSection() {
               className="rounded cursor-pointer group"
               onClick={() => router.push(`/writings/posts/${post.id}`)}
             >
-              <div className="flex flex-col gap-y-1">
+              <div className="flex flex-col">
                 <h1 className="text-lg
                 font-semibold 
               group-hover:text-blue-800 

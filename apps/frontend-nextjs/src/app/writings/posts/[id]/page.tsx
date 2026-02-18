@@ -1,7 +1,7 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { FaAngleLeft } from 'react-icons/fa';
+import BackButton from '@/components/ui/BackButton';
 import MotionWrapper from '@/components/ui/MotionWrapper';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import { api } from '@/lib/api';
@@ -31,9 +31,6 @@ export default function PostPage() {
     fetchPost();
   }, [id]);
 
-  const handleBack = () => {
-    router.back();
-  };
 
   if (loading) {
     return <div className="p-5">Loading...</div>;
@@ -44,19 +41,19 @@ export default function PostPage() {
   }
 
   return (
-    <MotionWrapper id="post-detail">
-      <div className="mb-3">
-                <button
-                  className="tab font-semibold pb-1 transition-colors duration-200 text-gray-700 hover:text-black"
-                  onClick={handleBack}
-                >
-                  <FaAngleLeft className="inline mr-1" />
-                  back to home
-                </button>
+
+    <>
+    <div className="mb">
+            <BackButton />
         </div>
       
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="text-gray-500 mb-6">{post.date}</p>
+    <MotionWrapper id="post-detail">
+
+        <div>
+      <h1 className="text-3xl font-bold">{post.title}</h1>
+      <h1 className="text-lg">{post.description}</h1>
+      <p className="text-gray-500 mb-4">{post.date}</p>
+      </div>
       
       {post.tags && (
         <div className="flex gap-2 mb-6">
@@ -69,7 +66,7 @@ export default function PostPage() {
       )}
       
       <MarkdownRenderer>{post.content}</MarkdownRenderer>
-
     </MotionWrapper>
+    </>
   );
 }

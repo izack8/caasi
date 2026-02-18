@@ -1,8 +1,13 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientLayout from "../components/ClientLayout";
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import AppSidebar from "@/components/ui/AppSidebar";
+import Glow from "@/components/ui/Glow";
+import Footer from "@/components/ui/Footer";
+import ScrollToTop from '@/components/ScrollToTop';
+import WindowsScrollbar from '@/components/WindowsScrollbar';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -28,7 +33,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,7 +41,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <ClientLayout>{children}</ClientLayout>
+        <Glow />
+        <WindowsScrollbar />
+        <ScrollToTop />
+        
+        <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
+          <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-x-8">
+
+            <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] sticky top-0 lg:py-20 lg:px-0 z-50">
+              <AppSidebar />
+            </header>
+
+            <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-md lg:text-base gap-y-4 p-5 lg:px-0 z-0">
+              {children}
+            </main>
+
+            <footer className="lg:hidden items-end p-5">
+              <Footer />
+            </footer>
+
+          </div>
+        </div>
         <Analytics />
       </body>
     </html>
