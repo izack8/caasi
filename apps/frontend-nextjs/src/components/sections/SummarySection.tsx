@@ -5,15 +5,15 @@ import Button from '@/components/ui/Button';
 
 export default function SummarySection() {
     const summaryContent = [
-        {year: "2026", title: "sign-a-photo.jpg", desc:"A web app that uses computer vision to detect ASL alphabets, built with the theme of a photobooth", type:"Project", link: "/work/projects/sign-a-photo-jpg"}, // ← fixed your link (was missing /)
-        {year: "2025", title: "Portfolio Website", desc:"Developments of my personal website, inspired by other engineers, built by yours truly", type:"Project", link: "/work/projects/portfolio-website"},
-        {year: "2025", title: "Implementing a CRUD UI", desc:"A short article about implementing a CRUD UI for my personal website", type:"Article", link: "/writings/posts/2025-10-17-implementing-a-ui-for-crud"},
+        {year: "2026", title: "sign-a-photo.jpg", desc:"A web app that uses computer vision to detect ASL alphabets, built with the theme of a photobooth", type:"Project", link: "/work/projects/sign-a-photo-jpg"}, 
+        {year: "2025", title: "Portfolio Website", desc:"Developments of my personal website. Inspired by other engineers, built by yours truly", type:"Project", link: "/work/projects/portfolio-website"},
+        {year: "2025", title: "Implementing a CRUD UI", desc:"A semi-long post about implementing a CRUD UI for my personal website", type:"Article", link: "/writings/posts/2025-10-17-implementing-a-ui-for-crud"},
     ]
     
     return (
         <div className="pt-5">
             <p>Featured works: (click me to explore more!)</p>
-            <div className="flex md:flex-row gap-4 w-full mt-1 flex-col lg:h-[200px]">
+            <div className="flex md:flex-row gap-4 w-full mt-1 flex-col md:h-[200px]">
                 {summaryContent.map((item, index) => (
                     <Link key={index} href={item.link} className="md:w-1/3 w-full h-full">
                         <Button className="flex outline-1 outline-white bg-white/30 hover:bg-stone-100 w-full h-full">

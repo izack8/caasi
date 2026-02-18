@@ -9,7 +9,7 @@ export default function BackButton({section}: {section?: string}) {
   return (
     <div className="mb-5">
     <button
-      className="tab font-semibold gap-x-1 transition-colors duration-200 text-gray-700 hover:text-black flex flex-row items-center"
+      className="tab font-semibold gap-x-1 transition-colors duration-300 text-gray-600 hover:text-black flex flex-row items-center"
       onClick={() => router.back()}
     >
       <FaAngleLeft />

@@ -27,11 +27,11 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
       {displayProjects.map((project, index) => (
         <div key={index} className="flex flex-col gap-y-2 w-full rounded-lg transition-all duration-300 group">
 
-          <h2 className="text-blue-900 text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300">
+          <h1 className="text-blue-900 text-xl font-bold group-hover:text-blue-500 transition-all duration-300">
             {project.title}
-            </h2>
+            </h1>
             
-            <h3 className="font-semibold flex items-center gap-2"><FaCalendar className='w-3 h-3' />{project.year}</h3>
+            <h2 className="font-semibold flex items-center gap-2"><FaCalendar className='w-3 h-3' />{project.year}</h2>
 
             
             <p className="text-slate-350 justify-items-left text-md">
