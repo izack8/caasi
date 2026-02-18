@@ -53,7 +53,7 @@ export default function RootLayout({
               <AppSidebar />
             </header>
 
-            <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-md lg:text-base gap-y-4 p-5 pt-[70px] lg:px-0 z-0">
+            <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-md lg:text-base p-5 pt-[70px] lg:px-0 z-0">
               {children}
             </main>
 

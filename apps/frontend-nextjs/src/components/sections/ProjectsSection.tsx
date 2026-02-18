@@ -19,29 +19,32 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
     <section className="projects-section w-full flex flex-col">
       <SectionLabel label="Projects" />
 
+      <div className="flex flex-col gap-y-6">
+
       {displayProjects.length === 0 && (
         <div className="text-center">No projects found</div>
       )}
       {displayProjects.map((project, index) => (
-        <div key={index} className="w-full rounded-lg transition-all duration-300 group mb-10">
-          <div className="flex flex-col mb-3">
-            <h2 className="text-blue-900 text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300">
-              {project.title}
-              </h2>
-              <h3 className="font-semibold flex items-center gap-2"><FaCalendar className='w-3 h-3' />{project.year}</h3>
-            </div>
+        <div key={index} className="flex flex-col gap-y-2 w-full rounded-lg transition-all duration-300 group">
+
+          <h2 className="text-blue-900 text-[17px] font-bold group-hover:text-blue-500 transition-all duration-300">
+            {project.title}
+            </h2>
             
-            <p className="text-slate-350 justify-items-left mb-3 text-md">
+            <h3 className="font-semibold flex items-center gap-2"><FaCalendar className='w-3 h-3' />{project.year}</h3>
+
+            
+            <p className="text-slate-350 justify-items-left text-md">
               {project.description}
             </p>
 
-          <div className="mb-3">
+          <div>
            <ProjectTechStack technologies={project.technologies} />
            </div>
            <div className='flex flex-row gap-2'>
             <Link href={`/work/projects/${project.slug}`} className="w-full">
               <Button 
-                className="w-full rounded-md transition-colors h-10"
+                className="w-full !text-sm rounded-md transition-colors h-10"
                 variant="default"
               >
                 View More
@@ -50,7 +53,7 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
             
            {(project.url?.live) && (project.url.live !== "") && (
             <a href={project.url.live} target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button className='w-full rounded-md transition-colors h-10' variant='live'>
+              <Button className='w-full rounded-md !text-sm transition-colors h-10 text-md' variant='live'>
                 View Live Site
               </Button>
             </a>
@@ -78,6 +81,7 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
           onClose={() => setSelectedProject(null)}
         />
       )} */}
+      </div>
     </section>
   );
 }

@@ -7,6 +7,7 @@ export default function BackButton({section}: {section?: string}) {
   const router = useRouter();
 
   return (
+    <div className="mb-5">
     <button
       className="tab font-semibold gap-x-1 transition-colors duration-200 text-gray-700 hover:text-black flex flex-row items-center"
       onClick={() => router.back()}
@@ -14,5 +15,6 @@ export default function BackButton({section}: {section?: string}) {
       <FaAngleLeft />
       back {section ? `to ${section}` : ''}
     </button>
+    </div>
   );
 }

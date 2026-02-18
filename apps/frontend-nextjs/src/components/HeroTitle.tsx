@@ -21,7 +21,7 @@ function HeroTitle() {
                 <span 
                     className={`cursor-pointer transition-colors ${lang === 'ch' ? 'text-rose-500' : 'hover:text-rose-500'}`}
                     onClick={() => setLang('ch')}
-                >&nbsp;嗨</span>&nbsp;/
+                >&nbsp;嗨&nbsp;</span>/
                 <span 
                     className={`cursor-pointer transition-colors ${lang === 'fr' ? 'text-rose-500' : 'hover:text-rose-500'}`}
                     onClick={() => setLang('fr')}
@@ -42,8 +42,7 @@ function HeroTitle() {
                 </AnimatePresence>
                 <Link 
                     href="/"
-                    className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors"
-                >
+                    className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors">
                     Isaac 🎮
                 </Link>
             </h1>

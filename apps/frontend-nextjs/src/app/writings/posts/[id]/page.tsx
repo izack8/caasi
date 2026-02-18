@@ -22,9 +22,9 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
   }
 
   return (
-
     <>
     <BackButton section='writings'/>
+
     <MotionWrapper id="post-detail">
 
         <div>

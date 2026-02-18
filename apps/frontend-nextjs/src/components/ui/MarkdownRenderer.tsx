@@ -18,7 +18,7 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
     try {
       await navigator.clipboard.writeText(code);
       setCopiedCode(code);
-      setTimeout(() => setCopiedCode(''), 2000); // Reset after 2 seconds
+      setTimeout(() => setCopiedCode(''), 2000); 
     } catch (err) {
       console.error('Failed to copy text: ', err);
     }
