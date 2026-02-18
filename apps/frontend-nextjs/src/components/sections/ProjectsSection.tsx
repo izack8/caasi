@@ -41,7 +41,7 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
            <div className='flex flex-row gap-2'>
             <Link href={`/work/projects/${project.slug}`} className="w-full">
               <Button 
-                className="w-full rounded-md transition-colors"
+                className="w-full rounded-md transition-colors h-10"
                 variant="default"
               >
                 View More
@@ -50,7 +50,7 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
             
            {(project.url?.live) && (project.url.live !== "") && (
             <a href={project.url.live} target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button className='w-full rounded-md transition-colors' variant='live'>
+              <Button className='w-full rounded-md transition-colors h-10' variant='live'>
                 View Live Site
               </Button>
             </a>
