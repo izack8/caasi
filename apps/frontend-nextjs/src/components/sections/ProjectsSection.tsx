@@ -48,8 +48,8 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
               </Button>
             </Link>
             
-           {project.url?.link && project.url.link !== "" && (
-            <a href={project.url.link} target="_blank" rel="noopener noreferrer" className="w-full">
+           {(project.url?.live) && (project.url.live !== "") && (
+            <a href={project.url.live} target="_blank" rel="noopener noreferrer" className="w-full">
               <Button className='w-full rounded-md transition-colors' variant='live'>
                 View Live Site
               </Button>

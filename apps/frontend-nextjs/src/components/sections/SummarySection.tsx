@@ -15,8 +15,8 @@ export default function SummarySection() {
             <p>Featured works: (click me to explore more!)</p>
             <div className="flex md:flex-row gap-4 w-full mt-1 flex-col">
                 {summaryContent.map((item, index) => (
-                    <Link key={index} href={item.link}>
-                        <Button className="md:w-1/3 w-full flex outline-1 outline-white bg-transparent hover:bg-stone-100">
+                    <Link key={index} href={item.link} className="md:w-1/3 w-full">
+                        <Button className="flex outline-1 outline-white bg-transparent hover:bg-stone-100 w-full">
                             <div className="flex flex-col gap-y-1 text-left text-black py-2">
                                 <h1 className="text-sm text-gray-500">{item.year}</h1>
                                 <h2 className="text-lg">{item.title}</h2>

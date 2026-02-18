@@ -17,9 +17,9 @@ export interface Project {
   description: string;
   year: string | number;
   what_i_learnt: string;
-  technologies: string[];
+  technologies: Technology[];
   url: {
-    link: string;
+    live: string;
     github: string;
   };
   www: {
@@ -28,6 +28,11 @@ export interface Project {
     who: string;
   };
   timeline: Timeline[];
+}
+
+export interface Technology {
+  name: string;
+  icon?: string;
 }
 
 export interface Timeline {

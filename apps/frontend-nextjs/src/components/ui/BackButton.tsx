@@ -3,16 +3,16 @@
 import { FaAngleLeft } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
 
-export default function BackButton() {
+export default function BackButton({section}: {section?: string}) {
   const router = useRouter();
 
   return (
     <button
-      className="tab font-semibold transition-colors duration-200 text-gray-700 hover:text-black"
+      className="tab font-semibold gap-x-1 transition-colors duration-200 text-gray-700 hover:text-black flex flex-row items-center"
       onClick={() => router.back()}
     >
-      <FaAngleLeft className="inline mr-1" />
-      back to projects
+      <FaAngleLeft />
+      back {section ? `to ${section}` : ''}
     </button>
   );
 }

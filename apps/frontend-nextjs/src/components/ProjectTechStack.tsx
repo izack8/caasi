@@ -1,7 +1,4 @@
-interface Technology {
-  name: string;
-  icon?: string;
-}
+import type { Technology } from '@/lib/types';
 
 interface ProjectTechStackProps {
   technologies: Technology[] | string[];

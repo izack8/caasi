@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 function HeroTitle() {
-
-    const navigate = useRouter();
 
     const langs = [
         { id: 'en', lang: "I'm" },
@@ -42,12 +40,12 @@ function HeroTitle() {
                         {langs.find(l => l.id === lang)?.lang}&nbsp;
                     </motion.span>
                 </AnimatePresence>
-                <span 
+                <Link 
+                    href="/"
                     className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors"
-                    onClick={() => navigate.push('/')}
                 >
                     Isaac 🎮
-                </span>
+                </Link>
             </h1>
             <p className='font-light text-md xl:text-lg flex w-full justify-center lg:justify-start '>
                 Gamer. Musician. Software Engineer.

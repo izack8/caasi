@@ -1,10 +1,9 @@
 'use client'
 
 import { FaAngleRight } from "react-icons/fa";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function PageTracker({ pathname }: { pathname: string }) {
-  const router = useRouter();
   
   // Parse pathname to get hierarchical breadcrumbs
   const segments = pathname
@@ -15,9 +14,9 @@ function PageTracker({ pathname }: { pathname: string }) {
   return (
     <div className="flex flex-row text-sm lg:text-xs xl:text-sm gap-x-1 w-full h-full items-center">
       
-      <span className="cursor-pointer" onClick={() => router.push('/')}>
+      <Link href="/" className="cursor-pointer">
         izack.dev
-      </span>
+      </Link>
       
       {segments.map((segment, index) => (
         <span key={index} className="flex items-center gap-x-1">

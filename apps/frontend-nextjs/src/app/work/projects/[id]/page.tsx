@@ -22,7 +22,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         what_i_learnt: "it's ok! i have other cool projects you can check out!!! :)",
         technologies: [],
         url: {
-        link: "",
+        live: "",
         github: ""
         },
         www: {
@@ -47,54 +47,50 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
     return (
       <>
-        <div className="mb-1">
-              <BackButton />
-          </div>
-  
-            <MotionWrapper id="project-detail">
-                  <div className="flex flex-col gap-y-4">
-                    <h1 className="text-3xl font-semibold">{project ? project.title : 'not found'}</h1>
-  
-                  <div className="">
-                    <div className="flex flex-row gap-x-2 w-full">
-                    {project && project.url?.link && project.url.link !== "" && (
-                      <a 
-                          href={project.url.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="group flex items-center gap-2 hover:text-[#0072b1] transition-colors duration-200"
-                      >
-                          <FaExternalLinkAlt className="group-hover:scale-110 transition-transform duration-200 w-5 h-5 hover:text-[#0072b1] transition-colors" />
-                          <span className="text-md text-base">Live Site</span>
-                      </a>
-                    )}
-                    
-                    {project && project.url?.github && project.url.github !== "" && (
-                      <a 
-                          href={project.url.github} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="group flex items-center gap-2 hover:text-slate-900 transition-colors duration-200"
-                      >
-                        <FaGithub className="group-hover:scale-110 transition-transform duration-200 w-6 h-6 hover:text-slate-900" />
-                        <span className="text-md text-base">GitHub</span>
-                      </a>
-                      
-                    )}
-                    </div>
-                    
-                  </div>
-                  <div className="flex flex-row gap-x-3">
-                    <ProjectTechStack technologies={project ? project.technologies : []} />
-                  </div>
-  
-  
-  
+
+        <BackButton section="projects" />
+        <MotionWrapper id="project-detail">
+              <div className="flex flex-col gap-y-4">
+                <h1 className="text-3xl font-semibold">{project ? project.title : 'not found'}</h1>
+
+              <div className="">
+                <div className="flex flex-row gap-x-2 w-full">
+                {project && (project.url?.live) && (project.url.live !== "") && (
+                  <a 
+                      href={project.url.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 hover:text-[#0072b1] transition-colors duration-200"
+                  >
+                      <FaExternalLinkAlt className="group-hover:scale-110 transition-transform duration-200 w-5 h-5 hover:text-[#0072b1] transition-colors" />
+                      <span className="text-md text-base">Live Site</span>
+                  </a>
+                )}
+                
+                {project && project.url?.github && project.url.github !== "" && (
+                  <a 
+                      href={project.url.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 hover:text-slate-900 transition-colors duration-200"
+                  >
+                    <FaGithub className="group-hover:scale-110 transition-transform duration-200 w-6 h-6 hover:text-slate-900" />
+                    <span className="text-md text-base">GitHub</span>
+                  </a>
+                  
+                )}
+                </div>
+                
+              </div>
+              <div className="flex flex-row gap-x-3">
+                <ProjectTechStack technologies={project ? project.technologies : []} />
+              </div>
+
           <div className="mb-4 flex flex-col gap-y-2">
             {/* To-do: update project content here plz dont procrastinate*/}
             
               <div className="flex flex-col gap-y-2 text-justify">
-  
+
                 <div>
                   <h2 className="text-xl font-semibold">abstract</h2>
                   <div className="text-justify">
@@ -111,18 +107,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                   <h1 className="text-xl font-semibold">why</h1>
                   <span className="text-justify">{project ? project.www.why : ''}</span>
                 </div>
-  
+
                 <div className="">
                   <h1 className="text-xl font-semibold">who</h1>
                   <span className="text-justify">{project ? project.www.who : ''}</span>
                 </div>
             </div>
           </div>
-  
+
             <Timeline timelineData={project ? project.timeline : []} />
           </div>
-  
+
         </MotionWrapper>
-  
+
       </>
     );}

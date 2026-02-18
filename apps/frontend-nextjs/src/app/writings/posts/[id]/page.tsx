@@ -1,52 +1,30 @@
-'use client'
-import { useParams, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import BackButton from '@/components/ui/BackButton';
 import MotionWrapper from '@/components/ui/MotionWrapper';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
-import { api } from '@/lib/api';
-import type { Post } from '@/lib/types';
+import { getCachedPost } from '@/lib/api';
 
-export default function PostPage() {
-  const params = useParams();
-  const router = useRouter();
-  const id = params?.id as string;
+export default async function PostPage({ params }: { params: Promise<{ id: string }> }) {
+
+  const { id } = await params;
   
-  const [post, setPost] = useState<Post | null>(null);
-  const [loading, setLoading] = useState(true);
-  
-  const fetchPost = async () => {
-    try {
-      const postData = await api.getPost(id);
-      setPost(postData);
-      setLoading(false);
-      console.log("Fetched post:", postData);
-    } catch (error) {
-      console.error("Error fetching post:", error);
-      setLoading(false);
-    }
-  };
+  let post;
+  let error = false;
 
-  useEffect(() => {
-    fetchPost();
-  }, [id]);
-
-
-  if (loading) {
-    return <div className="p-5">Loading...</div>;
+  try {
+    post = await getCachedPost(id);
+  } catch (err) {
+    console.error("Error fetching post:", err);
+    error = true;
   }
 
-  if (!post) {
+  if (error || !post) {
     return <div className="p-5">Post not found</div>;
   }
 
   return (
 
     <>
-    <div className="mb">
-            <BackButton />
-        </div>
-      
+    <BackButton section='writings'/>
     <MotionWrapper id="post-detail">
 
         <div>
@@ -66,6 +44,7 @@ export default function PostPage() {
       )}
       
       <MarkdownRenderer>{post.content}</MarkdownRenderer>
+
     </MotionWrapper>
     </>
   );
