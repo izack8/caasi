@@ -5,30 +5,30 @@ import Link from 'next/link';
 function HeroTitle() {
 
     const langs = [
-        { id: 'en', lang: "I'm" },
-        { id: 'ch', lang: "我叫" },
-        { id: 'fr', lang: "Je m'appelle" },
+        { id: 'en', hello: "Hi", name: "I'm" },
+        { id: 'ch', hello: "嗨", name: "我叫" },
+        { id: 'fr', hello: "Salut", name: "Je m'appelle" },
     ];
     const [lang, setLang] = useState('en');
 
     return(
-        <div className="flex flex-col w-full justify-center text-center lg:justify-start lg:text-left font-light gap-y-3">
-            <h1 className="text-4xl xl:text-5xl flex flex-row justify-center lg:justify-start">
-                <span 
-                    className={`cursor-pointer transition-colors ${lang === 'en' ? 'text-rose-500' : 'hover:text-rose-500'}`}
-                    onClick={() => setLang('en')}
-                >Hi&nbsp;</span>/
-                <span 
-                    className={`cursor-pointer transition-colors ${lang === 'ch' ? 'text-rose-500' : 'hover:text-rose-500'}`}
-                    onClick={() => setLang('ch')}
-                >&nbsp;嗨&nbsp;</span>/
-                <span 
-                    className={`cursor-pointer transition-colors ${lang === 'fr' ? 'text-rose-500' : 'hover:text-rose-500'}`}
-                    onClick={() => setLang('fr')}
-                >&nbsp;Salut</span>
+        <div className="flex flex-col gap-y-3">
+            <h1 className="text-4xl xl:text-5xl flex flex-row gap-x-2 font-light">
+                {langs.map((l, index) => (
+                    <span key={l.id} className="flex flex-row gap-x-2">
+                        <span 
+                            className={`cursor-pointer transition-colors ${lang === l.id ? 'text-rose-500' : 'hover:text-rose-500'}`}
+                            onClick={() => setLang(l.id)}
+                        >
+                            {l.hello}
+                        </span>
+                        {index < langs.length - 1 && <span>/</span>}
+                    </span>
+                ))}
+                
             </h1>
             
-            <h1 className="flex flex-col text-2xl lg:text-4xl font-light">
+            <div className="flex flex-col text-3xl xl:text-4xl font-light">
                 <AnimatePresence mode="wait">
                     <motion.span
                         key={lang}
@@ -37,15 +37,17 @@ function HeroTitle() {
                         exit={{ opacity: 0, y: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        {langs.find(l => l.id === lang)?.lang}&nbsp;
+                        {langs.find(l => l.id === lang)?.name}&nbsp;
                     </motion.span>
                 </AnimatePresence>
-                <Link 
-                    href="/"
-                    className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors">
-                    Isaac 🎮
-                </Link>
-            </h1>
+                
+                    <Link 
+                        href="/"
+                        className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors">
+                        Isaac
+                    </Link>
+                </div>
+            
             <p className='font-light text-md xl:text-lg flex w-full justify-center lg:justify-start '>
                 Gamer. Musician. Software Engineer.
             </p>

@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 function ExecutiveSection() {
@@ -12,8 +13,31 @@ function ExecutiveSection() {
                 </p>
                 
                 <p>I recently built a <span className="font-semibold cursor-pointer hover:text-rose-500 transition-colors duration-200" onClick={() => router.push('/work/projects/sign-a-photo-jpg')}>web-app</span> that uses computer vision to detect the American Sign Language (ASL) alphabets, <a className="font-semibold cursor-pointer italic hover:text-rose-500 transition-colors duration-200" href="https://vt.tiktok.com/ZSmNxAXJR/" target="_blank" rel="noopener noreferrer">which garnered 710k+ views, 150k+ likes on TikTok</a>, and 500+ weekly page visits (which is the <b>craziest</b> thing ever).
-            </p>
+                 </p>
+
+                
+            <div className="flex w-full">
+                <CallToAction />
+            </div>
         </section>
     );
 }
 export default ExecutiveSection;
+
+function CallToAction() {
+
+    const ctaContent = [
+        {label: "🎮 about me", link: "/about"},
+        {label: "🌻", link: "/favorites"},
+    ]
+
+    return (
+        <div className="flex flex-row gap-x-3">
+            {ctaContent.map((item, index) => (
+                <Link key={index} href={item.link} className="font-semibold cursor-pointer transition-colors duration-200 text-slate-300 hover:bg-slate-700 hover:text-white bg-slate-800 rounded-md p-2 cursor-pointer">
+                    {item.label}
+                </Link>
+            ))}
+        </div>
+    );
+}
