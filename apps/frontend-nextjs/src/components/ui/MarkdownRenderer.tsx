@@ -25,15 +25,15 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
   };
 
   return (
-    <div className="prose prose-neutral prose-lg dark:prose-invert text-justify ">
+    <div className="prose prose-neutral prose-lg dark:prose-invert text-justify">
       <Markdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
         components={{
-          h1: ({ children }) => <h1 className="text-3xl font-bold py-4">{children}</h1>,
+          h1: ({ children }) => <h1 className="text-3xl font-bold py-4 text-left">{children}</h1>,
           h2: ({ children }) => <h2 className="text-2xl font-semibold py-3">{children}</h2>,
           h3: ({ children }) => <h3 className="text-xl font-medium py-2">{children}</h3>,
-          p:  ({ children }) => <p className="my-2 leading-relaxed">{children}</p>,
+          p:  ({ children }) => <p className="my-2 leading-relaxed text-justify">{children}</p>,
           ul: ({ children }) => <ul className="list-disc list-inside space-y-1">{children}</ul>,
           ol: ({ children }) => <ol className="list-decimal list-inside space-y-1">{children}</ol>,
           li: ({ children }) => <li className="ml-4">{children}</li>,

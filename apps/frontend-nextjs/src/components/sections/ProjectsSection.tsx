@@ -42,21 +42,20 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
            <ProjectTechStack technologies={project.technologies} />
            </div>
            <div className='flex flex-row gap-2'>
-            <Link href={`/work/projects/${project.slug}`} className="w-full">
-              <Button 
-                className="w-full !text-sm rounded-md transition-colors h-10"
-                variant="default"
+            <Link href={`/work/projects/${project.slug}`} className="w-full cursor-pointer">
+              <div 
+                className="flex items-center justify-center rounded-lg transition-all duration-200 w-full bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white rounded-md transition-colors h-10 text-md"
               >
-                View More
-              </Button>
+                About More
+              </div>
             </Link>
             
            {(project.url?.live) && (project.url.live !== "") && (
-            <a href={project.url.live} target="_blank" rel="noopener noreferrer" className="w-full">
-              <Button className='w-full rounded-md !text-sm transition-colors h-10 text-md' variant='live'>
-                View Live Site
-              </Button>
-            </a>
+            <Link href={project.url.live} target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
+              <div className='flex items-center justify-center rounded-lg transition-all duration-200 w-full bg-sky-700 text-white hover:bg-sky-600 hover:text-white rounded-md transition-colors h-10 text-md'>
+                Live Site
+              </div>
+            </Link>
             )}
               </div>
           </div>

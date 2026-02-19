@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import type { Post } from "@/lib/types";
+import Link from "next/link";
 
 interface PostsClientProps {
   posts: Post[];
@@ -44,11 +45,9 @@ export default function PostsClient({ posts }: PostsClientProps) {
       
       <div className="flex flex-col gap-y-4">
         {filteredPosts.map((post) => (
-          <div 
-            key={post.id} 
-            className="rounded cursor-pointer group"
-            onClick={() => router.push(`/writings/posts/${post.id}`)}
-          >
+          <Link key={post.id} href={`/writings/posts/${post.id}`}>
+
+          <div className="rounded cursor-pointer group">
             <div className="flex flex-col">
               <h1 className="text-lg font-semibold group-hover:text-blue-800 transition-colors duration-200">
                 {post.title}
@@ -63,7 +62,9 @@ export default function PostsClient({ posts }: PostsClientProps) {
               </h2>
             </div>
           </div>
+          </Link>
         ))}
+        
       </div>
     </>
   );

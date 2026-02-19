@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import SparkleText from '@/components/animation/SparkleText';
 import ExecutiveSection from '@/components/sections/ExecutiveSection';
-import SummarySection from '@/components/sections/SummarySection';
+import FeaturedWorksSection from '@/components/sections/FeaturedWorksSection';
 import PageHeader from '@/components/ui/PageHeader';
 
 export default function HomePage() {
@@ -29,9 +29,9 @@ export default function HomePage() {
         subtitle="thanks for visiting! please enjoy your stay <3" 
       />
 
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-y-5">
         <ExecutiveSection />
-        <SummarySection />
+        <FeaturedWorksSection />
       </div>
     </motion.div>
   );
