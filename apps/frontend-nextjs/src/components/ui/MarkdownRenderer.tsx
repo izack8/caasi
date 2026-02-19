@@ -34,12 +34,12 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
           h1: ({ children }) => <h1 className="text-3xl font-bold py-4 text-left">{children}</h1>,
           h2: ({ children }) => <h2 className="text-2xl font-semibold py-3">{children}</h2>,
           h3: ({ children }) => <h3 className="text-xl font-medium py-2">{children}</h3>,
-          p:  ({ children }) => <p className="my-2 leading-relaxed text-justify">{children}</p>,
+          p:  ({ children }) => <p className="leading-relaxed text-justify">{children}</p>,
           ul: ({ children }) => <ul className="list-disc list-inside space-y-1">{children}</ul>,
           ol: ({ children }) => <ol className="list-decimal list-inside space-y-1">{children}</ol>,
           li: ({ children }) => <li className="ml-4">{children}</li>,
           blockquote: ({ children }) => (
-            <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-black-400 my-4">
+            <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-black-400">
               {children}
             </blockquote>
           ),
@@ -49,7 +49,7 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
             const codeString = String(children).replace(/\n$/, '');
             
             return !inline && match ? (
-              <div className="my-4 rounded-lg overflow-hidden relative group max-w-full">
+              <div className="rounded-lg overflow-hidden relative group max-w-full">
                 {/* Copy button */}
                 <button
                   onClick={() => copyToClipboard(codeString)}

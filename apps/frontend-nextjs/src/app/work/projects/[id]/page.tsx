@@ -98,17 +98,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                   </div>
               </div>
 
-                <div className="">
+                <div>
                   <h1 className="text-xl font-semibold">what</h1>
                   <span className="text-justify">{project ? project.www.what : ''}</span>
                 </div>
                 
-                <div className="">
+                <div>
                   <h1 className="text-xl font-semibold">why</h1>
                   <span className="text-justify">{project ? project.www.why : ''}</span>
                 </div>
 
-                <div className="">
+                <div>
                   <h1 className="text-xl font-semibold">who</h1>
                   <span className="text-justify">{project ? project.www.who : ''}</span>
                 </div>
