@@ -46,13 +46,13 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
               <div 
                 className="flex items-center justify-center rounded-lg transition-all duration-200 w-full bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white rounded-md transition-colors h-10 text-md"
               >
-                About More
+                About Project
               </div>
             </Link>
             
            {(project.url?.live) && (project.url.live !== "") && (
             <Link href={project.url.live} target="_blank" rel="noopener noreferrer" className="w-full cursor-pointer">
-              <div className='flex items-center justify-center rounded-lg transition-all duration-200 w-full bg-sky-700 text-white hover:bg-sky-600 hover:text-white rounded-md transition-colors h-10 text-md'>
+              <div className='flex items-center justify-center rounded-lg transition-all duration-200 w-full bg-sky-700 text-white hover:bg-rose-500 hover:text-white rounded-md transition-colors h-10 text-md'>
                 Live Site
               </div>
             </Link>

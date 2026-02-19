@@ -12,16 +12,16 @@ export default function FeaturedWorksSection() {
     ]
     
     return (
-        <section className="projects-section w-full flex flex-col">
+        <section className="projects-section w-full flex flex-col gap-y-2">
             <SectionLabel label="Featured Works" />
             <p>(click me to explore more!)</p>
             <div className="flex md:flex-row gap-4 w-full mt-1 flex-col md:h-[200px]">
                 {summaryContent.map((item, index) => (
                     <Link key={index} href={item.link} className="md:w-1/3 w-full h-full cursor-pointer">
-                        <div className="flex outline-1 outline-white bg-white/30 hover:bg-stone-100 transition-colors duration-300 w-full h-full cursor-pointer rounded-md p-4">
+                        <div className="flex outline-2 outline-white bg-white/30 hover:bg-stone-100 transition-colors duration-300 w-full h-full cursor-pointer rounded-md p-4 group">
                             <div className="flex flex-col gap-y-1 text-left text-black py-2">
                                 <h1 className="text-sm text-gray-500">{item.year}</h1>
-                                <h2 className="text-lg font-bold">{item.title}</h2>
+                                <h2 className="text-lg font-bold text-blue-900 group-hover:text-blue-500 transition-colors duration-300">{item.title}</h2>
                                 <h3 className="text-sm font-semibold">{item.type}</h3>
                                 <p className="font-normal text-sm">{item.desc}</p>
                             </div>

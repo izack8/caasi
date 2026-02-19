@@ -1,5 +1,5 @@
 import type { Timeline as TimelineType } from '@/lib/types';
-import ReactMarkdown from 'react-markdown';
+import MarkdownRenderer from './MarkdownRenderer';
 
 interface TimelineProps {
   timelineData: TimelineType[];
@@ -40,9 +40,9 @@ function TimelineItem({ timelineData, isLastItem }: TimelineItemProps) {
       <div className="flex flex-col">
         <h1 className="text-lg font-semibold">{timelineData.timeline_date}</h1>
         <div className="text-justify">
-          <ReactMarkdown>
+          <MarkdownRenderer>
             {timelineData.timeline_description}
-          </ReactMarkdown>
+          </MarkdownRenderer>
         </div>
       </div>
 

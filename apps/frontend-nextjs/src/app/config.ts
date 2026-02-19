@@ -17,6 +17,14 @@ export const techCategories = {
                 icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
             },
             {
+                name: "TypeScript",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+            },
+            {
+                name: "Next.js",
+                icon: "https://simpleicons.org/icons/nextdotjs.svg"
+            },
+            {
                 name: "FastAPI",
                 icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
             },

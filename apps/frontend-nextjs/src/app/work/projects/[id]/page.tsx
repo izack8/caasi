@@ -1,7 +1,7 @@
 
 import MotionWrapper from '@/components/ui/MotionWrapper';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
-import ReactMarkdown from 'react-markdown';
+import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import ProjectTechStack from '@/components/ProjectTechStack';
 import Timeline from '@/components/ui/Timeline';
 import BackButton from '@/components/ui/BackButton';
@@ -94,7 +94,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 <div>
                   <h2 className="text-xl font-semibold">abstract</h2>
                   <div className="text-justify">
-                    <ReactMarkdown>{project ? project.what_i_learnt : ''}</ReactMarkdown>
+                    <MarkdownRenderer>{project ? project.what_i_learnt : ''}</MarkdownRenderer>
                   </div>
               </div>
 

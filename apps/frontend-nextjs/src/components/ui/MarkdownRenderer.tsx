@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
@@ -88,16 +89,29 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
                 </SyntaxHighlighter>
               </div>
             ) : (
-              <code className="bg-gray-800 dark:bg-gray-800 text-white px-1 py-0.5 rounded text-sm break-all" {...props}>
+              <code className="bg-gray-800 bg-gray-800 text-white px-1 py-0.5 rounded text-sm break-all" {...props}>
                 {children}
               </code>
             );
           },
-          a: ({ href, children }) => (
-            <a href={href} className="text-blue-600 dark:text-blue-400 underline hover:opacity-80">
-              {children}
-            </a>
-          ),
+          a: ({ href, children }) => {
+           
+            const isInternal = href?.startsWith('/') || href?.startsWith('#');
+            
+            if (isInternal) {
+              return (
+                <Link href={href || '#'} className="text-blue-900 underline hover:text-blue-500 transition-colors duration-300">
+                  {children}
+                </Link>
+              );
+            }
+            
+            return (
+              <a href={href} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-rose-500 transition-colors duration-300">
+                {children}
+              </a>
+            );
+          },
         }}
       >
         {children}

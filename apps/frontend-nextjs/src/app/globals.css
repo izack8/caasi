@@ -3,7 +3,6 @@
 body { 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   min-height: 100vh;
-  font-weight: 400;
 }
 
 body::before {
