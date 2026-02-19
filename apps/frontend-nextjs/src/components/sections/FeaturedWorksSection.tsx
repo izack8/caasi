@@ -14,7 +14,6 @@ export default function FeaturedWorksSection() {
     return (
         <section className="projects-section w-full flex flex-col gap-y-2">
             <SectionLabel label="Featured Works" />
-            <p>(click me to explore more!)</p>
             <div className="flex md:flex-row gap-4 w-full mt-1 flex-col md:h-[200px]">
                 {summaryContent.map((item, index) => (
                     <Link key={index} href={item.link} className="md:w-1/3 w-full h-full cursor-pointer">

@@ -5,7 +5,7 @@ function AboutSection() {
   return (
     <section className="flex flex-col text-justify gap-y-4">
       <p>
-        Hello! I'm a <span className="tracking-[.2em]"><SparkleText>whimsy</SparkleText></span> ai and software engineer, curious about the digital world, with a dream of one day being affectionately referred to as a "nerd🤓". I love solving <span className="font-semibold"><a href="https://minutecryptic.com" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">minute cryptics</a></span> (love-hate actually), playing video games with my friendos (Overwatch!!!), playing the guitar, learning new musical instruments, reading, and hanging with my besties. I also love to make singing covers of pop songs (especially mandopop hehe)!!! I am currently developing AI solutions at a large FinTech consulting firm, <span className="font-semibold"><a href="https://synechron.com" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">Synechron</a></span>, building ML pipelines for major financial institutions.
+        Hello! I'm a <span className="tracking-[.2em]"><SparkleText>whimsy</SparkleText></span> ai and software engineer, curious about the digital world, with a dream of one day being affectionately referred to as a "nerd🤓". I <span className="line-through">hate</span> love solving <span className="font-semibold"><a href="https://minutecryptic.com" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">minute cryptics</a></span>, playing video games with my friendos (Overwatch!!!), playing the guitar, learning new musical instruments, reading, and hanging with my besties. I also love to make singing covers of pop songs (especially mandopop hehe)!!! I am currently developing AI solutions at a large FinTech consulting firm, <span className="font-semibold"><a href="https://synechron.com" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">Synechron</a></span>, building ML pipelines for major financial institutions.
         </p>
 
       <p className="">
@@ -13,13 +13,8 @@ function AboutSection() {
       </p>
 
       <p>
-        I'd like to think that I'm an individual that <span className="line-through">always</span> strives to give my best, and learn as much as I can in this short life I have, so I'm always looking for opportunities to learn, grow and contribute my skills effectively. But most importantly, <span className="font-semibold">I really want to put as much cool stuff into the world as I can</span>, and I’m très excité to see where this journey takes me! :D
+        I'd like to think that I'm someone who always strives to give my best, and learn as much as I can in this short life I have, so I'm always looking for opportunities to learn, grow and contribute my skills effectively. Most importantly, <span className="font-semibold">I really want to put as much cool stuff into the world as I can</span>, and I’m très excité to see where this journey takes me! :D
       </p>
-
-
-      <div className="flex font-semibold">
-        <SparkleText>Slay vibes only!!! 🎮🎸🎤👯🩵</SparkleText>
-      </div>
 
     </section>
   );
