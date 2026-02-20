@@ -40,13 +40,15 @@ function HeroTitle() {
                         {langs.find(l => l.id === lang)?.name}&nbsp;
                     </motion.span>
                 </AnimatePresence>
-                
-                    <Link 
-                        href="/"
-                        className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors">
-                        Isaac
-                    </Link>
-                </div>
+            
+                    
+                <Link 
+                    href="/"
+                    className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors w-min">
+                    Isaac
+                </Link>
+            </div>
+
             
             <p className='font-light text-md xl:text-lg flex w-full justify-center lg:justify-start '>
                 Gamer. Musician. Software Engineer.
