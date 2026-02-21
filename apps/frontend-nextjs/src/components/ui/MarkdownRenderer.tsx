@@ -6,7 +6,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 interface MarkdownRendererProps {
   children: string;
@@ -49,47 +49,44 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
             const codeString = String(children).replace(/\n$/, '');
             
             return !inline && match ? (
-              <div className="rounded-lg overflow-hidden relative group max-w-full">
-                {/* Copy button */}
-                <button
-                  onClick={() => copyToClipboard(codeString)}
-                  className="absolute top-2 right-2 z-10 px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                >
-                  {copiedCode === codeString ? 'Copied!' : 'Copy'}
-                </button>
-                
+              <div className="relative group w-full h-auto">
+                  <span className="absolute top-3 left-3 text-xs text-gray-400">{match[1]}
+                  </span>
+                  <button
+                    onClick={() => copyToClipboard(codeString)}
+                    className="absolute top-3 right-3 z-10 px-2 py-1 text-xs bg-gray-700 hover:bg-gray-600 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 cursor-pointer items-end"
+                  >
+                    {copiedCode === codeString ? 'Copied!' : 'Copy'}
+                  </button>
                 <SyntaxHighlighter
                   style={oneDark}
-                  PreTag="div"
-                  language={match[1]}
+                  language={match[1].toLowerCase()}
                   showLineNumbers={true}
-                  wrapLines={true}
-                  wrapLongLines={true}
+                  PreTag="div"
                   customStyle={{
                     margin: 0,
-                    padding: '1em',
-                    paddingTop: '2.5em',
+                    padding: '2.5em 1em 1em 1em',
                     background: '#282a36',
                     borderRadius: '0.5rem',
-                    fontSize: '0.9rem',
-                    whiteSpace: 'pre-wrap',
-                    wordBreak: 'normal',
-                    overflowWrap: 'break-word',
+                    fontSize: '0.875rem',
                   }}
                   codeTagProps={{
                     style: {
-                      fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
-                      whiteSpace: 'pre-wrap',
-                      wordBreak: 'normal',
+                        whiteSpace: 'pre-wrap',
+                        overflowWrap: 'anywhere'
                     }
-                  }}
-                  {...props}
+                }}
                 >
                   {codeString}
                 </SyntaxHighlighter>
               </div>
             ) : (
-              <code className="bg-gray-800 bg-gray-800 text-white px-1 py-0.5 rounded text-sm break-all" {...props}>
+              <code className="bg-slate-800 
+              text-gray-200 
+              px-1 py-0.5 
+              rounded 
+              text-sm"
+              {...props}>
                 {children}
               </code>
             );

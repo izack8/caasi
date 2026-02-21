@@ -1,11 +1,14 @@
 from ..mongo_db import db
 import os
 
-def get_posts():
-    posts = list(db['posts'].find({}, {"_id": 0}))
+def get_posts(full: bool = False):
+    if full:
+        posts = list(db['posts'].find({}, {"_id": 0}))
+    else:
+        posts = list(db['posts'].find({}, {"_id": 0, "id": 1, "date": 1, "title": 1, "description": 1, "type": 1}))
     return posts
 
-def get_post_by_id(post_id):
+def get_post_by_id(post_id: str):
     post = db['posts'].find_one({"id": post_id}, {"_id": 0})
     return post
 

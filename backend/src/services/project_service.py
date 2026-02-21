@@ -1,7 +1,10 @@
 from ..mongo_db import db
 
-def get_projects():
-    projects = list(db['projects'].find({}, {"_id": 0}))
+def get_projects(full: bool = False):
+    if full:
+        projects = list(db['projects'].find({}, {"_id": 0}))
+    else:
+        projects = list(db['projects'].find({}, {"_id": 0, "slug": 1, "title": 1, "description": 1, "date": 1, "url": 1, "technologies": 1}))
     return projects
 
 def get_project_by_id(project_id):

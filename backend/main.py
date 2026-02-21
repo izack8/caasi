@@ -17,10 +17,9 @@ def app_health_check():
 @api_router.get("/health")
 def api_health_check():
     return {"status": "healthy", "message": "API is running"}
+
 app.include_router(api_router)
 app.include_router(auth_controller.router)
-
-# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://caasi.vercel.app", 
