@@ -1,6 +1,6 @@
 from ..mongo_db import db
 
-def get_projects(full: bool = False):
+def get_projects(full: bool = True):
     if full:
         projects = list(db['projects'].find({}, {"_id": 0}))
     else:

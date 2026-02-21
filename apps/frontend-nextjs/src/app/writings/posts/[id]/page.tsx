@@ -3,6 +3,7 @@ import MotionWrapper from '@/components/ui/MotionWrapper';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import { getCachedPost } from '@/lib/api';
 import { Post } from '@/lib/types';
+import Button from '@/components/ui/Button';
 
 export default async function PostPage({ params }: { params: Promise<{ id: string }> }) {
 
@@ -42,9 +43,9 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
       {post.tags && (
         <div className="flex gap-2 mb-6">
           {post.tags.map((tag, index) => (
-            <span key={index} className="px-3 py-1 bg-gray-200 rounded-full text-sm">
+            <Button key={index} className="px-3 py-1 bg-gray-200 rounded-full text-sm">
               {tag}
-            </span>
+            </Button>
           ))}
         </div>
       )}

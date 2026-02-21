@@ -1,7 +1,7 @@
 from ..mongo_db import db
 import os
 
-def get_posts(full: bool = False):
+def get_posts(full: bool = True):
     if full:
         posts = list(db['posts'].find({}, {"_id": 0}))
     else:

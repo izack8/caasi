@@ -13,6 +13,7 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
 
   const projects = await getCachedProjects();
   const displayProjects = showAll ? projects : projects.slice(0, 10);
+  console.log("ProjectsSection rendered with projects:", displayProjects);
 
   return (
     
