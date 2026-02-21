@@ -84,8 +84,15 @@ function WritingSection() {
       <SectionLabel label="Blog Posts" />
         {loading && <LoadingBar />}
         {error && console.error('Error fetching posts:', error)}
-        <div className="flex flex-row items-start justify-between">
-        <div className="flex gap-2 mb-6">
+        <div className="flex flex-col">
+          <div className="mb-4">
+              <Button
+                onClick={() => navigate('/writing/new')}
+              >
+                new post
+              </Button>
+            </div>
+        <div className="flex flex-row items-start gap-2 mb-6">
           {uniqueTags.map((tag, index) => (
             <Button
               key={index}
@@ -99,14 +106,7 @@ function WritingSection() {
         ))}
         </div>
 
-            <div>
-              <Button
-                variant="tab"
-                onClick={() => navigate('/writing/new')}
-              >
-                new post
-              </Button>
-            </div>
+            
 
         </div>
         
