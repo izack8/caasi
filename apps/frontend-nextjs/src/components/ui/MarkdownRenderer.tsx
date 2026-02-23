@@ -26,7 +26,7 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
   };
 
   return (
-    <div className="prose prose-neutral prose-lg dark:prose-invert text-justify">
+    <div className="text-justify">
       <Markdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
@@ -73,7 +73,7 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
                   codeTagProps={{
                     style: {
                         whiteSpace: 'pre-wrap',
-                        overflowWrap: 'anywhere'
+                        overflowWrap: 'break-word',
                     }
                 }}
                 >

@@ -8,7 +8,7 @@ export default function FeaturedWorksSection() {
     const summaryContent = [
         {year: "2026", title: "sign-a-photo.jpg", desc:"A web app that uses computer vision to detect ASL alphabets, built with the theme of a photobooth", type:"Project", link: "/work/projects/sign-a-photo-jpg"}, 
         {year: "2025", title: "Portfolio Website", desc:"Developments of my personal website. Inspired by other engineers, built by yours truly", type:"Project", link: "/work/projects/portfolio-website"},
-        {year: "2025", title: "Implementing a CRUD UI", desc:"A semi-long post about implementing a CRUD UI for my personal website", type:"Article", link: "/writings/posts/2025-10-17-implementing-a-ui-for-crud"},
+        {year: "2025", title: "Optimizing my APIs", desc:"A semi-long post documenting the thought processes for optimizing my APIs", type:"Article", link: "/writings/posts/2026-02-21-optimizing-my-apis"},
     ]
     
     return (

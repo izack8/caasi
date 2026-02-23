@@ -18,6 +18,8 @@ export default function FavoritesPage() {
     {desc:"🍜 shin ramyun after alcohol"},
     {desc:"☔️ sleeping in on a rainy day"},
     {desc:"👯 my friends"},
+    {desc:"🎥 facetiming my long-distance besties"},
+    {desc:"💰 thinking you're broke, but suddenly finding random cash in your pocket"},
   ]
 
   return (
