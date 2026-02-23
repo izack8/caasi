@@ -9,6 +9,7 @@ function HeroTitle() {
         { id: 'ch', hello: "嗨", name: "我叫" },
         { id: 'fr', hello: "Salut", name: "Je m'appelle" },
     ];
+    
     const [lang, setLang] = useState('en');
 
     return(
@@ -44,7 +45,7 @@ function HeroTitle() {
                     
                 <Link 
                     href="/"
-                    className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-700 transition-colors w-min">
+                    className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-500 transition-duration-300 transition-colors w-min">
                     Isaac
                 </Link>
             </div>

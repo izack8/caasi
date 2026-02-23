@@ -2,9 +2,7 @@ import { cache } from 'react';
 import { API_ENDPOINTS } from '@/app/config';
 import type { Post, Project, Experience, ApiError } from './types';
 
-/**
- * Cache utility for session storage
- */
+
 class CacheManager {
   static get<T>(key: string): T | null {
     if (typeof window === 'undefined') return null;
@@ -49,10 +47,9 @@ class ApiClient {
   private async fetchData<T>(url: string): Promise<T> {
     try {
       const res = await fetch(url, {
-        cache: 'force-cache', // Use HTTP cache first
+        cache: 'force-cache', 
         next: { 
-          revalidate: 3600, // Revalidate every hour
-          tags: ['api-data'] 
+          revalidate: 300,
         }
       });
       
