@@ -2,7 +2,11 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import PostsClient from "@/components/sections/PostsClient";
 import { getCachedPosts } from "@/lib/api";
 
-async function PostsSection() {
+interface PostsSectionProps {
+  numPosts?: number;
+}
+
+async function PostsSection({ numPosts }: PostsSectionProps) {
   const posts = await getCachedPosts();
 
   return (

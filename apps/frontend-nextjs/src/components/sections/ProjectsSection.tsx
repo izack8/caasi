@@ -1,18 +1,19 @@
 import Link from 'next/link';
 import SectionLabel from '@/components/ui/SectionLabel';
-import Button from '@/components/ui/Button';
 import ProjectTechStack from '@/components/ProjectTechStack';
 import { FaCalendar } from 'react-icons/fa';
 import { getCachedProjects } from '@/lib/api';
 
+
 interface ProjectsSectionProps {
   showAll?: boolean;
+  numProjs?: number;
 }
 
-async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
+async function ProjectsSection({ showAll = false, numProjs }: ProjectsSectionProps) {
 
   const projects = await getCachedProjects();
-  const displayProjects = showAll ? projects : projects.slice(0, 10);
+  const displayProjects = showAll ? projects : projects.slice(0, numProjs || 10);
 
   return (
     
@@ -25,7 +26,19 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
         <div className="text-center">No projects found</div>
       )}
       {displayProjects.map((project, index) => (
-        <div key={index} className="flex flex-col gap-y-2 w-full rounded-lg transition-all duration-300 group">
+        <ProjectCard key={index} project={project} index={index} />
+        ))}
+      
+      </div>
+    </section>
+  );
+}
+
+export default ProjectsSection;
+
+export function ProjectCard({ project, index }: { project: any, index?: number }) {
+  return (
+     <div key={index} className="flex flex-col gap-y-2 w-full rounded-lg transition-all duration-300 group">
 
           <h1 className="text-blue-900 text-xl font-bold group-hover:text-blue-500 transition-all duration-300">
             {project.title}
@@ -59,30 +72,5 @@ async function ProjectsSection({ showAll = false }: ProjectsSectionProps) {
             )}
               </div>
           </div>
-        ))}
-      
-      
-      {/* {!showAll && projects.length > 3 && (
-        <div className="text-center mt-6">
-          <Link 
-            to="/projects" 
-            className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition-colors"
-          >
-            View All Projects ({projects.length})
-          </Link>
-        </div>
-      )} */}
-
-      {/* Project Modal */}
-      {/* {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)}
-        />
-      )} */}
-      </div>
-    </section>
-  );
+  )
 }
-
-export default ProjectsSection;

@@ -1,18 +1,17 @@
 'use client';
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
 import type { Post } from "@/lib/types";
 import Link from "next/link";
 
 interface PostsClientProps {
   posts: Post[];
+  numPosts?: number;
 }
 
-export default function PostsClient({ posts }: PostsClientProps) {
+export default function PostsClient({ posts, numPosts }: PostsClientProps) {
   const [activeTag, setActiveTag] = useState("All");
-  const router = useRouter();
 
   const uniqueTags = ["All", ...new Set(posts.flatMap((post) => post.type))].filter(tag => tag !== "Extras");
 
@@ -44,8 +43,18 @@ export default function PostsClient({ posts }: PostsClientProps) {
       </div>
       
       <div className="flex flex-col gap-y-4">
-        {filteredPosts.map((post) => (
-          <Link key={post.id} href={`/writings/posts/${post.id}`}>
+        {filteredPosts.slice(0, numPosts).map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </div>
+    </>
+  );
+}
+
+export function PostCard({ post }: { post: any }) {
+  return (
+     <div className="flex flex-col gap-y-4">
+    <Link key={post.id} href={`/writings/posts/${post.id}`}>
 
           <div className="rounded cursor-pointer group">
             <div className="flex flex-col">
@@ -63,9 +72,7 @@ export default function PostsClient({ posts }: PostsClientProps) {
             </div>
           </div>
           </Link>
-        ))}
-        
-      </div>
-    </>
-  );
+          </div>
+          
+  )
 }

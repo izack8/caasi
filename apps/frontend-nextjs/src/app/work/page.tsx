@@ -16,7 +16,7 @@ export default function WorkPage() {
 
     <div className="flex flex-col gap-y-10">
       <Suspense fallback={<LoadingBar />}>
-        <ProjectsSection />
+        <ProjectsSection showAll={true} />
       </Suspense>
       
       <Suspense fallback={<LoadingBar />}>

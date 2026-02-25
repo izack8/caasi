@@ -1,33 +1,124 @@
 'use client'
 
 import Link from 'next/link';
-import Button from '@/components/ui/Button';
+import { ProjectCard } from './ProjectsSection';
+import { PostCard } from './PostsClient';
 import SectionLabel from '../ui/SectionLabel';
 
 export default function FeaturedWorksSection() {
-    const summaryContent = [
-        {year: "2026", title: "sign-a-photo.jpg", desc:"A web app that uses computer vision to detect ASL alphabets, built with the theme of a photobooth", type:"Project", link: "/work/projects/sign-a-photo-jpg"}, 
-        {year: "2025", title: "Portfolio Website", desc:"Developments of my personal website. Inspired by other engineers, built by yours truly", type:"Project", link: "/work/projects/portfolio-website"},
-        {year: "2025", title: "Optimizing my APIs", desc:"A semi-long post documenting the thought processes for optimizing my APIs", type:"Article", link: "/writings/posts/2026-02-21-optimizing-my-apis"},
+    const projContent = [
+        {
+  "_id": {
+    "$oid": "6898c5a207c0917fb57ddb09"
+  },
+  "title": "Portfolio Website",
+  "description": "Building my own website, using HTML, CSS, JS, Python, and FastAPI (and gradually more frameworks as I learn more). I'm trying to constantly update this website with stuff I learnt, so checkback to see if you can spot any changes!",
+  "url": {
+    "github": "https://github.com/izack8/caasi",
+    "live": "https://izack.dev"
+  },
+  "year": "2025 - Present",
+  "technologies": [
+    {
+      "name": "JavaScript",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    },
+    {
+      "name": "TypeScript",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+    },
+    {
+      "name": "Python",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    {
+      "name": "FastAPI",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+    },
+    {
+      "name": "React",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "/icons/Tailwind_CSS_Logo.png"
+    },
+    {
+      "name": "MongoDB",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    },
+    {
+      "name": "NextJS",
+      "icon": "https://cdn.simpleicons.org/nextdotjs"
+    }
+  ],
+  "slug": "portfolio-website",
+},
+{
+    "title": "sign-a-photo.jpg",
+  "description": "A webapp for users to learn SgSL/ASL alphabets through Computer Vision. Powered by mediapipe.",
+  "url": {
+    "github": "https://github.com/izack8/sign-a-photo",
+    "live": "https://sign-a-photo.izack.dev"
+  },
+  "year": 2026,
+  "technologies": [
+    {
+      "name": "TypeScript",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+    },
+    {
+      "name": "Mediapipe",
+      "icon": ""
+    },
+    {
+      "name": "Python",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    },
+    {
+      "name": "React",
+      "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "/icons/Tailwind_CSS_Logo.png"
+    }
+  ],
+  "slug": "sign-a-photo-jpg",
+}
+
+    ]
+    const postsContent = [
+        {  "id": "2026-02-21-optimizing-my-apis",
+  "date": "2026-02-21",
+  "title": "Optimizing my APIs",
+  "description": "the most brain i've ever used",},
+  {  "id": "2025-08-11-finally-using-a-db",
+  "date": "2025-08-11",
+  "title": "Finally Using a Database (yay!)",
+  "description": "Journey in integrating a simple database solution into my website.",}
     ]
     
     return (
-        <section className="projects-section w-full flex flex-col gap-y-2">
-            <SectionLabel label="Featured Works" />
-            <div className="flex md:flex-row gap-4 w-full mt-1 flex-col md:h-[200px]">
-                {summaryContent.map((item, index) => (
-                    <Link key={index} href={item.link} className="md:w-1/3 w-full h-full cursor-pointer">
-                        <div className="flex outline-2 outline-white bg-white/30 hover:bg-stone-100 transition-colors duration-300 w-full h-full cursor-pointer rounded-md p-4 group">
-                        <div className="flex flex-col gap-y-1 text-left text-black py-2">
-                            <h1 className="text-sm text-gray-500">{item.year}</h1>
-                            <h2 className="text-lg font-bold text-blue-900 group-hover:text-blue-500 transition-colors duration-300">{item.title}</h2>
-                            <h3 className="text-sm font-semibold">{item.type}</h3>
-                            <p className="font-normal text-sm">{item.desc}</p>
-                        </div>
-                        </div>
-                    </Link>
+        <div className="flex flex-col gap-y-5">
+            <section className="projects-section w-full flex flex-col">
+                <SectionLabel label="Featured Projects ⭐️" />
+                <div className="flex flex-col gap-y-7">
+                {projContent.map((project, index) => (
+                    <ProjectCard key={index} project={project} />
                 ))}
-            </div>
-        </section>
+                </div>
+
+            </section>
+
+            <section className="writings-section w-full flex flex-col">
+                <SectionLabel label="Featured Writings ⭐️" />
+                <div className="flex flex-col gap-y-4">
+                {postsContent.map((post, index) => (
+                    <PostCard key={index} post={post} />
+                ))}
+                </div>
+            </section>
+        </div>
     );
 }
