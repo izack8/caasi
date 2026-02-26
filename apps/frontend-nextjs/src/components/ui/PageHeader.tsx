@@ -9,7 +9,7 @@ interface PageHeaderProps {
 function PageHeader({ title, subtitle }: PageHeaderProps) {
     return (
         <div className="mb-8 ">
-            <h1 className="lg:text-4xl text-2xl font-bold mb-2">{title}</h1>
+            <h1 className="lg:text-5xl text-3xl font-bold mb-2">{title}</h1>
             {subtitle && <p className="text-lg text-gray-600 font-light">{subtitle}</p>}
         </div>
     );

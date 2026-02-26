@@ -17,7 +17,6 @@ function Footer() {
         &copy; 2025 - 2026
         <div className='flex items-center gap-2'>
           <span>Click Me to Time Travel!</span>
-          {/* <SparkleText> */}
           <button 
             className="hover:scale-150 transition-transform duration-200 cursor-pointer"
             onClick={() => window.open('https://v1.izack.dev', '_blank')}

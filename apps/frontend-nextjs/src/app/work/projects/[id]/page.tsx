@@ -60,7 +60,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                       href={project.url.live} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-2 hover:text-[#0072b1] transition-colors duration-200"
+                      className="group flex items-center gap-2 hover:text-rose-500 transition-colors duration-200"
                   >
                       <FaExternalLinkAlt className="group-hover:scale-110 transition-transform duration-200 w-5 h-5 hover:text-[#0072b1] transition-colors" />
                       <span className="text-md text-base">Live Site</span>

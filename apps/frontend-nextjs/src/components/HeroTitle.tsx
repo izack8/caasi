@@ -29,7 +29,7 @@ function HeroTitle() {
                 
             </h1>
             
-            <div className="flex flex-col text-3xl xl:text-4xl font-light">
+            <div className="flex flex-col text-2xl xl:text-3xl font-light">
                 <AnimatePresence mode="wait">
                     <motion.span
                         key={lang}
@@ -45,7 +45,7 @@ function HeroTitle() {
                     
                 <Link 
                     href="/"
-                    className="font-semibold text-4xl xl:text-5xl cursor-pointer hover:text-blue-500 transition-duration-300 transition-colors w-min">
+                    className="font-semibold text-5xl xl:text-6xl cursor-pointer hover:text-blue-500 transition-duration-300 transition-colors w-min">
                     Isaac
                 </Link>
             </div>

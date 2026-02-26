@@ -8,7 +8,6 @@ import Glow from "@/components/ui/Glow";
 import Footer from "@/components/ui/Footer";
 import ScrollToTop from '@/components/ScrollToTop';
 import WindowsScrollbar from '@/components/WindowsScrollbar';
-import DisableBfCache from '@/components/DisableBfCache';
 
 const inter = Inter({ 
   subsets: ['latin'],

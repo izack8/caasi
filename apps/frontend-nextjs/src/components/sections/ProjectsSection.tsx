@@ -40,7 +40,7 @@ export function ProjectCard({ project, index }: { project: any, index?: number }
   return (
      <div key={index} className="flex flex-col gap-y-2 w-full rounded-lg transition-all duration-300 group">
 
-          <h1 className="text-blue-900 text-xl font-bold group-hover:text-blue-500 transition-all duration-300">
+          <h1 className="text-xl font-bold group-hover:text-blue-500 transition-all duration-300">
             {project.title}
             </h1>
             

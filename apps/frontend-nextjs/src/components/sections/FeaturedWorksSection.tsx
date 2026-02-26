@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link';
 import { ProjectCard } from './ProjectsSection';
 import { PostCard } from './PostsClient';
 import SectionLabel from '../ui/SectionLabel';
@@ -100,9 +99,9 @@ export default function FeaturedWorksSection() {
     ]
     
     return (
-        <div className="flex flex-col gap-y-5">
+        <div className="flex flex-col gap-y-6">
             <section className="projects-section w-full flex flex-col">
-                <SectionLabel label="Featured Projects ⭐️" />
+                <SectionLabel label="Featured Projects" />
                 <div className="flex flex-col gap-y-7">
                 {projContent.map((project, index) => (
                     <ProjectCard key={index} project={project} />
@@ -112,7 +111,7 @@ export default function FeaturedWorksSection() {
             </section>
 
             <section className="writings-section w-full flex flex-col">
-                <SectionLabel label="Featured Writings ⭐️" />
+                <SectionLabel label="Featured Writings" />
                 <div className="flex flex-col gap-y-4">
                 {postsContent.map((post, index) => (
                     <PostCard key={index} post={post} />
