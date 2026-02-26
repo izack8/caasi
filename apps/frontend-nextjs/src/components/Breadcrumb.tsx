@@ -3,7 +3,7 @@
 import { FaAngleRight } from "react-icons/fa";
 import Link from "next/link";
 
-function PageTracker({ pathname }: { pathname: string }) {
+function Breadcrumb({ pathname }: { pathname: string }) {
   
   // Parse pathname to get hierarchical breadcrumbs
   const segments = pathname
@@ -30,4 +30,4 @@ function PageTracker({ pathname }: { pathname: string }) {
   );
 }
 
-export default PageTracker;
+export default Breadcrumb;

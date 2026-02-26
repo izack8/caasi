@@ -14,6 +14,7 @@ function HeroTitle() {
 
     return(
         <div className="flex flex-col gap-y-3">
+
             <h1 className="text-4xl xl:text-5xl flex flex-row gap-x-2 font-light">
                 {langs.map((l, index) => (
                     <span key={l.id} className="flex flex-row gap-x-2">
@@ -30,24 +31,23 @@ function HeroTitle() {
             </h1>
             
             <div className="flex flex-col text-2xl xl:text-3xl font-light">
-                <AnimatePresence mode="wait">
+
                     <motion.span
                         key={lang}
-                        initial={{ opacity: 0, y: 0 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 0 }}
-                        transition={{ duration: 0.2 }}
+                        initial={{ opacity: 0}}
+                        animate={{ opacity: 1}}
+                        exit={{ opacity: 0}}
+                        transition={{ duration: 0.3 }}
                     >
                         {langs.find(l => l.id === lang)?.name}&nbsp;
                     </motion.span>
-                </AnimatePresence>
-            
                     
                 <Link 
                     href="/"
-                    className="font-semibold text-5xl xl:text-6xl cursor-pointer hover:text-blue-500 transition-duration-300 transition-colors w-min">
+                    className="font-semibold text-5xl xl:text-6xl cursor-pointer hover:text-blue-500 transition-duration-300 transition-colors flex w-min">
                     Isaac
                 </Link>
+
             </div>
 
             

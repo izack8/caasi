@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { memo } from 'react';
 import Link from 'next/link';
-import PageTracker from '@/components/PageTracker';
+import Breadcrumb from '@/components/Breadcrumb';
 import HeroTitle from '@/components/HeroTitle';
 import Footer from './Footer';
 
@@ -28,13 +28,13 @@ function AppSidebar() {
       {/* Desktop Sidebar */}
       <nav className="hidden lg:block">
         <div className="flex absolute top-[30px] h-[40px] items-center">
-            <PageTracker pathname={pathname} />
+            <Breadcrumb pathname={pathname} />
         </div>
         <div className="lg:flex lg:flex-col lg:h-full">
           <div className='flex flex-col h-full'>
             <HeroTitle />
             <NavigationBar activeTab={activeTab} />
-            <div className="hidden lg:block items-end mt-auto">
+            <div className="hidden lg:block">
               <Footer />
             </div>
           </div>
@@ -53,6 +53,8 @@ function AppSidebar() {
   );
 };
 
+export default AppSidebar;
+
 const NavigationBar = memo(function NavigationBar({ activeTab }: { activeTab: string }) {
   
   const links = [
@@ -65,7 +67,7 @@ const NavigationBar = memo(function NavigationBar({ activeTab }: { activeTab: st
 
   return (
     <div className="flex lg:justify-start justify-end lg:py-5 w-full items-center">
-      <div className="flex flex-row lg:flex-col gap-6 lg:gap-3 lg:items-start">
+      <div className="flex flex-row lg:flex-col gap-6 lg:gap-2 lg:items-start">
         {links.map((link) => (
           <Link
             key={link.id}
@@ -81,5 +83,3 @@ const NavigationBar = memo(function NavigationBar({ activeTab }: { activeTab: st
     </div>
   );
 });
-
-export default AppSidebar;

@@ -46,13 +46,13 @@ export default function RootLayout({
         <ScrollToTop />
         
         <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
-          <div className="w-full lg:h-full lg:flex lg:flex-row lg:gap-x-8">
+          <div className="w-full lg:h-full lg:flex lg:flex-row gap-x-3">
 
-            <header className="flex flex-col w-full lg:w-[30%] lg:h-[99dvh] lg:sticky lg:top-0 lg:py-20 lg:px-0 lg:z-50">
+            <header className="flex flex-col w-full lg:h-[99dvh] lg:sticky lg:top-0 lg:py-20 lg:px-0 lg:z-50 lg:w-[30%]">
               <AppSidebar />
             </header>
 
-            <main className="flex flex-col w-full min-h-screen lg:h-auto lg:w-[70%] lg:py-20 text-md lg:text-base p-5 pt-[70px] lg:px-0 z-0">
+            <main className="flex flex-col w-full min-h-screen lg:h-auto lg:py-20 text-md lg:text-base p-5 pt-[70px] lg:px-0 z-0 lg:w-[70%]">
               {children}
             </main>
 
