@@ -39,7 +39,6 @@ export default function MarkdownRenderer({
         });
       }
 
-      // Cleanup function
       return () => {
         if (crepeRef.current) {
           crepeRef.current.destroy?.();
