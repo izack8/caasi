@@ -140,9 +140,9 @@ export default function MarkdownRenderer({
                         
                         if (isInternal) {
                           return (
-                            <Link href={href || '#'} className="text-blue-900 underline hover:text-blue-500 transition-colors duration-300">
+                            <a href={href || '#'} className="text-blue-900 underline hover:text-blue-500 transition-colors duration-300">
                               {children}
-                            </Link>
+                            </a>
                           );
                         }
                         
