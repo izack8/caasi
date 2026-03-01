@@ -12,7 +12,7 @@ async function PostsSection({ numPosts }: PostsSectionProps) {
   return (
     <section className="writings-section w-full flex flex-col">
       <SectionLabel label="Posts" />
-      <PostsClient posts={posts} />
+      <PostsClient posts={posts} numPosts={numPosts} />
     </section>
   );
 }
