@@ -57,7 +57,6 @@ export default function MarkdownRenderer({
       }
     };
 
-    // If in editing mode, render Milkdown Crepe editor
     if (isEditing) {
       return (
         <div className="prose prose-neutral prose-lg max-w-none dark:prose-invert">
