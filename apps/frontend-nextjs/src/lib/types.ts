@@ -21,6 +21,7 @@ export interface Project {
   url: {
     live: string;
     github: string;
+    blog_post: string;
   };
   www: {
     what: string;

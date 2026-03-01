@@ -1,12 +1,13 @@
 
 import MotionWrapper from '@/components/ui/MotionWrapper';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaPenAlt } from 'react-icons/fa';
 import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import ProjectTechStack from '@/components/ProjectTechStack';
 import Timeline from '@/components/ui/Timeline';
 import BackButton from '@/components/ui/BackButton';
 import { getCachedProject } from '@/lib/api';
 import type { Project } from '@/lib/types';
+import Link from 'next/link';
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
 
@@ -29,7 +30,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           technologies: [],
           url: {
           live: "",
-          github: ""
+          github: "",
+          blog_post: ""
           },
           www: {
           what: "but anyways, 1/3 site secrets found! hehe",
@@ -52,41 +54,33 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
               <div className="flex flex-col gap-y-4">
                 <h1 className="text-3xl font-semibold">{project ? project.title : 'not found'}</h1>
 
-              <div className="">
-                <div className="flex flex-row gap-x-2 w-full">
-                {project && (project.url?.live) && (project.url.live !== "") && (
-                  <a 
-                      href={project.url.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-2 hover:text-rose-500 transition-colors duration-200"
-                  >
-                      <FaExternalLinkAlt className="group-hover:scale-110 transition-transform duration-200 w-5 h-5 hover:text-[#0072b1] transition-colors" />
-                      <span className="text-md text-base">Live Site</span>
-                  </a>
-                )}
-                
-                {project && project.url?.github && project.url.github !== "" && (
-                  <a 
-                      href={project.url.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-2 hover:text-slate-900 transition-colors duration-200"
-                  >
-                    <FaGithub className="group-hover:scale-110 transition-transform duration-200 w-6 h-6 hover:text-slate-900" />
-                    <span className="text-md text-base">GitHub</span>
-                  </a>
+                <div className="flex flex-row gap-x-4 w-full">
+                {[
+                  { url: project?.url?.live, icon: FaExternalLinkAlt, label: 'Live Site', iconClass: 'w-5 h-5', hoverColor: 'hover:text-rose-500', isInternal: false },
+                  { url: project?.url?.github, icon: FaGithub, label: 'GitHub', iconClass: 'w-5 h-5', hoverColor: 'hover:text-slate-900', isInternal: false },
+                  { url: project?.url?.blog_post, icon: FaPenAlt, label: 'Blog Post', iconClass: 'w-5 h-5', hoverColor: 'hover:text-blue-500', isInternal: true }
+                ].map((link, index) => {
+                  if (!link.url || link.url === "") return null;
                   
-                )}
+                  return (
+                    <Link 
+                      key={index}
+                      href={link.url}
+                      {...(!link.isInternal && { target: '_blank', rel: 'noopener noreferrer' })}
+                      className={`group flex items-center gap-2 ${link.hoverColor} transition-colors duration-200`}
+                    >
+                      <link.icon className={`group-hover:scale-110 transition-transform duration-200 ${link.iconClass}`} />
+                      <span className="text-base">{link.label}</span>
+                    </Link>
+                  );
+                })}
                 </div>
                 
-              </div>
               <div className="flex flex-row gap-x-3">
                 <ProjectTechStack technologies={project ? project.technologies : []} />
               </div>
 
           <div className="mb-4 flex flex-col gap-y-2">
-            {/* To-do: update project content here plz dont procrastinate*/}
             
               <div className="flex flex-col gap-y-2 text-justify">
 
@@ -97,20 +91,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                   </div>
               </div>
 
-                <div>
-                  <h1 className="text-xl font-semibold">what</h1>
-                  <span className="text-justify">{project ? project.www.what : ''}</span>
-                </div>
-                
-                <div>
-                  <h1 className="text-xl font-semibold">why</h1>
-                  <span className="text-justify">{project ? project.www.why : ''}</span>
-                </div>
-
-                <div>
-                  <h1 className="text-xl font-semibold">who</h1>
-                  <span className="text-justify">{project ? project.www.who : ''}</span>
-                </div>
+                {[
+                  { title: 'what', content: project?.www.what },
+                  { title: 'why', content: project?.www.why },
+                  { title: 'who', content: project?.www.who }
+                ].map((section, index) => (
+                  <div key={index}>
+                    <h1 className="text-xl font-semibold">{section.title}</h1>
+                    <span className="text-justify">{section.content || ''}</span>
+                  </div>
+                ))}
             </div>
           </div>
 

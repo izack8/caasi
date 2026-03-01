@@ -10,6 +10,14 @@ interface PostsClientProps {
   numPosts?: number;
 }
 
+function convertDate(dateString: string) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = date.toLocaleDateString('en-US', { month: 'short' });
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  };
+
 export default function PostsClient({ posts, numPosts }: PostsClientProps) {
   const [activeTag, setActiveTag] = useState("All");
 
@@ -53,26 +61,22 @@ export default function PostsClient({ posts, numPosts }: PostsClientProps) {
 
 export function PostCard({ post }: { post: any }) {
   return (
-     <div className="flex flex-col gap-y-4">
+
     <Link key={post.id} href={`/writings/posts/${post.id}`}>
 
           <div className="rounded cursor-pointer group">
             <div className="flex flex-col">
-              <h1 className="text-lg font-semibold group-hover:text-blue-800 transition-colors duration-200">
+              <h1 className="text-lg font-semibold group-hover:text-blue-500 transition-colors duration-200">
                 {post.title}
               </h1>
               <h2 className="text-md">{post.description}</h2>
               <h2 className="text-sm text-black-400">
-                {new Date(post.date).toLocaleDateString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}
+                {convertDate(post.date)}
               </h2>
+              
             </div>
           </div>
           </Link>
-          </div>
           
   )
 }

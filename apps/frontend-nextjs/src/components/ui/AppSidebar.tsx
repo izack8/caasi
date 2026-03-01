@@ -64,8 +64,8 @@ const NavigationBar = memo(function NavigationBar({ activeTab }: { activeTab: st
   ];
 
   return (
-    <div className="flex lg:justify-start justify-end lg:py-5 w-full items-center">
-      <div className="flex flex-row lg:flex-col gap-6 lg:gap-2 lg:items-start">
+    <div className="flex lg:justify-start justify-end xl:py-5 lg:py-4 w-full xl:mt-5 lg:mt-0">
+      <div className="flex flex-row lg:flex-col gap-x-6 lg:gap-y-3 lg:items-start">
         {links.map((link) => (
           <Link
             key={link.id}

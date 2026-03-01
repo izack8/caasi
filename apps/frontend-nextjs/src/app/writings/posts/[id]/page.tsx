@@ -5,6 +5,14 @@ import { getCachedPost } from '@/lib/api';
 import { Post } from '@/lib/types';
 import Button from '@/components/ui/Button';
 
+function convertDate(dateString: string) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = date.toLocaleDateString('en-US', { month: 'short' });
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  };
+
 export default async function PostPage({ params }: { params: Promise<{ id: string }> }) {
 
   const { id } = await params;
@@ -37,7 +45,9 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
         <div>
       <h1 className="text-3xl font-bold">{post.title}</h1>
       <h1 className="text-lg">{post.description}</h1>
-      <p className="text-gray-500 mb-4">{post.date}</p>
+      <p className="text-gray-500 mb-4">
+        {convertDate(post.date)}
+      </p>
       </div>
       
       {post.tags && (
