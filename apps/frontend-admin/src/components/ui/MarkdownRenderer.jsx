@@ -71,25 +71,26 @@ export default function MarkdownRenderer({
     return (
     <div className="prose prose-neutral prose-lg dark:prose-invert text-justify ">
             <Markdown
-                  remarkPlugins={[remarkGfm]}
-                  rehypePlugins={[rehypeRaw]}
-                  components={{
-                    h1: ({ children }) => <h1 className="text-3xl font-bold py-4 text-left">{children}</h1>,
-                    h2: ({ children }) => <h2 className="text-2xl font-semibold py-3">{children}</h2>,
-                    h3: ({ children }) => <h3 className="text-xl font-medium py-2">{children}</h3>,
-                    p:  ({ children }) => <p className="leading-relaxed text-justify">{children}</p>,
-                    ul: ({ children }) => <ul className="list-disc list-inside space-y-1">{children}</ul>,
-                    ol: ({ children }) => <ol className="list-decimal list-inside space-y-1">{children}</ol>,
-                    li: ({ children }) => <li className="ml-4">{children}</li>,
-                    blockquote: ({ children }) => (
-                      <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-black-400">
-                        {children}
-                      </blockquote>
-                    ),
-                    code({ node, className, children, ...props }) {
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeRaw]}
+                    components={{
+                      h1: ({ children }) => <h1 className="text-3xl font-bold py-4 text-left">{children}</h1>,
+                      h2: ({ children }) => <h2 className="text-2xl font-semibold py-3">{children}</h2>,
+                      h3: ({ children }) => <h3 className="text-xl font-medium py-2">{children}</h3>,
+                      p:  ({ children }) => <p className="leading-relaxed text-justify">{children}</p>,
+                      ul: ({ children }) => <ul className="list-disc list-inside space-y-1">{children}</ul>,
+                      ol: ({ children }) => <ol className="list-decimal list-inside space-y-1">{children}</ol>,
+                      li: ({ children }) => <li className="ml-4">{children}</li>,
+                      blockquote: ({ children }) => (
+                        <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-black-400">
+                          {children}
+                        </blockquote>
+                      ),
+                      code({ node, className, children, ...props }) {
                         const inline = props.inline;
                         const match = /language-(\w+)/.exec(className || '');
                         const codeString = String(children).replace(/\n$/, '');
+                        
                         return !inline && match ? (
                           <div className="relative group w-full h-auto">
                               <span className="absolute top-3 left-3 text-xs text-gray-400">{match[1]}
@@ -115,7 +116,7 @@ export default function MarkdownRenderer({
                               codeTagProps={{
                                 style: {
                                     whiteSpace: 'pre-wrap',
-                                    overflowWrap: 'anywhere'
+                                    overflowWrap: 'break-word',
                                 }
                             }}
                             >
@@ -131,30 +132,30 @@ export default function MarkdownRenderer({
                           {...props}>
                             {children}
                           </code>
-                      );
-                    },
-                    a: ({ href, children }) => {
-                     
-                      const isInternal = href?.startsWith('/') || href?.startsWith('#');
-                      
-                      if (isInternal) {
-                        return (
-                          <Link href={href || '#'} className="text-blue-900 underline hover:text-blue-500 transition-colors duration-300">
-                            {children}
-                          </Link>
                         );
-                      }
-                      
-                      return (
-                        <a href={href} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-rose-500 transition-colors duration-300">
-                          {children}
-                        </a>
-                      );
-                    },
-                  }}
-                >
-                  {children}
-                </Markdown>
+                      },
+                      a: ({ href, children }) => {
+                       
+                        const isInternal = href?.startsWith('/') || href?.startsWith('#');
+                        
+                        if (isInternal) {
+                          return (
+                            <Link href={href || '#'} className="text-blue-900 underline hover:text-blue-500 transition-colors duration-300">
+                              {children}
+                            </Link>
+                          );
+                        }
+                        
+                        return (
+                          <a href={href} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-rose-500 transition-colors duration-300">
+                            {children}
+                          </a>
+                        );
+                      },
+                    }}
+                  >
+                    {children}
+                  </Markdown>
             </div>
   );
   }
