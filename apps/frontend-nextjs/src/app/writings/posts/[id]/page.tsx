@@ -43,7 +43,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
     <MotionWrapper id="post-detail">
 
         <div>
-      <h1 className="text-3xl font-bold">{post.title}</h1>
+      <h1 className="text-3xl font-semibold">{post.title}</h1>
       <h1 className="text-lg">{post.description}</h1>
       <p className="text-gray-500 mb-4">
         {convertDate(post.date)}
