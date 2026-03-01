@@ -11,10 +11,14 @@ export default function NotFound() {
     <>
           <BackButton section="home"/>
           <MotionWrapper id="not-found">
+            <div className="items-start">
+                <h1 className="text-4xl font-bold">{`404. Not found :(`}</h1>
+              </div>
             <div className="flex flex-col items-center justify-center p-8">
-            <p>404. Oops, are you supposed to be here :o?</p>
-            <p>(if you are, please let me know how you got here lol)</p>
-            <p>anyways, there are 3 secrets hidden on this site! can you find them all? :p</p>
+              
+            <p>Oops, are you supposed to be here :o?</p>
+            <p>(but if you are, please let me know how you got here lol)</p>
+            <p>anyways, there are 3 secrets hidden on this site! find them all and tell me where :p</p>
             </div>
           </MotionWrapper>
 

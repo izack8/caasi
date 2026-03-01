@@ -13,32 +13,31 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     const { id } = await params;
     const slug = id;
 
-    const defaultErrorProject: Project = {
-        id: "not-found",
-        slug: "not-found",
-        title: "awwie. i didn't make this project! :(",
-        description: "not found",
-        year: "2024",
-        what_i_learnt: "i have other cool projects you can check out!!! :)",
-        technologies: [],
-        url: {
-        live: "",
-        github: ""
-        },
-        www: {
-        what: "but anyways, 1/3 site secrets found! hehe",
-        why: "i'm writing this at 3am, so i have no idea what to put here lol",
-        who: "67"
-        },
-        timeline: [{"timeline_date": "hehe", "timeline_description": "ok bye"}]
-    };
-
-    let project: Project = defaultErrorProject
+    let project: Project | null = null;
     
     try{
         project = await getCachedProject(slug);
     } catch (error) {
-        console.error("Error fetching project:", error);
+      // might need to handle server error instead of returning a dummy.
+          project = {
+          id: "not-found",
+          slug: "not-found",
+          title: "something bad happened/i didn't make this project! :(",
+          description: "not found",
+          year: "2024",
+          what_i_learnt: "i have other cool projects you can check out!!! :)",
+          technologies: [],
+          url: {
+          live: "",
+          github: ""
+          },
+          www: {
+          what: "but anyways, 1/3 site secrets found! hehe",
+          why: "i'm writing this at 3am, so i have no idea what to put here lol",
+          who: "67"
+          },
+          timeline: [{"timeline_date": "hehe", "timeline_description": "ok bye"}]
+      };
     }
 
     if (!project) {

@@ -9,22 +9,22 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
 
   const { id } = await params;
   
-  let post : Post = {
-
-    id: "post-not-found",
-    title: "ahhh! i haven't finished writing this post!",
-    description: "but it's coming soooooooon!!!",
-    date: "1998-12-08",
-    content: "found 1/3 site secrets, tho. hehe.",
-    type: "Extras",
-    tags: []
-
-  };
+  let post : Post | null = null;
 
   try {
     post = await getCachedPost(id);
   } catch (err) {
-    console.error("Error fetching post:", err);
+      post = {
+
+      id: "post-not-found",
+      title: "something bad happened/i have not finished writing/this post does not exist (...yet?)",
+      description: "check out my other posts, though!",
+      date: "1998-12-08",
+      content: "(found 1/3 site secrets. hehe.)",
+      type: "Extras",
+      tags: ["Site Secret"]
+
+    };
   }
 
 
