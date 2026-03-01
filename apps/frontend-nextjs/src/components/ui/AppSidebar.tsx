@@ -26,18 +26,16 @@ function AppSidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <nav className="hidden lg:block">
+      <nav className="hidden lg:block h-screen">
         <div className="flex absolute top-[30px] h-[40px] items-center">
             <Breadcrumb pathname={pathname} />
         </div>
-        <div className="lg:flex lg:flex-col lg:h-full">
-          <div className='flex flex-col h-full'>
+        <div className="flex flex-col h-full">
             <HeroTitle />
             <NavigationBar activeTab={activeTab} />
-            <div className="hidden lg:block">
+            <div className="hidden lg:block mt-auto">
               <Footer />
             </div>
-          </div>
         </div>
       </nav>
 
@@ -72,7 +70,7 @@ const NavigationBar = memo(function NavigationBar({ activeTab }: { activeTab: st
           <Link
             key={link.id}
             href={link.path}
-            className={`text-sm lg:text-md xl:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'}`}
+            className={`text-sm lg:text-base font-semibold relative pb-1 transition-colors duration-200 ${activeTab === link.id ? 'text-black' : 'text-gray-500'}`}
           >
             <span className="md:hidden">{link.emoji}</span>
             <span className="hidden md:inline">{link.emoji} {link.label}</span>

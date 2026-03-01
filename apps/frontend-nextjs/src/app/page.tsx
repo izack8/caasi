@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import SparkleText from '@/components/animation/SparkleText';
 import ExecutiveSection from '@/components/sections/ExecutiveSection';
@@ -8,14 +7,6 @@ import FeaturedWorksSection from '@/components/sections/FeaturedWorksSection';
 import PageHeader from '@/components/ui/PageHeader';
 
 export default function HomePage() {
-  const [windowWidth, setWindowWidth] = useState(1024);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <motion.div 
@@ -25,7 +16,7 @@ export default function HomePage() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <PageHeader 
-        title={<SparkleText>{windowWidth > 1023 ? "hey there!" : "hey there! i'm isaac 🎮"}</SparkleText>} 
+        title={<SparkleText>🏡 hey there!</SparkleText>} 
         subtitle="thanks for visiting! please enjoy your stay <3" 
       />
 

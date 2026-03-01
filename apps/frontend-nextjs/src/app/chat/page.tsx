@@ -9,7 +9,7 @@ export default function ChatPage() {
     <MotionWrapper id="chat"
     >
       <PageHeader 
-        title="ai chatbot" 
+        title="🤖 ai chatbot" 
         subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}
       />
       (it's kinda broken now, cause i ran out of credits)

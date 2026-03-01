@@ -10,7 +10,7 @@ export default function WorkPage() {
   return (
     <MotionWrapper id="work">
       <PageHeader 
-        title="leveling up & side quests" 
+        title="🧑‍💻 leveling up & side quests" 
         subtitle="projects, skills, professional experiences, trying to build cool stuff, automate things, etc etc"
       />
 

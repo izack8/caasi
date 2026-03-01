@@ -7,8 +7,8 @@ export default function WritingsPage() {
     <MotionWrapper id="writings">
 
       <PageHeader 
-        title="digital scrapbook" 
-        subtitle={`i sometimes try to form coherent thoughts and then write them down`}
+        title="✍️ digital scrapbook" 
+        subtitle="i sometimes try to form coherent thoughts and then write them down"
       />
       <PostsSection />
       

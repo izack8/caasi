@@ -8,7 +8,7 @@ import ConnectWithMeSection from '@/components/sections/ConnectWithMeSection';
 export default function AboutPage() {
   return (
     <MotionWrapper id="about">
-      <PageHeader title="with ♥️," subtitle="from your local whimsy software engineer" />
+      <PageHeader title="🎮 with love," subtitle="from your local whimsy software engineer" />
       <div className='flex flex-col gap-y-10'>
         <AboutSection />
         <ConnectWithMeSection />

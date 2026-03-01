@@ -25,7 +25,7 @@ export default function FavoritesPage() {
   return (
     <MotionWrapper id="favorites">
 
-      <PageHeader title="🌸" subtitle="these are a few of my favorite things" />
+      <PageHeader title="🌻" subtitle={`"these are a few of my favorite things"`} />
       <div className='flex flex-col gap-y-10'>
         <ul className="text-md">
           {favThings.map((thing, index) => (
