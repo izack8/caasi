@@ -6,8 +6,22 @@ interface TimelineProps {
 }
 
 export default function Timeline({ timelineData }: TimelineProps) {
-  // Reverse array so latest date appears first
-  const reversedData = [...timelineData].reverse();
+
+  const groupedByYear = timelineData.reduce((acc, item) => {
+    
+    const dateParts = item.timeline_date.split(' ');
+    const month = dateParts[0];
+    const year = dateParts[1] || new Date().getFullYear().toString();
+    
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push({ ...item, month });
+    return acc;
+  }, {} as Record<string, Array<TimelineType & { month: string }>>);
+
+  // Sort years in descending order (newest first)
+  const sortedYears = Object.keys(groupedByYear).sort((a, b) => Number(b) - Number(a));
 
   return (
     <div className="flex flex-col w-full">
@@ -16,9 +30,14 @@ export default function Timeline({ timelineData }: TimelineProps) {
             <span className="text-xs">(earlier entries at the bottom)</span>
         </div>
 
-        {reversedData && reversedData.length > 0 ? (
-          reversedData.map((item, index) => (
-            <TimelineItem key={index} timelineData={item} isLastItem={index === reversedData.length - 1} />
+        {sortedYears.length > 0 ? (
+          sortedYears.map((year, yearIndex) => (
+            <YearComponent 
+              key={year} 
+              year={year} 
+              items={groupedByYear[year]} 
+              isLastYear={yearIndex === sortedYears.length - 1}
+            />
           ))
         ) : (
           <p>🔨🚧 No timeline data available (cause i haven't added it yet :/) 🚧🔨</p>
@@ -28,29 +47,78 @@ export default function Timeline({ timelineData }: TimelineProps) {
   );
 }
 
-interface TimelineItemProps {
-  timelineData: TimelineType;
-  isLastItem: boolean;
+interface YearComponentProps {
+  year: string;
+  items: Array<TimelineType & { month: string }>;
+  isLastYear: boolean;
 }
 
-function TimelineItem({ timelineData, isLastItem }: TimelineItemProps) {
+function YearComponent({ year, items, isLastYear }: YearComponentProps) {
+
+  const groupedByMonth = items.reduce((acc, item) => {
+    const month = item.month;
+    if (!acc[month]) {
+      acc[month] = [];
+    }
+    acc[month].push(item);
+    return acc;
+  }, {} as Record<string, Array<TimelineType & { month: string }>>);
+
+  const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  
+  const sortedMonths = Object.keys(groupedByMonth).sort((a, b) => {
+    return monthOrder.indexOf(b) - monthOrder.indexOf(a);
+  });
+
   return (
     <div className="flex flex-col">
+      <h2 className="text-xl font-bold">{year}</h2>
+      
+      {sortedMonths.map((month, monthIndex) => (
+        <MonthComponent 
+          key={month}
+          month={month}
+          items={groupedByMonth[month]}
+          isLastMonth={monthIndex === sortedMonths.length - 1}
+        />
+      ))}
 
-      <div className="flex flex-col">
-        <h1 className="text-lg font-semibold">{timelineData.timeline_date}</h1>
-        <div className="text-justify">
-          <MarkdownRenderer>
-            {timelineData.timeline_description}
-          </MarkdownRenderer>
-        </div>
+      {/* divider line between years */}
+      {!isLastYear && (
+        <div className="border-t-2 border-slate-500 my-10 w-2/3 justify-center mx-auto"></div>
+      )}
+    </div>
+  );
+}
+
+interface MonthComponentProps {
+  month: string;
+  items: Array<TimelineType & { month: string }>;
+  isLastMonth: boolean;
+}
+
+function MonthComponent({ month, items, isLastMonth }: MonthComponentProps) {
+  return (
+    <div className="flex flex-col">
+      <h3 className="text-lg font-semibold">{month}</h3>
+      
+      <div className="flex flex-col gap-y-5">
+        {items.map((item, index) => (
+          <div key={index} className="flex flex-col ml-4">
+            <div>
+              <MarkdownRenderer>
+                {item.timeline_description}
+              </MarkdownRenderer>
+            </div>
+          </div>
+        ))}
       </div>
 
-        {/* if its the last item of array, dont render the line */}
-        {!isLastItem && (
-          <div className="flex border-l-2 border-slate-500 h-10 ml-4 my-2"></div>
-        )}
-      
+      {/* if its not the last month, render the line */}
+      {!isLastMonth && (
+        <div className="flex border-l-2 border-slate-500 h-10 ml-4 my-2"></div>
+      )}
     </div>
-  )}
+  );
+}
 
