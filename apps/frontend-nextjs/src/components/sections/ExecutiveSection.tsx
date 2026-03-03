@@ -13,7 +13,7 @@ function ExecutiveSection() {
             <div className="flex flex-col md:flex-row sm:gap-x-5 items-center">
                 
                 <p className="md:w-1/2">
-                Hello! My name is Isaac, or affectionately known as <b>izack/iz</b>, with my friends. I'm a software engineer + ai/ml student, who loves exploring the intersection of technology and creativity, to build fun and creative projects.
+                Hello! My name is Isaac, or affectionately known as <b>izack/iz</b> by my friends. I'm a software engineer + ai/ml student, who loves exploring the intersection of technology and creativity, to build fun and creative projects.
                 </p>
 
                 <Image className="md:w-1/2 rounded-md mt-5" src="/images/intersection.png" alt="image of intersection of technology and creativity" width={500} height={500} />
