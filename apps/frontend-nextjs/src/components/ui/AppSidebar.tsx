@@ -40,11 +40,16 @@ function AppSidebar() {
       </nav>
 
       {/* Mobile Navigation Bar */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 flex flex-row items-center bg-white/30 backdrop-blur-md h-[50px] p-5 z-50" style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}>
+      <nav className="lg:hidden fixed top-0 left-0 right-0 flex flex-row items-center bg-white/30 backdrop-blur-md h-[55px] p-5 z-50" style={{ WebkitTapHighlightColor: 'transparent', touchAction: 'manipulation' }}>
           <Link 
             href="/"
-            className="font-semibold text-xl cursor-pointer transition-colors w-1/3"
-          >  🎮&nbsp; Isaac</Link>
+            className="cursor-pointer transition-colors w-1/3"
+          >
+            <div className="flex flex-row gap-x-1 items-center">
+            <img src="/favicon.ico" alt="izack.dev logo" className="w-8 h-8" />
+            <p className="font-semibold">IZ</p>
+            </div>
+            </Link>
           <NavigationBar activeTab={activeTab} />
       </nav>
     </>
