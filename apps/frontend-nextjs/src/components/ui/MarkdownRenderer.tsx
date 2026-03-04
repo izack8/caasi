@@ -94,6 +94,7 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
           a: ({ href, children }) => {
            
             const isInternal = href?.startsWith('/') || href?.startsWith('#');
+            const isFullUrl = href?.includes('://') || href?.startsWith('www.');
             
             if (isInternal) {
               return (
@@ -102,9 +103,9 @@ export default function MarkdownRenderer({ children }: MarkdownRendererProps) {
                 </Link>
               );
             }
-            
+            const externalHref = isFullUrl ? href : `https://${href}`;
             return (
-              <a href={href} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-rose-500 transition-colors duration-300">
+              <a href={externalHref} target="_blank" rel="noopener noreferrer" className="text-black underline hover:text-rose-500 transition-colors duration-300">
                 {children}
               </a>
             );
