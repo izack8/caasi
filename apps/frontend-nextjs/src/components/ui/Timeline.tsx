@@ -7,7 +7,9 @@ interface TimelineProps {
 
 export default function Timeline({ timelineData }: TimelineProps) {
 
-  const groupedByYear = timelineData.reduce((acc, item) => {
+  const reversedTimelineData = [...timelineData].reverse();
+
+  const groupedByYear = reversedTimelineData.reduce((acc, item) => {
     
     const dateParts = item.timeline_date.split(' ');
     const month = dateParts[0];
@@ -20,13 +22,12 @@ export default function Timeline({ timelineData }: TimelineProps) {
     return acc;
   }, {} as Record<string, Array<TimelineType & { month: string }>>);
 
-  // Sort years in descending order (newest first)
   const sortedYears = Object.keys(groupedByYear).sort((a, b) => Number(b) - Number(a));
 
   return (
     <div className="flex flex-col w-full">
         <div className="mb-2 flex flex-col">
-            <h1 className="font-semibold text-2xl">Timeline</h1>
+            <h1 className="font-semibold text-3xl">Timeline</h1>
             <span className="text-xs">(earlier entries at the bottom)</span>
         </div>
 
@@ -104,8 +105,9 @@ function MonthComponent({ month, items, isLastMonth }: MonthComponentProps) {
       
       <div className="flex flex-col gap-y-5">
         {items.map((item, index) => (
-          <div key={index} className="flex flex-col ml-4">
+          <div key={index} className="flex flex-col">
             <div>
+              <h4 className="text-md font-semibold">{item.timeline_date}</h4>
               <MarkdownRenderer>
                 {item.timeline_description}
               </MarkdownRenderer>
