@@ -102,7 +102,7 @@ export default function FeaturedWorksSection() {
         <div className="flex flex-col gap-y-6">
             <section className="projects-section w-full flex flex-col">
                 <SectionLabel label="Featured Projects" />
-                <div className="flex flex-col gap-y-7">
+                <div className="flex flex-col gap-y-5">
                 {projContent.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}

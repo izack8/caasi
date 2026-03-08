@@ -7,11 +7,8 @@ function Breadcrumb({ pathname }: { pathname: string }) {
   
     const segments = pathname
       .split('/')
-      .filter(segment => segment.length > 0);
-
-    if (segments.length >= 4) {
-      segments[2] = '...';
-    }
+      .filter(segment => segment.length > 0)
+      .slice(0, 3);
 
 
     return (

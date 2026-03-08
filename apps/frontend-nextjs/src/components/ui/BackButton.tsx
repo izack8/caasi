@@ -10,7 +10,7 @@ export default function BackButton({section}: {section?: string}) {
     <div className="mb-5">
     <button
       className="tab font-semibold gap-x-1 transition-colors duration-300 text-gray-600 hover:text-black flex flex-row items-center"
-      onClick={() => router.back()}
+      onClick={() => router.push(`/${section || 'work'}`)}
     >
       <FaAngleLeft />
       back {section ? `to ${section}` : ''}

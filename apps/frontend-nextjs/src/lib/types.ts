@@ -1,5 +1,8 @@
 // API Response Types
 
+import { Url } from "next/dist/shared/lib/router/router";
+import { UrlObject } from "url";
+
 export interface Post {
   id: string;
   title: string;
@@ -43,13 +46,14 @@ export interface Timeline {
 
 export interface Experience {
   id: string;
+  slug: string;
   title: string;
   company: string;
   duration: string;
   description: string;
   location: string;
   tags: string[];
-  link?: string;
+  link: string;
 }
 
 // API Error Types

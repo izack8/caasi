@@ -146,7 +146,6 @@ class ApiClient {
 
     const experiences = await this.fetchData<Experience[]>(API_ENDPOINTS.experiences);
     
-    // Sort by start date (most recent first)
     experiences.sort((a, b) => {
       const parseDate = (duration: string) => {
         const startDateStr = duration.split(' - ')[0].trim();
