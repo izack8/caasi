@@ -42,7 +42,7 @@ export function ProjectCard({ project, index }: { project: any, index?: number }
     href={`/work/projects/${project.slug}/overview`} 
     className="flex flex-col gap-y-2 w-full rounded-lg transition-all duration-300 group lg:hover:bg-white/20 lg:bg-transparent border border-white/80 lg:border-transparent p-4">
 
-          <h1 className="text-xl font-bold group-hover:text-blue-500 transition-all duration-300 w-full flex flex-row items-center">
+          <h1 className="text-xl font-bold text-blue-900 group-hover:text-blue-500 transition-all duration-300 w-full flex flex-row items-center">
             <span>{project.title}</span>
             </h1>
             

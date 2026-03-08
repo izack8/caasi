@@ -3,16 +3,16 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-interface ProjectTabsProps {
-  projectId: string;
+interface ExperienceTabsProps {
+  experienceId: string;
 }
 
-export default function ProjectTabs({ projectId }: ProjectTabsProps) {
+export default function ExperienceTabs({ experienceId }: ExperienceTabsProps) {
   const pathname = usePathname();
   
   const tabs = [
-    { name: 'Overview', path: `/work/projects/${projectId}/overview` },
-    { name: 'Timeline', path: `/work/projects/${projectId}/timeline` }
+    { name: 'Overview', path: `/work/experiences/${experienceId}/overview` },
+    { name: 'Timeline', path: `/work/experiences/${experienceId}/timeline` }
   ];
 
   return (
@@ -23,14 +23,13 @@ export default function ProjectTabs({ projectId }: ProjectTabsProps) {
           <Link
             key={tab.name}
             href={tab.path}
-            className={`pb-2 px-1 font-medium text-lg border-b-2 transition-colors duration-200 ${
+            className={`pb-2 px-1 text-lg font-medium border-b-2 transition-colors duration-200 ${
               isActive 
-                ? 'border-blue-500 text-blue-500 ' 
+                ? 'border-blue-500 text-blue-500' 
                 : 'border-transparent text-black hover:text-blue-500'
             }`}
           >
             {tab.name}
-            
           </Link>
         );
       })}

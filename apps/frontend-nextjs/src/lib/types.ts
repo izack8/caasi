@@ -54,6 +54,7 @@ export interface Experience {
   location: string;
   tags: string[];
   link: string;
+  timeline: Timeline[];
 }
 
 // API Error Types

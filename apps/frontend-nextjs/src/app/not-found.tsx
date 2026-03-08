@@ -9,7 +9,7 @@ export default function NotFound() {
 
   return (
     <>
-          <BackButton section="home"/>
+          <BackButton />
           <MotionWrapper id="not-found">
             <div className="items-start">
                 <h1 className="text-4xl font-bold">{`404. Not found :(`}</h1>

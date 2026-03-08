@@ -12,8 +12,9 @@ export default function Timeline({ timelineData }: TimelineProps) {
   const groupedByYear = reversedTimelineData.reduce((acc, item) => {
     
     const dateParts = item.timeline_date.split(' ');
-    const month = dateParts[0];
-    const year = dateParts[1] || new Date().getFullYear().toString();
+    // Format: "09 Mar 2026" -> year is last, month is second to last
+    const month = dateParts.at(-2) || '';
+    const year = dateParts.at(-1) || new Date().getFullYear().toString();
     
     if (!acc[year]) {
       acc[year] = [];
@@ -41,7 +42,7 @@ export default function Timeline({ timelineData }: TimelineProps) {
             />
           ))
         ) : (
-          <p>🔨🚧 No timeline data available (cause i haven't added it yet :/) 🚧🔨</p>
+          <p className="text-gray-500">🔨🚧 No timeline data available (cause i haven't added it yet :/) 🚧🔨</p>
         )}
       
     </div>
@@ -103,7 +104,7 @@ function MonthComponent({ month, items, isLastMonth }: MonthComponentProps) {
     <div className="flex flex-col">
       <h3 className="text-lg font-semibold">{month}</h3>
       
-      <div className="flex flex-col gap-y-5">
+      <div className="flex flex-col gap-y-4">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col">
             <div>
@@ -116,7 +117,7 @@ function MonthComponent({ month, items, isLastMonth }: MonthComponentProps) {
         ))}
       </div>
 
-      {/* if its not the last month, render the line */}
+      {/* Line between months, but not after the last month */}
       {!isLastMonth && (
         <div className="flex border-l-2 border-slate-500 h-10 ml-4 my-2"></div>
       )}

@@ -167,6 +167,18 @@ class ApiClient {
     return experiences;
   }
 
+  async getExperience(slug: string): Promise<Experience> {
+
+    const cachedExperiences = CacheManager.get<Experience[]>('cachedExperiences');
+    if (cachedExperiences) {
+      const experience = cachedExperiences.find(p => p.slug === slug);
+      if (experience) return experience;
+    }
+
+    const experience = await this.fetchData<Experience>(API_ENDPOINTS.experience(slug));
+    return experience;
+  }
+
   /**
    * Clear all cached data
    */
@@ -182,10 +194,8 @@ class ApiClient {
   }
 }
 
-// Export singleton instance
 export const api = new ApiClient();
 
-// Wrap API methods with React cache for server-side deduplication
 export const getCachedProjects = cache(async () => {
   return api.getProjects(); 
 });
@@ -203,6 +213,10 @@ export const getCachedPost = cache(async (id: string) => {
 
 export const getCachedExperiences = cache(async () => {
   return api.getExperiences(); 
+});
+
+export const getCachedExperience = cache(async (slug: string) => {
+  return api.getExperience(slug); 
 });
 
 

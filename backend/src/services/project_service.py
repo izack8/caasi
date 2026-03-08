@@ -7,8 +7,8 @@ def get_projects(full: bool = True):
         projects = list(db['projects'].find({}, {"_id": 0, "slug": 1, "title": 1, "description": 1, "date": 1, "url": 1, "technologies": 1}))
     return projects
 
-def get_project_by_id(project_id):
+def get_project_by_slug(project_slug):
     # we're using "slug", b/c i didnt define "id" / idw use ObjectId.
     # maybe we should fix.
-    project = db['projects'].find_one({"slug": project_id}, {"_id": 0})
+    project = db['projects'].find_one({"slug": project_slug}, {"_id": 0})
     return project
