@@ -44,6 +44,11 @@ export interface Timeline {
   timeline_description: string;
 }
 
+export interface CompanyProject {
+  project_name: string;
+  project_about: string;
+}
+
 export interface Experience {
   id: string;
   slug: string;
@@ -55,6 +60,7 @@ export interface Experience {
   tags: string[];
   link: string;
   timeline: Timeline[];
+  projects?: CompanyProject[];
 }
 
 // API Error Types

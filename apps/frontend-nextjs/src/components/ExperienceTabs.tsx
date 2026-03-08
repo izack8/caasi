@@ -12,7 +12,9 @@ export default function ExperienceTabs({ experienceId }: ExperienceTabsProps) {
   
   const tabs = [
     { name: 'Overview', path: `/work/experiences/${experienceId}/overview` },
-    { name: 'Timeline', path: `/work/experiences/${experienceId}/timeline` }
+    { name: 'Timeline', path: `/work/experiences/${experienceId}/timeline` },
+    { name: 'Projects', path: `/work/experiences/${experienceId}/company-projects` },
+    
   ];
 
   return (

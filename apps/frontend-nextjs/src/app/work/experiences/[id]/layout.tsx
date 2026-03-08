@@ -31,7 +31,8 @@ export default async function ExperienceLayout({
       duration: "2024",
       tags: [],
       link: "",
-      timeline: [{"timeline_date": "hehe", "timeline_description": "ok bye"}]
+      timeline: [{"timeline_date": "hehe", "timeline_description": "ok bye"}],
+      projects: []
     };
   }
 
@@ -51,7 +52,7 @@ export default async function ExperienceLayout({
                 href={experience.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 hover:text-blue-500 transition-colors duration-200 w-fit"
+                className="group flex items-center gap-2 hover:text-rose-500 transition-colors duration-200 w-fit"
               >
                 <FaExternalLinkAlt className="w-4 h-4" />
                 <span className="text-lg font-semibold">{experience.company}</span>
@@ -68,7 +69,6 @@ export default async function ExperienceLayout({
                 {experience.location}
               </span>
             </div>
-
           
           {experience.tags && experience.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
@@ -83,10 +83,8 @@ export default async function ExperienceLayout({
             </div>
           )}
 
-          {/* Tabs Navigation */}
           <ExperienceTabs experienceId={slug} />
 
-          {/* Child pages will render here */}
           {children}
         </div>
       </MotionWrapper>

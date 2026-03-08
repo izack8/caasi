@@ -21,7 +21,8 @@ export default async function ExperienceTimelinePage({ params }: { params: Promi
       duration: "2024",
       tags: [],
       link: "",
-      timeline: [{"timeline_date": "hehe", "timeline_description": "ok bye"}]
+      timeline: [{"timeline_date": "hehe", "timeline_description": "ok bye"}],
+      projects: []
     };
   }
 

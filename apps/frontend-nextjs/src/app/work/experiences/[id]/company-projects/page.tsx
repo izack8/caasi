@@ -1,8 +1,7 @@
-import MarkdownRenderer from '@/components/ui/MarkdownRenderer';
 import { getCachedExperience } from '@/lib/api';
 import type { Experience } from '@/lib/types';
 
-export default async function ExperienceOverviewPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ExperienceCompanyProjectsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const slug = id;
 
@@ -31,14 +30,24 @@ export default async function ExperienceOverviewPage({ params }: { params: Promi
   }
 
   return (
-    <div className="mb-4 flex flex-col gap-y-4 mt-4">
-      <div className="flex flex-col gap-y-4 text-justify">
+    <div className="mt-4">
+      {experience.projects && experience.projects.length > 0 ? (
+        <div className="flex flex-col gap-y-8">
+          {experience.projects.map((project, index) => (
+            <div 
+              key={index}
+            >
+              <h2 className="text-2xl font-bold">{project.project_name}</h2>
+              <div className="text-md text-justify whitespace-pre-line">
+                {project.project_about}
+              </div>
+              </div>
 
-        <div>
-          <h2 className="text-xl font-semibold mb-2">About</h2>
-          <div className="text-justify" dangerouslySetInnerHTML={{ __html: experience.description }} />
+          ))}
         </div>
-      </div>
+      ) : (
+        <p className="text-gray-500">No company projects added (yet).</p>
+      )}
     </div>
   );
 }
