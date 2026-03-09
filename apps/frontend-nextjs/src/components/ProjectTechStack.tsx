@@ -6,9 +6,9 @@ interface ProjectTechStackProps {
 
 function ProjectTechStack({ technologies }: ProjectTechStackProps) {
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-2">
       {technologies.map((technology, index) => {
-        // Handle both string array and object array
+
         const isString = typeof technology === 'string';
         const name = isString ? technology : technology.name;
         const icon = isString ? undefined : technology.icon;

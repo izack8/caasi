@@ -47,6 +47,9 @@ export interface Timeline {
 export interface CompanyProject {
   project_name: string;
   project_about: string;
+  what: string;
+  why: string;
+  who: string;
 }
 
 export interface Experience {

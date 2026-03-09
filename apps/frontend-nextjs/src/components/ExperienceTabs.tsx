@@ -18,14 +18,14 @@ export default function ExperienceTabs({ experienceId }: ExperienceTabsProps) {
   ];
 
   return (
-    <div className="flex gap-x-4">
+    <div className="flex gap-x-5">
       {tabs.map((tab) => {
         const isActive = pathname === tab.path;
         return (
           <Link
             key={tab.name}
             href={tab.path}
-            className={`pb-2 px-1 text-lg font-medium border-b-2 transition-colors duration-200 ${
+            className={`pb-2 text-lg font-medium border-b-2 transition-colors duration-200 ${
               isActive 
                 ? 'border-blue-500 text-blue-500' 
                 : 'border-transparent text-black hover:text-blue-500'
