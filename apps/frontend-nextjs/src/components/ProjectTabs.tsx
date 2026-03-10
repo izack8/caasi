@@ -16,7 +16,7 @@ export default function ProjectTabs({ projectId }: ProjectTabsProps) {
   ];
 
   return (
-    <div className="flex gap-x-5">
+    <div className="flex gap-x-6">
       {tabs.map((tab) => {
         const isActive = pathname === tab.path;
         return (
