@@ -13,12 +13,12 @@ function ExecutiveSection() {
             
             <div className="flex flex-col items-center gap-y-4">
                 <p>
-                Hello! My name is Isaac, or affectionately known as <b>izack/iz</b> by my friends. I'm a software engineer + ai/ml enthusiast, who loves exploring the intersection of technology and creativity, to build fun and creative projects.
+                Hello! I'm Isaac, or affectionately known as <i>izack/iz</i> by my friends. I'm a software engineer + ai/ml enthusiast, who loves exploring the intersection of technology and creativity, to build fun and creative projects.
                 </p>
 
-                <p>I am currently working as a software engineer at <span className="font-semibold"><a href="https://nets.com.sg" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">NETS</a></span>, Singapore's national digital payment system and infrastructure, where I build in-house workflow solutions for reporting and analytics, while further enhancing communication channels between <span className="font-semibold"><a href="https://en.wikipedia.org/wiki/List_of_banks_in_Singapore" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">local banks</a></span> :D.</p>
+                <p>I am currently working at <span className="font-semibold"><a href="https://en.wikipedia.org/wiki/NETS_(company)" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">NETS</a></span>, Singapore's national digital payment system and infrastructure, where I build in-house workflow solutions for reporting and analytics, while further enhancing communication channels between <span className="font-semibold"><a href="https://en.wikipedia.org/wiki/List_of_banks_in_Singapore" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">local banks</a></span> :D.</p>
                 
-                <p>I also recently built a <span className="font-semibold cursor-pointer hover:text-blue-500 transition-colors duration-200" onClick={() => router.push('/work/projects/sign-a-photo-jpg')}>web-app</span> that uses computer vision to detect the American Sign Language (ASL) alphabets, <a className="font-semibold cursor-pointer italic hover:text-rose-500 transition-colors duration-200" href="https://vt.tiktok.com/ZSmNxAXJR/" target="_blank" rel="noopener noreferrer">which garnered 710k+ views, 150k+ likes on TikTok</a>, and 500+ weekly page visits (which is the <b>craziest</b> thing ever).
+                <p>I also recently built a <span className="font-semibold cursor-pointer hover:text-blue-500 transition-colors duration-200" onClick={() => router.push('/work/projects/sign-a-photo-jpg')}>photobooth web-app</span> that uses computer vision to detect the American Sign Language (ASL) alphabets, <a className="underline font-semibold cursor-pointer hover:text-rose-500 transition-colors duration-200" href="https://vt.tiktok.com/ZSmNxAXJR/" target="_blank" rel="noopener noreferrer">which garnered 710k+ views, 150k+ likes on TikTok</a>, and 500+ weekly page visits (which is the <i>craziest</i> thing ever).
                  </p>
 
                  <Image className="md:w-1/2 rounded-md" src="/images/intersection.png" alt="image of intersection of technology and creativity" width={500} height={500} />
@@ -26,7 +26,7 @@ function ExecutiveSection() {
              </div>
 
                 
-            <div className="flex w-full">
+            <div className="flex w-full items-center justify-center">
                 <CallToAction />
             </div>
         </section>

@@ -1,5 +1,6 @@
 'use client';
 
+import { theme } from '@/config/theme';
 import { useState } from "react";
 import Button from "@/components/ui/Button";
 import type { Post } from "@/lib/types";
@@ -69,8 +70,10 @@ export function PostCard({ post }: { post: any }) {
               <h1 className="text-lg font-semibold group-hover:text-blue-500 transition-colors duration-200">
                 {post.title}
               </h1>
-              <h2 className="text-md">{post.description}</h2>
-              <h2 className="text-sm text-black-400">
+              <h2 className={`${theme.typography.cardDescription}`}>
+                {post.description}
+              </h2>
+              <h2 className={`${theme.typography.cardDate}`}>
                 {convertDate(post.date)}
               </h2>
               

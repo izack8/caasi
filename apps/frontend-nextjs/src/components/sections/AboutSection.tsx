@@ -13,7 +13,7 @@ function AboutSection() {
       </p>
 
       <p>
-        I'd like to think that I'm someone who always strives to give my best, and learn as much as I can in this short life I have, so I'm always looking for opportunities to learn, grow and contribute my skills effectively. Most importantly, <span className="font-semibold">I really want to put as much cool stuff into the world as I can</span>, and I’m très excité to see where this journey takes me! :D
+        I'd like to think that I'm someone who always strives to give my best, and learn as much as I can, so I'm always looking for opportunities to learn, grow and contribute my skills effectively. Most importantly, <span className="font-semibold">I really want to put as much cool stuff into the world as I can</span>, and I’m très excité to see where this journey takes me! :D
       </p>
 
     </section>

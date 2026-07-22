@@ -1,5 +1,5 @@
 import { cache } from 'react';
-import { API_ENDPOINTS } from '@/app/config';
+import { API_ENDPOINTS } from '@/config/apis';
 import type { Post, Project, Experience, ApiError } from './types';
 
 

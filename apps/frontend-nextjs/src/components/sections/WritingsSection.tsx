@@ -1,5 +1,5 @@
 'use client'
-
+import { theme } from '@/config/theme';
 import SectionLabel from "@/components/ui/SectionLabel";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -86,8 +86,10 @@ function WritingSection() {
                     group-hover:text-blue-800 
                     transition-colors 
                     duration-200">{post.title}</h1>
-                    <h2 className="text-md">{post.description}</h2>
-                    <h2 className="text-sm text-black-400">{new Date(post.date).toLocaleDateString('en-US', { 
+                    <h2 className={`${theme.typography.cardDescription}`}>
+                      {post.description}
+                    </h2>
+                    <h2 className={`${theme.typography.cardDate}`}>{new Date(post.date).toLocaleDateString('en-US', { 
                       year: 'numeric', 
                       month: 'long', 
                       day: 'numeric' 
