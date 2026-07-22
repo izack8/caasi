@@ -2,7 +2,7 @@
 
 import SectionLabel from '@/components/ui/SectionLabel';
 import Button from '@/components/ui/Button';
-import { techCategories } from '@/config/cdn_icons.ts';
+import { techCategories } from '@/config/cdn_icons';
 import { useState, useEffect } from 'react';
 
 function TechStackSection() {
