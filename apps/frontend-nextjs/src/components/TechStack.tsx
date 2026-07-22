@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from '@/components/ui/Button';
-import { techCategories } from '@/app/config';
+import { techCategories } from '@/config/cdn_icons';
 
 type TechCategoryKey = keyof typeof techCategories;
 
