@@ -10,7 +10,7 @@ export default function ChatPage() {
     >
       <PageHeader 
         title="🤖 ai chatbot" 
-        subtitle={`mandatory ai implementation. "omg AI!" - someone, probably. (lowkey not proud of this one)`}
+        subtitle={`mandatory ai implementation. "omg AI!!!" - someone, probably`}
       />
       <div className="w-full h-[60dvh] bg-slate-200">
         <AIResumeChatSection />

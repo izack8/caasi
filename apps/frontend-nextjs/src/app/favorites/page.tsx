@@ -20,6 +20,7 @@ export default function FavoritesPage() {
     {desc:"👯 my friends"},
     {desc:"🎥 facetiming my long-distance besties"},
     {desc:"💰 thinking you're broke, but suddenly finding random cash in your pocket"},
+    {desc:"😴 the break you enjoy when you're in between jobs"},
   ]
 
   return (

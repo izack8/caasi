@@ -10,17 +10,20 @@ function ExecutiveSection() {
 
     return (
         <section className="journey-section text-base text-justify w-full flex flex-col gap-y-5">
-            <div className="flex flex-col sm:gap-x-5 items-center">
-                
+            
+            <div className="flex flex-col items-center gap-y-4">
                 <p>
-                Hello! My name is Isaac, or affectionately known as <b>izack/iz</b> by my friends. I'm a software engineer + ai/ml student, who loves exploring the intersection of technology and creativity, to build fun and creative projects.
+                Hello! My name is Isaac, or affectionately known as <b>izack/iz</b> by my friends. I'm a software engineer + ai/ml enthusiast, who loves exploring the intersection of technology and creativity, to build fun and creative projects.
                 </p>
-
-                <Image className="md:w-1/2 rounded-md mt-5" src="/images/intersection.png" alt="image of intersection of technology and creativity" width={500} height={500} />
-            </div>
                 
                 <p>I recently built a <span className="font-semibold cursor-pointer hover:text-blue-500 transition-colors duration-200" onClick={() => router.push('/work/projects/sign-a-photo-jpg')}>web-app</span> that uses computer vision to detect the American Sign Language (ASL) alphabets, <a className="font-semibold cursor-pointer italic hover:text-rose-500 transition-colors duration-200" href="https://vt.tiktok.com/ZSmNxAXJR/" target="_blank" rel="noopener noreferrer">which garnered 710k+ views, 150k+ likes on TikTok</a>, and 500+ weekly page visits (which is the <b>craziest</b> thing ever).
                  </p>
+
+                 <p>I am currently working as a Software Engineer at Singapore's national payment system, <span className="font-semibold"><a href="https://nets.com.sg" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">NETS</a></span>, building in-house workflow solutions for reporting and analytics, and further enhancing communication channels between <span className="font-semibold"><a href="https://en.wikipedia.org/wiki/List_of_banks_in_Singapore" className="underline hover:text-rose-500 transition-colors duration-200" target="_blank" rel="noopener noreferrer">local banks</a></span> :D.</p>
+
+                 <Image className="md:w-1/2 rounded-md" src="/images/intersection.png" alt="image of intersection of technology and creativity" width={500} height={500} />
+            
+             </div>
 
                 
             <div className="flex w-full">
