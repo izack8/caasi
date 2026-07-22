@@ -1,3 +1,4 @@
+import { theme } from "@/config/theme";
 import Link from 'next/link';
 import SectionLabel from '@/components/ui/SectionLabel';
 import ProjectTechStack from '@/components/ProjectTechStack';
@@ -46,12 +47,12 @@ export function ProjectCard({ project, index }: { project: any, index?: number }
             {project.title}
           </h1>
             
-          <div className="flex items-center gap-2 text-sm font-medium text-gray-600">
+          <div className={`${theme.typography.cardDate} gap-x-4`}>
             <FaCalendar className='w-3 h-3' />
             {project.year}
           </div>
 
-          <p className="text-slate-700 text-sm flex-grow">
+          <p className={theme.typography.cardDescription}>
             {project.description}
           </p>
 

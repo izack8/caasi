@@ -1,3 +1,4 @@
+import { theme } from "@/config/theme";
 import SectionLabel from '@/components/ui/SectionLabel';
 import { FaMapMarkerAlt, FaCalendar } from 'react-icons/fa';
 import { getCachedExperiences } from '@/lib/api';
@@ -33,7 +34,7 @@ export function ExperienceCard({ experience, index }: { experience: any, index?:
     <Link
       key={index}
       href={`/work/experiences/${experience.slug}`}
-      className='experience lg:flex lg:flex-wrap items-start rounded-lg transition-all duration-300 group lg:hover:bg-white/20 lg:bg-transparent border border-white/80 lg:border-transparent p-4'>
+      className='experience lg:flex lg:flex-wrap items-start rounded-lg transition-all duration-300 group'>
 
         <div className='flex flex-col gap-y-2'>
 
@@ -44,18 +45,18 @@ export function ExperienceCard({ experience, index }: { experience: any, index?:
                 {experience.company}
             </h2>
             
-            <div className='durationandlocation flex flex-row font-semibold text-md gap-7 items-center'>
-              <span className='flex flex-row items-center gap-2'>
+            <div className={`${theme.typography.cardDate} gap-x-10`}>
+              <span className='flex flex-row items-center gap-x-2'>
                 <FaCalendar className='w-3 h-3'/>
                 {experience.duration}
               </span>
-              <span className='flex flex-row items-center gap-2'>
+              <span className='flex flex-row items-center gap-x-2'>
                 <FaMapMarkerAlt className='w-3 h-3'/>
                 {experience.location}
                 </span>
-          </div>
+            </div>
           
-          <p className="text-md text-justify" dangerouslySetInnerHTML={{ __html: experience.description }} />
+          <p className={theme.typography.cardDescription} dangerouslySetInnerHTML={{ __html: experience.description }} />
         </div>
       </Link>
   )};
