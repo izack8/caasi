@@ -48,6 +48,7 @@ export default function RootLayout({
         <div className="mx-auto lg:min-h-screen max-w-screen-xl lg:px-12 h-screen lg:h-auto">
           <div className="w-full lg:h-full lg:flex lg:flex-row gap-x-3">
 
+
             <header className="flex flex-col w-full lg:h-[99dvh] lg:sticky lg:top-0 lg:py-20 lg:px-0 lg:z-50 lg:w-[30%]">
               <AppSidebar />
             </header>
