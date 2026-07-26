@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import HeroTitle from "../HeroTitle";
+import Button from "../ui/Button";
 
 function ExecutiveSection() {
     const router = useRouter();
@@ -37,15 +38,17 @@ export default ExecutiveSection;
 function CallToAction() {
 
     const ctaContent = [
-        {label: "🎮 about me", link: "/about"},
+        {label: "🎮 about me", link: "/me"},
         {label: "🌻", link: "/favorites"},
     ]
 
     return (
         <div className="flex flex-row gap-x-3">
             {ctaContent.map((item, index) => (
-                <Link key={index} href={item.link} className="font-semibold cursor-pointer transition-colors duration-200 text-slate-300 hover:bg-slate-700 hover:text-white bg-slate-800 rounded-md p-2 cursor-pointer">
-                    {item.label}
+                <Link key={index} href={item.link}>
+                    <Button className="font-semibold cursor-pointer" variant="glass" size="lg">
+                        {item.label}
+                    </Button>
                 </Link>
             ))}
         </div>

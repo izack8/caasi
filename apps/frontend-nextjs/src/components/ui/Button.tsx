@@ -2,7 +2,7 @@
 
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type ButtonVariant = 'default' | 'ghost' | 'active' | 'primary' | 'secondary' | 'danger' | 'live';
+type ButtonVariant = 'default' | 'ghost' | 'active' | 'primary' | 'secondary' | 'danger' | 'live' | 'glass';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -33,6 +33,7 @@ function Button({
         secondary: 'bg-gray-600 text-white hover:bg-gray-700',
         danger: 'bg-red-600 text-white hover:bg-red-700',
         live: 'bg-sky-700 text-white hover:bg-sky-600',
+        glass: 'rounded-xl transition-all duration-300 group bg-white/5 hover:bg-white/15 border border-white/20 hover:border-white/40 p-4 shadow-lg hover:shadow-xl hover:scale-[1.02]'
     };
     
     const sizes: Record<ButtonSize, string> = {

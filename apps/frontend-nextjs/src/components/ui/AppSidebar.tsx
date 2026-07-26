@@ -16,7 +16,7 @@ function AppSidebar() {
     if (path === '/work' || path?.startsWith('/work/')) return 'work';
     if (path === '/writings' || path?.startsWith('/writings/')) return 'writings';
     if (path === '/chat') return 'chat';
-    if (path === '/about') return 'about';
+    if (path === '/me') return 'me';
     if (path === '/favorites') return 'favorites';
     return 'home';
   };
@@ -47,7 +47,7 @@ function AppSidebar() {
           >
             <div className="flex flex-row gap-x-1 items-center">
             <img src="/favicon.ico" alt="izack.dev logo" className="w-8 h-8" />
-            <p className="font-semibold">IZ</p>
+            <p className="font-semibold">iz</p>
             </div>
             </Link>
           <NavigationBar activeTab={activeTab} />
@@ -64,7 +64,7 @@ const NavigationBar = memo(function NavigationBar({ activeTab }: { activeTab: st
     { id: 'work', label: 'my work', emoji: '🧑‍💻', path: '/work' },
     { id: 'writings', label: 'my writing', emoji: '✍️', path: '/writings' },
     { id: 'chat', label: 'resumé chat', emoji: '🤖', path: '/chat' },
-    { id: 'about', label: 'about me', emoji: '🎮', path: '/about' },
+    { id: 'me', label: 'about me', emoji: '🎮', path: '/me' },
     { id: 'favorites', label: '', emoji: '🌻', path: '/favorites' },
   ];
 

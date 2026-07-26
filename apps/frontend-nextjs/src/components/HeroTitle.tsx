@@ -13,7 +13,7 @@ function HeroTitle() {
     const [lang, setLang] = useState('en');
 
     return(
-        <div className="flex flex-col gap-y-3">
+        <div className="flex flex-col gap-y-3 items-center lg:items-start">
 
             <h1 className="text-5xl flex flex-row gap-x-2 font-light">
                 {langs.map((l, index) => (
@@ -30,7 +30,7 @@ function HeroTitle() {
                 
             </h1>
             
-            <div className="flex flex-col text-3xl font-light">
+            <div className="flex flex-col text-3xl font-light items-center lg:items-start">
 
                     <motion.span
                         key={lang}
@@ -50,10 +50,6 @@ function HeroTitle() {
 
             </div>
 
-{/*             
-            <p className='font-light text-md xl:text-lg flex w-full justify-center lg:justify-start '>
-                i like video games, music, software.
-            </p> */}
 
         </div>
     )
