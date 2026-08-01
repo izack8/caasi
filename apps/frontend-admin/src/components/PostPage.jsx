@@ -1,13 +1,15 @@
-import { useParams, useNavigate, useLocation, replace } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import PostUI from './ui/PostUI';
 import { API_ENDPOINTS } from '../config';
 import Footer from './ui/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from './contexts/AuthContext';
 
 export default function Post() {
   const { id } = useParams();
   const location = useLocation();
+  const { logout } = useAuth();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isEditing, setIsEditing] = useState(false);
@@ -129,11 +131,11 @@ export default function Post() {
     } catch (error) {
       if (error.message.includes('401')) {
         alert('Session expired. Please login again.');
-        localStorage.removeItem('token');
+        logout();
         navigate('/login');
       } else if (error.message.includes('403')) {
         alert('You do not have permission to perform this action.');
-        localStorage.removeItem('token');
+        logout();
         navigate('/login');
       } else {
         console.error('Error saving post:', error);
@@ -176,6 +178,12 @@ export default function Post() {
       
       navigate('/');
     } catch (error) {
+      if (error.message.includes('401') || error.message.includes('403')) {
+        logout();
+        navigate('/login');
+        return;
+      }
+
       console.error('Error deleting post:', error);
       alert('Failed to delete post. Please try again.');
     }
